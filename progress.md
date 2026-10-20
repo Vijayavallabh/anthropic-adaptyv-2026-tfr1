@@ -1,7 +1,7 @@
 # progress
 
-**Updated:** 2026-10-20 (session S203 cont., post-/clear)
-**Active feature:** F01 — recon + strategy
+**Updated:** 2026-10-20 (session cont., post-/clear)
+**Active feature:** F02 — target prep
 
 ## Done
 - **F00 repo + harness** (closing out) — clean uv project `adaptyv-tfr1` at the canonical path;
@@ -12,18 +12,28 @@
   Evidence: `./init.sh` -> INIT_EXIT=0 (uv sync 42 pkgs; compile ok; pytest now 14/14, incl. target seq = 640 aa). Recon Workflow launched (runId wf_419b8156-f71).
 - **F03 submission contract** — Challenge-4 validator (`src/adaptyv_tfr1/submission.py` + `scripts/validate_submission.py`), 10 contract tests, `submissions/example_track2.csv`. molecule_class canonical = `protein` (`single_chain` accepted as a portal alias with a warning; re-verify on the live form). Evidence: pytest 14/14; validator self-check PASS.
 
+- **F01 recon + strategy** (done) — structures byte-verified first-hand: `11QC` = human TfR1
+  ectodomain (chain A, 122–760, **Gly142 already correct**, UniProt-numbered) = TARGET; `11RN` =
+  TfR1(A/B)+B19V VP1u(X/Y), **TfR1 = chain A** = APICAL. Apical footprint byte-derived from 11RN
+  (<5 Å to VP1u): {202,203,204,208,209,210,211,212,348,371}. Conservation deterministic
+  (`scripts/conservation_epitope.py` → `docs/conservation.json`): ectodomain **78.1 %**; apical
+  **3/10 conserved = {202,203,209}**, 7/10 divergent (loses R208/K371; center Y211 not conserved).
+  Mouse **Q62351** = TFR1_MOUSE/Tfrc/763 aa VERIFIED. Strategy in `docs/RECON.md`: generator lead
+  **RFd3 + BindCraft** (ranking inverts vs TNF), **mechanism-B** default, **JustHISpKa** primary pKa,
+  3-arm portfolio (A apical / B conserved-non-apical / **C conserved-apical subsite = max-min core**),
+  18 protein + 2 conditional nanobody. Corrected the "Baker 79× on TNF" memory error (real: ~1000×
+  mech-A / ~10⁸× mech-B; targets EphA2/TNFR2/IL6/PCSK9). Evidence: pytest 14/14; `target.yaml` parses.
+
 ## In progress
-- **F01 recon + strategy** — (1) verify PDB structures BY BYTES (brief prints `11QC`/`11RN`; an
-  earlier scout flagged `1IQC`/`1IRN` as wrong proteins and proposed `1CX8`/`3KAS`/`6WRV`, but the
-  brief distinguishes "newer UniProt-exact 11QC/11RN" from "older Ser142 1CX8/3KAS/3S9L/6WRV" — so
-  the correction itself is unresolved); (2) human↔mouse apical conservation table + conserved
-  basic-residue map; (3) epitope choice (apical vs conserved patch — portfolio split); (4) selection
-  + novelty rubric from the published selection prompt; (5) 2026 SOTA generators for a concave
-  precedented epitope + pH-switch + cross-species joint design; (6) molecule-class portfolio.
-  To run as a recon Workflow; findings → `docs/` and resolve `target.yaml` VERIFY flags.
+- **F02 target prep** — write FRESH (TNF `stage0_target_prep.py` is stale EGFR). (1) From `11QC.cif`
+  emit a clean human apical TARGET PDB (single subunit, chain A, Gly142 — already correct) + a
+  full-atom single-subunit af2ig target; (2) define apical/conserved-apical-subsite/conserved-non-apical
+  epitope hotspot sets from `docs/conservation.json`; (3) build the mouse (Q62351, 123–763) model and
+  align; (4) numbering asserts (640-aa window 121–760, UniProt 211 == Y). Fix the ~100 TNF absolute-root
+  hardcodes on any ported script + add a repo-root assert.
 
 ## Next
-- F02 target prep · F03 submission contract (both unblocked once F01 verifies structures).
+- F04 generation (unblocked once F02 emits targets + hotspots).
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did

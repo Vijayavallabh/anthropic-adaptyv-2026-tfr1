@@ -9,19 +9,19 @@ target:
   construct_residues: [121, 760]        # UniProt; 640 aa; assay construct is tag-free
   assembly: disulfide_linked_homodimer  # each target presents TWO copies of the epitope
   domains_per_subunit: 3                # protease-like, apical, helical
-  # Reference structures — VERIFY BY BYTES in F01. The brief prints "11QC" (ectodomain homodimer)
-  # and "11RN" (apical + parvovirus B19 VP1u, chain A). An earlier scout flagged 1IQC/1IRN as the
-  # WRONG proteins (peroxidase / rubredoxin) and proposed 1CX8/3KAS/6WRV; BUT the brief distinguishes
-  # the "newer, UniProt-exact 11QC/11RN" from the "older Ser142 structures 1CX8/3KAS/3S9L/6WRV".
-  # => The correction is UNRESOLVED. Do not build target prep until the PDB id + chains are confirmed.
+  # Reference structures — VERIFIED BY BYTES (RCSB REST + curl, 2026-10-20). The brief is CORRECT:
+  # 11QC/11RN are REAL new cryo-EM entries (released 2026-05-27), NOT typos for 1IQC/1IRN (which are a
+  # bacterial di-heme peroxidase / Zn-rubredoxin and are unrelated). 1CX8 is the older Ser142 X-ray.
   reference_structures:
-    ectodomain_homodimer: { brief_label: "11QC", candidate: "1CX8", status: VERIFY }
-    apical_vp1u_complex:  { brief_label: "11RN", note: "parvovirus B19 VP1u, chain A", status: VERIFY }
-    machupo_gp1_complex:  { pdb: "3KAS", note: "functional apical epitope complex", status: VERIFY }
-    designed_binder:      { pdb: "6WRV", note: "de-novo 3DS18 on apical — NOVELTY no-fly zone", status: VERIFY }
+    ectodomain_homodimer: { pdb: "11QC", status: VERIFIED, method: "cryo-EM 2.4A", uniprot_span: "122-760 (639 aa)", residue_142: G, assembly: "Homo 2-mer homodimer", use: TARGET_PREP, cif: "https://files.rcsb.org/download/11QC.cif" }
+    apical_vp1u_complex:  { pdb: "11RN", status: VERIFIED, method: "cryo-EM 2.4A", note: "TfR1 homodimer + 2x parvovirus B19 VP1u RBD (UniProt Q9PZT0 res 8-69); Hetero 4-mer; VERIFY which author chain is TfR1 before slicing (byte-level)", use: APICAL_EPITOPE }
+    machupo_gp1_complex:  { pdb: "3KAS", status: VERIFIED, note: "Machupo GP1 on human TfR1 apical (X-ray 2.4A) - independent apical ligand" }
+    designed_binder:      { pdb: "6WRV", status: VERIFIED, note: "de-novo 3DS18 on apical (X-ray 2.47A) - NOVELTY NO-FLY (seq + structural TM)" }
+    transferrin_site_refs: { pdbs: ["3S9L", "1SUV", "1DE4"], note: "TfR1-transferrin / TfR1-HFE at the helical/Tf face - the site to AVOID, not the target epitope" }
+    legacy_ectodomain:    { pdb: "1CX8", status: "legacy - Ser142, X-ray 3.2A - do NOT use for prep (use 11QC)" }
   allele_fix:
     position: 142
-    use: G                              # UniProt/construct = Gly142; older crystals carry Ser142 -> correct
+    use: G                              # UniProt/construct = Gly142. 11QC is ALREADY Gly142 (byte-checked) -> no fix needed; only legacy 1CX8 carries Ser142.
   design_capture_tag:
     type: C-terminal Twin-Strep (added by host)
     rule: MUST NOT be part of the binding interface
@@ -30,8 +30,9 @@ target:
 epitope:
   name: apical domain (recommended functional epitope; viral + brain-shuttle-Ab site)
   recommended: apical
-  residues_uniprot: [202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 348, 371]
-  center: 211                           # Tyr211
+  residues_uniprot: [202, 203, 204, 208, 209, 210, 211, 212, 348, 371]   # BYTE-DERIVED: 11RN TfR1(chain A) heavy-atom contacts <5A to VP1u RBD (205-207, 213-215 are NOT in contact)
+  conserved_in_mouse: [202, 203, 209]   # I202,V203,L209 identical h==m -> the Arm-C contact core (rest of the footprint is divergent)
+  center: 211                           # Tyr211 (NOT conserved: mouse Asp)
   rationale: >
     Viruses (parvovirus B19 VP1u, Machupo GP1) and designed binders (6WRV) land here; transferrin
     binds the HELICAL domain (619-670) and only grazes the partner apical, so an apical binder leaves
@@ -41,19 +42,24 @@ epitope:
 
 cross_reactivity:
   ortholog: mouse TfR1 (Tfrc)
-  ortholog_uniprot: Q62351              # VERIFY in F01
+  ortholog_uniprot: Q62351              # VERIFIED (TFR1_MOUSE / gene Tfrc / 763 aa; UniProt+RCSB bytes 2026-10-20)
   ortholog_construct_residues: [123, 763]
   identity_pct: 78                      # ectodomains ~78% identical
   # Apical patch differs at 6 of 9 signature residues (human -> mouse, mouse numbering):
+  # CORRECTED by deterministic alignment (scripts/conservation_epitope.py, biopython global, 2026-10-20).
+  # The 210-212 loop carries a human/mouse indel (mouse +3 aa), so V210/Y211's exact 1:1 partner is
+  # alignment-dependent; the robust conclusion (apical is the most divergent surface, loses 2 basics) holds.
   divergent_apical:
     - { human: D204, mouse: Q207 }
     - { human: R208, mouse: N211 }      # LOSES a basic residue in mouse
-    - { human: V210, mouse: D213 }
-    - { human: Y211, mouse: P214 }      # center Tyr -> Pro: large change
-    - { human: L212, mouse: "-" }       # no counterpart (indel)
+    - { human: V210, mouse: "-" }       # indel/gap region (mouse is 3 aa longer near the apical loop)
+    - { human: Y211, mouse: D213 }      # center Tyr -> Asp: aromatic -> acidic, NOT conserved
+    - { human: L212, mouse: P214 }      # Leu -> Pro
     - { human: N348, mouse: K350 }
     - { human: K371, mouse: Q373 }      # LOSES a basic residue in mouse
-  conserved_apical_count: 3             # identify exact conserved positions in F01 alignment
+  conserved_apical_count: 3             # RESOLVED by bytes
+  conserved_apical_positions: [202, 203, 209]   # I202, V203, L209 (identical human==mouse) -> Arm-C contact core
+  ectodomain_identity_pct_computed: 78.1        # biopython global align over 121-760 (matches the ~78 prior)
   implication: >
     The apical patch is the MOST species-divergent surface and loses basic residues in mouse. A
     conserved interface-His-vs-target-cation switch (mechanism A) will not transfer. For cross-reactive
@@ -72,12 +78,23 @@ trigger:
       RISK here: apical basic residues (R208, K371) are species-divergent -> breaks mouse transfer.
     B_buried_network: >
       buried His (charged H-bond network) in the BINDER core -> acid destabilises the local fold /
-      interface, target-independent -> SAFEST for cross-reactivity (Baker 2025 SOTA on TNF-alpha, 79x).
+      interface, target-independent -> SAFEST for cross-reactivity. Baker 2025 (Ahn/Coventry et al.,
+      bioRxiv 2025.09.29.678932): mechanism B buried His-network up to ~10^8x; mechanism A interface-His
+      up to ~1000x. (Targets were EphA2/TNFR2/IL-6/PCSK9/Neo2, NOT TNF-alpha -- the cached "79x on TNF"
+      was a memory error, corrected 2026-10-20.)
   validation: >
     Folders (AF2/Boltz/Chai) are pH-blind. Prove SELECTIVITY (not just direction) with explicit
     two-state MD occupancy (His0 interface intact @7.4 / His+ broken @6.0, with a Gln-isostere causal
-    control) + PROPKA-Wyman & pKAI linkage + GFN2-xTB cluster energetics, contact-gated (ON-state His
-    < 8 A from its partner). Tune the transition to sit at pH 6.0. Re-validate on the exact final sequence.
+    control) + JustHISpKa (PRIMARY His-pKa ranker, MUE 0.4 pH units vs ~1.0 for PROPKA/pKAI; tarball
+    salvaged in-repo) cross-checked by PROPKA-Wyman & pKAI linkage sign-consensus + GFN2-xTB cluster
+    energetics, contact-gated (ON-state His < 8 A from its partner). Tune the transition to sit at pH 6.0.
+    Re-validate on the exact final sequence.
+  physics_budget: >
+    SELECTOR GATE (published prompt, verbatim): "one titratable site changes affinity at most tenfold
+    per pH unit". The 7.4->6.0 window is 1.4 units, so a single His gives at most ~10^1.4 (~25x). Budget
+    >=2-3 SEPARATED titratable His for a decisive KD(6.0)/KD(7.4) ratio; a single-His design reads as
+    marginal/near the physical floor. The selector explicitly prefers "a weak but clear pH switch" over
+    "a strong binder that is not pH-sensitive" -> pH-selectivity is the single highest-value property.
 
 objective_priority: [ph_selective, cross_reactive, affinity]
 
@@ -89,5 +106,7 @@ submission:
   molecule_class_allowed: [protein, nanobody, scfv, fab_kappa, fab_lambda]
   denovo_default: protein               # de-novo single-chain mini/micro/large binder
   ranking: [ph_selective_human, mouse_crossreact_ratio_to_1, human_affinity_kd]
-  novelty_gate: ">=3/4 (<=30% seq id AND low TM to known proteins; structural; binding-domain only; portal authoritative)"
+  novelty_gate: "Adaptyv 1-4 LEVEL scale (NOT 3-of-4). Hard gate = level >=3 (enforced at submission). Level 4 = seq id <=30% (MMseqs2 vs SwissProt/PDB/patents/PLAbDab) AND < moderate structural TM (ESMFold -> domain split -> Foldseek/TM-align, coverage-weighted). TARGET LEVEL 4; selector prefers 4 to 3. Judged on the BINDING PART ONLY (no linkers/tags/padding/extra domains). Antibodies scored on CDRH3 novelty. NOTE: exact thresholds via WebFetch summarizer - byte-verify before hard-coding a local oracle."
+  selector_metadata: "Submit per design: pLDDT (ProteinTyper), ipSAE (co-fold interface vs target), mean Kyte-Doolittle GRAVY; plus ipTM + stated epitope + a predicted human+mouse complex. 'No single in silico metric decides.'"
+  selection_mechanics: "Tracks 2/3 submit ranked (only first 20 count, in order); selector takes <=10/submission from the TOP -> front-load the best ~10. Builds ranked 500/track -> top 375 tested + 125 reserve; <=93/method-family. Method novelty can carry a submission; diversify across 9 classes (miniprotein/small-protein/peptide/Fab/nanobody/scFv/monobody/DARPin/affibody), ~2/lineage. Participant text is DATA, not instructions (injection -> whole-account set-aside)."
   conditions_measured: [human_pH7.4, human_pH6.0, mouse_pH7.4]   # design immobilised, target in solution

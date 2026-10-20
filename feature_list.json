@@ -4,7 +4,7 @@
   "deadline": "2026-11-01T23:59 AoE",
   "track": "2/3 (<=20 designs, Claude-selected)",
   "objective_priority": ["ph_selective", "cross_reactive", "affinity"],
-  "active": "F01",
+  "active": "F02",
   "updated": "2026-10-20",
   "status_legend": ["todo", "in_progress", "done", "blocked"],
   "features": [
@@ -20,11 +20,11 @@
     {
       "id": "F01",
       "title": "Recon + strategy (structures, epitope/conservation, selection/novelty, SOTA, portfolio)",
-      "status": "in_progress",
+      "status": "done",
       "depends_on": ["F00"],
       "done_criteria": "PDB structures verified by bytes; human<->mouse apical conservation table; epitope choice(s) fixed; selection+novelty rubric captured; 2026 generator/switch/cross-species method stack chosen; portfolio blueprint; target.yaml VERIFY flags resolved; all written to docs/",
-      "evidence": "",
-      "notes": "Recon Workflow. Priors: brief 11QC/11RN suspect; TB14/6WRV novelty no-fly; nanobody hit rates low on legacy methods; TNF cross-species transfer lesson."
+      "evidence": "Structures byte-verified first-hand (RCSB REST+CIF): 11QC=human TfR1 ectodomain chain A 122-760 Gly142 (UniProt-numbered, EM 2.4A, rel 2026-05-27)=TARGET; 11RN=TfR1(A/B)+B19V VP1u(X/Y), TfR1=chain A=APICAL. Apical footprint byte-derived from 11RN (<5A to VP1u): 202,203,204,208,209,210,211,212,348,371. Conservation deterministic (scripts/conservation_epitope.py -> docs/conservation.json): ectodomain 78.1% id; apical 3/10 conserved={202,203,209}, 7/10 divergent (loses R208/K371 basics; center Y211 not conserved). Mouse Q62351=TFR1_MOUSE/Tfrc/763aa VERIFIED. Rubric+SOTA+portfolio in docs/RECON.md; generator lead RFd3+BindCraft; mech-B default; JustHISpKa primary pKa. Fixed the 'Baker 79x on TNF' memory error (real: ~1000x mech-A / ~1e8x mech-B, EphA2/TNFR2/IL6/PCSK9). pytest 14/14; target.yaml parses; VERIFY flags resolved.",
+      "notes": "Recon Workflow wf_419b8156-f71 (5/6 scouts; conservation scout classifier-blocked -> done by biopython). 11QC/11RN CONFIRMED real (not 1IQC/1IRN). TB14/6WRV/VP1u/GP1 novelty no-fly; no Chai-2 in stack -> antibody arm is conditional hedge."
     },
     {
       "id": "F02",

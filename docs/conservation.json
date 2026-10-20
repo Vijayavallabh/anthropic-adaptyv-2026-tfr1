@@ -1,0 +1,390 @@
+{
+  "11QC": {
+    "tfr1_chain": "A",
+    "n_res": 639,
+    "resnum_range": [
+      122,
+      760
+    ],
+    "residue_142": "G",
+    "numbering_is_uniprot": true
+  },
+  "11RN": {
+    "tfr1_chain": "A",
+    "all_contacts": [
+      180,
+      182,
+      202,
+      203,
+      204,
+      208,
+      209,
+      210,
+      211,
+      212,
+      312,
+      313,
+      314,
+      316,
+      317,
+      318,
+      319,
+      320,
+      322,
+      323,
+      324,
+      348,
+      371,
+      392,
+      394,
+      397,
+      399,
+      400,
+      401,
+      402,
+      447,
+      449,
+      466,
+      468,
+      469,
+      470,
+      472,
+      473,
+      475,
+      476,
+      477,
+      637,
+      638,
+      641,
+      644,
+      668,
+      669,
+      672,
+      673,
+      676,
+      680,
+      683,
+      684,
+      688,
+      689,
+      690,
+      691,
+      692,
+      693,
+      729,
+      732,
+      733,
+      735,
+      736,
+      737,
+      739,
+      740,
+      743,
+      744,
+      745,
+      747,
+      748,
+      751,
+      752,
+      753,
+      754,
+      756
+    ],
+    "apical_footprint": [
+      202,
+      203,
+      204,
+      208,
+      209,
+      210,
+      211,
+      212,
+      348,
+      371
+    ],
+    "apical_footprint_labeled": [
+      "I202",
+      "V203",
+      "D204",
+      "R208",
+      "L209",
+      "V210",
+      "Y211",
+      "L212",
+      "N348",
+      "K371"
+    ]
+  },
+  "alignment": {
+    "full_identity_pct": 77.3,
+    "ectodomain_identity_pct": 78.1,
+    "apical_footprint_used": [
+      202,
+      203,
+      204,
+      208,
+      209,
+      210,
+      211,
+      212,
+      348,
+      371
+    ],
+    "apical_conserved": [
+      202,
+      203,
+      209
+    ],
+    "apical_divergent": [
+      204,
+      208,
+      210,
+      211,
+      212,
+      348,
+      371
+    ],
+    "apical_table": [
+      {
+        "uniprot_human": 202,
+        "human_aa": "I",
+        "mouse_aa": "I",
+        "mouse_num": 205,
+        "conserved": true
+      },
+      {
+        "uniprot_human": 203,
+        "human_aa": "V",
+        "mouse_aa": "V",
+        "mouse_num": 206,
+        "conserved": true
+      },
+      {
+        "uniprot_human": 204,
+        "human_aa": "D",
+        "mouse_aa": "Q",
+        "mouse_num": 207,
+        "conserved": false
+      },
+      {
+        "uniprot_human": 208,
+        "human_aa": "R",
+        "mouse_aa": "N",
+        "mouse_num": 211,
+        "conserved": false
+      },
+      {
+        "uniprot_human": 209,
+        "human_aa": "L",
+        "mouse_aa": "L",
+        "mouse_num": 212,
+        "conserved": true
+      },
+      {
+        "uniprot_human": 210,
+        "human_aa": "V",
+        "mouse_aa": "-",
+        "mouse_num": null,
+        "conserved": false
+      },
+      {
+        "uniprot_human": 211,
+        "human_aa": "Y",
+        "mouse_aa": "D",
+        "mouse_num": 213,
+        "conserved": false
+      },
+      {
+        "uniprot_human": 212,
+        "human_aa": "L",
+        "mouse_aa": "P",
+        "mouse_num": 214,
+        "conserved": false
+      },
+      {
+        "uniprot_human": 348,
+        "human_aa": "N",
+        "mouse_aa": "K",
+        "mouse_num": 350,
+        "conserved": false
+      },
+      {
+        "uniprot_human": 371,
+        "human_aa": "K",
+        "mouse_aa": "Q",
+        "mouse_num": 373,
+        "conserved": false
+      }
+    ]
+  },
+  "conserved_runs": [
+    {
+      "lo": 154,
+      "hi": 163,
+      "len": 10,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 179,
+      "hi": 184,
+      "len": 6,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 188,
+      "hi": 193,
+      "len": 6,
+      "tag": ""
+    },
+    {
+      "lo": 230,
+      "hi": 244,
+      "len": 15,
+      "tag": ""
+    },
+    {
+      "lo": 255,
+      "hi": 260,
+      "len": 6,
+      "tag": ""
+    },
+    {
+      "lo": 262,
+      "hi": 271,
+      "len": 10,
+      "tag": ""
+    },
+    {
+      "lo": 275,
+      "hi": 284,
+      "len": 10,
+      "tag": ""
+    },
+    {
+      "lo": 298,
+      "hi": 324,
+      "len": 27,
+      "tag": ""
+    },
+    {
+      "lo": 326,
+      "hi": 347,
+      "len": 22,
+      "tag": ""
+    },
+    {
+      "lo": 386,
+      "hi": 395,
+      "len": 10,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 402,
+      "hi": 411,
+      "len": 10,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 425,
+      "hi": 431,
+      "len": 7,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 444,
+      "hi": 453,
+      "len": 10,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 461,
+      "hi": 486,
+      "len": 26,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 488,
+      "hi": 505,
+      "len": 18,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 530,
+      "hi": 535,
+      "len": 6,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 543,
+      "hi": 560,
+      "len": 18,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 562,
+      "hi": 568,
+      "len": 7,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 590,
+      "hi": 596,
+      "len": 7,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 599,
+      "hi": 612,
+      "len": 14,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 635,
+      "hi": 648,
+      "len": 14,
+      "tag": ""
+    },
+    {
+      "lo": 650,
+      "hi": 660,
+      "len": 11,
+      "tag": ""
+    },
+    {
+      "lo": 681,
+      "hi": 692,
+      "len": 12,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 694,
+      "hi": 699,
+      "len": 6,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 701,
+      "hi": 709,
+      "len": 9,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 714,
+      "hi": 719,
+      "len": 6,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 725,
+      "hi": 744,
+      "len": 20,
+      "tag": "candidate ArmB"
+    },
+    {
+      "lo": 746,
+      "hi": 752,
+      "len": 7,
+      "tag": "candidate ArmB"
+    }
+  ]
+}
