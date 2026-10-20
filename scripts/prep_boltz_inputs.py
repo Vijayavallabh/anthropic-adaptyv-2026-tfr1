@@ -8,8 +8,10 @@ import argparse, csv, random
 from pathlib import Path
 
 POS_3DS18 = "DEREEEQRRRLEEVKEEAKRRERSEQDLAVLYLEAVNAAVVFVADSEEEAKRVADIVKKLVPEVIIFVHDNFVVFVVDSDEAARRVYEIVERA"
+# binder (A) = single-seq (de-novo, no MSA); target (B) = MSA via --use_msa_server (real protein has
+# homologs) -> the standard binder-validation setup; target MSA gives Boltz proper interface context.
 YAML = ("version: 1\nsequences:\n  - protein:\n      id: A\n      sequence: {b}\n      msa: empty\n"
-        "  - protein:\n      id: B\n      sequence: {t}\n      msa: empty\n")
+        "  - protein:\n      id: B\n      sequence: {t}\n")
 
 
 def main():
