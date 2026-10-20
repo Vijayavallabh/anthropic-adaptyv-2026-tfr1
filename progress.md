@@ -284,3 +284,11 @@ Measured backbone Rg (compactness) + coverage-weighted foldseek novelty on RFd1 
 DECISION: generate LONG binders (100-135aa); filter Rg (compact) + novelty; then MPNN(B,0-Cys) -> self_consistency
 (ESMFold real-gate novelty + self-consist) -> Chai∧Boltz binding -> switch -> select. Launched long1 (240 designs).
 Funnel yield est: 240 -> ~70 compact&novel -> ~10-30 novel binders. gpu5_17 remains the floor.
+
+## RFd1 novel-binder funnel RESULT (2026-10-21)
+long1 (240 long binders) -> 110 compact (Rg) -> 220 MPNN seqs (chain B, 0-Cys) -> self_consistency:
+**187/220 self-consistent (85%), 49 novel, 31 self-consistent AND novel** (covwTM 0.70-0.80, PDB-only).
+HUGE improvement over BoltzGen (~1 novel). Caveat: all 0.70-0.80 (3/4 PASS but near the line; AFDB would raise;
+0 robust <0.65) -> user portal check is the final novelty authority. Chai binding validation launched on the 31
+(b4sumfysu); Boltz YAMLs prepped for the dual gate. Next: Chai∧Boltz binders -> switch (mech-A/B) -> x-species
+-> developability -> select ≤20 (novel RFd1 binders + gpu5_17 floor). The long-binder RFd1 path WORKS for novelty.
