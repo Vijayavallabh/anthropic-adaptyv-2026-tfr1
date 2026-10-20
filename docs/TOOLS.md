@@ -27,8 +27,16 @@ rfdiffusion1, proteinmpnn, common, + folders (boltz2, chai1, protenix, esmfold2,
   - `AF2_PARAMS=weights/af2ig` (holds `params/params_model_1_ptm.npz` → symlinked to the cached bindcraft
     param; sha256 matches the kit pin). Built via `scripts/setup_uplifting.sh af2ig` (no `--weights`).
   - run: `cd $KIT && AF2IG_DIR=.. AF2_PARAMS=.. bash run.sh pred --config h100 --mode exact --pdbdir D --out D`.
-  - Proven drivers to port: tnf `scripts/run_af2ig.py` + `fold_af2ig.sh` (binder=chain A; gate rmsd<2 ∧
-    pae_interaction<10 ∧ plddt_binder>80). NB: crop the 639-aa target to the epitope neighbourhood for speed.
+  - **⚠ CUDA-stack fix (REQUIRED on this box):** the kit lock pins CUDA 12.9, which SEGFAULTS on GPU
+    matmul under this driver (CUDA 13.0). Fix applied to the venv (per `env-af2ig-cuda-stack-drift`):
+    `uv pip install --python envs/uplifting-af2ig/bin/python "nvidia-cublas-cu12<12.9" "nvidia-cuda-cupti-cu12<12.9"
+    "nvidia-cuda-nvcc-cu12<12.9" "nvidia-cuda-nvrtc-cu12<12.9" "nvidia-cuda-runtime-cu12<12.9"
+    "nvidia-nvjitlink-cu12<12.9" "nvidia-cufft-cu12<11.4" "nvidia-cusolver-cu12<11.8" "nvidia-cusparse-cu12<12.6"
+    "nvidia-cudnn-cu12>=9.8,<9.9"` → resolves to 12.8 + cudnn 9.8.0.87; GPU matmul then correct, af2ig rc=0.
+  - **F06 drivers (ported, working):** `scripts/prep_af2ig_inputs.py` (crop target <12 Å around binder →
+    binder=chain A, target=chain B PDBs), `scripts/fold_af2ig.sh` (one GPU; exports AF2_PARAMS=weights/af2ig),
+    `scripts/af2ig_sharded.sh` (shards across GPUs, 25 s cuBLAS stagger). Gate: binder_aligned_rmsd<2 ∧
+    pae_interaction<10 ∧ plddt_binder>80.
 - **PXDesign** (2nd generator). env `envs/uplifting-pxdesign`, ckpt `pxdesign_v0.1.0.pt`. `run.sh design --config h100 --mode fast -i tasks.json -o OUT` with `PXDESIGN_CKPT_DIR`+`PROTENIX_DATA_ROOT_DIR` (cf. memory env-pxdesign-activation-recsite).
 - **RFdiffusion3** (best for the buried-His network; EXPENSIVE: apex wheel compile ~10 min + CUDA-13 toolkit + weight DL). `setup_rfd3.sh` (in tnf). Rebuild only if BoltzGen+PXDesign coverage is insufficient.
 - **Genie3** (`setup_genie3.sh`), **RFdiffusion1** — moderate; diversity arms.

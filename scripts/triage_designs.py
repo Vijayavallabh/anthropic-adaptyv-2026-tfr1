@@ -18,7 +18,7 @@ import gemmi
 
 warnings.filterwarnings("ignore")
 ARM_KEY = {"armA": "armA_apical_human", "armB": "armB_conserved_nonapical",
-           "armC": "armC_conserved_apical_subsite"}
+           "armC": "armC_conserved_apical_subsite", "armC_mini": "armC_conserved_apical_subsite"}
 
 
 def is_vhh(seq):
