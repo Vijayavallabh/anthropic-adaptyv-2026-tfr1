@@ -223,3 +223,18 @@ PROPKA (tools/pka-venv, uv) His pKa on the re-folded complex (model ref 6.50; hi
 All have correct DIRECTION (Δn_H>0 across 7.4→6.0). Caveat: PROPKA is the weakest His predictor (R²~0.05,
 ±1u) → treat as first-pass; confirm flagship(s) with JustHISpKa/pKAI before final. Magnitude unrankable →
 select for mechanism diversity. Switch-binder ranking so far: gpu5_12_sw2his > gpu2_18_mA1 ≈ gpu5_17_mA1 > gpu2_31_mA1.
+
+## Full-pool gate + novelty + Boltz dual-gate on switches (2026-10-21)
+**Full pool (Chai iptm≥0.35 ∧ Boltz iptm≥0.5): 18 binders** (runs/f06/f06_pass_full.tsv). Expand added 5:
+gpu2_13 (chai 0.697 NEW top), gpu1_08, gpu4_09, gpu4_00, gpu4_31. Dev: 4 new CLEAN, gpu1_08 SEVERE.
+**Novelty (single-seq ESMFold + foldseek vs PDB) = SYSTEMIC high-TM** (BoltzGen makes PDB-like folds):
+almost all 0.85-1.0 (risk/borderline); new binders too (gpu2_13 0.923). Most novel: gpu4_28 0.774,
+gpu5_17 0.844, gpu5_26 0.882 (but these are dev-SEVERE or Chai-weak). ASSUMPTION (reference-adaptyv-novelty-metric):
+de-novo helical bundles w/ low seq-id cap at 3/4 => PASS the ≥3/4 gate; 4/4 unreachable without a novel-fold
+generator (RFd3/Genie3 not installed). Treat novelty as ~uniform 3/4 pass (not a differentiator); RISK noted.
+**Boltz dual-gate on switch-binders** (His mutation can drop Boltz even when Chai holds):
+- gpu2_31_mA1  chai .616 ∧ boltz .843  ✓✓ consensus (pKa 5.28 weak switch; novelty .895)
+- gpu5_12_sw2his chai .491 ∧ boltz .566 ✓✓ consensus (pKa 6.23 BEST switch; novelty .945 risk; 95aa)
+- gpu2_18_mA1  chai .554 BUT boltz .409 ✗ Chai-only (parent was .831 — His hurt Boltz)
+- gpu5_17_mA1  chai .702 BUT boltz .437 ✗ Chai-only (parent .809)
+=> 2 dual-consensus switch-binders + 2 Chai-only (riskier). Honest: no single design aces switch+novelty+binding.
