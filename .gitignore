@@ -1,0 +1,56 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+envs/
+
+# Secrets
+.env
+
+# Third-party tools & model weights (shared installs; local-only)
+third_party/
+weights/
+tools/
+
+# Licensed tool artifacts (local-only — NEVER commit the key or the licensed binary)
+*.lic
+justhispka-1.0.2.tgz
+
+# Generated design artifacts & run outputs (keep data/targets tracked)
+designs/
+results/
+runs/
+outputs/
+scratchpad/
+data/generated/
+*.log
+
+# Caches
+.cache/
+hf_home/
+.huggingface/
+wandb/
+.ipynb_checkpoints/
+.jit/
+logs/
+
+# rfd3 Route C build scratch (user-space CUDA toolkit + apex source)
+.rfd3build/
+
+# Model params (bootstrapped, local-only)
+model_params/
+
+# session scratch + downloads (local-only, untrusted)
+_pdb_raw/
+_research_downloads/
+_research_scripts/
+_scratch/
+_uniprot_raw/
+research_scratch/
+research_tmp/

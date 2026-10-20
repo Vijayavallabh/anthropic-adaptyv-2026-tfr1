@@ -1,0 +1,93 @@
+# Human TfR1 (CD71) conditional-binder target contract — Anthropic x Adaptyv 2026 Challenge 4.
+# Numbering is UniProt P02786 (== construct numbering). Construct = ectodomain residues 121-760
+# (640 aa), supplied as a disulfide-linked HOMODIMER, tag-free (a Gly-Pro scar precedes residue 1).
+# Sequence index i (1-based in `sequence`) corresponds to UniProt residue (i + 120).
+
+target:
+  name: human transferrin receptor 1 (TfR1 / CD71) soluble ectodomain, homodimer
+  uniprot: P02786-1
+  construct_residues: [121, 760]        # UniProt; 640 aa; assay construct is tag-free
+  assembly: disulfide_linked_homodimer  # each target presents TWO copies of the epitope
+  domains_per_subunit: 3                # protease-like, apical, helical
+  # Reference structures — VERIFY BY BYTES in F01. The brief prints "11QC" (ectodomain homodimer)
+  # and "11RN" (apical + parvovirus B19 VP1u, chain A). An earlier scout flagged 1IQC/1IRN as the
+  # WRONG proteins (peroxidase / rubredoxin) and proposed 1CX8/3KAS/6WRV; BUT the brief distinguishes
+  # the "newer, UniProt-exact 11QC/11RN" from the "older Ser142 structures 1CX8/3KAS/3S9L/6WRV".
+  # => The correction is UNRESOLVED. Do not build target prep until the PDB id + chains are confirmed.
+  reference_structures:
+    ectodomain_homodimer: { brief_label: "11QC", candidate: "1CX8", status: VERIFY }
+    apical_vp1u_complex:  { brief_label: "11RN", note: "parvovirus B19 VP1u, chain A", status: VERIFY }
+    machupo_gp1_complex:  { pdb: "3KAS", note: "functional apical epitope complex", status: VERIFY }
+    designed_binder:      { pdb: "6WRV", note: "de-novo 3DS18 on apical — NOVELTY no-fly zone", status: VERIFY }
+  allele_fix:
+    position: 142
+    use: G                              # UniProt/construct = Gly142; older crystals carry Ser142 -> correct
+  design_capture_tag:
+    type: C-terminal Twin-Strep (added by host)
+    rule: MUST NOT be part of the binding interface
+  sequence: "RLYWDDLKRKLSEKLDSTDFTGTIKLLNENSYVPREAGSQKDENLALYVENQFREFKLSKVWRDQHFVKIQVKDSAQNSVIIVDKNGRLVYLVENPGGYVAYSKAATVTGKLVHANFGTKKDFEDLYTPVNGSIVIVRAGKITFAEKVANAESLNAIGVLIYMDQTKFPIVNAELSFFGHAHLGTGDPYTPGFPSFNHTQFPPSRSSGLPNIPVQTISRAAAEKLFGNMEGDCPSDWKTDSTCRMVTSESKNVKLTVSNVLKEIKILNIFGVIKGFVEPDHYVVVGAQRDAWGPGAAKSGVGTALLLKLAQMFSDMVLKDGFQPSRSIIFASWSAGDFGSVGATEWLEGYLSSLHLKAFTYINLDKAVLGTSNFKVSASPLLYTLIEKTMQNVKHPVTGQFLYQDSNWASKVEKLTLDNAAFPFLAYSGIPAVSFCFCEDTDYPYLGTTMDTYKELIERIPELNKVARAAAEVAGQFVIKLTHDVELNLDYERYNSQLLSFVRDLNQYRADIKEMGLSLQWLYSARGDFFRATSRLTTDFGNAEKTDRFVMKKLNDRVMRVEYHFLSPYVSPKESPFRHVFWGSGSHTLPALLENLKLRKQNNGAFNETLFRNQLALATWTIQGAANALSGDVWDIDNEF"
+
+epitope:
+  name: apical domain (recommended functional epitope; viral + brain-shuttle-Ab site)
+  recommended: apical
+  residues_uniprot: [202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 348, 371]
+  center: 211                           # Tyr211
+  rationale: >
+    Viruses (parvovirus B19 VP1u, Machupo GP1) and designed binders (6WRV) land here; transferrin
+    binds the HELICAL domain (619-670) and only grazes the partner apical, so an apical binder leaves
+    the Tf site free and the receptor keeps recycling (functional).
+  transferrin_site_avoid: [619, 670]    # helical domain — leave free
+  note: apical binding counts in favour for Objective 3 (affinity ranking).
+
+cross_reactivity:
+  ortholog: mouse TfR1 (Tfrc)
+  ortholog_uniprot: Q62351              # VERIFY in F01
+  ortholog_construct_residues: [123, 763]
+  identity_pct: 78                      # ectodomains ~78% identical
+  # Apical patch differs at 6 of 9 signature residues (human -> mouse, mouse numbering):
+  divergent_apical:
+    - { human: D204, mouse: Q207 }
+    - { human: R208, mouse: N211 }      # LOSES a basic residue in mouse
+    - { human: V210, mouse: D213 }
+    - { human: Y211, mouse: P214 }      # center Tyr -> Pro: large change
+    - { human: L212, mouse: "-" }       # no counterpart (indel)
+    - { human: N348, mouse: K350 }
+    - { human: K371, mouse: Q373 }      # LOSES a basic residue in mouse
+  conserved_apical_count: 3             # identify exact conserved positions in F01 alignment
+  implication: >
+    The apical patch is the MOST species-divergent surface and loses basic residues in mouse. A
+    conserved interface-His-vs-target-cation switch (mechanism A) will not transfer. For cross-reactive
+    designs, favour a conserved sub-patch for contacts AND a target-INDEPENDENT buried-His switch
+    (mechanism B). Always test the mouse ortholog ENERGETICALLY, not by a single co-folder's ipTM.
+
+trigger:
+  type: pH
+  on_value: 7.4                         # plasma: binding ON
+  off_value: 6.0                        # early endosome: binding OFF (release; binder stays in, receptor recycles)
+  direction: release_at_low_pH          # protonation must BREAK binding
+  sensor: binder_histidine              # His pKa ~6.5: neutral @7.4, protonated @6.0
+  mechanisms:
+    A_interface_repulsion: >
+      binder His next to a CONSERVED target basic -> His+ at pH6 -> charge repulsion -> release.
+      RISK here: apical basic residues (R208, K371) are species-divergent -> breaks mouse transfer.
+    B_buried_network: >
+      buried His (charged H-bond network) in the BINDER core -> acid destabilises the local fold /
+      interface, target-independent -> SAFEST for cross-reactivity (Baker 2025 SOTA on TNF-alpha, 79x).
+  validation: >
+    Folders (AF2/Boltz/Chai) are pH-blind. Prove SELECTIVITY (not just direction) with explicit
+    two-state MD occupancy (His0 interface intact @7.4 / His+ broken @6.0, with a Gln-isostere causal
+    control) + PROPKA-Wyman & pKAI linkage + GFN2-xTB cluster energetics, contact-gated (ON-state His
+    < 8 A from its partner). Tune the transition to sit at pH 6.0. Re-validate on the exact final sequence.
+
+objective_priority: [ph_selective, cross_reactive, affinity]
+
+submission:
+  host: Proteinbase (Adaptyv 2026)
+  track: "2/3"
+  design_cap: 20
+  length_range: [10, 250]               # single chain
+  molecule_class_allowed: [protein, nanobody, scfv, fab_kappa, fab_lambda]
+  denovo_default: protein               # de-novo single-chain mini/micro/large binder
+  ranking: [ph_selective_human, mouse_crossreact_ratio_to_1, human_affinity_kd]
+  novelty_gate: ">=3/4 (<=30% seq id AND low TM to known proteins; structural; binding-domain only; portal authoritative)"
+  conditions_measured: [human_pH7.4, human_pH6.0, mouse_pH7.4]   # design immobilised, target in solution

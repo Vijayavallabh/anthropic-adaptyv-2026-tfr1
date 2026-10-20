@@ -1,0 +1,120 @@
+{
+  "project": "adaptyv-tfr1",
+  "challenge": "Anthropic x Adaptyv 2026 - Challenge 4 (TfR1 / CD71 conditional binder)",
+  "deadline": "2026-11-01T23:59 AoE",
+  "track": "2/3 (<=20 designs, Claude-selected)",
+  "objective_priority": ["ph_selective", "cross_reactive", "affinity"],
+  "active": "F01",
+  "updated": "2026-10-20",
+  "status_legend": ["todo", "in_progress", "done", "blocked"],
+  "features": [
+    {
+      "id": "F00",
+      "title": "Repo + harness setup (uv, git, harness-creator)",
+      "status": "done",
+      "depends_on": [],
+      "done_criteria": "uv sync + ./init.sh green (compile + pytest smoke); AGENTS/CLAUDE/feature_list/target.yaml/PLAN present",
+      "evidence": "./init.sh -> INIT_EXIT=0: uv sync 42 pkgs + built adaptyv-tfr1; compile ok; pytest 4/4 incl. target seq == 640 aa (UniProt 121-760) natural AAs",
+      "notes": "Clean rebuild per user instruction; stale raw-TNF copy moved to ../.stale-tfr1-tnfcopy-20261020; justHisPKa salvaged."
+    },
+    {
+      "id": "F01",
+      "title": "Recon + strategy (structures, epitope/conservation, selection/novelty, SOTA, portfolio)",
+      "status": "in_progress",
+      "depends_on": ["F00"],
+      "done_criteria": "PDB structures verified by bytes; human<->mouse apical conservation table; epitope choice(s) fixed; selection+novelty rubric captured; 2026 generator/switch/cross-species method stack chosen; portfolio blueprint; target.yaml VERIFY flags resolved; all written to docs/",
+      "evidence": "",
+      "notes": "Recon Workflow. Priors: brief 11QC/11RN suspect; TB14/6WRV novelty no-fly; nanobody hit rates low on legacy methods; TNF cross-species transfer lesson."
+    },
+    {
+      "id": "F02",
+      "title": "Target prep (verified structure, fix G142, full-atom human apical target + mouse model)",
+      "status": "todo",
+      "depends_on": ["F01"],
+      "done_criteria": "Clean human ectodomain/apical target PDB (Gly142), full-atom single-subunit target for af2ig, mouse model built + aligned; numbering asserts pass (seq window 121-760 = 640 aa, seq[211-121]=='Y')",
+      "evidence": "",
+      "notes": ""
+    },
+    {
+      "id": "F03",
+      "title": "Submission contract (Challenge-4 validator + tests + example CSV)",
+      "status": "done",
+      "depends_on": ["F00"],
+      "done_criteria": "validate_submission.py enforces molecule_class in {protein,nanobody,scfv,fab_kappa,fab_lambda}, len 10-250, <=20, unique names+seqs, natural AAs, Fab VH:VL, ANARCI for nb/ab; tests pass; example CSV validates",
+      "evidence": "pytest 14/14 (incl. 10 contract tests); validate_submission.py on submissions/example_track2.csv -> RESULT: PASS (./init.sh INIT_EXIT=0)",
+      "notes": "molecule_class default = protein (NOT single_chain)."
+    },
+    {
+      "id": "F04",
+      "title": "Generation (de-novo backbones at chosen epitope[s])",
+      "status": "todo",
+      "depends_on": ["F02"],
+      "done_criteria": "Backbone pools from >=2 generators (RFd3/Genie3/BoltzGen/PXDesign) at apical + conserved epitopes; generator ranking re-established for THIS geometry; nanobody arm decided",
+      "evidence": "",
+      "notes": "Do NOT assume TNF's Genie3+PXDesign ranking; re-test on a concave, precedented epitope."
+    },
+    {
+      "id": "F05",
+      "title": "Sequence design (ProteinMPNN / LigandMPNN; cross-species JOINT multi-state)",
+      "status": "todo",
+      "depends_on": ["F04"],
+      "done_criteria": "0-Cys sequences; joint multi-state MPNN over human+mouse where cross-react targeted (--pdb_path_multi + symmetry_residues)",
+      "evidence": "",
+      "notes": ""
+    },
+    {
+      "id": "F06",
+      "title": "Binding validation (af2ig + Boltz-2 + Chai; ipSAE/ipSAE_min; self-consistency)",
+      "status": "todo",
+      "depends_on": ["F05"],
+      "done_criteria": "Per-design human binding confirmed by >=2 independent folders; de-novo af2ig positive control; ipSAE_min across species; self-consistency recorded",
+      "evidence": "",
+      "notes": "af2ig positive control MUST be de-novo (natural binders fold to garbage single-seq)."
+    },
+    {
+      "id": "F07",
+      "title": "pH-switch install + 4-class validation",
+      "status": "todo",
+      "depends_on": ["F06"],
+      "done_criteria": "His switch installed (mech B default; A where a conserved cation exists); direction+selectivity via two-state MD (+Gln-isostere control) + PROPKA/pKAI linkage + GFN2-xTB, contact-gated; re-folded",
+      "evidence": "",
+      "notes": "Switch magnitude is in-silico-unrankable -> select for diversity; gate on direction purity."
+    },
+    {
+      "id": "F08",
+      "title": "Cross-species energetic validation (mouse)",
+      "status": "todo",
+      "depends_on": ["F07"],
+      "done_criteria": "Every design tested energetically on mouse with matched protonation; dual-species releasers featured; anti-switchers demoted",
+      "evidence": "",
+      "notes": "Human switch often human-specific (TNF ~5/18). Don't assume transfer; test directly."
+    },
+    {
+      "id": "F09",
+      "title": "Novelty + developability",
+      "status": "todo",
+      "depends_on": ["F06"],
+      "done_criteria": "Structural TM + seq-id gate vs PDB/AFDB AND vs 6WRV/TB14/viral binders; 0-Cys; SAP; expression screen (ESMFold monomer pLDDT + consensus)",
+      "evidence": "",
+      "notes": "Portal novelty is authoritative (>=3/4)."
+    },
+    {
+      "id": "F10",
+      "title": "Assembly + selection (<=20, diverse, ranked)",
+      "status": "todo",
+      "depends_on": ["F07", "F08", "F09"],
+      "done_criteria": "<=20 designs, ranked by objective priority, <=2 per lineage, validator exits 0 for the track",
+      "evidence": "",
+      "notes": ""
+    },
+    {
+      "id": "F11",
+      "title": "Methods writeup + submission package (user-gated upload)",
+      "status": "todo",
+      "depends_on": ["F10"],
+      "done_criteria": "docs/METHODOLOGY + per-design evidence; CSV + metadata package; validator PASS; user-gated upload to Proteinbase",
+      "evidence": "",
+      "notes": "Method novelty is part of selection; describe clearly. No prompt-like text in CSV/methods."
+    }
+  ]
+}
