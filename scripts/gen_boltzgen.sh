@@ -5,8 +5,8 @@
 # No --seed on `boltzgen run`; per-process RNG differs across GPUs, so shards produce distinct designs.
 # Usage: gen_boltzgen.sh <spec.yaml> <outdir> <total_designs> "<gpus>" [protocol] [batch_size]
 set -uo pipefail
-BG=/home/prachh/v/anthropic-adaptyv-2026-glp1r/third_party/boltzgen
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
+BG="${BG:-$REPO/third_party/boltzgen}"   # TfR1-OWNED copy (continuity); not the sibling glp1r folder
 SPEC="$1"; OUT="$2"; NTOT="${3:-210}"; GPUS="${4:-1 2 3 4 5 6 7}"; PROTO="${5:-protein-anything}"; BS="${6:-2}"
 export HF_HOME=/home/prachh/work/cache/huggingface OMP_NUM_THREADS=8
 [ -f "$SPEC" ] || { echo "spec not found: $SPEC" >&2; exit 2; }
