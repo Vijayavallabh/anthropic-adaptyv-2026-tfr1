@@ -19,14 +19,8 @@ def run_dir(pdbdir, outdir, nseq, temp):
     sh = lambda *c: subprocess.run([str(MPNN_PY), *map(str, c)], check=True,
                                    stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
     sh(H / "parse_multiple_chains.py", "--input_path", pdbdir, "--output_path", parsed)
-    sh(H / "assign_fixed_chains.py", "--input_path", parsed, "--output_path", chains, "--chain_list", "A")
-    # bias Cys strongly negative => 0-Cys designs
-    bias = outdir / "bias.jsonl"
-    import json
-    with open(bias, "w") as f:
-        for ln in open(parsed):
-            d = json.loads(ln)
-            f.write(json.dumps({d["name"]: {"A": {str(i): {"C": -10.0} for i in range(len(d.get("seq_chain_A", "")))}}}) + "\n")
+    # RFd1 output: target=chain A (kept), BINDER=chain B (designed). Design B, fix A.
+    sh(H / "assign_fixed_chains.py", "--input_path", parsed, "--output_path", chains, "--chain_list", "B")
     subprocess.run([str(MPNN_PY), str(MPNN / "protein_mpnn_run.py"),
                     "--jsonl_path", str(parsed), "--chain_id_jsonl", str(chains),
                     "--out_folder", str(outdir), "--num_seq_per_target", str(nseq),
@@ -56,7 +50,8 @@ def main():
         rec = list(open(fa)); base = Path(fa).stem
         k = 0
         for i in range(2, len(rec), 2):  # skip native (record 0), take designs
-            seq = rec[i + 1].strip().split("/")[0].strip()  # chain A
+            parts = rec[i + 1].strip().split("/")
+            seq = (parts[1] if len(parts) > 1 else parts[0]).strip()  # chain B = designed binder
             rows.append((f"{base}_mpnn{k}", seq)); k += 1
     w = csv.writer(open(a.out, "w")); w.writerow(["name", "sequence"])
     for n, s in rows:

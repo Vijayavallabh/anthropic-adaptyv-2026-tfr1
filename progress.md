@@ -272,3 +272,15 @@ USER-RUN PORTAL check on the final set is the only hard authority. Strategy: max
 low-TM designs), keep gpu5_17 (oracle-novel 0.757) as floor, generate RFd1 low-TM designs, and gate the FINAL
 set on the portal (user-run) pre-submission. Tooling added: self_consistency.py (ESMFold self-consistency +
 novelty in one pass, replaces broken af2ig), gen_rfd1.sh, mpnn_rfd.py.
+
+## RFd1 novelty-yield diagnosis + long-binder fix (2026-10-21)
+Measured backbone Rg (compactness) + coverage-weighted foldseek novelty on RFd1 batches:
+- **batch1 (65-90aa)**: ~70% EXTENDED (single long helices, Rg 26-34 for ~70aa = a straight helix, not a fold);
+  only 1/42 compact&novel. SHORT binders to a 3-residue hotspot => RFd1 lays a single extended helix. GARBAGE.
+- **batch_long (105-130aa)**: 5/10 compact, **3/10 compact&novel** (des_3 124aa covwTM 0.638 ROBUST, des_4 0.708,
+  des_5 0.799). LONG binders fold into compact bundles AND are more novel (longer folds rarer in PDB).
+- Extended issue is NOT mode-specific (off-mode des_0 also Rg 34.1) => inherent to short-binder setup, fixed by length.
+- MPNN chain bug FIXED: RFd1 output is target=chain A, BINDER=chain B (design B not A).
+DECISION: generate LONG binders (100-135aa); filter Rg (compact) + novelty; then MPNN(B,0-Cys) -> self_consistency
+(ESMFold real-gate novelty + self-consist) -> Chai∧Boltz binding -> switch -> select. Launched long1 (240 designs).
+Funnel yield est: 240 -> ~70 compact&novel -> ~10-30 novel binders. gpu5_17 remains the floor.
