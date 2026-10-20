@@ -188,3 +188,12 @@ INTERFACE) and (ii) buried His core networks (destabilize fold). Buried-His desi
   mech B (conserved cation / large binder) reserved for x-species.
 - Note: `runs/f07/complexes` are full-ecto GENERATION poses; `runs/f07/complexes_apical` are the VALIDATED
   F06 apical-domain poses (binder=A 1-N, target=B 1-195, resnum1=UniProt189) — use these for placement.
+
+## F07 switch_contacts validator + first validated switch-binder (2026-10-20 late)
+`scripts/switch_contacts.py` (Baker His-cation metric, dep-free) on the RE-FOLDED model confirms the His
+actually sits by a cation (re-fold can move it away). First fully-validated switch-binder:
+- **armC_mini gpu5_12 sw2his**: binding kept (Chai iptm 0.491 > parent 0.407) AND His A13 makes 4 buried
+  contacts to binder R17 (mech-B, >Baker floor 2). (2nd His A49 lost its K89 contact on re-fold — 1 strong
+  buried His-Arg pair still = a real switch.) 95aa, developability CLEAN (Nglyc2 only).
+Switch-binder gate = binding-retained (Chai≥~0.35) ∧ switch_contacts total≥2 on the re-folded model.
+Next: mech-A re-fold (18 seqs, bhmf2we3p) -> same gate; then pKa in-window check (JustHISpKa, env deferred).
