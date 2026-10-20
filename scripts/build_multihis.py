@@ -15,7 +15,8 @@ import numpy as np
 import gemmi
 
 warnings.filterwarnings("ignore")
-SEP = 8.0
+SEP = 8.0        # min Cb-Cb between two switch-His (additive, not anti-cooperative titration)
+IFACE_CUT = 9.0  # min His-Cb -> target heavy-atom dist; keeps the switch OFF the binding interface
 PAT = re.compile(r"__A(\d+)([A-Z])2H_vs([KR]\d+)")  # anchor = buried Lys OR Arg cation (both repel His+)
 
 
@@ -27,6 +28,14 @@ def cb_coords(pdb):
         if a:
             out[r.seqid.num] = np.array([a.pos.x, a.pos.y, a.pos.z])
     return out
+
+
+def target_heavy(pdb):
+    """Heavy-atom coords of the target (every chain except the binder chain A)."""
+    m = gemmi.read_structure(pdb)[0]
+    pts = [[a.pos.x, a.pos.y, a.pos.z] for c in m if c.name != "A" for r in c for a in r
+           if a.element.name != "H"]
+    return np.asarray(pts, float) if pts else np.zeros((0, 3))
 
 
 def main():
@@ -50,6 +59,13 @@ def main():
         if not Path(cpx).exists():
             continue
         cb = cb_coords(cpx)
+        tgt = target_heavy(cpx)
+        # drop candidate His positions at/near the binding interface (a switch there kills binding on re-fold)
+        if len(tgt):
+            variants = [(p, o, a) for (p, o, a) in variants
+                        if p in cb and float(np.min(np.linalg.norm(tgt - cb[p], axis=1))) > IFACE_CUT]
+        if len(variants) < 2:
+            continue
         # one best His position per distinct anchor (closest -> smallest |pos index proximity|; use first)
         by_anchor = {}
         for pos, orig, anc in variants:
