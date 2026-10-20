@@ -87,12 +87,20 @@
 - **Running Chai-1 (independent architecture) as the honest gate** on top-40/arm by Boltz (124 + controls).
   Decision rule: real candidates must clear the scrambled floor in CHAI (not just Boltz) and ideally in both.
 
-## Next
-- Parse Chai → Boltz∧Chai consensus (rank by the min of the two independent interface signals, floor-gated
-  by scrambled negatives). If Chai shows NO separation above the scramble floor, report honestly that
-  in-silico binding can't be confirmed for these BoltzGen designs (consider F05 MPNN re-design / a non-Boltz
-  generator). Then: hot_contacts fix (epitope landing) → F07 switch → F08 mouse → F09 novelty → F10 select.
-- Consider a better positive control (a non-sheet-extension de-novo binder) for the gate ceiling.
+## F06 RESULT: 13 binders pass the independent 2-folder gate (runs/f06/f06_pass.tsv)
+- Chai (independent of BoltzGen) SEPARATES a real tail: scramble floor ~0.16, weak 3DS18 positive 0.20,
+  but top designs reach Chai **0.40-0.672**. **F06-PASS gate = Chai≥0.35 ∧ Boltz≥0.5 → 13 designs**:
+  armC_mini 6, armC 3, armA 4; 12 mini (40-100) + 1 micro. Top: armC_mini gpu4_21 (chai 0.672/boltz 0.811/68aa),
+  armC gpu2_31 (0.569/0.806/59aa), armC gpu2_18 (0.505/0.831/85aa), armC_mini gpu5_17 (0.475), armA gpu4_05 (0.466).
+- **The cross-reactive core (Arm C) HAS real binders** (3) — the hard axis is reachable. All F06-pass are
+  mini → buried-His (mechanism B) feasible.
+
+## Next (F07+ on the 13 F06-pass, + expand)
+- F07 pH-switch: install buried-His (mech B) on the 13 (esp. the Arm C cross-react core + Arm A apical) →
+  validate direction/selectivity (JustHISpKa + PROPKA/pKAI + GFN2-xTB + two-state MD, contact-gated) on the
+  EXACT sequence; re-fold. F08 mouse cross-species (energetic) on Arm C. F09 novelty (structural TM vs
+  6WRV/TB14/PDB) + developability. F10 select ≤20 (relax gate to ~Chai≥0.30 / run Arm B region / more pool
+  through Chai if more candidates needed). Fix hot_contacts (epitope landing) to support the apical/functional claim.
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did
