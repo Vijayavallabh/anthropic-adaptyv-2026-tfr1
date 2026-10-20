@@ -121,3 +121,28 @@
 - af2ig positive control must be a DE-NOVO binder; ipSAE_min for cross-species robustness.
 - Novelty is structural + sequence; stay far from 6WRV/3DS18, TB14, viral VP1u/GP1.
 - Don't over-optimise a single in-silico metric (the selector doesn't; method novelty counts).
+
+## F07 multi-His build + F09 developability + novelty tooling (2026-10-20 late)
+**F07 switch build** (`scripts/build_multihis.py`): 6 switched seqs from 4 of the 6 switch-viable designs —
+gpu2_18 (sw2his A10H/K14+A15H/K64; sw3his +A49H/K53), gpu2_31 (sw2his A18H/K10+A30H/R59), gpu4_22
+(sw2his A23H/K27+A30H/K65), gpu5_12 (sw2his A13H/R17+A49H/K89; sw3his +A75H/K78). Each His sits near a
+DISTINCT buried cation (Lys **or Arg** — fixed a bug that dropped Arg anchors), pairwise Cβ>8Å so they
+titrate additively, not anti-cooperatively. gpu4_21 (TOP binder, Chai 0.672) + gpu4_05 CANNOT host a clean
+multi-His switch (K31/R32 adjacent; single R24) → they stay **plain** high-affinity binders. This is the
+expected pool-thinning: the final 20 will MIX switch-binders + plain binders (not 20 acing every axis).
+- Binding-retention re-fold (Chai, GPU0, bs1usp2au) launched on the 6 switched seqs vs apical receptor;
+  keep only those whose Chai stays ≥ gate (parent Chai: gpu2_18 0.505, gpu2_31 0.569, gpu4_22 0.376, gpu5_12 0.407).
+
+**F09 developability** (`scripts/developability_scan.py`, 13 parents + 6 switched → results/developability_dev_input.csv):
+- Switch mutations IMPROVE developability — His lowers GRAVY (gpu5_12 +0.153→+0.03; gpu2_31 +0.76→+0.53;
+  gpu4_22 +0.39→+0.26). Switch helps solubility.
+- 4 expression-SEVERE (charge-blob/low-complexity, GRAVY>+0.9): gpu5_26, gpu5_34, gpu1_14, gpu4_28 → deprioritize.
+- Unpaired Cys: gpu2_31, gpu5_34 (scrambling risk → C→S in final seq; gpu2_31 is a good switch-binder).
+- Cleanest: gpu2_18 (LIAB 2), armA gpu4_33/35/05, gpu4_22.
+
+**Novelty tooling** (de-risk the HARD ≥3/4 gate): foldseek installed (tools/foldseek, static binary) + PDB DB
+downloading (b8d54a6ys); ESMFold2 env `.venv-esmfold2` available (single-seq fold); TMalign works. AFDB skipped
+(disk 729G free, AFDB too large) — helical de-novo bundles cap at 3/4 anyway (passes), key check is vs PDB.
+
+**Pool expansion**: Chai-expand on 317 remaining apical designs (bzduk45hg) running → when done, re-run
+buried_switch_scan + build_multihis on the FULL F06-pass set (avoid rework on a partial pool).
