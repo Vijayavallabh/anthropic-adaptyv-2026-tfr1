@@ -95,6 +95,16 @@
 - **The cross-reactive core (Arm C) HAS real binders** (3) — the hard axis is reachable. All F06-pass are
   mini → buried-His (mechanism B) feasible.
 
+## F07 feasibility (buried_switch_scan on the 13 F06-pass)
+- **6/13 can host a buried-His mechanism-B switch** (His next to a buried binder cation → low-pH repulsion
+  → release; variants in runs/f07/switchscan/): armC gpu2_18 (12 positions), armC gpu2_31 (9),
+  armC_mini gpu5_12 (11), armC_mini gpu4_22 (7), armC_mini gpu4_21 (5), armA gpu4_05 (2). The other 7 lack
+  buried cation anchors (would need a de-novo His-His/His-polar HBNet — harder). The top cross-reactive
+  (armC) + armC_mini binders ARE switch-installable — good alignment of binding + switch.
+- Next: combine 2-3 separated buried positions → multi-His switched sequences → re-fold (Boltz+Chai, confirm
+  binding retained @pH7.4) → JustHISpKa in-window + PROPKA/pKAI sign + GFN2-xTB + two-state MD direction,
+  contact-gated. Select for switch-mechanism DIVERSITY (magnitude is in-silico-unrankable).
+
 ## Next (F07+ on the 13 F06-pass, + expand)
 - F07 pH-switch: install buried-His (mech B) on the 13 (esp. the Arm C cross-react core + Arm A apical) →
   validate direction/selectivity (JustHISpKa + PROPKA/pKAI + GFN2-xTB + two-state MD, contact-gated) on the
