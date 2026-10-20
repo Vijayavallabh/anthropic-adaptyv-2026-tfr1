@@ -260,3 +260,15 @@ structurally-novel binders to the TfR1 apical epitope.** Pipeline: RFd backbones
 Chai∧Boltz validate (fair for non-BoltzGen designs) -> novelty (expect LOW TM) -> mech-A/B switch -> x-species
 -> select. FLOOR = gpu5_17 (+ cleaned SEVERE). Kit source: /home/prachh/work/cache/uplifting-biomolecular-modeling/
 {rfdiffusion1,rfdiffusion3,genie3}. Note: af2ig broken here -> Chai∧Boltz is the binding gate.
+
+## RFd1 installed + first-design novelty check (2026-10-21)
+RFd1 (rfdiffusion1 opt-kit, route C) INSTALLED in third_party/rfd1kit (venv rfd1, weights OK, run.sh check
+passes H100, mode=fast). Smoke (2 de-novo, apical hotspots A202/A209/A211, len 70-90): WORKS, ~3min cold-start
+(Triton compile) then fast. BUT des_0 backbone foldseek covwTM=0.955 vs PDB = NOT novel (RFd1 default also makes
+PDB-like helical bundles). => novelty is NOT automatic with RFd1 either; need the FRACTION of designs with TM<0.8.
+Running batch1 (42 designs) to measure the novel-fold yield distribution.
+Nuance (reference-adaptyv-novelty-metric): oracle TM is NOISY (portal estimates off up to 2 levels); the
+USER-RUN PORTAL check on the final set is the only hard authority. Strategy: maximize novelty MARGIN (prefer
+low-TM designs), keep gpu5_17 (oracle-novel 0.757) as floor, generate RFd1 low-TM designs, and gate the FINAL
+set on the portal (user-run) pre-submission. Tooling added: self_consistency.py (ESMFold self-consistency +
+novelty in one pass, replaces broken af2ig), gen_rfd1.sh, mpnn_rfd.py.
