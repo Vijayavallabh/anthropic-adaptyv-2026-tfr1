@@ -80,7 +80,9 @@ def main():
                     if r.seqid.num in hot:
                         hot_hits.append(r.seqid.num)
             vhh = is_vhh(seq)
-            did = Path(cif).stem
+            # shard-unique id: BoltzGen restarts the index per GPU, so the bare stem collides across gpus
+            gpu = next((p for p in Path(cif).parts if p.startswith("gpu")), "g0")
+            did = f"{gpu}_{Path(cif).stem.rsplit('_', 1)[-1]}"
             if len(hot_hits) == 0:
                 pool = "DROP_offsite"
             elif vhh:
