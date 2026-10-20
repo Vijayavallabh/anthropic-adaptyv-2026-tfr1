@@ -32,14 +32,22 @@
   the 11QC backbone + PyRosetta repack/min (78.1% id, divergent epitope positions verified). pytest 17/17.
 
 ## In progress
-- **F04 generation** — re-rank generators on the concave apical pocket (do NOT inherit TNF). Lead
-  **RFdiffusion3 + BindCraft**; proven arms PXDesign/Genie3; re-test RFd3/BoltzGen; SeedProteo for
-  novelty-max. Generate backbones at the 3 epitope sets (ArmA apical, ArmC conserved subsite, ArmB
-  conserved non-apical). Port the reusable drivers (`gen_rfd3_tnf.sh`, `gen_boltzgen_tnf.sh`) — FIX the
-  ~100 TNF absolute-root hardcodes + add a repo-root assert. Queue across the 8× H100 idle GPUs.
+- **F04 generation** — **availability reality** (`docs/TOOLS.md`, byte-audited): the recon's "RFd3 +
+  BindCraft lead" is moot — RFd3/Genie3/PXDesign/af2ig installs were CLEANED; **BoltzGen is the only
+  runnable generator today**. Kit SOURCE preserved at `/home/prachh/work/cache/uplifting-biomolecular-modeling`
+  (1.1 GB) for rebuilds. **Smoke PASS**: BoltzGen docks binders on the conserved apical core (202/203 ~3 Å).
+  **Wave-1 launched** across GPUs 1-7 (`scripts/gen_boltzgen.sh`): armC 240 (gpu1-3) / armA 140 (gpu4-5) /
+  armB 140 (gpu6-7), `protein-anything`, design step, bs=2 (length diversity), kernels off.
+  - **Ig-fold caveat:** `protein-anything` → ~50% VHH/Ig folds (2 Cys) + ~50% 0-Cys de-novo. Ig folds
+    FAIL protein-class novelty (Ig is ubiquitous → high structural TM) → **filter: novel 0-Cys → protein
+    arm; Ig → nanobody-candidate pool** (novelty judged on CDRH3, must pass ANARCI + ≥2-folder ipTM≥0.6).
+    Usable protein yield ≈ half raw → generate more (`--reuse`) if short.
+  - Next generators: rebuild **PXDesign** (2nd lineage, cheap-ish) then **RFd3** (expensive) if needed;
+    rebuild **af2ig** before trusting F06 binding (Boltz/Chai over-dock).
 
 ## Next
-- F05 sequence (ProteinMPNN; joint multi-state h+m for Arm B/C) → F06 binding (3-folder consensus).
+- Triage wave-1 (fold-classify Ig vs de-novo, hotspot-contact filter) → F05 sequence (ProteinMPNN; joint
+  multi-state h+m for Arm B/C) → F06 binding (Boltz-2 + Chai-1 2-folder consensus now; + af2ig once rebuilt).
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did

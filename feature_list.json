@@ -47,11 +47,11 @@
     {
       "id": "F04",
       "title": "Generation (de-novo backbones at chosen epitope[s])",
-      "status": "todo",
+      "status": "in_progress",
       "depends_on": ["F02"],
       "done_criteria": "Backbone pools from >=2 generators (RFd3/Genie3/BoltzGen/PXDesign) at apical + conserved epitopes; generator ranking re-established for THIS geometry; nanobody arm decided",
-      "evidence": "",
-      "notes": "Do NOT assume TNF's Genie3+PXDesign ranking; re-test on a concave, precedented epitope."
+      "evidence": "AVAILABILITY REALITY (docs/TOOLS.md, byte-audited): RFd3/Genie3/PXDesign/af2ig installs were CLEANED; BoltzGen is the only runnable generator today (kit SOURCE preserved at /home/prachh/work/cache/uplifting-biomolecular-modeling for rebuilds). Smoke PASS: BoltzGen docks binders on the conserved apical core (202/203 ~3A); scripts/gen_boltzgen.sh. Wave-1 launched across GPUs 1-7 (armC 240 / armA 140 / armB 140, protein-anything, design step).",
+      "notes": "protein-anything yields ~50% VHH/Ig folds (2 Cys) + ~50% 0-Cys de-novo. FILTER: novel 0-Cys -> protein arm; Ig-fold -> nanobody-candidate pool (judged on CDRH3 novelty, must pass ANARCI + >=2-folder ipTM>=0.6). Usable PROTEIN yield ~= half raw -> generate more (--reuse) if short. 2nd generator = rebuild PXDesign; RFd3 only if needed. Re-test, don't inherit TNF ranking."
     },
     {
       "id": "F05",
