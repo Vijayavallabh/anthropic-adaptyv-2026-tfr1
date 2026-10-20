@@ -174,3 +174,17 @@ equiv from threaded mouse ecto; 75.4% id to human apical — more divergent than
 **Strategy (honest)**: switch yield is low on retrofit -> rely on (a) expanded pool (more + larger parents),
 (b) MPNN core-repair (if the test rescues binding), (c) prioritize large binders. Final 20 = MIX of
 switch-binders + strong plain binders (gpu4_21 etc.), as the switch step thins its own pool.
+
+## F07 SOTA pivot: mechanism A (interface His-cation) — 2026-10-20 late
+Consensus/lit search surfaced Ahn/Baker 2025 "Computational design of pH-sensitive binders" (bioRxiv
+2025.09.29): TWO methods — (i) interface His adjacent to a TARGET cation (repel at low pH, weakens
+INTERFACE) and (ii) buried His core networks (destabilize fold). Buried-His designs ([Goldbach 2023],
+[Shen 2024]) are built DE-NOVO with the network designed in — hence my mech-B retrofit yield is low.
+- **MPNN core-repair = DEAD END**: re-fold of repaired gpu2_18/gpu2_31 got WORSE (0.31→0.22, 0.30→0.28).
+  Dropped. (Redesigning core changes the binder; confirms af2-binding-is-sequence-specific.)
+- **Mech A is the gentle, high-yield retrofit** (`scripts/mech_a_scan.py`): apical epitope HAS target
+  cations (R208,K344,K371,K374 + more). 18 interface-His point-mutant seqs from 11/13 designs; re-fold
+  vs apical domain running (bhmf2we3p) to confirm pH7.4 binding kept. Mech A for HUMAN objective #1;
+  mech B (conserved cation / large binder) reserved for x-species.
+- Note: `runs/f07/complexes` are full-ecto GENERATION poses; `runs/f07/complexes_apical` are the VALIDATED
+  F06 apical-domain poses (binder=A 1-N, target=B 1-195, resnum1=UniProt189) — use these for placement.
