@@ -74,11 +74,25 @@
   CAVEAT: `hot_contacts` metric is buggy (reads 0 even for the positive — chain-B numbering/offset) → not
   trusted yet; ab_iptm + ipae are the signals. Thresholds: promising ≈ ab_iptm > ~0.33 (well above the 0.20 floor).
 
+## F06 CRITICAL FINDINGS (2026-10-20)
+- **Full Boltz run (439+controls) is NOT trustworthy alone — generator/scorer circularity.** BoltzGen is
+  built on Boltz-2, so Boltz-2 over-validates BoltzGen's own designs (hundreds at ab_iptm 0.8-0.92) while
+  the INDEPENDENT 3DS18 binder scored 0.276 (below the design median 0.427). Target MSA was consistent
+  (6518 seqs everywhere), so it's not MSA; it's shared inductive bias + single-sample diffusion noise.
+  ⇒ Boltz ipTM alone cannot rank these designs.
+- **3DS18 is a WEAK positive control for single-seq cofold** (β-sheet-EXTENSION topology; both Boltz 0.28
+  and Chai 0.20 score it low — these binders are intrinsically hard without the binder's own MSA). The
+  reliable calibrator is the SCRAMBLED NEGATIVE floor (~0.15-0.19); look for designs that clear it in the
+  INDEPENDENT folder.
+- **Running Chai-1 (independent architecture) as the honest gate** on top-40/arm by Boltz (124 + controls).
+  Decision rule: real candidates must clear the scrambled floor in CHAI (not just Boltz) and ideally in both.
+
 ## Next
-- Precompute the target MSA once (avoid 439 server calls) → run the Boltz gate on the FULL apical pool
-  (armA+armC+armC_mini = 439) + an Arm B region run → rank by ab_iptm → **Chai-1 2-folder consensus** on the
-  top subset → fix hot_contacts (confirm the binder lands at the epitope, for the functional/apical claim) →
-  F05 joint multi-state MPNN (cross-species rescue for the weak Arm C) → F07 switch → F08 → F09 → F10.
+- Parse Chai → Boltz∧Chai consensus (rank by the min of the two independent interface signals, floor-gated
+  by scrambled negatives). If Chai shows NO separation above the scramble floor, report honestly that
+  in-silico binding can't be confirmed for these BoltzGen designs (consider F05 MPNN re-design / a non-Boltz
+  generator). Then: hot_contacts fix (epitope landing) → F07 switch → F08 mouse → F09 novelty → F10 select.
+- Consider a better positive control (a non-sheet-extension de-novo binder) for the gate ceiling.
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did
