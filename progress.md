@@ -66,9 +66,19 @@
   control** to prove the gate separates binders from the over-dock floor. Run on the 546 protein pool
   (pre-rank by triage iface, co-fold top subset first).
 
+- **Boltz gate CALIBRATED + VALIDATED** (target MSA, binder single-seq; `scripts/{prep_boltz_inputs,run_boltz,parse_boltz}`):
+  3DS18 positive control **ab_iptm 0.562 / ipae 15.0** (real-binder ceiling for single-seq-binder cofold)
+  vs scrambled negatives **~0.20 / ipae ~23** (floor) — clean separation. On the top-8/arm calibration
+  subset: **Arm A (apical/human) + Arm C-mini bind best** (armA_57 0.444, armC_mini_37 0.405, armA_49 0.34);
+  **Arm C conserved-subsite is weak** (~0.20-0.25, near the floor) — the cross-reactive core is the hard axis.
+  CAVEAT: `hot_contacts` metric is buggy (reads 0 even for the positive — chain-B numbering/offset) → not
+  trusted yet; ab_iptm + ipae are the signals. Thresholds: promising ≈ ab_iptm > ~0.33 (well above the 0.20 floor).
+
 ## Next
-- Build Boltz/Chai cofold+score driver (+controls) → rank 546 → F05 joint multi-state MPNN (cross-species
-  rescue, Arm B/C) → F07 switch → F08 mouse → F09 novelty/dev → F10 select. Revisit af2ig if time allows.
+- Precompute the target MSA once (avoid 439 server calls) → run the Boltz gate on the FULL apical pool
+  (armA+armC+armC_mini = 439) + an Arm B region run → rank by ab_iptm → **Chai-1 2-folder consensus** on the
+  top subset → fix hot_contacts (confirm the binder lands at the epitope, for the functional/apical claim) →
+  F05 joint multi-state MPNN (cross-species rescue for the weak Arm C) → F07 switch → F08 → F09 → F10.
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did
