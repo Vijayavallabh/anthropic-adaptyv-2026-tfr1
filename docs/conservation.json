@@ -386,5 +386,3841 @@
       "len": 7,
       "tag": "candidate ArmB"
     }
-  ]
+  ],
+  "human_to_mouse_122_760": {
+    "122": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 124,
+      "conserved": true
+    },
+    "123": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 125,
+      "conserved": true
+    },
+    "124": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 126,
+      "conserved": true
+    },
+    "125": {
+      "human_aa": "D",
+      "mouse_aa": "A",
+      "mouse_num": 127,
+      "conserved": false
+    },
+    "126": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 128,
+      "conserved": true
+    },
+    "127": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 129,
+      "conserved": true
+    },
+    "128": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 130,
+      "conserved": true
+    },
+    "129": {
+      "human_aa": "R",
+      "mouse_aa": "T",
+      "mouse_num": 131,
+      "conserved": false
+    },
+    "130": {
+      "human_aa": "K",
+      "mouse_aa": "L",
+      "mouse_num": 132,
+      "conserved": false
+    },
+    "131": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 133,
+      "conserved": true
+    },
+    "132": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 134,
+      "conserved": true
+    },
+    "133": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 135,
+      "conserved": true
+    },
+    "134": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 136,
+      "conserved": true
+    },
+    "135": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 137,
+      "conserved": true
+    },
+    "136": {
+      "human_aa": "D",
+      "mouse_aa": "N",
+      "mouse_num": 138,
+      "conserved": false
+    },
+    "137": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 139,
+      "conserved": true
+    },
+    "138": {
+      "human_aa": "T",
+      "mouse_aa": "I",
+      "mouse_num": 140,
+      "conserved": false
+    },
+    "139": {
+      "human_aa": "D",
+      "mouse_aa": "E",
+      "mouse_num": 141,
+      "conserved": false
+    },
+    "140": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 142,
+      "conserved": true
+    },
+    "141": {
+      "human_aa": "T",
+      "mouse_aa": "A",
+      "mouse_num": 143,
+      "conserved": false
+    },
+    "142": {
+      "human_aa": "G",
+      "mouse_aa": "D",
+      "mouse_num": 144,
+      "conserved": false
+    },
+    "143": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 145,
+      "conserved": true
+    },
+    "144": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 146,
+      "conserved": true
+    },
+    "145": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 147,
+      "conserved": true
+    },
+    "146": {
+      "human_aa": "L",
+      "mouse_aa": "Q",
+      "mouse_num": 148,
+      "conserved": false
+    },
+    "147": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 149,
+      "conserved": true
+    },
+    "148": {
+      "human_aa": "N",
+      "mouse_aa": "S",
+      "mouse_num": 150,
+      "conserved": false
+    },
+    "149": {
+      "human_aa": "E",
+      "mouse_aa": "Q",
+      "mouse_num": 151,
+      "conserved": false
+    },
+    "150": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 152,
+      "conserved": true
+    },
+    "151": {
+      "human_aa": "S",
+      "mouse_aa": "T",
+      "mouse_num": 153,
+      "conserved": false
+    },
+    "152": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 154,
+      "conserved": true
+    },
+    "153": {
+      "human_aa": "V",
+      "mouse_aa": "T",
+      "mouse_num": 155,
+      "conserved": false
+    },
+    "154": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 156,
+      "conserved": true
+    },
+    "155": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 157,
+      "conserved": true
+    },
+    "156": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 158,
+      "conserved": true
+    },
+    "157": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 159,
+      "conserved": true
+    },
+    "158": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 160,
+      "conserved": true
+    },
+    "159": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 161,
+      "conserved": true
+    },
+    "160": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 162,
+      "conserved": true
+    },
+    "161": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 163,
+      "conserved": true
+    },
+    "162": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 164,
+      "conserved": true
+    },
+    "163": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 165,
+      "conserved": true
+    },
+    "164": {
+      "human_aa": "N",
+      "mouse_aa": "S",
+      "mouse_num": 166,
+      "conserved": false
+    },
+    "165": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 167,
+      "conserved": true
+    },
+    "166": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 168,
+      "conserved": true
+    },
+    "167": {
+      "human_aa": "L",
+      "mouse_aa": "Y",
+      "mouse_num": 169,
+      "conserved": false
+    },
+    "168": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 170,
+      "conserved": true
+    },
+    "169": {
+      "human_aa": "V",
+      "mouse_aa": "I",
+      "mouse_num": 171,
+      "conserved": false
+    },
+    "170": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 172,
+      "conserved": true
+    },
+    "171": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 173,
+      "conserved": true
+    },
+    "172": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 174,
+      "conserved": true
+    },
+    "173": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 175,
+      "conserved": true
+    },
+    "174": {
+      "human_aa": "R",
+      "mouse_aa": "H",
+      "mouse_num": 176,
+      "conserved": false
+    },
+    "175": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 177,
+      "conserved": true
+    },
+    "176": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 178,
+      "conserved": true
+    },
+    "177": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 179,
+      "conserved": true
+    },
+    "178": {
+      "human_aa": "L",
+      "mouse_aa": "F",
+      "mouse_num": 180,
+      "conserved": false
+    },
+    "179": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 181,
+      "conserved": true
+    },
+    "180": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 182,
+      "conserved": true
+    },
+    "181": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 183,
+      "conserved": true
+    },
+    "182": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 184,
+      "conserved": true
+    },
+    "183": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 185,
+      "conserved": true
+    },
+    "184": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 186,
+      "conserved": true
+    },
+    "185": {
+      "human_aa": "Q",
+      "mouse_aa": "E",
+      "mouse_num": 187,
+      "conserved": false
+    },
+    "186": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 188,
+      "conserved": true
+    },
+    "187": {
+      "human_aa": "F",
+      "mouse_aa": "Y",
+      "mouse_num": 189,
+      "conserved": false
+    },
+    "188": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 190,
+      "conserved": true
+    },
+    "189": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 191,
+      "conserved": true
+    },
+    "190": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 192,
+      "conserved": true
+    },
+    "191": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 193,
+      "conserved": true
+    },
+    "192": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 194,
+      "conserved": true
+    },
+    "193": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 195,
+      "conserved": true
+    },
+    "194": {
+      "human_aa": "D",
+      "mouse_aa": "S",
+      "mouse_num": 196,
+      "conserved": false
+    },
+    "195": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 197,
+      "conserved": true
+    },
+    "196": {
+      "human_aa": "A",
+      "mouse_aa": "G",
+      "mouse_num": 199,
+      "conserved": false
+    },
+    "197": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 200,
+      "conserved": true
+    },
+    "198": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 201,
+      "conserved": true
+    },
+    "199": {
+      "human_aa": "S",
+      "mouse_aa": "M",
+      "mouse_num": 202,
+      "conserved": false
+    },
+    "200": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 203,
+      "conserved": true
+    },
+    "201": {
+      "human_aa": "I",
+      "mouse_aa": "T",
+      "mouse_num": 204,
+      "conserved": false
+    },
+    "202": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 205,
+      "conserved": true
+    },
+    "203": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 206,
+      "conserved": true
+    },
+    "204": {
+      "human_aa": "D",
+      "mouse_aa": "Q",
+      "mouse_num": 207,
+      "conserved": false
+    },
+    "205": {
+      "human_aa": "K",
+      "mouse_aa": "S",
+      "mouse_num": 208,
+      "conserved": false
+    },
+    "206": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 209,
+      "conserved": true
+    },
+    "207": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 210,
+      "conserved": true
+    },
+    "208": {
+      "human_aa": "R",
+      "mouse_aa": "N",
+      "mouse_num": 211,
+      "conserved": false
+    },
+    "209": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 212,
+      "conserved": true
+    },
+    "210": {
+      "human_aa": "V",
+      "mouse_aa": "-",
+      "mouse_num": null,
+      "conserved": false
+    },
+    "211": {
+      "human_aa": "Y",
+      "mouse_aa": "D",
+      "mouse_num": 213,
+      "conserved": false
+    },
+    "212": {
+      "human_aa": "L",
+      "mouse_aa": "P",
+      "mouse_num": 214,
+      "conserved": false
+    },
+    "213": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 215,
+      "conserved": true
+    },
+    "214": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 216,
+      "conserved": true
+    },
+    "215": {
+      "human_aa": "N",
+      "mouse_aa": "S",
+      "mouse_num": 217,
+      "conserved": false
+    },
+    "216": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 218,
+      "conserved": true
+    },
+    "217": {
+      "human_aa": "G",
+      "mouse_aa": "E",
+      "mouse_num": 219,
+      "conserved": false
+    },
+    "218": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 220,
+      "conserved": true
+    },
+    "219": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 221,
+      "conserved": true
+    },
+    "220": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 222,
+      "conserved": true
+    },
+    "221": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 223,
+      "conserved": true
+    },
+    "222": {
+      "human_aa": "Y",
+      "mouse_aa": "F",
+      "mouse_num": 224,
+      "conserved": false
+    },
+    "223": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 225,
+      "conserved": true
+    },
+    "224": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 226,
+      "conserved": true
+    },
+    "225": {
+      "human_aa": "A",
+      "mouse_aa": "P",
+      "mouse_num": 227,
+      "conserved": false
+    },
+    "226": {
+      "human_aa": "A",
+      "mouse_aa": "T",
+      "mouse_num": 228,
+      "conserved": false
+    },
+    "227": {
+      "human_aa": "T",
+      "mouse_aa": "E",
+      "mouse_num": 229,
+      "conserved": false
+    },
+    "228": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 230,
+      "conserved": true
+    },
+    "229": {
+      "human_aa": "T",
+      "mouse_aa": "S",
+      "mouse_num": 231,
+      "conserved": false
+    },
+    "230": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 232,
+      "conserved": true
+    },
+    "231": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 233,
+      "conserved": true
+    },
+    "232": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 234,
+      "conserved": true
+    },
+    "233": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 235,
+      "conserved": true
+    },
+    "234": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 236,
+      "conserved": true
+    },
+    "235": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 237,
+      "conserved": true
+    },
+    "236": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 238,
+      "conserved": true
+    },
+    "237": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 239,
+      "conserved": true
+    },
+    "238": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 240,
+      "conserved": true
+    },
+    "239": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 241,
+      "conserved": true
+    },
+    "240": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 242,
+      "conserved": true
+    },
+    "241": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 243,
+      "conserved": true
+    },
+    "242": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 244,
+      "conserved": true
+    },
+    "243": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 245,
+      "conserved": true
+    },
+    "244": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 246,
+      "conserved": true
+    },
+    "245": {
+      "human_aa": "D",
+      "mouse_aa": "E",
+      "mouse_num": 247,
+      "conserved": false
+    },
+    "246": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 248,
+      "conserved": true
+    },
+    "247": {
+      "human_aa": "Y",
+      "mouse_aa": "S",
+      "mouse_num": 249,
+      "conserved": false
+    },
+    "248": {
+      "human_aa": "T",
+      "mouse_aa": "Y",
+      "mouse_num": 250,
+      "conserved": false
+    },
+    "249": {
+      "human_aa": "P",
+      "mouse_aa": "S",
+      "mouse_num": 251,
+      "conserved": false
+    },
+    "250": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 252,
+      "conserved": true
+    },
+    "251": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 253,
+      "conserved": true
+    },
+    "252": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 254,
+      "conserved": true
+    },
+    "253": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 255,
+      "conserved": true
+    },
+    "254": {
+      "human_aa": "I",
+      "mouse_aa": "L",
+      "mouse_num": 256,
+      "conserved": false
+    },
+    "255": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 257,
+      "conserved": true
+    },
+    "256": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 258,
+      "conserved": true
+    },
+    "257": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 259,
+      "conserved": true
+    },
+    "258": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 260,
+      "conserved": true
+    },
+    "259": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 261,
+      "conserved": true
+    },
+    "260": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 262,
+      "conserved": true
+    },
+    "261": {
+      "human_aa": "K",
+      "mouse_aa": "E",
+      "mouse_num": 263,
+      "conserved": false
+    },
+    "262": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 264,
+      "conserved": true
+    },
+    "263": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 265,
+      "conserved": true
+    },
+    "264": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 266,
+      "conserved": true
+    },
+    "265": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 267,
+      "conserved": true
+    },
+    "266": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 268,
+      "conserved": true
+    },
+    "267": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 269,
+      "conserved": true
+    },
+    "268": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 270,
+      "conserved": true
+    },
+    "269": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 271,
+      "conserved": true
+    },
+    "270": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 272,
+      "conserved": true
+    },
+    "271": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 273,
+      "conserved": true
+    },
+    "272": {
+      "human_aa": "E",
+      "mouse_aa": "Q",
+      "mouse_num": 274,
+      "conserved": false
+    },
+    "273": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 275,
+      "conserved": true
+    },
+    "274": {
+      "human_aa": "L",
+      "mouse_aa": "F",
+      "mouse_num": 276,
+      "conserved": false
+    },
+    "275": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 277,
+      "conserved": true
+    },
+    "276": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 278,
+      "conserved": true
+    },
+    "277": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 279,
+      "conserved": true
+    },
+    "278": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 280,
+      "conserved": true
+    },
+    "279": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 281,
+      "conserved": true
+    },
+    "280": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 282,
+      "conserved": true
+    },
+    "281": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 283,
+      "conserved": true
+    },
+    "282": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 284,
+      "conserved": true
+    },
+    "283": {
+      "human_aa": "M",
+      "mouse_aa": "M",
+      "mouse_num": 285,
+      "conserved": true
+    },
+    "284": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 286,
+      "conserved": true
+    },
+    "285": {
+      "human_aa": "Q",
+      "mouse_aa": "K",
+      "mouse_num": 287,
+      "conserved": false
+    },
+    "286": {
+      "human_aa": "T",
+      "mouse_aa": "N",
+      "mouse_num": 288,
+      "conserved": false
+    },
+    "287": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 289,
+      "conserved": true
+    },
+    "288": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 290,
+      "conserved": true
+    },
+    "289": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 291,
+      "conserved": true
+    },
+    "290": {
+      "human_aa": "I",
+      "mouse_aa": "V",
+      "mouse_num": 292,
+      "conserved": false
+    },
+    "291": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 293,
+      "conserved": true
+    },
+    "292": {
+      "human_aa": "N",
+      "mouse_aa": "E",
+      "mouse_num": 294,
+      "conserved": false
+    },
+    "293": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 295,
+      "conserved": true
+    },
+    "294": {
+      "human_aa": "E",
+      "mouse_aa": "D",
+      "mouse_num": 296,
+      "conserved": false
+    },
+    "295": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 297,
+      "conserved": true
+    },
+    "296": {
+      "human_aa": "S",
+      "mouse_aa": "A",
+      "mouse_num": 298,
+      "conserved": false
+    },
+    "297": {
+      "human_aa": "F",
+      "mouse_aa": "L",
+      "mouse_num": 299,
+      "conserved": false
+    },
+    "298": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 300,
+      "conserved": true
+    },
+    "299": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 301,
+      "conserved": true
+    },
+    "300": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 302,
+      "conserved": true
+    },
+    "301": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 303,
+      "conserved": true
+    },
+    "302": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 304,
+      "conserved": true
+    },
+    "303": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 305,
+      "conserved": true
+    },
+    "304": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 306,
+      "conserved": true
+    },
+    "305": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 307,
+      "conserved": true
+    },
+    "306": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 308,
+      "conserved": true
+    },
+    "307": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 309,
+      "conserved": true
+    },
+    "308": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 310,
+      "conserved": true
+    },
+    "309": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 311,
+      "conserved": true
+    },
+    "310": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 312,
+      "conserved": true
+    },
+    "311": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 313,
+      "conserved": true
+    },
+    "312": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 314,
+      "conserved": true
+    },
+    "313": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 315,
+      "conserved": true
+    },
+    "314": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 316,
+      "conserved": true
+    },
+    "315": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 317,
+      "conserved": true
+    },
+    "316": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 318,
+      "conserved": true
+    },
+    "317": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 319,
+      "conserved": true
+    },
+    "318": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 320,
+      "conserved": true
+    },
+    "319": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 321,
+      "conserved": true
+    },
+    "320": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 322,
+      "conserved": true
+    },
+    "321": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 323,
+      "conserved": true
+    },
+    "322": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 324,
+      "conserved": true
+    },
+    "323": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 325,
+      "conserved": true
+    },
+    "324": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 326,
+      "conserved": true
+    },
+    "325": {
+      "human_aa": "R",
+      "mouse_aa": "Q",
+      "mouse_num": 327,
+      "conserved": false
+    },
+    "326": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 328,
+      "conserved": true
+    },
+    "327": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 329,
+      "conserved": true
+    },
+    "328": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 330,
+      "conserved": true
+    },
+    "329": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 331,
+      "conserved": true
+    },
+    "330": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 332,
+      "conserved": true
+    },
+    "331": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 333,
+      "conserved": true
+    },
+    "332": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 334,
+      "conserved": true
+    },
+    "333": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 335,
+      "conserved": true
+    },
+    "334": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 336,
+      "conserved": true
+    },
+    "335": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 337,
+      "conserved": true
+    },
+    "336": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 338,
+      "conserved": true
+    },
+    "337": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 339,
+      "conserved": true
+    },
+    "338": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 340,
+      "conserved": true
+    },
+    "339": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 341,
+      "conserved": true
+    },
+    "340": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 342,
+      "conserved": true
+    },
+    "341": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 343,
+      "conserved": true
+    },
+    "342": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 344,
+      "conserved": true
+    },
+    "343": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 345,
+      "conserved": true
+    },
+    "344": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 346,
+      "conserved": true
+    },
+    "345": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 347,
+      "conserved": true
+    },
+    "346": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 348,
+      "conserved": true
+    },
+    "347": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 349,
+      "conserved": true
+    },
+    "348": {
+      "human_aa": "N",
+      "mouse_aa": "K",
+      "mouse_num": 350,
+      "conserved": false
+    },
+    "349": {
+      "human_aa": "M",
+      "mouse_aa": "M",
+      "mouse_num": 351,
+      "conserved": true
+    },
+    "350": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 352,
+      "conserved": true
+    },
+    "351": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 353,
+      "conserved": true
+    },
+    "352": {
+      "human_aa": "D",
+      "mouse_aa": "S",
+      "mouse_num": 354,
+      "conserved": false
+    },
+    "353": {
+      "human_aa": "C",
+      "mouse_aa": "C",
+      "mouse_num": 355,
+      "conserved": true
+    },
+    "354": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 356,
+      "conserved": true
+    },
+    "355": {
+      "human_aa": "S",
+      "mouse_aa": "A",
+      "mouse_num": 357,
+      "conserved": false
+    },
+    "356": {
+      "human_aa": "D",
+      "mouse_aa": "R",
+      "mouse_num": 358,
+      "conserved": false
+    },
+    "357": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 359,
+      "conserved": true
+    },
+    "358": {
+      "human_aa": "K",
+      "mouse_aa": "N",
+      "mouse_num": 360,
+      "conserved": false
+    },
+    "359": {
+      "human_aa": "T",
+      "mouse_aa": "I",
+      "mouse_num": 361,
+      "conserved": false
+    },
+    "360": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 362,
+      "conserved": true
+    },
+    "361": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 363,
+      "conserved": true
+    },
+    "362": {
+      "human_aa": "T",
+      "mouse_aa": "S",
+      "mouse_num": 364,
+      "conserved": false
+    },
+    "363": {
+      "human_aa": "C",
+      "mouse_aa": "C",
+      "mouse_num": 365,
+      "conserved": true
+    },
+    "364": {
+      "human_aa": "R",
+      "mouse_aa": "K",
+      "mouse_num": 366,
+      "conserved": false
+    },
+    "365": {
+      "human_aa": "M",
+      "mouse_aa": "L",
+      "mouse_num": 367,
+      "conserved": false
+    },
+    "366": {
+      "human_aa": "V",
+      "mouse_aa": "E",
+      "mouse_num": 368,
+      "conserved": false
+    },
+    "367": {
+      "human_aa": "T",
+      "mouse_aa": "L",
+      "mouse_num": 369,
+      "conserved": false
+    },
+    "368": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 370,
+      "conserved": true
+    },
+    "369": {
+      "human_aa": "E",
+      "mouse_aa": "Q",
+      "mouse_num": 371,
+      "conserved": false
+    },
+    "370": {
+      "human_aa": "S",
+      "mouse_aa": "N",
+      "mouse_num": 372,
+      "conserved": false
+    },
+    "371": {
+      "human_aa": "K",
+      "mouse_aa": "Q",
+      "mouse_num": 373,
+      "conserved": false
+    },
+    "372": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 374,
+      "conserved": true
+    },
+    "373": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 375,
+      "conserved": true
+    },
+    "374": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 376,
+      "conserved": true
+    },
+    "375": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 377,
+      "conserved": true
+    },
+    "376": {
+      "human_aa": "T",
+      "mouse_aa": "I",
+      "mouse_num": 378,
+      "conserved": false
+    },
+    "377": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 379,
+      "conserved": true
+    },
+    "378": {
+      "human_aa": "S",
+      "mouse_aa": "K",
+      "mouse_num": 380,
+      "conserved": false
+    },
+    "379": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 381,
+      "conserved": true
+    },
+    "380": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 382,
+      "conserved": true
+    },
+    "381": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 383,
+      "conserved": true
+    },
+    "382": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 384,
+      "conserved": true
+    },
+    "383": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 385,
+      "conserved": true
+    },
+    "384": {
+      "human_aa": "I",
+      "mouse_aa": "R",
+      "mouse_num": 386,
+      "conserved": false
+    },
+    "385": {
+      "human_aa": "K",
+      "mouse_aa": "R",
+      "mouse_num": 387,
+      "conserved": false
+    },
+    "386": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 388,
+      "conserved": true
+    },
+    "387": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 389,
+      "conserved": true
+    },
+    "388": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 390,
+      "conserved": true
+    },
+    "389": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 391,
+      "conserved": true
+    },
+    "390": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 392,
+      "conserved": true
+    },
+    "391": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 393,
+      "conserved": true
+    },
+    "392": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 394,
+      "conserved": true
+    },
+    "393": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 395,
+      "conserved": true
+    },
+    "394": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 396,
+      "conserved": true
+    },
+    "395": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 397,
+      "conserved": true
+    },
+    "396": {
+      "human_aa": "F",
+      "mouse_aa": "Y",
+      "mouse_num": 398,
+      "conserved": false
+    },
+    "397": {
+      "human_aa": "V",
+      "mouse_aa": "E",
+      "mouse_num": 399,
+      "conserved": false
+    },
+    "398": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 400,
+      "conserved": true
+    },
+    "399": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 401,
+      "conserved": true
+    },
+    "400": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 402,
+      "conserved": true
+    },
+    "401": {
+      "human_aa": "H",
+      "mouse_aa": "R",
+      "mouse_num": 403,
+      "conserved": false
+    },
+    "402": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 404,
+      "conserved": true
+    },
+    "403": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 405,
+      "conserved": true
+    },
+    "404": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 406,
+      "conserved": true
+    },
+    "405": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 407,
+      "conserved": true
+    },
+    "406": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 408,
+      "conserved": true
+    },
+    "407": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 409,
+      "conserved": true
+    },
+    "408": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 410,
+      "conserved": true
+    },
+    "409": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 411,
+      "conserved": true
+    },
+    "410": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 412,
+      "conserved": true
+    },
+    "411": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 413,
+      "conserved": true
+    },
+    "412": {
+      "human_aa": "W",
+      "mouse_aa": "L",
+      "mouse_num": 414,
+      "conserved": false
+    },
+    "413": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 415,
+      "conserved": true
+    },
+    "414": {
+      "human_aa": "P",
+      "mouse_aa": "A",
+      "mouse_num": 416,
+      "conserved": false
+    },
+    "415": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 417,
+      "conserved": true
+    },
+    "416": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 419,
+      "conserved": true
+    },
+    "417": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 420,
+      "conserved": true
+    },
+    "418": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 421,
+      "conserved": true
+    },
+    "419": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 422,
+      "conserved": true
+    },
+    "420": {
+      "human_aa": "G",
+      "mouse_aa": "S",
+      "mouse_num": 423,
+      "conserved": false
+    },
+    "421": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 424,
+      "conserved": true
+    },
+    "422": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 425,
+      "conserved": true
+    },
+    "423": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 426,
+      "conserved": true
+    },
+    "424": {
+      "human_aa": "A",
+      "mouse_aa": "G",
+      "mouse_num": 427,
+      "conserved": false
+    },
+    "425": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 428,
+      "conserved": true
+    },
+    "426": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 429,
+      "conserved": true
+    },
+    "427": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 430,
+      "conserved": true
+    },
+    "428": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 431,
+      "conserved": true
+    },
+    "429": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 432,
+      "conserved": true
+    },
+    "430": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 433,
+      "conserved": true
+    },
+    "431": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 434,
+      "conserved": true
+    },
+    "432": {
+      "human_aa": "M",
+      "mouse_aa": "V",
+      "mouse_num": 435,
+      "conserved": false
+    },
+    "433": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 436,
+      "conserved": true
+    },
+    "434": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 437,
+      "conserved": true
+    },
+    "435": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 438,
+      "conserved": true
+    },
+    "436": {
+      "human_aa": "M",
+      "mouse_aa": "M",
+      "mouse_num": 439,
+      "conserved": true
+    },
+    "437": {
+      "human_aa": "V",
+      "mouse_aa": "I",
+      "mouse_num": 440,
+      "conserved": false
+    },
+    "438": {
+      "human_aa": "L",
+      "mouse_aa": "S",
+      "mouse_num": 441,
+      "conserved": false
+    },
+    "439": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 442,
+      "conserved": true
+    },
+    "440": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 443,
+      "conserved": true
+    },
+    "441": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 444,
+      "conserved": true
+    },
+    "442": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 445,
+      "conserved": true
+    },
+    "443": {
+      "human_aa": "Q",
+      "mouse_aa": "R",
+      "mouse_num": 446,
+      "conserved": false
+    },
+    "444": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 447,
+      "conserved": true
+    },
+    "445": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 448,
+      "conserved": true
+    },
+    "446": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 449,
+      "conserved": true
+    },
+    "447": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 450,
+      "conserved": true
+    },
+    "448": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 451,
+      "conserved": true
+    },
+    "449": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 452,
+      "conserved": true
+    },
+    "450": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 453,
+      "conserved": true
+    },
+    "451": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 454,
+      "conserved": true
+    },
+    "452": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 455,
+      "conserved": true
+    },
+    "453": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 456,
+      "conserved": true
+    },
+    "454": {
+      "human_aa": "S",
+      "mouse_aa": "T",
+      "mouse_num": 457,
+      "conserved": false
+    },
+    "455": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 458,
+      "conserved": true
+    },
+    "456": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 459,
+      "conserved": true
+    },
+    "457": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 460,
+      "conserved": true
+    },
+    "458": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 461,
+      "conserved": true
+    },
+    "459": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 462,
+      "conserved": true
+    },
+    "460": {
+      "human_aa": "S",
+      "mouse_aa": "A",
+      "mouse_num": 463,
+      "conserved": false
+    },
+    "461": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 464,
+      "conserved": true
+    },
+    "462": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 465,
+      "conserved": true
+    },
+    "463": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 466,
+      "conserved": true
+    },
+    "464": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 467,
+      "conserved": true
+    },
+    "465": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 468,
+      "conserved": true
+    },
+    "466": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 469,
+      "conserved": true
+    },
+    "467": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 470,
+      "conserved": true
+    },
+    "468": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 471,
+      "conserved": true
+    },
+    "469": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 472,
+      "conserved": true
+    },
+    "470": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 473,
+      "conserved": true
+    },
+    "471": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 474,
+      "conserved": true
+    },
+    "472": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 475,
+      "conserved": true
+    },
+    "473": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 476,
+      "conserved": true
+    },
+    "474": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 477,
+      "conserved": true
+    },
+    "475": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 478,
+      "conserved": true
+    },
+    "476": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 479,
+      "conserved": true
+    },
+    "477": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 480,
+      "conserved": true
+    },
+    "478": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 481,
+      "conserved": true
+    },
+    "479": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 482,
+      "conserved": true
+    },
+    "480": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 483,
+      "conserved": true
+    },
+    "481": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 484,
+      "conserved": true
+    },
+    "482": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 485,
+      "conserved": true
+    },
+    "483": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 486,
+      "conserved": true
+    },
+    "484": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 487,
+      "conserved": true
+    },
+    "485": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 488,
+      "conserved": true
+    },
+    "486": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 489,
+      "conserved": true
+    },
+    "487": {
+      "human_aa": "A",
+      "mouse_aa": "V",
+      "mouse_num": 490,
+      "conserved": false
+    },
+    "488": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 491,
+      "conserved": true
+    },
+    "489": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 492,
+      "conserved": true
+    },
+    "490": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 493,
+      "conserved": true
+    },
+    "491": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 494,
+      "conserved": true
+    },
+    "492": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 495,
+      "conserved": true
+    },
+    "493": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 496,
+      "conserved": true
+    },
+    "494": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 497,
+      "conserved": true
+    },
+    "495": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 498,
+      "conserved": true
+    },
+    "496": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 499,
+      "conserved": true
+    },
+    "497": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 500,
+      "conserved": true
+    },
+    "498": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 501,
+      "conserved": true
+    },
+    "499": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 502,
+      "conserved": true
+    },
+    "500": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 503,
+      "conserved": true
+    },
+    "501": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 504,
+      "conserved": true
+    },
+    "502": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 505,
+      "conserved": true
+    },
+    "503": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 506,
+      "conserved": true
+    },
+    "504": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 507,
+      "conserved": true
+    },
+    "505": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 508,
+      "conserved": true
+    },
+    "506": {
+      "human_aa": "I",
+      "mouse_aa": "M",
+      "mouse_num": 509,
+      "conserved": false
+    },
+    "507": {
+      "human_aa": "E",
+      "mouse_aa": "G",
+      "mouse_num": 510,
+      "conserved": false
+    },
+    "508": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 511,
+      "conserved": true
+    },
+    "509": {
+      "human_aa": "T",
+      "mouse_aa": "I",
+      "mouse_num": 512,
+      "conserved": false
+    },
+    "510": {
+      "human_aa": "M",
+      "mouse_aa": "M",
+      "mouse_num": 513,
+      "conserved": true
+    },
+    "511": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 514,
+      "conserved": true
+    },
+    "512": {
+      "human_aa": "N",
+      "mouse_aa": "D",
+      "mouse_num": 515,
+      "conserved": false
+    },
+    "513": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 516,
+      "conserved": true
+    },
+    "514": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 517,
+      "conserved": true
+    },
+    "515": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 518,
+      "conserved": true
+    },
+    "516": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 519,
+      "conserved": true
+    },
+    "517": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 520,
+      "conserved": true
+    },
+    "518": {
+      "human_aa": "T",
+      "mouse_aa": "D",
+      "mouse_num": 521,
+      "conserved": false
+    },
+    "519": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 522,
+      "conserved": true
+    },
+    "520": {
+      "human_aa": "Q",
+      "mouse_aa": "K",
+      "mouse_num": 523,
+      "conserved": false
+    },
+    "521": {
+      "human_aa": "F",
+      "mouse_aa": "S",
+      "mouse_num": 524,
+      "conserved": false
+    },
+    "522": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 525,
+      "conserved": true
+    },
+    "523": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 526,
+      "conserved": true
+    },
+    "524": {
+      "human_aa": "Q",
+      "mouse_aa": "R",
+      "mouse_num": 527,
+      "conserved": false
+    },
+    "525": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 528,
+      "conserved": true
+    },
+    "526": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 529,
+      "conserved": true
+    },
+    "527": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 530,
+      "conserved": true
+    },
+    "528": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 531,
+      "conserved": true
+    },
+    "529": {
+      "human_aa": "A",
+      "mouse_aa": "I",
+      "mouse_num": 532,
+      "conserved": false
+    },
+    "530": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 533,
+      "conserved": true
+    },
+    "531": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 534,
+      "conserved": true
+    },
+    "532": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 535,
+      "conserved": true
+    },
+    "533": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 536,
+      "conserved": true
+    },
+    "534": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 537,
+      "conserved": true
+    },
+    "535": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 538,
+      "conserved": true
+    },
+    "536": {
+      "human_aa": "T",
+      "mouse_aa": "S",
+      "mouse_num": 539,
+      "conserved": false
+    },
+    "537": {
+      "human_aa": "L",
+      "mouse_aa": "F",
+      "mouse_num": 540,
+      "conserved": false
+    },
+    "538": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 541,
+      "conserved": true
+    },
+    "539": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 542,
+      "conserved": true
+    },
+    "540": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 543,
+      "conserved": true
+    },
+    "541": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 544,
+      "conserved": true
+    },
+    "542": {
+      "human_aa": "F",
+      "mouse_aa": "Y",
+      "mouse_num": 545,
+      "conserved": false
+    },
+    "543": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 546,
+      "conserved": true
+    },
+    "544": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 547,
+      "conserved": true
+    },
+    "545": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 548,
+      "conserved": true
+    },
+    "546": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 549,
+      "conserved": true
+    },
+    "547": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 550,
+      "conserved": true
+    },
+    "548": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 551,
+      "conserved": true
+    },
+    "549": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 552,
+      "conserved": true
+    },
+    "550": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 553,
+      "conserved": true
+    },
+    "551": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 554,
+      "conserved": true
+    },
+    "552": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 555,
+      "conserved": true
+    },
+    "553": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 556,
+      "conserved": true
+    },
+    "554": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 557,
+      "conserved": true
+    },
+    "555": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 558,
+      "conserved": true
+    },
+    "556": {
+      "human_aa": "C",
+      "mouse_aa": "C",
+      "mouse_num": 559,
+      "conserved": true
+    },
+    "557": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 560,
+      "conserved": true
+    },
+    "558": {
+      "human_aa": "C",
+      "mouse_aa": "C",
+      "mouse_num": 561,
+      "conserved": true
+    },
+    "559": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 562,
+      "conserved": true
+    },
+    "560": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 563,
+      "conserved": true
+    },
+    "561": {
+      "human_aa": "T",
+      "mouse_aa": "A",
+      "mouse_num": 564,
+      "conserved": false
+    },
+    "562": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 565,
+      "conserved": true
+    },
+    "563": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 566,
+      "conserved": true
+    },
+    "564": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 567,
+      "conserved": true
+    },
+    "565": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 568,
+      "conserved": true
+    },
+    "566": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 569,
+      "conserved": true
+    },
+    "567": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 570,
+      "conserved": true
+    },
+    "568": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 571,
+      "conserved": true
+    },
+    "569": {
+      "human_aa": "T",
+      "mouse_aa": "R",
+      "mouse_num": 572,
+      "conserved": false
+    },
+    "570": {
+      "human_aa": "M",
+      "mouse_aa": "L",
+      "mouse_num": 573,
+      "conserved": false
+    },
+    "571": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 574,
+      "conserved": true
+    },
+    "572": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 575,
+      "conserved": true
+    },
+    "573": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 576,
+      "conserved": true
+    },
+    "574": {
+      "human_aa": "K",
+      "mouse_aa": "E",
+      "mouse_num": 577,
+      "conserved": false
+    },
+    "575": {
+      "human_aa": "E",
+      "mouse_aa": "A",
+      "mouse_num": 578,
+      "conserved": false
+    },
+    "576": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 579,
+      "conserved": true
+    },
+    "577": {
+      "human_aa": "I",
+      "mouse_aa": "T",
+      "mouse_num": 580,
+      "conserved": false
+    },
+    "578": {
+      "human_aa": "E",
+      "mouse_aa": "Q",
+      "mouse_num": 581,
+      "conserved": false
+    },
+    "579": {
+      "human_aa": "R",
+      "mouse_aa": "K",
+      "mouse_num": 582,
+      "conserved": false
+    },
+    "580": {
+      "human_aa": "I",
+      "mouse_aa": "V",
+      "mouse_num": 583,
+      "conserved": false
+    },
+    "581": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 584,
+      "conserved": true
+    },
+    "582": {
+      "human_aa": "E",
+      "mouse_aa": "Q",
+      "mouse_num": 585,
+      "conserved": false
+    },
+    "583": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 586,
+      "conserved": true
+    },
+    "584": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 587,
+      "conserved": true
+    },
+    "585": {
+      "human_aa": "K",
+      "mouse_aa": "Q",
+      "mouse_num": 588,
+      "conserved": false
+    },
+    "586": {
+      "human_aa": "V",
+      "mouse_aa": "M",
+      "mouse_num": 589,
+      "conserved": false
+    },
+    "587": {
+      "human_aa": "A",
+      "mouse_aa": "V",
+      "mouse_num": 590,
+      "conserved": false
+    },
+    "588": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 591,
+      "conserved": true
+    },
+    "589": {
+      "human_aa": "A",
+      "mouse_aa": "T",
+      "mouse_num": 592,
+      "conserved": false
+    },
+    "590": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 593,
+      "conserved": true
+    },
+    "591": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 594,
+      "conserved": true
+    },
+    "592": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 595,
+      "conserved": true
+    },
+    "593": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 596,
+      "conserved": true
+    },
+    "594": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 597,
+      "conserved": true
+    },
+    "595": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 598,
+      "conserved": true
+    },
+    "596": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 599,
+      "conserved": true
+    },
+    "597": {
+      "human_aa": "F",
+      "mouse_aa": "L",
+      "mouse_num": 600,
+      "conserved": false
+    },
+    "598": {
+      "human_aa": "V",
+      "mouse_aa": "I",
+      "mouse_num": 601,
+      "conserved": false
+    },
+    "599": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 602,
+      "conserved": true
+    },
+    "600": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 603,
+      "conserved": true
+    },
+    "601": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 604,
+      "conserved": true
+    },
+    "602": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 605,
+      "conserved": true
+    },
+    "603": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 606,
+      "conserved": true
+    },
+    "604": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 607,
+      "conserved": true
+    },
+    "605": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 608,
+      "conserved": true
+    },
+    "606": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 609,
+      "conserved": true
+    },
+    "607": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 610,
+      "conserved": true
+    },
+    "608": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 611,
+      "conserved": true
+    },
+    "609": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 612,
+      "conserved": true
+    },
+    "610": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 613,
+      "conserved": true
+    },
+    "611": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 614,
+      "conserved": true
+    },
+    "612": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 615,
+      "conserved": true
+    },
+    "613": {
+      "human_aa": "R",
+      "mouse_aa": "M",
+      "mouse_num": 616,
+      "conserved": false
+    },
+    "614": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 617,
+      "conserved": true
+    },
+    "615": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 618,
+      "conserved": true
+    },
+    "616": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 619,
+      "conserved": true
+    },
+    "617": {
+      "human_aa": "Q",
+      "mouse_aa": "K",
+      "mouse_num": 620,
+      "conserved": false
+    },
+    "618": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 621,
+      "conserved": true
+    },
+    "619": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 622,
+      "conserved": true
+    },
+    "620": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 623,
+      "conserved": true
+    },
+    "621": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 624,
+      "conserved": true
+    },
+    "622": {
+      "human_aa": "V",
+      "mouse_aa": "M",
+      "mouse_num": 625,
+      "conserved": false
+    },
+    "623": {
+      "human_aa": "R",
+      "mouse_aa": "K",
+      "mouse_num": 626,
+      "conserved": false
+    },
+    "624": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 627,
+      "conserved": true
+    },
+    "625": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 628,
+      "conserved": true
+    },
+    "626": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 629,
+      "conserved": true
+    },
+    "627": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 630,
+      "conserved": true
+    },
+    "628": {
+      "human_aa": "Y",
+      "mouse_aa": "F",
+      "mouse_num": 631,
+      "conserved": false
+    },
+    "629": {
+      "human_aa": "R",
+      "mouse_aa": "K",
+      "mouse_num": 632,
+      "conserved": false
+    },
+    "630": {
+      "human_aa": "A",
+      "mouse_aa": "T",
+      "mouse_num": 633,
+      "conserved": false
+    },
+    "631": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 634,
+      "conserved": true
+    },
+    "632": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 635,
+      "conserved": true
+    },
+    "633": {
+      "human_aa": "K",
+      "mouse_aa": "R",
+      "mouse_num": 636,
+      "conserved": false
+    },
+    "634": {
+      "human_aa": "E",
+      "mouse_aa": "D",
+      "mouse_num": 637,
+      "conserved": false
+    },
+    "635": {
+      "human_aa": "M",
+      "mouse_aa": "M",
+      "mouse_num": 638,
+      "conserved": true
+    },
+    "636": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 639,
+      "conserved": true
+    },
+    "637": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 640,
+      "conserved": true
+    },
+    "638": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 641,
+      "conserved": true
+    },
+    "639": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 642,
+      "conserved": true
+    },
+    "640": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 643,
+      "conserved": true
+    },
+    "641": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 644,
+      "conserved": true
+    },
+    "642": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 645,
+      "conserved": true
+    },
+    "643": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 646,
+      "conserved": true
+    },
+    "644": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 647,
+      "conserved": true
+    },
+    "645": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 648,
+      "conserved": true
+    },
+    "646": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 649,
+      "conserved": true
+    },
+    "647": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 650,
+      "conserved": true
+    },
+    "648": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 651,
+      "conserved": true
+    },
+    "649": {
+      "human_aa": "F",
+      "mouse_aa": "Y",
+      "mouse_num": 652,
+      "conserved": false
+    },
+    "650": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 653,
+      "conserved": true
+    },
+    "651": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 654,
+      "conserved": true
+    },
+    "652": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 655,
+      "conserved": true
+    },
+    "653": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 656,
+      "conserved": true
+    },
+    "654": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 657,
+      "conserved": true
+    },
+    "655": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 658,
+      "conserved": true
+    },
+    "656": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 659,
+      "conserved": true
+    },
+    "657": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 660,
+      "conserved": true
+    },
+    "658": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 661,
+      "conserved": true
+    },
+    "659": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 662,
+      "conserved": true
+    },
+    "660": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 663,
+      "conserved": true
+    },
+    "661": {
+      "human_aa": "G",
+      "mouse_aa": "H",
+      "mouse_num": 664,
+      "conserved": false
+    },
+    "662": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 665,
+      "conserved": true
+    },
+    "663": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 666,
+      "conserved": true
+    },
+    "664": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 667,
+      "conserved": true
+    },
+    "665": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 668,
+      "conserved": true
+    },
+    "666": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 669,
+      "conserved": true
+    },
+    "667": {
+      "human_aa": "D",
+      "mouse_aa": "N",
+      "mouse_num": 670,
+      "conserved": false
+    },
+    "668": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 671,
+      "conserved": true
+    },
+    "669": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 672,
+      "conserved": true
+    },
+    "670": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 673,
+      "conserved": true
+    },
+    "671": {
+      "human_aa": "M",
+      "mouse_aa": "M",
+      "mouse_num": 674,
+      "conserved": true
+    },
+    "672": {
+      "human_aa": "K",
+      "mouse_aa": "R",
+      "mouse_num": 675,
+      "conserved": false
+    },
+    "673": {
+      "human_aa": "K",
+      "mouse_aa": "E",
+      "mouse_num": 676,
+      "conserved": false
+    },
+    "674": {
+      "human_aa": "L",
+      "mouse_aa": "I",
+      "mouse_num": 677,
+      "conserved": false
+    },
+    "675": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 678,
+      "conserved": true
+    },
+    "676": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 679,
+      "conserved": true
+    },
+    "677": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 680,
+      "conserved": true
+    },
+    "678": {
+      "human_aa": "V",
+      "mouse_aa": "I",
+      "mouse_num": 681,
+      "conserved": false
+    },
+    "679": {
+      "human_aa": "M",
+      "mouse_aa": "M",
+      "mouse_num": 682,
+      "conserved": true
+    },
+    "680": {
+      "human_aa": "R",
+      "mouse_aa": "K",
+      "mouse_num": 683,
+      "conserved": false
+    },
+    "681": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 684,
+      "conserved": true
+    },
+    "682": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 685,
+      "conserved": true
+    },
+    "683": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 686,
+      "conserved": true
+    },
+    "684": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 687,
+      "conserved": true
+    },
+    "685": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 688,
+      "conserved": true
+    },
+    "686": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 689,
+      "conserved": true
+    },
+    "687": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 690,
+      "conserved": true
+    },
+    "688": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 691,
+      "conserved": true
+    },
+    "689": {
+      "human_aa": "Y",
+      "mouse_aa": "Y",
+      "mouse_num": 692,
+      "conserved": true
+    },
+    "690": {
+      "human_aa": "V",
+      "mouse_aa": "V",
+      "mouse_num": 693,
+      "conserved": true
+    },
+    "691": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 694,
+      "conserved": true
+    },
+    "692": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 695,
+      "conserved": true
+    },
+    "693": {
+      "human_aa": "K",
+      "mouse_aa": "R",
+      "mouse_num": 696,
+      "conserved": false
+    },
+    "694": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 697,
+      "conserved": true
+    },
+    "695": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 698,
+      "conserved": true
+    },
+    "696": {
+      "human_aa": "P",
+      "mouse_aa": "P",
+      "mouse_num": 699,
+      "conserved": true
+    },
+    "697": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 700,
+      "conserved": true
+    },
+    "698": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 701,
+      "conserved": true
+    },
+    "699": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 702,
+      "conserved": true
+    },
+    "700": {
+      "human_aa": "V",
+      "mouse_aa": "I",
+      "mouse_num": 703,
+      "conserved": false
+    },
+    "701": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 704,
+      "conserved": true
+    },
+    "702": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 705,
+      "conserved": true
+    },
+    "703": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 706,
+      "conserved": true
+    },
+    "704": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 707,
+      "conserved": true
+    },
+    "705": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 708,
+      "conserved": true
+    },
+    "706": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 709,
+      "conserved": true
+    },
+    "707": {
+      "human_aa": "H",
+      "mouse_aa": "H",
+      "mouse_num": 710,
+      "conserved": true
+    },
+    "708": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 711,
+      "conserved": true
+    },
+    "709": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 712,
+      "conserved": true
+    },
+    "710": {
+      "human_aa": "P",
+      "mouse_aa": "S",
+      "mouse_num": 713,
+      "conserved": false
+    },
+    "711": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 714,
+      "conserved": true
+    },
+    "712": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 715,
+      "conserved": true
+    },
+    "713": {
+      "human_aa": "L",
+      "mouse_aa": "V",
+      "mouse_num": 716,
+      "conserved": false
+    },
+    "714": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 717,
+      "conserved": true
+    },
+    "715": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 718,
+      "conserved": true
+    },
+    "716": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 719,
+      "conserved": true
+    },
+    "717": {
+      "human_aa": "K",
+      "mouse_aa": "K",
+      "mouse_num": 720,
+      "conserved": true
+    },
+    "718": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 721,
+      "conserved": true
+    },
+    "719": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 722,
+      "conserved": true
+    },
+    "720": {
+      "human_aa": "K",
+      "mouse_aa": "Q",
+      "mouse_num": 723,
+      "conserved": false
+    },
+    "721": {
+      "human_aa": "Q",
+      "mouse_aa": "K",
+      "mouse_num": 724,
+      "conserved": false
+    },
+    "722": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 725,
+      "conserved": true
+    },
+    "723": {
+      "human_aa": "N",
+      "mouse_aa": "I",
+      "mouse_num": 726,
+      "conserved": false
+    },
+    "724": {
+      "human_aa": "G",
+      "mouse_aa": "T",
+      "mouse_num": 727,
+      "conserved": false
+    },
+    "725": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 728,
+      "conserved": true
+    },
+    "726": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 729,
+      "conserved": true
+    },
+    "727": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 730,
+      "conserved": true
+    },
+    "728": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 731,
+      "conserved": true
+    },
+    "729": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 732,
+      "conserved": true
+    },
+    "730": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 733,
+      "conserved": true
+    },
+    "731": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 734,
+      "conserved": true
+    },
+    "732": {
+      "human_aa": "R",
+      "mouse_aa": "R",
+      "mouse_num": 735,
+      "conserved": true
+    },
+    "733": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 736,
+      "conserved": true
+    },
+    "734": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 737,
+      "conserved": true
+    },
+    "735": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 738,
+      "conserved": true
+    },
+    "736": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 739,
+      "conserved": true
+    },
+    "737": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 740,
+      "conserved": true
+    },
+    "738": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 741,
+      "conserved": true
+    },
+    "739": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 742,
+      "conserved": true
+    },
+    "740": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 743,
+      "conserved": true
+    },
+    "741": {
+      "human_aa": "T",
+      "mouse_aa": "T",
+      "mouse_num": 744,
+      "conserved": true
+    },
+    "742": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 745,
+      "conserved": true
+    },
+    "743": {
+      "human_aa": "Q",
+      "mouse_aa": "Q",
+      "mouse_num": 746,
+      "conserved": true
+    },
+    "744": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 747,
+      "conserved": true
+    },
+    "745": {
+      "human_aa": "A",
+      "mouse_aa": "V",
+      "mouse_num": 748,
+      "conserved": false
+    },
+    "746": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 749,
+      "conserved": true
+    },
+    "747": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 750,
+      "conserved": true
+    },
+    "748": {
+      "human_aa": "A",
+      "mouse_aa": "A",
+      "mouse_num": 751,
+      "conserved": true
+    },
+    "749": {
+      "human_aa": "L",
+      "mouse_aa": "L",
+      "mouse_num": 752,
+      "conserved": true
+    },
+    "750": {
+      "human_aa": "S",
+      "mouse_aa": "S",
+      "mouse_num": 753,
+      "conserved": true
+    },
+    "751": {
+      "human_aa": "G",
+      "mouse_aa": "G",
+      "mouse_num": 754,
+      "conserved": true
+    },
+    "752": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 755,
+      "conserved": true
+    },
+    "753": {
+      "human_aa": "V",
+      "mouse_aa": "I",
+      "mouse_num": 756,
+      "conserved": false
+    },
+    "754": {
+      "human_aa": "W",
+      "mouse_aa": "W",
+      "mouse_num": 757,
+      "conserved": true
+    },
+    "755": {
+      "human_aa": "D",
+      "mouse_aa": "N",
+      "mouse_num": 758,
+      "conserved": false
+    },
+    "756": {
+      "human_aa": "I",
+      "mouse_aa": "I",
+      "mouse_num": 759,
+      "conserved": true
+    },
+    "757": {
+      "human_aa": "D",
+      "mouse_aa": "D",
+      "mouse_num": 760,
+      "conserved": true
+    },
+    "758": {
+      "human_aa": "N",
+      "mouse_aa": "N",
+      "mouse_num": 761,
+      "conserved": true
+    },
+    "759": {
+      "human_aa": "E",
+      "mouse_aa": "E",
+      "mouse_num": 762,
+      "conserved": true
+    },
+    "760": {
+      "human_aa": "F",
+      "mouse_aa": "F",
+      "mouse_num": 763,
+      "conserved": true
+    }
+  }
 }

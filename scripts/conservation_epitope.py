@@ -231,6 +231,14 @@ def main():
         rep.append(f"   {lo}-{hi} ({hi-lo+1} aa) {t}")
     out["conserved_runs"] = [{"lo": lo, "hi": hi, "len": hi-lo+1, "tag": tag(lo, hi)} for lo, hi in runs]
 
+    # full human->mouse threading map over the target construct window (122-760), for f02_mouse_model.py
+    full_map = {}
+    for i in range(122, 761):
+        m_num, m_aa = h2m.get(i, (None, "-"))
+        full_map[str(i)] = {"human_aa": human[i-1], "mouse_aa": m_aa, "mouse_num": m_num,
+                            "conserved": bool(m_aa == human[i-1])}
+    out["human_to_mouse_122_760"] = full_map
+
     Path(a.out).write_text(json.dumps(out, indent=2))
     print("\n".join(rep))
     print(f"\n[wrote {a.out}]")

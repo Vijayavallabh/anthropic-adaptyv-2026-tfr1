@@ -24,16 +24,22 @@
   18 protein + 2 conditional nanobody. Corrected the "Baker 79× on TNF" memory error (real: ~1000×
   mech-A / ~10⁸× mech-B; targets EphA2/TNFR2/IL6/PCSK9). Evidence: pytest 14/14; `target.yaml` parses.
 
+- **F02 target prep** (done) — written fresh. `data/targets/tfr1_human_ecto_A.pdb` = clean
+  single-subunit full-atom human target (11QC chain A, 639 aa, Gly142, glycans stripped) = af2ig target.
+  `data/targets/epitopes.json` = 3-arm hotspots: ArmA apical, ArmC conserved subset {202,203,209}, ArmB
+  conserved non-apical compact cluster {694,696,704,705,706,714,717,718,725,728,729} (dimer-interface +
+  Tf-site + apical-domain excluded). `data/targets/tfr1_mouse_ecto_A.pdb` = mouse (Q62351) threaded onto
+  the 11QC backbone + PyRosetta repack/min (78.1% id, divergent epitope positions verified). pytest 17/17.
+
 ## In progress
-- **F02 target prep** — write FRESH (TNF `stage0_target_prep.py` is stale EGFR). (1) From `11QC.cif`
-  emit a clean human apical TARGET PDB (single subunit, chain A, Gly142 — already correct) + a
-  full-atom single-subunit af2ig target; (2) define apical/conserved-apical-subsite/conserved-non-apical
-  epitope hotspot sets from `docs/conservation.json`; (3) build the mouse (Q62351, 123–763) model and
-  align; (4) numbering asserts (640-aa window 121–760, UniProt 211 == Y). Fix the ~100 TNF absolute-root
-  hardcodes on any ported script + add a repo-root assert.
+- **F04 generation** — re-rank generators on the concave apical pocket (do NOT inherit TNF). Lead
+  **RFdiffusion3 + BindCraft**; proven arms PXDesign/Genie3; re-test RFd3/BoltzGen; SeedProteo for
+  novelty-max. Generate backbones at the 3 epitope sets (ArmA apical, ArmC conserved subsite, ArmB
+  conserved non-apical). Port the reusable drivers (`gen_rfd3_tnf.sh`, `gen_boltzgen_tnf.sh`) — FIX the
+  ~100 TNF absolute-root hardcodes + add a repo-root assert. Queue across the 8× H100 idle GPUs.
 
 ## Next
-- F04 generation (unblocked once F02 emits targets + hotspots).
+- F05 sequence (ProteinMPNN; joint multi-state h+m for Arm B/C) → F06 binding (3-folder consensus).
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did

@@ -4,7 +4,7 @@
   "deadline": "2026-11-01T23:59 AoE",
   "track": "2/3 (<=20 designs, Claude-selected)",
   "objective_priority": ["ph_selective", "cross_reactive", "affinity"],
-  "active": "F02",
+  "active": "F04",
   "updated": "2026-10-20",
   "status_legend": ["todo", "in_progress", "done", "blocked"],
   "features": [
@@ -29,11 +29,11 @@
     {
       "id": "F02",
       "title": "Target prep (verified structure, fix G142, full-atom human apical target + mouse model)",
-      "status": "todo",
+      "status": "done",
       "depends_on": ["F01"],
       "done_criteria": "Clean human ectodomain/apical target PDB (Gly142), full-atom single-subunit target for af2ig, mouse model built + aligned; numbering asserts pass (seq window 121-760 = 640 aa, seq[211-121]=='Y')",
-      "evidence": "",
-      "notes": ""
+      "evidence": "scripts/f02_target_prep.py: data/targets/tfr1_human_ecto_A.pdb = clean single-subunit full-atom human target (11QC chain A, 639 aa 122-760, Gly142, glycans stripped, == af2ig target); asserts 639aa/211==Y/142==G pass. 3-arm hotspots in data/targets/epitopes.json: ArmA apical {202,203,204,208,209,210,211,212,348,371}, ArmC conserved subset {202,203,209}, ArmB conserved non-apical compact cluster {694,696,704,705,706,714,717,718,725,728,729} (dimer-iface 32 res + Tf-site 619-670 + apical domain excluded). scripts/f02_mouse_model.py (PyRosetta): data/targets/tfr1_mouse_ecto_A.pdb = mouse Q62351 threaded onto 11QC backbone + repack/min, 140 muts, score -929.9, 78.1% id to human, divergent epitope positions verified (D204Q/R208N/Y211D/N348K/K371Q). pytest 17/17 (incl 3 F02 checks).",
+      "notes": "Written fresh (TNF stage0 was stale EGFR). Mouse model shares the human frame (threaded on the same backbone) so it is aligned by construction; the single mouse-insertion (indel) position is left human. Apical-domain crop deferred to F04 (per-generator)."
     },
     {
       "id": "F03",

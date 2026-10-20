@@ -1,0 +1,136 @@
+{
+  "target_pdb": "tfr1_human_ecto_A.pdb",
+  "target_chain": "A",
+  "numbering": "UniProt P02786 == construct",
+  "armA_apical_human": {
+    "hotspots": [
+      202,
+      203,
+      204,
+      208,
+      209,
+      210,
+      211,
+      212,
+      348,
+      371
+    ],
+    "center": 211,
+    "domain": "apical (II)",
+    "note": "functional epitope (VP1u/GP1/6WRV site); Obj1+Obj3, Obj2 sacrificed"
+  },
+  "armC_conserved_apical_subsite": {
+    "hotspots": [
+      202,
+      203,
+      209
+    ],
+    "expand_from": [
+      202,
+      203,
+      204,
+      208,
+      209,
+      210,
+      211,
+      212,
+      348,
+      371
+    ],
+    "note": "the 3 conserved apical residues {202,203,209}; max-min core, mechanism B, joint h+m MPNN"
+  },
+  "armB_conserved_nonapical": {
+    "hotspots": [
+      694,
+      696,
+      704,
+      705,
+      706,
+      714,
+      717,
+      718,
+      725,
+      728,
+      729
+    ],
+    "note": "largest compact conserved + dimer-surface-exposed cluster, outside apical & Tf-site(619-670) & dimer interface; cross-reactive specialist",
+    "alt_clusters": [
+      [
+        492,
+        495,
+        530,
+        531,
+        533,
+        534,
+        559,
+        560,
+        562
+      ],
+      [
+        154,
+        156,
+        158,
+        160,
+        161
+      ],
+      [
+        600,
+        604,
+        605,
+        606,
+        608
+      ],
+      [
+        179,
+        394
+      ]
+    ]
+  },
+  "exclude": {
+    "transferrin_helical_site": [
+      619,
+      670
+    ],
+    "dimer_interface": [
+      180,
+      312,
+      318,
+      319,
+      320,
+      322,
+      323,
+      400,
+      469,
+      470,
+      472,
+      473,
+      641,
+      668,
+      669,
+      672,
+      673,
+      684,
+      688,
+      689,
+      691,
+      692,
+      693,
+      733,
+      736,
+      737,
+      740,
+      744,
+      748,
+      752,
+      753,
+      754
+    ],
+    "novelty_nofly_structures": [
+      "6WRV",
+      "3DS18",
+      "TB14",
+      "VP1u",
+      "GP1"
+    ]
+  }
+}
