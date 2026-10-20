@@ -238,3 +238,14 @@ generator (RFd3/Genie3 not installed). Treat novelty as ~uniform 3/4 pass (not a
 - gpu2_18_mA1  chai .554 BUT boltz .409 ✗ Chai-only (parent was .831 — His hurt Boltz)
 - gpu5_17_mA1  chai .702 BUT boltz .437 ✗ Chai-only (parent .809)
 => 2 dual-consensus switch-binders + 2 Chai-only (riskier). Honest: no single design aces switch+novelty+binding.
+
+## NOVELTY CRISIS (2026-10-21) — BoltzGen pool fails the HARD gate
+Coverage-weighted novelty (Adaptyv-exact: max TM among hits qcov>=0.70; <0.80=PASS 3/4, >=0.80=DQ 2/4;
+PDB-only = LOWER bound, AFDB would raise it). Of 18 binders, only **3 PASS**: gpu5_17 (0.757), gpu5_26
+(0.761, dev-SEVERE), gpu4_28 (0.774, dev-SEVERE). gpu4_33=0.0 is a FAILED ESMFold fold (unfoldable, exclude).
+ALL the good binders/switches are DQ: gpu2_31/gpu2_31_mA1 (0.895), gpu5_12/sw2his (0.942/0.945),
+gpu2_13 (0.923), gpu4_21 (0.914), gpu2_18 (0.929). => **BoltzGen makes PDB-like folds; it fails Adaptyv novelty.**
+ONLY clean novelty-pass + switch-capable binder = **gpu5_17 / gpu5_17_mA1** (0.757/0.764, dev-CLEAN, Chai 0.702).
+Decision: (1) mine the FULL BoltzGen pool for lower-binding-but-novel folds; (2) if that's dry, PIVOT to a
+structurally-novel generator (RFdiffusion/Genie3 — diffusion explores novel fold space; co-folding does not).
+This is the side-agent-warned pivot. Runway to 2026-11-01 ~11 days = feasible.
