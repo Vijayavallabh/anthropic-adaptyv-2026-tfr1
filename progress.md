@@ -249,3 +249,14 @@ ONLY clean novelty-pass + switch-capable binder = **gpu5_17 / gpu5_17_mA1** (0.7
 Decision: (1) mine the FULL BoltzGen pool for lower-binding-but-novel folds; (2) if that's dry, PIVOT to a
 structurally-novel generator (RFdiffusion/Genie3 — diffusion explores novel fold space; co-folding does not).
 This is the side-agent-warned pivot. Runway to 2026-11-01 ~11 days = feasible.
+
+## PIVOT DECISION (2026-10-21): diffusion generator for novelty
+Mining the full BoltzGen pool for novel folds is DRY: designs with novel folds (raw TM<0.8) are Boltz-only
+(Chai says they DON'T bind — circularity). The binding-novelty tradeoff is intrinsic to BoltzGen (co-folding
+reproduces PDB folds). Real binders that PASS novelty: gpu5_17 (0.757, CLEAN, switch mA1, x-react mouse 0.475!),
+gpu4_28 (0.774, dev-SEVERE), gpu5_26 (0.761, dev-SEVERE). = 1 clean design.
+**PIVOT: install a DIFFUSION generator (RFdiffusion1 first; RFd3/Genie3 if it floors) to produce
+structurally-novel binders to the TfR1 apical epitope.** Pipeline: RFd backbones -> ProteinMPNN (0-Cys) ->
+Chai∧Boltz validate (fair for non-BoltzGen designs) -> novelty (expect LOW TM) -> mech-A/B switch -> x-species
+-> select. FLOOR = gpu5_17 (+ cleaned SEVERE). Kit source: /home/prachh/work/cache/uplifting-biomolecular-modeling/
+{rfdiffusion1,rfdiffusion3,genie3}. Note: af2ig broken here -> Chai∧Boltz is the binding gate.
