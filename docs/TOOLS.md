@@ -16,12 +16,17 @@ rfdiffusion1, proteinmpnn, common, + folders (boltz2, chai1, protenix, esmfold2,
 - **Protenix** (FOLDER only, not a generator). `.venv-protenix`; ckpt `/home/prachh/checkpoint/protenix_base_default_v1.0.0.pt`.
 - **ProteinMPNN** (F05). `/home/prachh/v/mva-track2-orthogonal-20261006-v29/ProteinMPNN` (+ weights); also vendored inside BoltzGen (`--inverse_fold_model solublempnn`).
 
-## NEEDS REBUILD (source in the preserved kit; AF2 params already cached)
-- **af2ig** (de-novo fold gate, F06 — the honest binding gate; Boltz/Chai over-dock). AF2 params present:
-  `/home/prachh/work/cache/bindcraft/alphafold/params_model_1_ptm.npz` (point `AF2_PARAMS` there, skip DL).
-  Build: `setup_uplifting.sh af2ig` (py3.11, jax 0.5.3 + CUDA-12.8 stack — pin cublas/runtime/nvrtc/cupti
-  12.8 + cudnn 9.8, cf. memory), `run.sh install`, then `run.sh pred --config h100 --mode exact --pdbdir D --out D`.
-  Proven drivers: tnf `scripts/run_af2ig.py` + `fold_af2ig.sh` (binder=chain A; rmsd<2 ∧ pae<10 ∧ plddt_binder>80).
+## RUNNABLE (rebuilt 2026-10-20)
+- **af2ig** (de-novo fold gate, F06 — the honest binding gate; Boltz/Chai over-dock). **REBUILT + check
+  PASSES** (`core=ok pins=ok checkout=ok weights=ok`, H100). Recipe:
+  - venv: `source envs/uplifting-af2ig/bin/activate` (py3.11, jax 0.5.3 + its own CUDA-12.9 stack).
+  - kit: `third_party/uplifting-biomolecular-modeling` → symlink to the preserved cache kit.
+  - `AF2IG_DIR=third_party/uplifting-biomolecular-modeling/af2ig/dl_binder_design/af2_initial_guess`
+  - `AF2_PARAMS=weights/af2ig` (holds `params/params_model_1_ptm.npz` → symlinked to the cached bindcraft
+    param; sha256 matches the kit pin). Built via `scripts/setup_uplifting.sh af2ig` (no `--weights`).
+  - run: `cd $KIT && AF2IG_DIR=.. AF2_PARAMS=.. bash run.sh pred --config h100 --mode exact --pdbdir D --out D`.
+  - Proven drivers to port: tnf `scripts/run_af2ig.py` + `fold_af2ig.sh` (binder=chain A; gate rmsd<2 ∧
+    pae_interaction<10 ∧ plddt_binder>80). NB: crop the 639-aa target to the epitope neighbourhood for speed.
 - **PXDesign** (2nd generator). env `envs/uplifting-pxdesign`, ckpt `pxdesign_v0.1.0.pt`. `run.sh design --config h100 --mode fast -i tasks.json -o OUT` with `PXDESIGN_CKPT_DIR`+`PROTENIX_DATA_ROOT_DIR` (cf. memory env-pxdesign-activation-recsite).
 - **RFdiffusion3** (best for the buried-His network; EXPENSIVE: apex wheel compile ~10 min + CUDA-13 toolkit + weight DL). `setup_rfd3.sh` (in tnf). Rebuild only if BoltzGen+PXDesign coverage is insufficient.
 - **Genie3** (`setup_genie3.sh`), **RFdiffusion1** — moderate; diversity arms.

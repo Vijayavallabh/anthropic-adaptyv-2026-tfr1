@@ -42,12 +42,18 @@
     FAIL protein-class novelty (Ig is ubiquitous → high structural TM) → **filter: novel 0-Cys → protein
     arm; Ig → nanobody-candidate pool** (novelty judged on CDRH3, must pass ANARCI + ≥2-folder ipTM≥0.6).
     Usable protein yield ≈ half raw → generate more (`--reuse`) if short.
-  - Next generators: rebuild **PXDesign** (2nd lineage, cheap-ish) then **RFd3** (expensive) if needed;
-    rebuild **af2ig** before trusting F06 binding (Boltz/Chai over-dock).
+  - **Wave-1 triaged** (`scripts/triage_designs.py` → `runs/f04/triage.tsv`): **432 protein + 71 nanobody**
+    candidates. armA 140 protein (30-95, apical, mech-A); armB 107 protein + 20 nb; armC 185 protein
+    (incl. **60 large-novel >100 aa** for buried-His cores + 122 mini) + 51 nb. (armC_mini 65-95 wave
+    still running on gpu4,5.) Confirms the switch-scaffold worry is moot: BoltzGen's large band is ~50%
+    novel, so buried-His-capable large scaffolds ARE available — RFd3 stays conditional on F07.
+  - **af2ig REBUILT + verified** (`docs/TOOLS.md`): the honest de-novo binding gate for F06. Next
+    generator for lineage diversity = PXDesign (rebuild); RFd3 only if F07 needs it.
 
 ## Next
-- Triage wave-1 (fold-classify Ig vs de-novo, hotspot-contact filter) → F05 sequence (ProteinMPNN; joint
-  multi-state h+m for Arm B/C) → F06 binding (Boltz-2 + Chai-1 2-folder consensus now; + af2ig once rebuilt).
+- **F06 binding** — port af2ig driver (crop target to epitope nbhd for speed), run on the protein pool
+  (rmsd<2 ∧ pae_int<10 ∧ plddt_binder>80), then Boltz-2 + Chai-1 2-folder consensus + ipSAE on survivors.
+- Then F05 joint multi-state MPNN (cross-species rescue for Arm B/C) → F07 switch → F08 mouse → F09/F10.
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did
