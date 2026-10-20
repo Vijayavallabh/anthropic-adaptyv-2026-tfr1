@@ -1,0 +1,15 @@
+# auto-generated BoltzGen spec (scripts/make_boltzgen_spec.py)
+entities:
+  - protein:
+      id: G
+      sequence: 55..135
+  - file:
+      path: /home/prachh/v/anthropic-adaptyv-2026-tfr1/data/targets/tfr1_human_ecto_A.cif
+      include:
+        - chain:
+            id: A
+      binding_types:
+        - chain:
+            id: A
+            binding: 150,154,156,158,160,161
+      structure_groups: "all"
