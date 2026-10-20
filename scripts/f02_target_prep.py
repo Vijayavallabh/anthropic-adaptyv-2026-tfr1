@@ -70,6 +70,20 @@ def main():
     io.save(str(tgt), ChainResRange('A', 122, 760))
     print(f"[wrote {tgt}]  (clean single-subunit human target == af2ig target)")
 
+    # also emit an RCSB-format CIF with _entity_poly_seq preserved (Boltz-based tools -- BoltzGen/Boltz/Chai
+    # -- need it; a gemmi PDB->CIF does NOT emit entity_poly_seq, so build the CIF FROM the raw RCSB cif).
+    import gemmi
+    gst = gemmi.read_structure(a.cif); gst.setup_entities()
+    gm = gst[0]
+    for cid in [c.name for c in gm]:
+        if cid != 'A':
+            gm.remove_chain(cid)
+    gst.remove_ligands_and_waters(); gst.remove_empty_chains()
+    cif = out / "tfr1_human_ecto_A.cif"
+    gst.make_mmcif_document().write_file(str(cif))
+    assert 'ATOM' in cif.read_text() and '_entity_poly_seq.entity_id' in cif.read_text(), "CIF missing entity_poly_seq"
+    print(f"[wrote {cif}]  (RCSB-format, entity_poly_seq preserved; glycans/dimer stripped)")
+
     # 2a) per-residue SASA on MONOMER (chain A alone) and on DIMER (A+B)
     def rsasa_map(chain_ids):
         sub = model.__class__(model.id)
