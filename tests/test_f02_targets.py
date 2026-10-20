@@ -62,9 +62,11 @@ def test_epitopes_three_arms():
     e = json.loads(EPI.read_text())
     for arm in ("armA_apical_human", "armC_conserved_apical_subsite", "armB_conserved_nonapical"):
         assert arm in e and e[arm]["hotspots"], f"{arm} missing/empty"
-    # Arm C core is the conserved subset of the apical footprint
-    assert set(e["armC_conserved_apical_subsite"]["hotspots"]) <= set(e["armA_apical_human"]["hotspots"])
-    assert set(e["armC_conserved_apical_subsite"]["hotspots"]) == {202, 203, 209}
+    # Arm C core is the conserved subset of the apical footprint; its patch excludes the divergent tip
+    armC = e["armC_conserved_apical_subsite"]
+    assert set(armC["core"]) == {202, 203, 209}
+    assert set(armC["core"]) <= set(armC["hotspots"]), "core must be within the Arm C hotspots"
+    assert not (set(armC["hotspots"]) & {204, 208, 210, 211, 212, 348, 371}), "Arm C must avoid the divergent tip"
     # Arm B is outside the apical domain and the transferrin site, and avoids the dimer interface
     armB = set(e["armB_conserved_nonapical"]["hotspots"])
     assert armB, "Arm B empty"

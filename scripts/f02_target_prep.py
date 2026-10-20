@@ -100,14 +100,10 @@ def main():
 
     # 2c) conservation map (human->mouse identity)
     cons = json.loads(Path(a.conservation).read_text())
-    # rebuild human-resnum -> conserved(bool) from the apical table + conserved_runs + full align isn't stored;
-    # recompute identity from the alignment summary we DO have: use conserved_runs for runs, apical_table for apical.
-    conserved = set()
-    for run in cons.get("conserved_runs", []):
-        conserved.update(range(run["lo"], run["hi"] + 1))
-    for row in cons["alignment"]["apical_table"]:
-        if row["conserved"]:
-            conserved.add(row["uniprot_human"])
+    # per-residue conservation from the full human->mouse map (individually identical positions,
+    # NOT only >=6-runs — the coarse run-based set undercounts conserved surface residues).
+    fm = cons["human_to_mouse_122_760"]
+    conserved = {int(k) for k, v in fm.items() if v["conserved"]}
 
     # 2d) Arm-B candidate residues: surface on dimer (rSASA>0.25), conserved, outside apical & Tf-site & dimer-iface
     def surface_dim(rn): return rsasa_dim.get(rn, 0) > 0.25
@@ -116,34 +112,41 @@ def main():
                        and not (APICAL_DOMAIN[0] <= rn <= APICAL_DOMAIN[1])
                        and not (TF_SITE[0] - 5 <= rn <= TF_SITE[1] + 5)
                        and rn not in dimer_iface)
-    # spatially cluster the pool (CB within 11 A) -> pick the largest compact cluster
-    ca = {rn: (by_num[rn]['CA'].coord if 'CA' in by_num[rn] else None) for rn in armB_pool}
-    ca = {k: v for k, v in ca.items() if v is not None}
-    pool = list(ca)
-    clusters = []
-    unassigned = set(pool)
-    while unassigned:
-        seed = unassigned.pop(); cl = [seed]
-        changed = True
-        while changed:
-            changed = False
-            for rn in list(unassigned):
-                if any(np.linalg.norm(ca[rn] - ca[c]) < 11.0 for c in cl):
-                    cl.append(rn); unassigned.discard(rn); changed = True
-        clusters.append(sorted(cl))
-    clusters.sort(key=len, reverse=True)
-    armB = clusters[0] if clusters else []
-    print(f"Arm-B conserved-surface patch (largest compact cluster): n={len(armB)} {armB}")
-    print(f"   (other conserved-surface clusters: {[len(c) for c in clusters[1:6]]})")
+    # COMPACT contactable patch (not single-linkage, which chains across the whole surface): take the
+    # densest 10 A CB-neighbourhood as the Arm-B epitope; seed a few disjoint alternates for F04 choice.
+    cb = lambda r: (r['CB'] if 'CB' in r else r['CA']).coord
+    cbc = {rn: cb(by_num[rn]) for rn in armB_pool if rn in by_num}
+    pool = list(cbc)
+    RAD = 10.0
+    neigh = lambda s: sorted(rn for rn in pool if np.linalg.norm(cbc[rn] - cbc[s]) <= RAD)
+    armB = neigh(max(pool, key=lambda s: len(neigh(s)))) if pool else []
+    used, clusters = set(armB), ([armB] if armB else [])
+    for s in sorted(pool, key=lambda s: -len(neigh(s))):
+        p = neigh(s)
+        if s not in used and len(set(p) & used) < max(1, len(p) // 2):
+            clusters.append(p); used |= set(p)
+        if len(clusters) >= 5:
+            break
+    print(f"Arm-B conserved-surface COMPACT patch (densest 10A nbhd): n={len(armB)} {armB}")
+    print(f"   (alternate compact patches: {[c[:6] for c in clusters[1:5]]})")
+
+    # Arm-C: conserved apical-SURFACE patch near the {202,203,209} core, excluding the divergent tip.
+    div_tip = {204, 208, 210, 211, 212, 348, 371}
+    cen = np.mean([cb(by_num[i]) for i in CONSERVED_APICAL], axis=0)
+    armC_patch = sorted(rn for rn in range(APICAL_DOMAIN[0], APICAL_DOMAIN[1] + 1)
+                        if rn in by_num and rn in conserved and rn not in div_tip
+                        and rsasa_mono.get(rn, 0) > 0.20
+                        and np.linalg.norm(cb(by_num[rn]) - cen) < 13.0)
+    armC_hot = sorted(set(CONSERVED_APICAL) | set(armC_patch))
+    print(f"Arm-C conserved-apical-surface patch (<13A of core, surface, conserved, excl divergent tip): {armC_hot}")
 
     # 3) epitopes.json
     epitopes = {
         "target_pdb": "tfr1_human_ecto_A.pdb", "target_chain": "A", "numbering": "UniProt P02786 == construct",
         "armA_apical_human": {"hotspots": APICAL_FP, "center": 211, "domain": "apical (II)",
                               "note": "functional epitope (VP1u/GP1/6WRV site); Obj1+Obj3, Obj2 sacrificed"},
-        "armC_conserved_apical_subsite": {"hotspots": CONSERVED_APICAL,
-                              "expand_from": APICAL_FP,
-                              "note": "the 3 conserved apical residues {202,203,209}; max-min core, mechanism B, joint h+m MPNN"},
+        "armC_conserved_apical_subsite": {"hotspots": armC_hot, "core": CONSERVED_APICAL,
+                              "note": "conserved apical-surface patch near the {202,203,209} core (surface+conserved, excludes the divergent tip 204/208/210/211/212/348/371); max-min core, mechanism B, joint h+m MPNN"},
         "armB_conserved_nonapical": {"hotspots": armB,
                               "note": "largest compact conserved + dimer-surface-exposed cluster, outside apical & Tf-site(619-670) & dimer interface; cross-reactive specialist",
                               "alt_clusters": [c for c in clusters[1:5]]},

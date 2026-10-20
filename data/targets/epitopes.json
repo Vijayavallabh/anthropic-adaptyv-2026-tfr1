@@ -23,57 +23,41 @@
     "hotspots": [
       202,
       203,
-      209
+      206,
+      207,
+      209,
+      214,
+      344,
+      374
     ],
-    "expand_from": [
+    "core": [
       202,
       203,
-      204,
-      208,
-      209,
-      210,
-      211,
-      212,
-      348,
-      371
+      209
     ],
-    "note": "the 3 conserved apical residues {202,203,209}; max-min core, mechanism B, joint h+m MPNN"
+    "note": "conserved apical-surface patch near the {202,203,209} core (surface+conserved, excludes the divergent tip 204/208/210/211/212/348/371); max-min core, mechanism B, joint h+m MPNN"
   },
   "armB_conserved_nonapical": {
     "hotspots": [
-      694,
-      696,
-      704,
-      705,
-      706,
-      714,
-      717,
-      718,
-      725,
-      728,
-      729
+      150,
+      154,
+      156,
+      158,
+      160,
+      161
     ],
     "note": "largest compact conserved + dimer-surface-exposed cluster, outside apical & Tf-site(619-670) & dimer interface; cross-reactive specialist",
     "alt_clusters": [
       [
-        492,
-        495,
+        523,
+        525,
+        526,
+        527,
         530,
-        531,
-        533,
-        534,
-        559,
-        560,
-        562
+        531
       ],
       [
-        154,
-        156,
-        158,
-        160,
-        161
-      ],
-      [
+        123,
         600,
         604,
         605,
@@ -81,8 +65,17 @@
         608
       ],
       [
-        179,
-        394
+        705,
+        706,
+        714,
+        717,
+        718
+      ],
+      [
+        171,
+        175,
+        177,
+        431
       ]
     ]
   },
