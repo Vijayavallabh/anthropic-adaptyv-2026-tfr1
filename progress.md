@@ -213,3 +213,13 @@ interface target lysine (gpu2_18/gpu2_31/gpu5_34 all switch on it). Honest: sing
 modest; magnitude in-silico-unrankable -> select for mechanism DIVERSITY (mech-A + mech-B) + binding + novelty.
 TODO: His pKa in-window check (nearby K+ lowers His pKa; verify transition stays ≥6.0) — JustHISpKa env deferred.
 Mouse co-fold (13 plain binders) running on GPU0; expand 297/317 (full pool imminent).
+
+## F07 switch-His pKa (PROPKA first-pass) — 2026-10-20 late
+PROPKA (tools/pka-venv, uv) His pKa on the re-folded complex (model ref 6.50; higher=stronger in-window switch):
+- gpu5_12_sw2his His13 pKa **6.23** — BEST (near midpoint, buried His13-R17, binding IMPROVED) = flagship switch
+- gpu2_18_mA1 His47 **5.76** — good mech-A switch (bind 0.554)
+- gpu5_17_mA1 His36 **5.59** — acceptable mech-A (bind 0.702, best binding)
+- gpu2_31_mA1 His37 **5.28** — weak switch (nearby K287 lowered pKa; confirms the mech-A pKa-depression risk) → keep as a binder, switch marginal
+All have correct DIRECTION (Δn_H>0 across 7.4→6.0). Caveat: PROPKA is the weakest His predictor (R²~0.05,
+±1u) → treat as first-pass; confirm flagship(s) with JustHISpKa/pKAI before final. Magnitude unrankable →
+select for mechanism diversity. Switch-binder ranking so far: gpu5_12_sw2his > gpu2_18_mA1 ≈ gpu5_17_mA1 > gpu2_31_mA1.
