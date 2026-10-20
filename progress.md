@@ -146,3 +146,31 @@ downloading (b8d54a6ys); ESMFold2 env `.venv-esmfold2` available (single-seq fol
 
 **Pool expansion**: Chai-expand on 317 remaining apical designs (bzduk45hg) running → when done, re-run
 buried_switch_scan + build_multihis on the FULL F06-pass set (avoid rework on a partial pool).
+
+## F07 switch re-fold RESULT + F08 mouse prep + F09 diversity (2026-10-20 late)
+**Switch binding-retention re-fold** (Chai, paired vs parent iptm): switch-install is LOW-YIELD on retrofit —
+| design | parent iptm | switched iptm | verdict |
+|---|---|---|---|
+| armC_mini gpu5_12 sw2his | 0.407 | **0.491** | ✓ survives & IMPROVES (95aa, largest) |
+| armC gpu2_18 sw3his | 0.505 | 0.312 | marginal |
+| armC gpu2_31 sw2his | 0.569 | 0.300 | fail |
+| armC gpu2_18 sw2his | 0.505 | 0.190 | broke |
+| armC_mini gpu4_22 sw2his | 0.376 | 0.170 | broke |
+Root cause of breakage: burying His deletes a core hydrophobic -> fold destabilizes (not an interface clash;
+positions were >9Å from the interface). The one clean win is the LARGEST binder (more core to absorb His).
+- Fix 1 (`build_multihis.py`): interface-distance filter (His only >9Å from target contact).
+- Fix 2 (`mpnn_switch_repair.py`): install His -> ProteinMPNN repacks the CORE around them, FIXING target +
+  interface contacts + His sites (canonical Baker install). Test on gpu2_18_sw3his / gpu2_31_sw2his: His
+  retained, 55/85 (resp. core) positions redesigned -> re-fold pending (bc46c2iq0). Rescue decision test-first.
+
+**F09 fold diversity** (foldseek all-vs-all, TM≥0.6): 13 binders -> 6 clusters, but 8/13 share ONE fold
+(cluster 1: gpu4_21,gpu2_18,gpu5_34,gpu5_12,gpu1_14,gpu4_33,gpu4_28,gpu4_22 — helical bundles). Selection caps
+this lineage (~2 best: gpu4_21 top-affinity + gpu5_12 switch) + keeps the 5 singletons. SEVERE-dev members
+(gpu5_34,gpu1_14,gpu4_28) drop from cluster 1 naturally.
+
+**F08 mouse cross-species prep**: mouse apical receptor `data/targets/mouse_apical_189_383.seq` (human 189-383
+equiv from threaded mouse ecto; 75.4% id to human apical — more divergent than 78% ecto-wide). Co-fold ready.
+
+**Strategy (honest)**: switch yield is low on retrofit -> rely on (a) expanded pool (more + larger parents),
+(b) MPNN core-repair (if the test rescues binding), (c) prioritize large binders. Final 20 = MIX of
+switch-binders + strong plain binders (gpu4_21 etc.), as the switch step thins its own pool.

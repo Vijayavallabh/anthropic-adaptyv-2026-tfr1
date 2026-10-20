@@ -6,7 +6,7 @@ Usage: fold_diversity.py <name_TAB_pdb.tsv>... --out <dir> [--thr 0.6]
 """
 import sys, os, csv, subprocess, argparse, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FS = f"{R}/tools/foldseek_dl/foldseek/bin/foldseek"
+FS = f"{R}/tools/foldseek/bin/foldseek"
 ap = argparse.ArgumentParser(); ap.add_argument("tsvs", nargs="+"); ap.add_argument("--out", required=True)
 ap.add_argument("--thr", type=float, default=0.6); ap.add_argument("--chain", default="A")
 A = ap.parse_args()
