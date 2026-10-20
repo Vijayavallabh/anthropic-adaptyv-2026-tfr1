@@ -197,3 +197,19 @@ actually sits by a cation (re-fold can move it away). First fully-validated swit
   buried His-Arg pair still = a real switch.) 95aa, developability CLEAN (Nglyc2 only).
 Switch-binder gate = binding-retained (Chai≥~0.35) ∧ switch_contacts total≥2 on the re-folded model.
 Next: mech-A re-fold (18 seqs, bhmf2we3p) -> same gate; then pKa in-window check (JustHISpKa, env deferred).
+
+## F07 mech-A RESULT: 4 validated switch-binders (2026-10-20 late)
+Mech-A single-His (mA1) retains binding 8/9 (vs mech-B retrofit 1/6) — SOTA pivot validated. 2-His (mA2)
+mostly broke binding -> single interface His is the gentle, binding-safe switch. Switch GEOMETRY check
+(switch_contacts on the re-folded model) narrows to those whose His actually sits by a cation:
+| switch-binder | mech | His->cation | dist | bind iptm (parent) |
+|---|---|---|---|---|
+| armC_mini gpu5_17 mA1 | A | His36->K194(tgt) | 6.0Å | 0.702 (0.475) |
+| armC gpu2_31 mA1 | A | His37->K287(tgt,apical99) | 5.6Å | 0.616 (0.569) |
+| armC gpu2_18 mA1 | A | His47->K287(tgt) | 4.9Å | 0.554 (0.505) |
+| armC_mini gpu5_12 sw2his | B | His13->R17(binder) | 3-4Å ×4 | 0.491 (0.407) |
+(armA gpu5_34 mA1 works 0.504 but dev-SEVERE -> deprioritize.) K287 (apical resnum 99) is a recurring
+interface target lysine (gpu2_18/gpu2_31/gpu5_34 all switch on it). Honest: single-His mech-A ≈ 1 pH unit,
+modest; magnitude in-silico-unrankable -> select for mechanism DIVERSITY (mech-A + mech-B) + binding + novelty.
+TODO: His pKa in-window check (nearby K+ lowers His pKa; verify transition stays ≥6.0) — JustHISpKa env deferred.
+Mouse co-fold (13 plain binders) running on GPU0; expand 297/317 (full pool imminent).
