@@ -50,10 +50,25 @@
   - **af2ig REBUILT + verified** (`docs/TOOLS.md`): the honest de-novo binding gate for F06. Next
     generator for lineage diversity = PXDesign (rebuild); RFd3 only if F07 needs it.
 
+## In progress — F06 binding validation
+- **af2ig status: CUDA crash FIXED, but af2_initial_guess output is UNRELIABLE on this install — DEFERRED.**
+  - Fixed the GPU segfault (kit CUDA 12.9 vs this box's CUDA-13 driver → pinned venv to CUDA 12.8 +
+    cudnn 9.8.0.87; `docs/TOOLS.md`). Core GPU ops now verified correct (matmul/conv/einsum/softmax, no NaN).
+  - BUT the **6WRV/3DS18 positive control FAILS** (binder rmsd 6.3–6.7, pae_int 20–28, plddt_binder 73)
+    and the kit's own barnase–barstar warm scores garbage (rmsd 10.8, plddt_binder 42) — af2ig RUNS
+    (rc=0) but does not reproduce a known binder. Params sha256 MATCH the kit pin; inputs verified; CUDA
+    ops correct ⇒ the fault is in af2_initial_guess's initial-guess application/patch, not CUDA/params/input.
+    Needs deeper debug (uncertain time) — deferred, not trusted. **A gate that fails its positive control
+    must not be used** (lesson: validation gates must fail loud + have a positive control).
+- **PIVOT: F06 gate = Boltz-2 + Chai-1 two-folder consensus**, discriminated by (a) pose self-consistency
+  (co-fold recapitulates the designed pose: binder RMSD-to-design after target-align), (b) ipSAE_min +
+  iPAE, (c) 2-folder agreement — with a **6WRV positive control** and a **scrambled-sequence negative
+  control** to prove the gate separates binders from the over-dock floor. Run on the 546 protein pool
+  (pre-rank by triage iface, co-fold top subset first).
+
 ## Next
-- **F06 binding** — port af2ig driver (crop target to epitope nbhd for speed), run on the protein pool
-  (rmsd<2 ∧ pae_int<10 ∧ plddt_binder>80), then Boltz-2 + Chai-1 2-folder consensus + ipSAE on survivors.
-- Then F05 joint multi-state MPNN (cross-species rescue for Arm B/C) → F07 switch → F08 mouse → F09/F10.
+- Build Boltz/Chai cofold+score driver (+controls) → rank 546 → F05 joint multi-state MPNN (cross-species
+  rescue, Arm B/C) → F07 switch → F08 mouse → F09 novelty/dev → F10 select. Revisit af2ig if time allows.
 
 ## Key risks / lessons carried from TNF (Challenge 2) and GLP1R (Challenge 3)
 - Cross-species pH-switch transfer is NOT free (only ~5/18 TNF designs held in mouse; strength did
