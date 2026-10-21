@@ -18,11 +18,9 @@
   "weights_non_helical": 1.0,
   "weights_binder_helicity": 0,
   "max_helix_fraction_final": 0.5,
-  "filters": {
-    "Binder_BetaSheet_Fraction": {"threshold": 0.2, "higher": true},
-    "Binder_Free_Cysteines": {"threshold": 0, "higher": false, "mandatory": true}
-  },
-  "min_iptm_final": 0.6,
+  "max_surface_hydrophobicity_final": 0.45,
+  "max_binder_free_cysteines_final": 0,
+  "min_iptm_final": 0.65,
   "min_plddt_refine": 0.65,
   "min_plddt_mutate": 0.65
 }
