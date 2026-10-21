@@ -292,3 +292,16 @@ HUGE improvement over BoltzGen (~1 novel). Caveat: all 0.70-0.80 (3/4 PASS but n
 0 robust <0.65) -> user portal check is the final novelty authority. Chai binding validation launched on the 31
 (b4sumfysu); Boltz YAMLs prepped for the dual gate. Next: Chai∧Boltz binders -> switch (mech-A/B) -> x-species
 -> developability -> select ≤20 (novel RFd1 binders + gpu5_17 floor). The long-binder RFd1 path WORKS for novelty.
+
+## Novel-binder yield reality + refined plan (2026-10-21)
+- des_160_mpnn1 (the 1 novel RFd1 binder): Chai 0.639 but **Boltz 0.317 => Chai-ONLY** (fair, RFd1 is Boltz-independent).
+- Partial diffusion from des_160: DUD — children drift to extended/non-novel (parent is marginal-novel 0.793, so children
+  inherit marginal/worse). Dropped. Partial diffusion needs a ROBUSTLY-novel (<0.65) parent, which I don't have.
+- **Brutal yields**: novel+binding ~0.5% de-novo, and those are mostly Chai-only + MARGINAL novelty (0.70-0.80, near DQ line).
+- **Best design remains gpu5_17** (BoltzGen): novel 0.757 + dual-folder binding (Chai .475 ∧ Boltz .809) + mech-A/B switch +
+  cross-reactive (mouse 0.475). The most complete single design across all axes.
+**Refined plan**: scale de-novo RFd1 volume (long2 420 running + more rounds) with nseq=8 in the MPNN step (4x binding
+chances/backbone — rescues near-miss backbones at Chai 0.25-0.30) -> accumulate marginal-novel Chai-confirmed binders.
+Realistic target ~8-15 novel binders (not a forced 20). Portfolio: gpu5_17 (anchor) + des_160 + novel RFd1 binders;
+switch where it survives; USER portal novelty check is the final gate (oracle is noisy). Honest: a 20-strong-on-every-axis
+submission is not achievable with these tools; aim for the best legitimate novel+switch+xreact portfolio.
