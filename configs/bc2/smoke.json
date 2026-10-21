@@ -1,0 +1,24 @@
+{
+  "modality": "binder",
+  "campaign_name": "tfr1_smoke",
+  "project_folder": "/home/prachh/v/anthropic-adaptyv-2026-tfr1/runs/f12/bc2/smoke",
+  "targets": [
+    {
+      "name": "TfR1_apical",
+      "target_path": "/home/prachh/v/anthropic-adaptyv-2026-tfr1/data/targets/tfr1_apical_189_383.pdb",
+      "chains": "A",
+      "hotspots": "A203,A209,A211"
+    }
+  ],
+  "binder_lengths": [60, 100],
+  "number_of_final_designs": 1,
+  "max_trajectories": 4,
+  "aa_bias": {"C": 0},
+  "forced_targeting": true,
+  "weights_non_helical": 1.0,
+  "weights_binder_helicity": 0,
+  "max_helix_fraction_final": 0.5,
+  "min_iptm_final": 0.5,
+  "min_plddt_refine": 0.6,
+  "min_plddt_mutate": 0.6
+}

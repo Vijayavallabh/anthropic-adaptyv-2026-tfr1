@@ -1,0 +1,28 @@
+{
+  "modality": "binder",
+  "campaign_name": "tfr1_apical_mixtopo",
+  "project_folder": "/home/prachh/v/anthropic-adaptyv-2026-tfr1/runs/f12/bc2/mixtopo",
+  "targets": [
+    {
+      "name": "TfR1_apical",
+      "target_path": "/home/prachh/v/anthropic-adaptyv-2026-tfr1/data/targets/tfr1_apical_189_383.pdb",
+      "chains": "A",
+      "hotspots": "A203,A209,A211"
+    }
+  ],
+  "binder_lengths": [60, 120],
+  "number_of_final_designs": 40,
+  "max_trajectories": 400,
+  "aa_bias": {"C": 0},
+  "forced_targeting": true,
+  "weights_non_helical": 1.0,
+  "weights_binder_helicity": 0,
+  "max_helix_fraction_final": 0.5,
+  "filters": {
+    "Binder_BetaSheet_Fraction": {"threshold": 0.2, "higher": true},
+    "Binder_Free_Cysteines": {"threshold": 0, "higher": false, "mandatory": true}
+  },
+  "min_iptm_final": 0.6,
+  "min_plddt_refine": 0.65,
+  "min_plddt_mutate": 0.65
+}

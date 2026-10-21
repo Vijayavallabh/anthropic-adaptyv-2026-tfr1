@@ -305,3 +305,49 @@ chances/backbone — rescues near-miss backbones at Chai 0.25-0.30) -> accumulat
 Realistic target ~8-15 novel binders (not a forced 20). Portfolio: gpu5_17 (anchor) + des_160 + novel RFd1 binders;
 switch where it survives; USER portal novelty check is the final gate (oracle is noisy). Honest: a 20-strong-on-every-axis
 submission is not achievable with these tools; aim for the best legitimate novel+switch+xreact portfolio.
+
+## Developability + spec-driven strategy pivot to BindCraft (2026-10-21)
+Re-read configs/target.yaml (authoritative). Key facts that reshape the plan:
+- **Epitope** apical [202,203,204,208,209,210,211,212,348,371]; **conserved-in-mouse = ONLY 202,203,209**
+  (I/V/L, hydrophobic). Exposure (isolated-domain neighbor count): 202 BURIED, 203 mid, **209 EXPOSED**,
+  211 EXPOSED(center), 204/208/212 exposed but DIVERGENT, 371 buried. => the conserved surface is small
+  (209 the one well-exposed conserved anchor); full cross-reactivity is intrinsically hard.
+- **Switch**: mech-A (interface His vs target cation) is HUMAN-SPECIFIC (apical basics R208,K371 diverge
+  in mouse) -> my gpu5_17_mA1/gpu4_28_mA1 are human-only. mech-B (buried multi-His) = cross-reactive.
+  Physics budget: single His ~=25x (near floor); **need 2-3 SEPARATED His**. Selector prefers a weak-but-
+  clear switch over a strong non-switch -> pH-selectivity is THE highest-value property.
+- **Novelty**: Adaptyv 1-4 LEVEL scale, hard gate >=3, BINDING-PART ONLY, target 4. NO-FLY 6WRV/3DS18/TB14/VP1u.
+- **Submission**: ranked <=20, selector takes <=10 from the TOP (front-load best ~10), diversify ~2/lineage
+  across 9 classes (miniprotein/small/peptide/Fab/nanobody/scFv/monobody/DARPin/affibody).
+
+DEVELOPABILITY AUDIT (scripts/developability_scan.py on the novel core) — DECISIVE:
+- gpu5_17 GRAVY +1.29, gpu5_26 +1.19 (SEVERE), gpu4_28 +0.95 (SEVERE, 11-res hydrophobic run). ALL 3
+  BoltzGen novel binders are EXTREMELY hydrophobic (expression/aggregation risk) — because the conserved
+  hotspots are hydrophobic AND MPNN made the WHOLE binder hydrophobic.
+- des_160 (RFd1): LIAB=1, 52% charged, SOLUBLE. RFd1+MPNN binders are DEVELOPABLE; BoltzGen are not.
+=> A binder that won't express can't win. This re-justifies de-novo (soluble) over BoltzGen, AND motivates
+   BindCraft (built-in Surface_Hydrophobicity/liability filters keep the NON-interface surface polar).
+
+Novelty table rebuilt (coverage-wtd foldseek + pLDDT gate, pLDDT is 0-1 scale):
+- **Novel dual-binders (level 3)**: gpu5_17 (covwTM 0.757, pLDDT .70), gpu5_26 (0.761, .80),
+  gpu4_28 (0.774, .90 = most trustworthy). All PDB-only lower bounds (AFDB raises) -> portal is the authority.
+- gpu4_33 covwTM 0.000 = FALSE novelty (ESMFold garbage: 41aa, pLDDT 0.6, zero foldseek hits). EXCLUDED.
+- Switches generated (mech-A, scripts/mech_a_scan.py -> runs/f07/mecha_novel.csv): gpu5_17_mA1(validated)/mA2,
+  gpu4_28_mA1/mA2. gpu5_26 yields NO mech-A (no target cation near interface) -> plain-binder or mech-B only.
+
+**BindCraft2 PIVOT** (SOTA, installed+proven in the glp1r project; TfR1 project had only AF2 params):
+BindCraft gives soluble + AF2-validated (3rd folder beyond Chai/Boltz) + de-novo binders, with modalities
+(binder/large_binder/VHH/scFv/Fab = the 9 submission classes) and properties (**mixed_topology** = alpha/beta
+folds rarer in PDB -> beats the "helical bundle caps at 3/4" novelty ceiling; humanize; termini_accessible
+for the C-term Twin-Strep tag). This fills the exact gap: BoltzGen=novel+strong+hydrophobic; RFd1=novel+
+soluble+weak; **BindCraft target = novel(mixtopo)+soluble+strong**. Campaign prepared:
+runs/f12/bc2/mixtopo.json (binder, apical hotspots A203,A209,A211=conserved-anchored, 60-120aa, 0-Cys,
+non-helical weights, betasheet>=0.2, iptm>=0.6, 40 finals/400 traj) + smoke.json. Switch installed post-hoc.
+
+GPU STATE: all 8 GPUs are running the USER's GLP1R BindCraft 4-arm campaign (deadline 2026-10-25 = SOONER
+than TfR1 2026-11-01). NOT clobbering it. Watcher bcbwo5wzi waits for it to finish, then re-invokes.
+Staged for the GPU window: (1) BindCraft TfR1 smoke -> full mixtopo campaign; (2) RFd1 funnel on 1472 staged
+seqs (long2 nseq8 1136 + long1 rescue nseq16 336) via self_consistency -> Chai -> Boltz; (3) re-fold the new
+switches (gpu5_17_mA2, gpu4_28_mA1/mA2) to confirm binding retained; (4) mech-B multi-His on survivors.
+Current best complete design remains gpu5_17 (novel+dual-bind+switch, but hydrophobic). Portfolio target:
+diverse soluble novel switch-binders, front-load ~10, user portal novelty check is the final gate.
