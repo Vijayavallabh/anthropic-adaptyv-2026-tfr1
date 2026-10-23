@@ -452,3 +452,8 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
 - KEY RESULT: RFD4 yields excellent NOVEL SOLUBLE cross-reactive BINDERS beyond des_25 (breaks the RFd1 x-react wall), BUT auto-placed mech-B buried-His switch loses geometry on these backbones (mechB 0-1 after refold) - same wall des_25 hit (only specific His pairs retain). Only g7_8_sw2his got a valid switch (mech-A, total4).
 - v4 = v3 core (des_25_sw2b_A9_A25 flagship retained) + 4 RFD4 lineages (g7_8 valid-switch #6; g7_1/g5_14/g2_132 x-react depth) replacing 4 weakest v3 hedges. submissions/tfr1_track2_v4.csv validated PASS (20/0/0).
 - All 8 GPUs utilized throughout (packed folding + 6-GPU generation waves).
+
+## 2026-10-24 portal novelty + g7_1 switch rescue (v5)
+- Portal novelty on v4: 19/20 PASSED; d107_m5_sw2his NOT PASSED ("contains a known binder fragment") - matches its covwTM 0.82 flag. Dropped.
+- g7_1 per-backbone His-pair tuning (13 combos: singles+pairs across K15/R36/K42): NONE achieved valid mech-B geometry (mechB 0-1 after refold); g7_1 backbone cations don't retain His contact. mech-A would be species-specific. => g7_1 stays an x-react BINDER hedge, no designable switch. Reconfirms des_25_sw2b_A9_A25 as the unique switch+x-react design.
+- v5 = v4 minus d107; g7_1/g5_14/g2_132 (no valid switch) demoted to hedge ranks 11-13; d386 promoted to #10; g6_32_sw2his added #20. Top-10 now all valid-switch designs. submissions/tfr1_track2_v5.csv validated PASS. (Re-run portal on v5: g6_32 is new, unchecked.)
