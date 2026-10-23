@@ -15,7 +15,7 @@ pids=()
 for i in "${!G[@]}"; do
   g=${G[$i]}; [ -n "$(ls -A "$OUT/sh$i"/*.yaml 2>/dev/null)" ] || continue
   CUDA_VISIBLE_DEVICES=$g "$BOLTZ" predict "$OUT/sh$i" --out_dir "$OUT/pred$i" --devices 1 \
-    --recycling_steps 3 --sampling_steps 50 --diffusion_samples 1 --output_format pdb --override --use_msa_server \
+    --recycling_steps 3 --sampling_steps 50 --diffusion_samples ${DIFF_SAMPLES:-1} --output_format pdb --override $([ "${NOMSA:-0}" = 1 ] || echo --use_msa_server) \
     > "$OUT/sh$i.log" 2>&1 &
   pids+=($!); sleep 6
 done

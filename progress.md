@@ -435,3 +435,12 @@ Expansion (10 new backbones): only 3 boltz-only keepers (His mutations broke bin
 FINAL submissions/tfr1_track2_final.csv (16, ranked, <=2/bb, PASS). Front-7 DUAL-confirmed; front-10 = 7 dual + 3 boltz-only xreact hedges (l2_des_417, l2_des_408). All: mech-B switch (swG>=2), soluble (0-Cys, GRAVY<0.3), novel covwTM 0.67-0.82 (PDB-only L3; portal=authority; lower=safer).
 Objectives: #1 switch (all valid mech-B) / #2 xreact (flagship ratio 1.26, several 0.5-0.7) / #3 affinity (bolt 0.58-0.84, 7 dual). Baselines: v1(12), v2(12), final(16) all validated.
 UPLOAD USER-GATED. Novelty portal check = final gate before upload.
+
+## 2026-10-23 /ambition-lift reassessment (v3)
+- **Flagship upgraded (evidence-based):** old #1 single-His d25_sw1_A9 -> NEW #1 d25_sw2b_A9_A25 (2 His: A9/R13 + A25/R28).
+  Reval f15 (clean, POS_3DS18 Chai0.72/NEG0.14): Chai0.50 + Boltz0.53 (dual), x-react ratio 0.96 Chai / 1.50 Boltz (best), mech-B swG4-6.
+  Root cause of earlier miss: "des_25 multi-His breaks Chai" was a BAD His pair (A9+A54 Chai0.31); A9+A25 passes (0.50).
+- **Top-10 fixed:** dropped Chai-failing d408 (0.178) from top-10; demoted Boltz-only d417 (Chai0.29) + novelty-borderline d107 (covwTM0.82).
+- **submissions/tfr1_track2_v3.csv** = 20 ranked, validate_submission --track 2 PASS (0 errors). Prior: final.csv(16), v1/v2.
+- **SOTA scan (2 subagents):** keep Boltz/Chai + mech-B buried-His; switch magnitude still unrankable. Gap = generator diversity (organizers' own Aug-2026 protocol: PXDesign/RFd3/Genie3 lead; flat targets->Genie3/PXDesign; SolubleMPNN; ESMFold2+Protenix v2 ipSAEmin filter).
+- **STRETCH (in progress):** RFD4-Proteina confirmed working (runs/f16; needs atomworks CIF w/ bonds+label_seq, not PDB/gemmi-cif). Full wave launched (8 GPU x128) targeting conserved apical sub-site (hotspots 202/203/209) for a 2nd x-react lineage + novel folds. Next: SolubleMPNN -> dual-species screen -> switch -> triple-confirm (Boltz+Chai+Protenix v2, ipSAEmin). +PXDesign/Genie3/RFd1-conserved planned.
