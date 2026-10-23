@@ -361,3 +361,24 @@ Driver: scripts/sc_shard.sh (shards self_consistency.py; per-shard struct-dir av
 SC gates: self-consistent bb_TM>=0.80 & rmsd<=2.5; novel covwTM<0.80 (robust<0.65).
 **NB long2 & long1_rescue share stems** (des_160 etc. = DIFFERENT backbones per batch) → keep outputs namespaced; prefix l2_/l1_ when merging survivors for Chai∧Boltz.
 Next: smoke passes → full mixtopo campaign; SC done → filter sc&novel → Chai∧Boltz dual-gate (receptor=data/targets/apical_domain_189_383.seq, mouse=mouse_apical_189_383.seq).
+
+## 2026-10-23 — smoke verdict + funnel results (live)
+**BindCraft smoke (b6r0x3c86, non-helical):** config VALID, pipeline works end-to-end (target 195aa, hotspots A203/209/211, forced-targeting lysinated 101/195). 0/4 accepted — 2 strong trajectories (anneal i_pTM 0.83, 0.64) COLLAPSED at harden (0.08, 0.20) = aggressive non-helical pressure fragile under sequence hardening. Helical already clears novelty GATE(≥3); non-helical only pushes toward level-4 target. → running moderate-helix diagnostic.
+**smoke2 (bz245pdas, GPU0):** weights_non_helical 1.0→0.3, max_helix_fraction 0.5→0.7, 8 traj → decides full-campaign helix.
+**long1_rescue SC (bcyghampl):** 336 seqs → 178 self-consistent&novel (53%, from 21 proven-novel backbones). Top novelty covwTM 0.667-0.72 (solid L3, nearing robust<0.65). bb_TM 0.85-0.98.
+**long1r Chai triage (b6653bpwk, GPU6-7):** 178 survivors (l1_ prefix) vs human apical, samples=3 → runs/f12/chai/long1r. Chai-FIRST screen; Boltz-confirm shortlist only (avoids Boltz on ~500).
+**long2 SC (bup010hgx, GPU1-5):** 1136 seqs, still running.
+GPU map: 0=smoke2 | 1-5=long2 SC | 6-7=long1r Chai. Next: smoke2→campaign helix decision; long2 SC→long2 survivors→Chai; long1r Chai→rank→Boltz-confirm shortlist.
+
+## 2026-10-23 — BindCraft harden-collapse is NOT helix; long2 survivors
+**smoke2 (moderate-helix) 0/8** — SAME harden-collapse: every trajectory reaching good anneal i_pTM (0.60-0.75) collapsed at harden (0.09-0.33). → helix content NOT the cause. Systematic suspect: **forced_targeting lysinates 52% (101/195) of target surface** = artificial charge field the binder exploits soft-stage but can't hold when hardened.
+**smoke3 (b2n2bjljp, GPU0):** forced_targeting=false, default helix, no final dev-filters = pure "can BindCraft bind this apical target at all" feasibility test. If 0/8 again → cut BindCraft (target too hard), go all-in RFd1 funnel + switch. If accepts → reintroduce constraints.
+**long2 SC:** 255 sc&novel (8 robust covwTM<0.65: des_81_mpnn3 0.571, des_214_mpnn5 0.573...). 57 unique backbones. → Chai triage bkj0arm8o GPU1-5.
+**parse_boltz.py:** added "apical" hotspot set + l1_/l2_→apical mapping (correct on-epitope contact counting for RFd1 designs).
+GPU map: 0=smoke3 | 1-5=long2 Chai | 6-7=long1r Chai.
+
+## 2026-10-23 — BindCraft root-caused via GLP1R working config
+**smoke3 (forced_targeting OFF):** traj1 PASSED harden at i_pTM=0.79 (real AF2 interface!) then died at MUTATE (0.79→0.18, pLDDT→0.42). Two tunable killers: forced_targeting (harden) + mutate-stage MPNN interface-redesign (binding, = af2-seq-specific lesson).
+**Root cause via GLP1R campaign_settings.json (produced 30 designs, same install):** my minimal configs left defaults. Key proven levers missing: **redesign_interface=false** (no interface MPNN-redesign at mutate), **sequence_candidates=10 / kept_sequences=1** (10 MPNN tries, keep best), **min_plddt_mutate=0.55** (I had 0.65), explicit min_iptm_harden/mutate=0.5, mpnn_variant=negative, full filters/losses/weights blocks.
+**apical_test.json (bvzhr22fm, GPU0):** GLP1R config + overrides {modality binder, lengths 60-120, forced_targeting FALSE, hotspots A203/209/211, 30 traj, 5 designs}. Dev left permissive (aa_bias C:0) → post-filter. Go/no-go: >=2-3 accepts in 30 → full campaign (450 traj, 40 designs, multi-GPU); ~0 → cut BindCraft, all-in RFd1.
+GPU map: 0=BindCraft test | 1-5=long2 Chai | 6-7=long1r Chai.

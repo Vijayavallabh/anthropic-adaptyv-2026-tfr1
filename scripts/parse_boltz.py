@@ -14,6 +14,7 @@ warnings.filterwarnings("ignore")
 APICAL_OFFSET = 188  # output chain-B residue j -> UniProt 188+j
 HOT = {"armA": {202,203,204,208,209,210,211,212,348,371},
        "armC": {202,203,206,207,209,214,344,374}, "armC_mini": {202,203,206,207,209,214,344,374},
+       "apical": {202,203,204,208,209,210,211,212,348,371},  # target.yaml epitope (RFd1 l1_/l2_ designs)
        "POS": {202,203,206,207,209,214,344,374,348,371,204,208,210,211,212}, "NEG": set()}
 
 
@@ -23,6 +24,8 @@ def heavy(res):
 
 
 def arm_of(name):
+    if name.startswith("l1_") or name.startswith("l2_"):
+        return "apical"
     for k in ("armC_mini", "armA", "armC", "armB", "POS", "NEG"):
         if name.startswith(k):
             return k
