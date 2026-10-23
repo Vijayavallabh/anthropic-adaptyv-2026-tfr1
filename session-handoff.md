@@ -1,6 +1,6 @@
 # session-handoff
 
-**Repo:** `/home/prachh/v/anthropic-adaptyv-2026-tfr1` (private; local git, no remote)
+**Repo:** `/home/prachh/v/anthropic-adaptyv-2026-tfr1` — private GitHub `Vijayavallabh/anthropic-adaptyv-2026-tfr1` (`origin/main`)
 **Challenge:** Anthropic × Adaptyv 2026 #4 — conditional TfR1 / CD71 binder.
 **Deadline:** 2026-11-01 23:59 AoE. Track 2/3, ≤20 designs, Claude-selected (upload user-gated).
 
