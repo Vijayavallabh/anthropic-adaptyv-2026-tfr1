@@ -429,3 +429,9 @@ ALL soluble (0-Cys, GRAVY mostly neg), novel L3 (covwTM 0.67-0.82).
 RUNNING: Chai-restrained dual-confirm of the 14 SWITCHED (submitted) seqs (btpm5ktlu) — final gate (esp l2_417 parent Chai-weak).
 SUBMISSION fmt: name,sequence,molecule_class=protein; Track2/3 ranked<=20 front-load10 <=2/bb. Validate via scripts/validate_submission.py --track 2. Upload USER-GATED.
 RANK PLAN (front-load): triple-winners first (by xreact,switch,bind,novelty), then switch+bind; <=2/bb.
+
+## 2026-10-23 — DEFINITIVE FINAL: 16 switch-valid designs (12 bb, 7 dual-confirmed)
+Expansion (10 new backbones): only 3 boltz-only keepers (His mutations broke binding or switch for most new bb). Single-His RESCUE of l2_des_25 -> sw1_A9 DUAL (0.62/0.63) + mouse 0.78 ratio 1.26 + swG3 = TRIPLE-WINNER flagship (#1).
+FINAL submissions/tfr1_track2_final.csv (16, ranked, <=2/bb, PASS). Front-7 DUAL-confirmed; front-10 = 7 dual + 3 boltz-only xreact hedges (l2_des_417, l2_des_408). All: mech-B switch (swG>=2), soluble (0-Cys, GRAVY<0.3), novel covwTM 0.67-0.82 (PDB-only L3; portal=authority; lower=safer).
+Objectives: #1 switch (all valid mech-B) / #2 xreact (flagship ratio 1.26, several 0.5-0.7) / #3 affinity (bolt 0.58-0.84, 7 dual). Baselines: v1(12), v2(12), final(16) all validated.
+UPLOAD USER-GATED. Novelty portal check = final gate before upload.
