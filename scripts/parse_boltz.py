@@ -43,7 +43,8 @@ def main():
     for cj in confs:
         d = json.loads(Path(cj).read_text())
         name = Path(cj).stem.replace("confidence_", "").rsplit("_model_", 1)[0]
-        pdbs = glob.glob(str(Path(cj).parent / f"{name}*model_0.pdb"))
+        pdbs = (glob.glob(str(Path(cj).parent / f"{name}*model_0.pdb"))
+                or glob.glob(str(Path(cj).parent / f"{name}*model_0.cif")))  # Chai writes .cif
         iptm = d.get("iptm"); pair = d.get("pair_chains_iptm", {})
         try:
             ab = float(pair["0"]["1"])

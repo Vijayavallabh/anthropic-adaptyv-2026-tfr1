@@ -382,3 +382,23 @@ GPU map: 0=smoke3 | 1-5=long2 Chai | 6-7=long1r Chai.
 **Root cause via GLP1R campaign_settings.json (produced 30 designs, same install):** my minimal configs left defaults. Key proven levers missing: **redesign_interface=false** (no interface MPNN-redesign at mutate), **sequence_candidates=10 / kept_sequences=1** (10 MPNN tries, keep best), **min_plddt_mutate=0.55** (I had 0.65), explicit min_iptm_harden/mutate=0.5, mpnn_variant=negative, full filters/losses/weights blocks.
 **apical_test.json (bvzhr22fm, GPU0):** GLP1R config + overrides {modality binder, lengths 60-120, forced_targeting FALSE, hotspots A203/209/211, 30 traj, 5 designs}. Dev left permissive (aa_bias C:0) → post-filter. Go/no-go: >=2-3 accepts in 30 → full campaign (450 traj, 40 designs, multi-GPU); ~0 → cut BindCraft, all-in RFd1.
 GPU map: 0=BindCraft test | 1-5=long2 Chai | 6-7=long1r Chai.
+
+## 2026-10-23 — STRATEGIC INFLECTION: apical epitope walls de-novo confident binding
+**long2 RFd1 Chai (255 survivors): ZERO on-epitope confident binders.** Confident ones (iptm 0.6-0.68) dock OFF-epitope at UniProt 259-300 (stickier patch); on-epitope ones (hot>=3) all iptm<=0.30, ipae>18. Verified NOT a pipeline bug: RFd1 correctly used input=tfr1_apical_189_383.pdb, hotspots=[A202,A209,A211]. De-novo binders simply aren't apical-specific (flat/polar/buried epitope — matches lesson-denovo-wall-flat-polar-target).
+**BoltzGen "dual binders" re-examined (f06): weak 2-folder consensus** — gpu5_17 chai0.475/boltz0.809, gpu5_26 0.423/0.852, gpu4_28 0.394/0.812. High Boltz (lineage-biased) but Chai (independent)=0.4 weak. + hydrophobic. Not robustly confirmed.
+**BindCraft proven-config test: 0/18 so far** (likely cut if 0/30).
+**Conclusion forming:** no method yields a STRONG two-folder apical binder; epitope is the central wall. This is WET-LAB-judged → in-silico = prior, not verdict. Winning play = DIVERSE portfolio of best on-epitope binders (any lineage) + pH-switch, front-load best-evidence, trust wet lab.
+**Unexploited lever = PARTIAL DIFFUSION from the BoltzGen apical binders** (pose-preserving; beats de-novo ~11% vs 0.3%; lesson-rfd-partial-diffusion-beats-denovo). Diversify fold toward novelty+solubility while KEEPING the one apical pose that scores. Pending refold (bi6lqhjci) confirms their on-epitope landing + switch-retention first.
+GPU map: 0=BindCraft test | 1-5=best-asset refold Chai | 6-7=long1r Chai.
+
+## 2026-10-23 — VALIDATOR WAS BROKEN (positive control 3DS18 drifts to sink)
+POSITIVE CONTROL: crystal-true apical binder 3DS18 (6WRV, footprint [199-215,340-376]) blind-co-folded (Chai) vs apical fragment -> docks 259-300 SINK, iptm 0.204, 0 apical contacts. f06 latent evidence: blind POS_3DS18 iptm 0.20 (chai)/0.28 (boltz) — never checked. => blind single-seq co-fold CANNOT validate apical binding here; ALL prior "binders" (RFd1+BoltzGen, both folders) scored the sink. My "nothing binds apical" conclusion was a validator artifact.
+FIX: pocket-RESTRAINED Boltz (scripts/prep_boltz_pocket.py; apical chainB resids [14,15,16,20,21,22,23,24,160,183], max_distance 6, force true).
+CALIBRATION (bb0dsrhgi, GPU0-5): 33 candidates (30 long2 + 3 BoltzGen) + POS_3DS18 + 2 NEG scrambles. Gate: POS high + NEG low => method discriminates => run full 433 survivors restrained.
+BindCraft apical_test: 0/30 even with proven GLP1R config (set aside; AF2 hallucination can't make confident apical binder — but its internal validation is pose-aware so this is a truer 'hard' signal).
+Saved memory [[lesson-tfr1-apical-blind-cofold-fails-poscontrol]].
+
+## 2026-10-23 — BREAKTHROUGH: pocket-restrained validator works; real apical binders found
+CALIBRATION (pocket-restrained Boltz, force=true): POS_3DS18 ab_iptm=0.863 ipae=5.95 hot=13 (vs 0.20 blind!); NEG scrambles 0.20-0.32 ipae>19 hot=0. Method DISCRIMINATES cleanly. Real apical binders in the 30-design calib subset: l2_des_344_mpnn1 (0.74/ipae8/hot6), l2_des_241_mpnn6 (0.72/hot8), l2_des_136_mpnn1 (0.69/hot10), gpu5_26 (0.76/hot5), ~13 pass ab_iptm>=0.55 & ipae<=12 & hot>=5 & iplddt>=0.8.
+FULL VALIDATION (bbj7b5r2e, 8 GPUs): all 440 candidates (long2 255 + long1r 178 + BoltzGen 3 + mechA 4) + 3 controls, pocket-restrained Boltz -> runs/f12/pocket/full_out. Killed obsolete long1r blind Chai (b6653bpwk) to free GPUs.
+NEXT: parse full_out -> gate (ab_iptm>=0.55,ipae<=12,hot>=5,iplddt>=0.8 vs POS0.86/NEG0.32) -> INDEPENDENT confirm (Chai pocket-restrained, add restraint support) -> developability -> switch (mech-B multi-His) -> mouse x-react (pocket-restrained vs mouse_apical) -> novelty -> select 20.
