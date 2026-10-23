@@ -457,3 +457,9 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
 - Portal novelty on v4: 19/20 PASSED; d107_m5_sw2his NOT PASSED ("contains a known binder fragment") - matches its covwTM 0.82 flag. Dropped.
 - g7_1 per-backbone His-pair tuning (13 combos: singles+pairs across K15/R36/K42): NONE achieved valid mech-B geometry (mechB 0-1 after refold); g7_1 backbone cations don't retain His contact. mech-A would be species-specific. => g7_1 stays an x-react BINDER hedge, no designable switch. Reconfirms des_25_sw2b_A9_A25 as the unique switch+x-react design.
 - v5 = v4 minus d107; g7_1/g5_14/g2_132 (no valid switch) demoted to hedge ranks 11-13; d386 promoted to #10; g6_32_sw2his added #20. Top-10 now all valid-switch designs. submissions/tfr1_track2_v5.csv validated PASS. (Re-run portal on v5: g6_32 is new, unchecked.)
+
+## 2026-10-24 v6: 20 distinct backbones (remove within-upload redundancy)
+- User: no "similar designs in this upload" (v5 reused des_25/206/223/4 across switch variants).
+- Switch-installed + refolded 12 fresh distinct RFD4 backbones (top novel human binders): 8 dual-confirmed; g4_5_sw3his VALID-SWITCH (swG2); g1_15 (Bh0.95/Ch0.83), g0_96 (0.94/0.80) strong binders (swG0-1).
+- v6 = 20 DISTINCT backbones, one design each, ranked by objective priority: valid-switch tier (des_25 flagship, des_206/223/374/4, g7_8, g4_5, des_386) -> x-react hedges (g7_1/g5_14/g2_132/d417) -> strong distinct binders (g1_15/g0_96/g7_73/g6_7/g4_91/g4_92/g5_24/g6_32). No shared backbones.
+- submissions/tfr1_track2_v6.csv validated PASS. NOTE: 9 new RFD4 designs unchecked on portal novelty (from novel pool maxTM<0.80; re-run portal before upload).
