@@ -409,3 +409,13 @@ DEVELOPABILITY (inline GRAVY/Cys/run/charge): 74/105 soluble (GRAVY<0, 0-Cys, hy
 NOVELTY (covwTM from SC, PDB-only lower bound): 101 L3 (<0.80), only 2 robust (<0.65); most 0.73-0.80 (near edge). Prefer lower covwTM; portal = final authority.
 master table: runs/f12/pocket/master.tsv (105 rows: abiptm,iplddt,ipae,hot,L,gravy,nCys,run,chg,covwTM).
 IN PROGRESS: Chai pocket-restrained dual-confirm (chai_confirm_in: 48 cand <=2/backbone + controls; watcher b6vhgrhks). THEN: switch pipeline (buried_switch_scan -> build_multihis mech-B 2-3His -> re-fold pocket-restrained to confirm binding RETAINED -> ph_release_consensus) on dual-confirmed soluble novel; mouse x-react (pocket-restrained vs mouse_apical_189_383); select 20 (front-load, <=2/backbone, diversify).
+
+## 2026-10-23 — mech-B switches installed; 12 bind+switch-valid
+Dual-confirm (Boltz∧Chai restrained, 48 tested): 8 strong dual + Tier-2 Boltz-strong. Selected 12 (>=0.65 bolt & >=0.38 chai, <=3/bb) for switches.
+buried_switch_scan: all 12 have abundant buried K/R anchors (10-24 each) despite net-acidic -> mech-B feasible.
+build_switch_combos.py (mech-B, SEP 8A, IFACE_CUT 9A, 2+3 His): 24 switched seqs.
+RE-FOLD (pocket-restrained Boltz): 16/24 RETAIN apical binding (ab>=0.55,ipae<=12,hot>=4). Controls POS 0.853/NEG 0.21-0.27.
+switch_contacts geometry: 12/16 valid mech-B (His-cation contacts>=2). Strong: l1_des_223_mpnn3_sw3his(11), l2_des_206_mpnn6_sw3his(7), l2_des_374_mpnn7_sw3his(7), l2_des_25_mpnn0_sw3his(5). sw3his > sw2his switch decisiveness.
+=> 12 designs: bind apical (dual) + retain binding post-switch + valid mech-B geometry + soluble + novel (L3). From ~9 backbones.
+MOUSE X-REACT (b3nq1qsmt, running): pocket-restrained Boltz vs mouse_apical (only 4/10 epitope pos conserved: 202/203/209/210 hydrophobic; 6 divergent). mech-B is target-independent so switch transfers; binding transfers iff interface on conserved core.
+NEXT: mouse results -> rank (binding+switch+xreact+novelty+dev) -> select <=20, front-load 10, <=2/bb.
