@@ -444,3 +444,11 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
 - **submissions/tfr1_track2_v3.csv** = 20 ranked, validate_submission --track 2 PASS (0 errors). Prior: final.csv(16), v1/v2.
 - **SOTA scan (2 subagents):** keep Boltz/Chai + mech-B buried-His; switch magnitude still unrankable. Gap = generator diversity (organizers' own Aug-2026 protocol: PXDesign/RFd3/Genie3 lead; flat targets->Genie3/PXDesign; SolubleMPNN; ESMFold2+Protenix v2 ipSAEmin filter).
 - **STRETCH (in progress):** RFD4-Proteina confirmed working (runs/f16; needs atomworks CIF w/ bonds+label_seq, not PDB/gemmi-cif). Full wave launched (8 GPU x128) targeting conserved apical sub-site (hotspots 202/203/209) for a 2nd x-react lineage + novel folds. Next: SolubleMPNN -> dual-species screen -> switch -> triple-confirm (Boltz+Chai+Protenix v2, ipSAEmin). +PXDesign/Genie3/RFd1-conserved planned.
+
+## 2026-10-23 RFD4-Proteina generator-diversity campaign (v4)
+- RFD4-Proteina (NVIDIA, user-flagged) run targeting the CONSERVED apical sub-site (hotspots 202/203/209). Input contract: atomworks CIF with bonds+label_seq (not PDB/gemmi-cif).
+- wave1 1024 -> 982 soluble 0-Cys (92%, GRAVY med -0.18) -> 237 novel (maxTM<0.80) -> 154 human-binders (clean calib POS0.85/NEG0.23) -> 8 cross-reactive (ratio>=0.8) -> Chai: g7_1 dual-confirmed x-react (ratC0.92).
+- wave2 900 -> 797 soluble -> 203 novel -> 117 human-binders -> 3 cross-reactive (g5_14 ratio1.15, g2_132, g2_137).
+- KEY RESULT: RFD4 yields excellent NOVEL SOLUBLE cross-reactive BINDERS beyond des_25 (breaks the RFd1 x-react wall), BUT auto-placed mech-B buried-His switch loses geometry on these backbones (mechB 0-1 after refold) - same wall des_25 hit (only specific His pairs retain). Only g7_8_sw2his got a valid switch (mech-A, total4).
+- v4 = v3 core (des_25_sw2b_A9_A25 flagship retained) + 4 RFD4 lineages (g7_8 valid-switch #6; g7_1/g5_14/g2_132 x-react depth) replacing 4 weakest v3 hedges. submissions/tfr1_track2_v4.csv validated PASS (20/0/0).
+- All 8 GPUs utilized throughout (packed folding + 6-GPU generation waves).
