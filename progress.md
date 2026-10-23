@@ -351,3 +351,13 @@ seqs (long2 nseq8 1136 + long1 rescue nseq16 336) via self_consistency -> Chai -
 switches (gpu5_17_mA2, gpu4_28_mA1/mA2) to confirm binding retained; (4) mech-B multi-His on survivors.
 Current best complete design remains gpu5_17 (novel+dual-bind+switch, but hydrophobic). Portfolio target:
 diverse soluble novel switch-binders, front-load ~10, user portal novelty check is the final gate.
+
+## 2026-10-23 — GPU window opened; funnel + BindCraft launched
+GLP1R campaign finished (watcher bcbwo5wzi hit 48h; live nvidia-smi: all 8 GPUs 0 MiB, no foreign compute apps). Launched three non-contending background jobs:
+- **BindCraft smoke** (b6r0x3c86, GPU 0): `bindcraft design runs/f12/bc2/smoke.json` → gate for the full mixtopo campaign; log runs/f12/bc2/smoke.log
+- **long2 self-consistency** (bup010hgx, GPUs 1-5): 1136 seqs, backbones=long2_compact → runs/f12/sc/long2/all.csv (ESMFold+TMalign SC + foldseek novelty)
+- **long1_rescue self-consistency** (bcyghampl, GPUs 6-7): 336 seqs (21 proven-novel backbones @nseq16), backbones=long1_compact → runs/f12/sc/long1r/all.csv
+Driver: scripts/sc_shard.sh (shards self_consistency.py; per-shard struct-dir avoids fs_tmp collision). venv=.venv-esmfold2 (torch2.14+cu130, tfm5.19).
+SC gates: self-consistent bb_TM>=0.80 & rmsd<=2.5; novel covwTM<0.80 (robust<0.65).
+**NB long2 & long1_rescue share stems** (des_160 etc. = DIFFERENT backbones per batch) → keep outputs namespaced; prefix l2_/l1_ when merging survivors for Chai∧Boltz.
+Next: smoke passes → full mixtopo campaign; SC done → filter sc&novel → Chai∧Boltz dual-gate (receptor=data/targets/apical_domain_189_383.seq, mouse=mouse_apical_189_383.seq).
