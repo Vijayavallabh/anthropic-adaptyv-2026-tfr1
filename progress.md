@@ -419,3 +419,13 @@ switch_contacts geometry: 12/16 valid mech-B (His-cation contacts>=2). Strong: l
 => 12 designs: bind apical (dual) + retain binding post-switch + valid mech-B geometry + soluble + novel (L3). From ~9 backbones.
 MOUSE X-REACT (b3nq1qsmt, running): pocket-restrained Boltz vs mouse_apical (only 4/10 epitope pos conserved: 202/203/209/210 hydrophobic; 6 divergent). mech-B is target-independent so switch transfers; binding transfers iff interface on conserved core.
 NEXT: mouse results -> rank (binding+switch+xreact+novelty+dev) -> select <=20, front-load 10, <=2/bb.
+
+## 2026-10-23 — PORTFOLIO: 14 switch-valid human-binding designs (9 backbones)
+Switch cycle 2 (cross-reactive backbones l1_des_215,l2_417,l2_408,l2_270): adds l2_des_417_mpnn7_sw3his (hum0.84/mou0.72/ratio0.86/swG2 = strong triple-winner), l1_des_215 (xreact,marginal bind), l2_408_sw2his (0.75,swG7 human switch). (geom loop bug: switched.csv is COMMA-sep, cut needs -d,.)
+FINAL TABLE (runs/f13/final_table.tsv): 14 switch-valid (swG>=2) & human-binding (hum>=0.55,ipae<=12,hot>=4), 9 backbones.
+TIER A triple-winners (switch+xreact+bind): l2_des_25_mpnn0_sw3his(0.65/0.65/r0.99/swG5) & _sw2his(0.62/0.85/r1.38), l2_des_417_mpnn7_sw3his(0.84/0.72/r0.86), l2_des_206_mpnn6_sw3his(0.81/0.46/r0.56/swG7), l2_des_374_mpnn7_sw3his(0.69/r0.51/swG7/covwTM0.674 BEST-novelty).
+TIER B switch+bind human-biased: l1_des_223(×3,swG8-11,GRAVY-1.68), l2_des_408, l2_des_107, l1_des_160, l2_des_386.
+ALL soluble (0-Cys, GRAVY mostly neg), novel L3 (covwTM 0.67-0.82).
+RUNNING: Chai-restrained dual-confirm of the 14 SWITCHED (submitted) seqs (btpm5ktlu) — final gate (esp l2_417 parent Chai-weak).
+SUBMISSION fmt: name,sequence,molecule_class=protein; Track2/3 ranked<=20 front-load10 <=2/bb. Validate via scripts/validate_submission.py --track 2. Upload USER-GATED.
+RANK PLAN (front-load): triple-winners first (by xreact,switch,bind,novelty), then switch+bind; <=2/bb.
