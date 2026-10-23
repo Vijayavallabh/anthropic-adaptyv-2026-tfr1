@@ -31,6 +31,7 @@ def main():
     ap.add_argument("--seeds", default="0,1,2")
     ap.add_argument("--samples", type=int, default=5)
     ap.add_argument("--recycles", type=int, default=3)
+    ap.add_argument("--constraints", default="")  # Chai pocket-restraint CSV (apical epitope)
     a = ap.parse_args()
 
     seeds = [int(s) for s in a.seeds.split(",")]
@@ -67,6 +68,7 @@ def main():
                 use_esm_embeddings=True, use_msa_server=False,
                 num_diffn_samples=a.samples, num_trunk_recycles=a.recycles,
                 seed=seed, device="cuda:0", low_memory=True,
+                constraint_path=(Path(a.constraints) if a.constraints else None),
             )
             # pick best candidate = max aggregate_score (Chai's own ranking) = Boltz model_0 analog
             n = len(cands.cif_paths)

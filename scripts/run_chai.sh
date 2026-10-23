@@ -26,6 +26,7 @@ for i in "${!G[@]}"; do
   g=${G[$i]}; [ -s "$OUT/sh$i/designs.csv" ] || continue
   CUDA_VISIBLE_DEVICES=$g "$CHAIPY" "$REPO/scripts/chai_fold_adapt.py" \
     "$OUT/sh$i/designs.csv" "$REC" "$OUT/sh$i" --seeds "$SEEDS" --samples "$SAMPLES" \
+    ${CONSTRAINTS:+--constraints "$CONSTRAINTS"} \
     > "$OUT/sh$i.log" 2>&1 &
   pids+=($!); sleep 8
 done
