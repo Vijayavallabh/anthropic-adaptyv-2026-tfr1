@@ -20,8 +20,11 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**Campaign setup (2026-10-20).** Clean repo + harness initialised; recon/strategy (F01) underway.
-See `feature_list.json`, `progress.md`, `session-handoff.md`, `docs/PLAN.md`.
+**COMPLETE (2026-10-24) — submission ready; upload user-gated.** Deliverable:
+`submissions/tfr1_track2_v6.csv` — 20 distinct-backbone designs, validator PASS, Proteinbase portal
+novelty 20/20 PASS. Flagship `d25_sw2b_A9_A25` (2-His mech-B switch + cross-reactive + dual-confirmed).
+Generators: RFdiffusion1 + RFD4-Proteina (generator-diversity); validation is **pocket-restrained**
+Boltz-2 ∧ Chai-1 (blind co-fold drifts off-epitope here). See `progress.md` / `session-handoff.md`.
 
 ## Quickstart
 

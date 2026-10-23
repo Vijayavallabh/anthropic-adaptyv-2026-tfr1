@@ -5,7 +5,19 @@ validation. This is the gate each claim must clear. All validation is on the EXA
 sequence (**submit == folded == simulated**). Scripts are adapted from the reference pipeline
 `../anthropic-adaptyv-2026-tnf/scripts` (its `scripts/README.md` is the manifest).
 
+## 0. Generation + sequence design — F04/F05
+- **RFdiffusion1** de-novo backbones at the apical epitope (hotspots 202/209/211) — the original
+  frontier (105 pocket-confirmed apical binders). **RFD4-Proteina** (NVIDIA flow+diffusion) adds fold
+  diversity; target the CONSERVED sub-site (202/203/209) for cross-reactivity; its input is an
+  **atomworks CIF** (bonds + label_seq via `atomworks.io.parser.parse` + `to_cif_file`), NOT a
+  PDB/gemmi-CIF. **ProteinMPNN** 0-Cys (SolubleMPNN for solubility). For flat/polar epitopes,
+  generator diversity (Genie3 / PXDesign / RFD4) beats RFd1-only (organizers' own Aug-2026 protocol).
+
 ## 1. Binding (human, ON state) — F06
+- **POCKET-RESTRAINED co-fold is MANDATORY here**: blind single-seq co-fold drifts every binder (even
+  the crystal-true 3DS18 positive control) to an off-epitope sink (~259–308), NOT the apical epitope.
+  Use Boltz `constraints: pocket` (chain-B resid = UniProt−188) calibrated by POS_3DS18 / NEG scrambles;
+  single-seq + 1 diffusion sample gives clean separation (POS ~0.85 / NEG ~0.2).
 - **af2ig** (AlphaFold2 initial-guess) is the load-bearing filter: `pae_interaction < ~10`,
   `plddt_binder > 80`, `rmsd < 2`. The positive control MUST be a DE-NOVO binder — natural binders
   fold to garbage single-seq, so a natural-binder "control" is meaningless.

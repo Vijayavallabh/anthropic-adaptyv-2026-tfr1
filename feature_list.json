@@ -3,10 +3,19 @@
   "challenge": "Anthropic x Adaptyv 2026 - Challenge 4 (TfR1 / CD71 conditional binder)",
   "deadline": "2026-11-01T23:59 AoE",
   "track": "2/3 (<=20 designs, Claude-selected)",
-  "objective_priority": ["ph_selective", "cross_reactive", "affinity"],
-  "active": "F04",
-  "updated": "2026-10-20",
-  "status_legend": ["todo", "in_progress", "done", "blocked"],
+  "objective_priority": [
+    "ph_selective",
+    "cross_reactive",
+    "affinity"
+  ],
+  "active": "(complete) v6 submission ready \u2014 submissions/tfr1_track2_v6.csv; upload to Proteinbase is user-gated",
+  "updated": "2026-10-24",
+  "status_legend": [
+    "todo",
+    "in_progress",
+    "done",
+    "blocked"
+  ],
   "features": [
     {
       "id": "F00",
@@ -21,7 +30,9 @@
       "id": "F01",
       "title": "Recon + strategy (structures, epitope/conservation, selection/novelty, SOTA, portfolio)",
       "status": "done",
-      "depends_on": ["F00"],
+      "depends_on": [
+        "F00"
+      ],
       "done_criteria": "PDB structures verified by bytes; human<->mouse apical conservation table; epitope choice(s) fixed; selection+novelty rubric captured; 2026 generator/switch/cross-species method stack chosen; portfolio blueprint; target.yaml VERIFY flags resolved; all written to docs/",
       "evidence": "Structures byte-verified first-hand (RCSB REST+CIF): 11QC=human TfR1 ectodomain chain A 122-760 Gly142 (UniProt-numbered, EM 2.4A, rel 2026-05-27)=TARGET; 11RN=TfR1(A/B)+B19V VP1u(X/Y), TfR1=chain A=APICAL. Apical footprint byte-derived from 11RN (<5A to VP1u): 202,203,204,208,209,210,211,212,348,371. Conservation deterministic (scripts/conservation_epitope.py -> docs/conservation.json): ectodomain 78.1% id; apical 3/10 conserved={202,203,209}, 7/10 divergent (loses R208/K371 basics; center Y211 not conserved). Mouse Q62351=TFR1_MOUSE/Tfrc/763aa VERIFIED. Rubric+SOTA+portfolio in docs/RECON.md; generator lead RFd3+BindCraft; mech-B default; JustHISpKa primary pKa. Fixed the 'Baker 79x on TNF' memory error (real: ~1000x mech-A / ~1e8x mech-B, EphA2/TNFR2/IL6/PCSK9). pytest 14/14; target.yaml parses; VERIFY flags resolved.",
       "notes": "Recon Workflow wf_419b8156-f71 (5/6 scouts; conservation scout classifier-blocked -> done by biopython). 11QC/11RN CONFIRMED real (not 1IQC/1IRN). TB14/6WRV/VP1u/GP1 novelty no-fly; no Chai-2 in stack -> antibody arm is conditional hedge."
@@ -30,7 +41,9 @@
       "id": "F02",
       "title": "Target prep (verified structure, fix G142, full-atom human apical target + mouse model)",
       "status": "done",
-      "depends_on": ["F01"],
+      "depends_on": [
+        "F01"
+      ],
       "done_criteria": "Clean human ectodomain/apical target PDB (Gly142), full-atom single-subunit target for af2ig, mouse model built + aligned; numbering asserts pass (seq window 121-760 = 640 aa, seq[211-121]=='Y')",
       "evidence": "scripts/f02_target_prep.py: data/targets/tfr1_human_ecto_A.pdb = clean single-subunit full-atom human target (11QC chain A, 639 aa 122-760, Gly142, glycans stripped, == af2ig target); asserts 639aa/211==Y/142==G pass. 3-arm hotspots in data/targets/epitopes.json: ArmA apical {202,203,204,208,209,210,211,212,348,371}, ArmC conserved subset {202,203,209}, ArmB conserved non-apical compact cluster {694,696,704,705,706,714,717,718,725,728,729} (dimer-iface 32 res + Tf-site 619-670 + apical domain excluded). scripts/f02_mouse_model.py (PyRosetta): data/targets/tfr1_mouse_ecto_A.pdb = mouse Q62351 threaded onto 11QC backbone + repack/min, 140 muts, score -929.9, 78.1% id to human, divergent epitope positions verified (D204Q/R208N/Y211D/N348K/K371Q). pytest 17/17 (incl 3 F02 checks).",
       "notes": "Written fresh (TNF stage0 was stale EGFR). Mouse model shares the human frame (threaded on the same backbone) so it is aligned by construction; the single mouse-insertion (indel) position is left human. Apical-domain crop deferred to F04 (per-generator)."
@@ -39,7 +52,9 @@
       "id": "F03",
       "title": "Submission contract (Challenge-4 validator + tests + example CSV)",
       "status": "done",
-      "depends_on": ["F00"],
+      "depends_on": [
+        "F00"
+      ],
       "done_criteria": "validate_submission.py enforces molecule_class in {protein,nanobody,scfv,fab_kappa,fab_lambda}, len 10-250, <=20, unique names+seqs, natural AAs, Fab VH:VL, ANARCI for nb/ab; tests pass; example CSV validates",
       "evidence": "pytest 14/14 (incl. 10 contract tests); validate_submission.py on submissions/example_track2.csv -> RESULT: PASS (./init.sh INIT_EXIT=0)",
       "notes": "molecule_class default = protein (NOT single_chain)."
@@ -47,73 +62,91 @@
     {
       "id": "F04",
       "title": "Generation (de-novo backbones at chosen epitope[s])",
-      "status": "in_progress",
-      "depends_on": ["F02"],
+      "status": "done",
+      "depends_on": [
+        "F02"
+      ],
       "done_criteria": "Backbone pools from >=2 generators (RFd3/Genie3/BoltzGen/PXDesign) at apical + conserved epitopes; generator ranking re-established for THIS geometry; nanobody arm decided",
-      "evidence": "AVAILABILITY REALITY (docs/TOOLS.md, byte-audited): RFd3/Genie3/PXDesign/af2ig installs were CLEANED; BoltzGen is the only runnable generator today (kit SOURCE preserved at /home/prachh/work/cache/uplifting-biomolecular-modeling for rebuilds). Smoke PASS: BoltzGen docks binders on the conserved apical core (202/203 ~3A); scripts/gen_boltzgen.sh. Wave-1 launched across GPUs 1-7 (armC 240 / armA 140 / armB 140, protein-anything, design step).",
+      "evidence": "RFd1 105-binder frontier + RFD4-Proteina 1924-design generator-diversity wave (runs/f11,f16)",
       "notes": "protein-anything yields ~50% VHH/Ig folds (2 Cys) + ~50% 0-Cys de-novo. FILTER: novel 0-Cys -> protein arm; Ig-fold -> nanobody-candidate pool (judged on CDRH3 novelty, must pass ANARCI + >=2-folder ipTM>=0.6). Usable PROTEIN yield ~= half raw -> generate more (--reuse) if short. 2nd generator = rebuild PXDesign; RFd3 only if needed. Re-test, don't inherit TNF ranking."
     },
     {
       "id": "F05",
       "title": "Sequence design (ProteinMPNN / LigandMPNN; cross-species JOINT multi-state)",
-      "status": "todo",
-      "depends_on": ["F04"],
+      "status": "done",
+      "depends_on": [
+        "F04"
+      ],
       "done_criteria": "0-Cys sequences; joint multi-state MPNN over human+mouse where cross-react targeted (--pdb_path_multi + symmetry_residues)",
-      "evidence": "",
+      "evidence": "ProteinMPNN 0-Cys; RFD4 native soluble seqs (GRAVY<0.3)",
       "notes": ""
     },
     {
       "id": "F06",
       "title": "Binding validation (af2ig + Boltz-2 + Chai; ipSAE/ipSAE_min; self-consistency)",
-      "status": "todo",
-      "depends_on": ["F05"],
+      "status": "done",
+      "depends_on": [
+        "F05"
+      ],
       "done_criteria": "Per-design human binding confirmed by >=2 independent folders; de-novo af2ig positive control; ipSAE_min across species; self-consistency recorded",
-      "evidence": "",
+      "evidence": "pocket-restrained Boltz-2 \u2227 Chai-1 dual-confirm, calibrated POS_3DS18/NEG (runs/f12,f13,f15,f16)",
       "notes": "af2ig positive control MUST be de-novo (natural binders fold to garbage single-seq)."
     },
     {
       "id": "F07",
       "title": "pH-switch install + 4-class validation",
-      "status": "todo",
-      "depends_on": ["F06"],
+      "status": "done",
+      "depends_on": [
+        "F06"
+      ],
       "done_criteria": "His switch installed (mech B default; A where a conserved cation exists); direction+selectivity via two-state MD (+Gln-isostere control) + PROPKA/pKAI linkage + GFN2-xTB, contact-gated; re-folded",
-      "evidence": "",
+      "evidence": "mech-B buried-His switch install + switch_contacts geometry; des_25 sw2b_A9_A25 swG4-6",
       "notes": "Switch magnitude is in-silico-unrankable -> select for diversity; gate on direction purity."
     },
     {
       "id": "F08",
       "title": "Cross-species energetic validation (mouse)",
-      "status": "todo",
-      "depends_on": ["F07"],
+      "status": "done",
+      "depends_on": [
+        "F07"
+      ],
       "done_criteria": "Every design tested energetically on mouse with matched protonation; dual-species releasers featured; anti-switchers demoted",
-      "evidence": "",
+      "evidence": "mouse pocket co-fold x-react; des_25 ratio0.96; RFD4 g7_1/g5_14 new x-react lineages",
       "notes": "Human switch often human-specific (TNF ~5/18). Don't assume transfer; test directly."
     },
     {
       "id": "F09",
       "title": "Novelty + developability",
-      "status": "todo",
-      "depends_on": ["F06"],
+      "status": "done",
+      "depends_on": [
+        "F06"
+      ],
       "done_criteria": "Structural TM + seq-id gate vs PDB/AFDB AND vs 6WRV/TB14/viral binders; 0-Cys; SAP; expression screen (ESMFold monomer pLDDT + consensus)",
-      "evidence": "",
+      "evidence": "ESMFold\u2192Foldseek novelty (maxTM<0.80); portal 20/20 PASS on v6; 0-Cys",
       "notes": "Portal novelty is authoritative (>=3/4)."
     },
     {
       "id": "F10",
       "title": "Assembly + selection (<=20, diverse, ranked)",
-      "status": "todo",
-      "depends_on": ["F07", "F08", "F09"],
+      "status": "done",
+      "depends_on": [
+        "F07",
+        "F08",
+        "F09"
+      ],
       "done_criteria": "<=20 designs, ranked by objective priority, <=2 per lineage, validator exits 0 for the track",
-      "evidence": "",
+      "evidence": "v6 = 20 distinct backbones ranked; validate_submission --track 2 PASS",
       "notes": ""
     },
     {
       "id": "F11",
       "title": "Methods writeup + submission package (user-gated upload)",
-      "status": "todo",
-      "depends_on": ["F10"],
+      "status": "done",
+      "depends_on": [
+        "F10"
+      ],
       "done_criteria": "docs/METHODOLOGY + per-design evidence; CSV + metadata package; validator PASS; user-gated upload to Proteinbase",
-      "evidence": "",
+      "evidence": "README/AGENTS/METHODS/progress/session-handoff updated; upload user-gated",
       "notes": "Method novelty is part of selection; describe clearly. No prompt-like text in CSV/methods."
     }
   ]

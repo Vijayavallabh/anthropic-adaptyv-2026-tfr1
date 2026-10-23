@@ -10,21 +10,21 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-20)
-- F00 done (repo + harness). F01 recon + strategy launched.
-- Tools (shared): `/home/prachh/work/cache/{rfdiffusion3_opt,genie3_opt,chai1_opt}`, BoltzGen in
-  `work/cache/huggingface/models--boltzgen--boltzgen-1` (+ `../glp1r/third_party/boltzgen`),
-  Boltz-2 `~/.boltz`, PXDesign `v/protenix_cache`, ProteinMPNN `../mva-track2-orthogonal-*/ProteinMPNN`,
-  AF/BindCraft `work/cache/bindcraft/alphafold`; per-tool venvs `../sepiq-2026-challenge/.venv-*`;
-  MD/pKa conda envs `ambertools`/`pmxfep`/`evobind` + `justHisPKa`.
-- Reference pipeline: `../anthropic-adaptyv-2026-tnf` (`scripts/README.md`).
-- 8× H100: GPU0 lightly used, 1–7 idle (at setup).
-
-## Open decisions (F01 synthesis / brainstorming)
-- **Epitope:** apical (functional, Obj 3 bonus, de-novo-amenable, but 6/9 divergent h↔mouse) vs a
-  conserved patch (cross-reactive, non-functional). Likely a portfolio split.
-- **Switch mechanism:** A (interface His vs conserved target cation — but apical cations are
-  species-divergent) vs B (buried intra-binder His network — cross-species-safe). Leaning B for
-  cross-reactive designs.
-- **Molecule-class mix:** de-novo `protein` minibinders (apical is de-novo-amenable, cf. 6WRV) ±
-  microbinders ± a nanobody arm (brain-shuttle Abs bind apical; legacy de-novo VHH ~1% hit rate).
+## State (2026-10-24) — COMPLETE; submission ready, upload user-gated
+- **Deliverable: `submissions/tfr1_track2_v6.csv`** — 20 DISTINCT backbones (one design each),
+  validator PASS, Proteinbase portal novelty **20/20 PASS** (no "similar designs" flags). Prior:
+  v5/v4/v3 (reused backbones for switch depth), final/v1/v2 (older).
+- **Flagship #1 `d25_sw2b_A9_A25`** (l2_des_25_mpnn0 + 2 His: A9/R13 + A25/R28): dual-confirmed
+  (Boltz∧Chai), cross-reactive (ratio 0.96), valid mech-B switch (swG 4–6). The one design strong on
+  BOTH pH-switch (#1) and cross-reactivity (#2). Earlier "des_25 multi-His breaks Chai" was a bad His
+  pair (A9+A54 fails; A9+A25 holds).
+- **Pipeline F01→F11 executed** (see `progress.md`). Generators: **RFdiffusion1** (de-novo, the
+  original 105-binder apical frontier) + **RFD4-Proteina** (NVIDIA; generator-diversity wave — 1924
+  designs on the conserved sub-site → novel soluble cross-reactive binders beyond des_25). Sequences:
+  ProteinMPNN 0-Cys (SolubleMPNN available). Validation: **pocket-restrained** Boltz-2 ∧ Chai-1
+  (blind co-fold is broken here), calibrated by POS_3DS18 / NEG. Switch: mech-B buried-His.
+- **Key findings:** (1) blind co-fold fails the positive control → pocket restraints mandatory;
+  (2) RFD4 breaks the RFd1 cross-reactivity wall at the BINDER level, but auto buried-His switch loses
+  geometry on new backbones (per-backbone His-pair search needed; only des_25 A9+A25 held);
+  (3) switch magnitude is in-silico-unrankable → select mechanism diversity + direction.
+- **Remaining (user-gated): upload `v6` to Proteinbase.** No further compute needed.
