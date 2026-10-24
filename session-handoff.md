@@ -10,13 +10,17 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-24) — COMPLETE; v13 ready (crowns validated), upload user-gated
+## State (2026-10-24) — COMPLETE; v13 portal-verified + crowns validated; CLEARED FOR UPLOAD (user-gated)
 - **Deliverable: `submissions/tfr1_track2_v13.csv`** (RECOMMENDED) + `_v13_evidence.csv` — SAME 20
   sequences as v12 (byte-identical, reordered). **All 10 CROWNS VALIDATED** by a decoy false-crown
   control + pose-contact check (see below), then the **top-10 INTERLEAVED by generator**: the 4
   non-Genie3 crowns hold PROTECTED ranks 1/3/5/7 (d25 RFd1 #1; g1_133, g7_8, g5_14 RFD4), Genie3 crowns
   at 2/4/6/8/9/10 — hedges generator-correlation wet-lab risk at the top without demoting any validated
   cross-reactive crown. Ranks 11-20 unchanged. Validator PASS (20/0/0, anarci yes).
+- **PORTAL-VERIFIED 2026-10-24:** all 20 Passed, "20 included • 0 needing fixes", NO novelty / "similar
+  designs" flags. The 10 sequences new since v10 (9 Genie3 crowns + g7_8) ALL cleared the authoritative
+  novelty gate; portal output byte-matched v13.csv (name + rank order + seq endpoints + length, 20/20).
+  **⇒ v13 is cleared for upload (upload itself remains user-gated).**
 - **VALIDATION (runs/f27 + pose-contact) — why the crowns are real, not in-silico artifacts:**
   The red-team + a side-agent flagged Genie3 in-silico reliability (its lab-real TNF binders once scored
   as failures). Two decision-critical controls, both PASSED: (1) **decoy false-crown control** — 20

@@ -20,7 +20,7 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-24) — v13 ready (crowns validated); upload user-gated.** Deliverables (all validator PASS):
+**COMPLETE (2026-10-24) — v13 portal-verified + crowns validated; cleared for upload (user-gated).** Deliverables (all validator PASS):
 - **`submissions/tfr1_track2_v13.csv`** (RECOMMENDED) + `_v13_evidence.csv` — the same 20 sequences as
   v12 (byte-identical), with **all 10 CROWNS now validated against a false-positive control** and the
   **top-10 interleaved by generator**. A decoy control (20 de-novo binders designed for *other* targets,
@@ -31,7 +31,8 @@ hard gate; the Proteinbase portal is authoritative.
   209/210) in *both* species. So the crowns are real — the mouse cross-reactivity axis is the filter
   de-novo non-binders cannot fake. The top-10 then interleaves generators (the four non-Genie3 crowns
   hold protected ranks 1/3/5/7: `d25` #1, `g1_133`/`g7_8`/`g5_14`) to hedge wet-lab correlation risk.
-  **10 new sequences → portal novelty re-check before upload** (local oracle: all novel, covwTM 0.64–0.78).
+  **Portal-verified 2026-10-24 — all 20 Passed, "0 needing fixes", no novelty flags; the 10 new
+  sequences (9 Genie3 crowns + `g7_8`) all cleared the authoritative novelty gate. Cleared for upload.**
 - **`submissions/tfr1_track2_v12.csv`** (fallback) + `_v12_evidence.csv` — the same 20 sequences, ranked
   by raw cross-reactivity before the generator interleave. v11 (7 crowns) / v10 / v7 are further
   fallbacks (v10/v7 portal-verified).

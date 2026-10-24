@@ -724,3 +724,12 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
 - **10 NEW seqs (9 Genie3 + g7_8) -> portal novelty re-check before upload (USER-GATED).** Local oracle:
   all novel (covwTM 0.64-0.78 < 0.80 gate). Fallbacks: v12 (=v13 seqs, pre-interleave), v11, v10 (portal
   20/20), v7. Upload + push USER-GATED. CAMPAIGN COMPLETE: both pools exhausted; crowns validated.
+
+## 2026-10-24 v13 PORTAL-VERIFIED — cleared for upload
+- **Proteinbase portal on v13: all 20 Passed, "20 included • 0 needing fixes", NO novelty / "similar
+  designs" flags.** The 10 sequences new since v10 (9 Genie3 crowns + g7_8) ALL cleared the authoritative
+  novelty gate -> confirms the local oracle (covwTM 0.64-0.78) AND confirms Genie3 crowns are novel.
+- Portal output BYTE-MATCHED v13.csv: name + rank order (Row2..Row21 = rank 1..20) + seq first12/last8 +
+  length, 20/20 exact. Evidence CSV portal col updated: 10 verified(v10) + 10 verified(v13) = 20/20.
+- **v13 is CLEARED FOR UPLOAD.** Upload to Proteinbase + git push remain USER-GATED. Fallbacks v12/v11/
+  v10/v7 (all portal-verified). CAMPAIGN COMPLETE: crowns validated (decoy false-crown 0/20) + novel (portal).
