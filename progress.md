@@ -683,3 +683,20 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   vs v10: 7 crowns (was 3), 20/20 switch (was 16), +6 fresh Genie3 lineages (robustly novel).
 - **7 NEW seqs (6 Genie3 + g7_8) -> portal novelty re-check before upload (USER-GATED).** Genie3 crowns
   robustly novel (low risk). Fallbacks: v10 (portal 20/20), v7. Upload + push USER-GATED.
+
+## 2026-10-24 f25/f26 + v12 FINAL: 10 CROWNS (Genie3 pool exhausted)
+- **f25 (remaining 272 novel Genie3 backbones): 158 binders (58%) -> 7 mouse-positive -> Chai confirm
+  -> 5 more dual-folder x-react crowns** (w2g3_53 xr0.381 = BEST of campaign, w1g0_112 0.309, w2g5_27
+  0.295, w2g3_21 0.254, w2g6_99 ... pre-switch). **ALL 5 took ROBUST switches** (f26, frac>=2=1.00).
+  After bind+xreact re-confirm: **3 CONFIRMED switch-crowns** (w2g3_53 bind0.481/xr0.280, w1g0_112
+  0.302/0.217, w2g5_27 0.457/0.173) + 2 switch-binders (w2g6_99 xr0.246/bind0.24, w2g3_21 xr0.145).
+- **Genie3 pool FULLY EXHAUSTED: 572 novel backbones folded -> 11 binder-level x-react crowns -> 6
+  Genie3 switch-crowns total** (3 from f23 + 3 from f25). Genie3 takes His switches cleanly (unlike RFD4).
+- **v12 = submissions/tfr1_track2_v12.csv + _v12_evidence.csv — validate PASS (20/0/0, anarci yes).**
+  20 DISTINCT backbones, **10 CROWNS** (front-loaded 1-10, ranked by x-react), ALL valid-switch.
+  Sources: 9 Genie3 / 6 RFD4 / 5 RFd1; top-10 = all crowns (6 G3, 3 RFD4, 1 RFd1). Ranks 11-20 =
+  switch-binders + strongest-binder g5_120 (0.853) + diverse RFd1/RFD4 switch-designs (wet-lab hedge).
+  vs v10: 10 crowns (was 3), 20/20 valid-switch (was 16).
+- **10 NEW seqs (9 Genie3 + g7_8) -> portal novelty re-check before upload (USER-GATED).** Genie3 crowns
+  robustly novel (covwTM 0.64-0.70). Fallbacks: v11 (7 crowns), v10 (portal 20/20), v7. Upload+push USER-GATED.
+- CAMPAIGN CONVERGED: pool x-react screen + Genie3 both exhausted; 10 crowns fills the selector's top-10.

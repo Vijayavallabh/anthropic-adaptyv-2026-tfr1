@@ -8,7 +8,7 @@
     "cross_reactive",
     "affinity"
   ],
-  "active": "(complete) v11 RECOMMENDED \u2014 submissions/tfr1_track2_v11.csv + _v11_evidence.csv (20 distinct, ALL valid-switch, 7 CROWNS incl 3 Genie3; Genie3 at conserved sub-site -> 6 x-react crowns 3 switch-installed; full-pool screen -> g7_8); 7 new seqs -> portal novelty re-check. v10 (portal 20/20 verified) + v7 = fallbacks. Upload user-gated (commit local/unpushed).",
+  "active": "(complete) v12 RECOMMENDED \u2014 submissions/tfr1_track2_v12.csv + _v12_evidence.csv (20 distinct, ALL valid-switch, 10 CROWNS, top-10 all crowns; Genie3 pool fully mined = 572 novel backbones -> 11 binder x-react crowns -> 6 Genie3 switch-crowns; full-pool screen -> g7_8); 10 new seqs -> portal novelty re-check. v11 (7 crowns)/v10 (portal 20/20)/v7 = fallbacks. Upload user-gated (commit local/unpushed).",
   "updated": "2026-10-24",
   "status_legend": [
     "todo",

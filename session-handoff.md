@@ -10,13 +10,13 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-24) — COMPLETE; v11 ready, upload user-gated
-- **Deliverable: `submissions/tfr1_track2_v11.csv`** (RECOMMENDED) + `_v11_evidence.csv` — 20 DISTINCT
-  backbones, **all valid-switch, 7 CROWNS**: d25 (0.37), Genie3 w2g6_144 (0.311), w2g5_111 (0.254),
-  g1_133 (0.244), g7_8 (0.234), Genie3 w2g3_19 (0.222), g5_14 (0.185). Built by running **Genie3**
-  (organizers' flat-target generator) at the conserved sub-site → 6 x-react crowns (3 switch-installed)
-  + full-pool x-react screen → g7_8. 7 new seqs → portal novelty re-check (USER-GATED). v10/v7 =
-  portal-verified fallbacks.
+## State (2026-10-24) — COMPLETE; v12 ready, upload user-gated
+- **Deliverable: `submissions/tfr1_track2_v12.csv`** (RECOMMENDED) + `_v12_evidence.csv` — 20 DISTINCT
+  backbones, **all valid-switch, 10 CROWNS** (top-10 all crowns): d25 (0.37), Genie3 w2g6_144 (0.311),
+  w2g3_53 (0.280), w2g5_111 (0.254), g1_133 (0.244), g7_8 (0.234), w2g3_19 (0.222), w1g0_112 (0.217),
+  g5_14 (0.185), w2g5_27 (0.173). Built by fully mining **Genie3** at the conserved sub-site (572 novel
+  backbones → 11 binder-level x-react crowns → 6 Genie3 switch-crowns) + full-pool x-react screen → g7_8.
+  10 new seqs → portal novelty re-check (USER-GATED). v11 (7 crowns) / v10 / v7 = fallbacks.
 - **(fallback) `submissions/tfr1_track2_v10.csv`** (portal 20/20) + `_v10_evidence.csv` — 20 DISTINCT
   backbones, **16 switch-designs incl. 3 all-three CROWNS**: `d25_sw2b_A9_A25` (RFd1, x-react 0.37),
   `rfd4_g5_14_sw2b_A34_A50` (RFD4, 0.185), `rfd4_g1_133_sw2b_A10_A20` (RFD4, 0.244) — each robust switch
