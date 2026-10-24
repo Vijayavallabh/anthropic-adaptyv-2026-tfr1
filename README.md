@@ -21,18 +21,22 @@ hard gate; the Proteinbase portal is authoritative.
 ## Status
 
 **COMPLETE (2026-10-24) — submission ready; upload user-gated.** Deliverables (all validator PASS):
-- **`submissions/tfr1_track2_v8.csv`** (recommended) — 20 distinct backbones, **two all-three crowns**
-  (`d25_sw2b_A9_A25`, RFd1, x-react 0.37; `rfd4_g5_14_sw2b_A34_A50`, RFD4, x-react 0.185 — both:
-  robust switch + cross-reactive + binding, dual-folder × dual-species confirmed). Re-ranked by a
-  uniform 4-fold validation. **1 new sequence (the 2nd crown) vs v6/v7 → re-run the portal novelty
-  check before upload** (local oracle 0.737, novel; low risk).
-- **`submissions/tfr1_track2_v7.csv`** (portal-safe fallback) — the same 20 sequences as v6 (portal
-  novelty 20/20 PASS already) but re-ranked by the 4-fold validation; use if skipping the portal re-check.
-- `submissions/tfr1_track2_v6.csv` — original frozen fallback (portal 20/20 PASS).
+- **`submissions/tfr1_track2_v10.csv`** (recommended) + `_v10_evidence.csv` — 20 distinct backbones,
+  **16 switch-designs incl. 3 all-three CROWNS** (`d25_sw2b_A9_A25` RFd1 x-react 0.37; `rfd4_g5_14_sw2b`
+  RFD4 0.185; `rfd4_g1_133_sw2b` RFD4 0.244 — each robust switch + cross-reactive + binding, dual-folder
+  confirmed). Standout binder-switch `rfd4_g5_120_sw2b` (ipSAE 0.853). Built by validating against the
+  **organizers' exact judge** (selection prompt) + screening a 1567-design pool for switch-installable
+  binders. **8 new sequences → re-run the Proteinbase portal novelty check before upload** (local oracle
+  all novel 0.69–0.74).
+- **`submissions/tfr1_track2_v7.csv`** (fully portal-verified fallback) — same 20 sequences as v6
+  (portal 20/20 PASS), re-ranked. Use if skipping the portal re-check. v9 (4 new) / v8 (2 crowns) are
+  intermediate fallbacks; v6 is the original frozen fallback.
 
-Flagships are **mech-B multi-His switches + cross-reactive + dual-confirmed**. Generators: RFdiffusion1
-+ RFD4-Proteina. Validation is **pocket-restrained** Boltz-2 ∧ Chai-1 with **ipSAE_min** (worst-case
-over folders/species) and **replicate-fold switch probability** (single-fold switch_contacts is noisy).
+**Key validation finding:** the organizers co-fold **blind** against the full ectodomain; on this
+flat/buried apical epitope that is unreliable even on the exact homodimer (ipSAE ≈ 0 and epitope drifts
+for POS_3DS18 itself). So selection rests on **switch mechanism** (replicate-fold validated) >
+**cross-reactivity** (fragment, dual-folder min) > **apical binding competence** (pocket-restrained
+fragment), plus pLDDT (all pass), hydropathy, and novelty. Generators: RFdiffusion1 + RFD4-Proteina.
 See `progress.md` / `session-handoff.md`.
 
 ## Quickstart

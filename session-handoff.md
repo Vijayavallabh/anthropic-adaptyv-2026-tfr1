@@ -11,19 +11,21 @@
 3. Continue the active feature.
 
 ## State (2026-10-24) — COMPLETE; submission ready, upload user-gated
-- **Deliverable: `submissions/tfr1_track2_v8.csv`** (recommended) — 20 DISTINCT backbones, **TWO
-  all-three crowns**: `d25_sw2b_A9_A25` (RFd1, x-react 0.37) + `rfd4_g5_14_sw2b_A34_A50` (RFD4,
-  x-react 0.185) — each robust switch + cross-reactive + binding, dual-folder × dual-species confirmed.
-  Validator PASS. **1 new sequence (the 2nd crown) → re-run portal novelty before upload** (local
-  oracle 0.737 NOVEL = parent g5_14 which passed 20/20; low risk).
-- **Fallback `submissions/tfr1_track2_v7.csv`** — same 20 sequences as v6 (portal 20/20 PASS already),
-  re-ranked by the 4-fold validation; use if skipping the portal re-check. `v6` = original frozen
-  fallback (portal 20/20). Prior v5/v4/v3, final/v1/v2 (older).
-- **Re-ranking (runs/f17):** re-scored all 20 on a uniform 4-fold panel {Boltz-2,Chai-1}×{human,mouse},
-  pocket-restrained, POS/NEG-calibrated; ranked by lexicographic #1 switch (4-fold valid) > #2 x-react
-  (ipSAE_min) > #3 affinity (ipSAE_min), affinity-floor gated. ipSAE_min caught folder-dependent
-  over-confidence (d386 Boltz 0.73/Chai 0.29); replicate-fold switch probability fixed single-fold
-  switch noise. 2nd crown found via exhaustive mech-B His-pair search on g5_14.
+- **Deliverable: `submissions/tfr1_track2_v10.csv`** (recommended) + `_v10_evidence.csv` — 20 DISTINCT
+  backbones, **16 switch-designs incl. 3 all-three CROWNS**: `d25_sw2b_A9_A25` (RFd1, x-react 0.37),
+  `rfd4_g5_14_sw2b_A34_A50` (RFD4, 0.185), `rfd4_g1_133_sw2b_A10_A20` (RFD4, 0.244) — each robust switch
+  + cross-reactive + binding, dual-folder confirmed. Standout binder-switch `rfd4_g5_120_sw2b` (bind
+  0.853). Validator PASS. **8 new sequences → re-run portal novelty before upload** (local oracle all
+  NOVEL 0.69–0.74).
+- **Fallback `submissions/tfr1_track2_v7.csv`** — same 20 sequences as v6 (portal 20/20 PASS), re-ranked;
+  use if skipping the portal re-check. v9 (4 new) / v8 (2 crowns) intermediate; v6 original frozen.
+- **How v10 was built (runs/f17 + f18):** validated against the ORGANIZERS' EXACT JUDGE (selection
+  prompt): blind co-fold vs the full ectodomain homodimer (human 121-760/mouse 123-763). FOUND the blind
+  co-fold is UNRELIABLE on this target even on the exact homodimer (ipSAE≈0 and epitope drifts for
+  POS_3DS18) → confirmed the pocket-restrained FRAGMENT methodology is correct. Ranked #1 switch
+  (replicate-fold validated) > #2 x-react (fragment ipSAE_min, dual-folder) > #3 apical binding
+  (fragment ipSAE_min), + pLDDT (all pass) + hydropathy + novelty. Screened a 1567-design pool for
+  switch-installable binders (exhaustive His-pair search) → 8 new switch-designs + the 3rd crown.
 - **Flagship #1 `d25_sw2b_A9_A25`** (l2_des_25_mpnn0 + 2 His: A9/R13 + A25/R28): dual-confirmed
   (Boltz∧Chai), cross-reactive (ratio 0.96), valid mech-B switch (swG 4–6). The one design strong on
   BOTH pH-switch (#1) and cross-reactivity (#2). Earlier "des_25 multi-His breaks Chai" was a bad His
@@ -37,5 +39,5 @@
   (2) RFD4 breaks the RFd1 cross-reactivity wall at the BINDER level, but auto buried-His switch loses
   geometry on new backbones (per-backbone His-pair search needed; only des_25 A9+A25 held);
   (3) switch magnitude is in-silico-unrankable → select mechanism diversity + direction.
-- **Remaining (user-gated): re-run Proteinbase portal novelty on v8's 1 new crown sequence, then
-  upload `v8`** (or upload `v7` directly — fully portal-verified). No further compute needed.
+- **Remaining (user-gated): re-run Proteinbase portal novelty on v10's 8 new sequences, then upload
+  `v10`** (or upload `v7` directly — fully portal-verified). No further compute needed.

@@ -508,3 +508,40 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   submissions/tfr1_track2_v8.csv. **1 NEW sequence (the crown) vs the portal-checked v6/v7 set ->
   re-run Proteinbase portal novelty before upload** (local oracle novel 0.737; low risk). v7 = fully
   portal-verified fallback; v6 = original frozen fallback. Upload USER-GATED.
+
+## 2026-10-24 v9 campaign (runs/f18): validate against the ORGANIZERS' EXACT JUDGE (selection prompt)
+- User supplied the organizers' selection prompt. KEY: they co-fold BLIND vs the FULL ectodomain
+  HOMODIMER (human 121-760 / mouse 123-763, UniProt-exact; my prior work used the apical FRAGMENT
+  189-383) and score 3 screens: pLDDT, ipSAE, Kyte-Doolittle hydropathy. Built exact constructs from
+  UniProt P02786/Q62351 (Tyr211 -> construct pos 91). Scripts: prep_blind_cofold, epitope_read,
+  epitope_prob, build_pool, exhaustive_switch(reuse).
+- DECISIVE CALIBRATION RESULT: the BLIND co-fold is UNRELIABLE on this target at EVERY scale.
+  * ipSAE ~= 0.000 for ALL designs INCLUDING POS_3DS18 (the real crystal binder) on the full ectodomain
+    -> the organizers' ipSAE screen CANNOT discriminate TfR1 apical designs.
+  * ipTM does not separate signal from noise (NEG_scramble ipTM 0.75 > POS 0.58 on the homodimer).
+  * Epitope read swings wildly: POS reads apical_frac 0.72 (monomer DIFF1), 0.20/helical0.80 (monomer
+    DIFF5), apical 1.00 (homodimer DIFF1), 0.20/helical0.80 (homodimer DIFF5). The positive control
+    drifts to the helical/transferrin face as much as the designs -> epitope read is NOISE, even on the
+    organizers' exact homodimer construct, even de-noised over 5 replicates.
+- CONSEQUENCE: the blind full-target signals (ipSAE/ipTM/epitope) are all non-discriminating. This
+  CONFIRMS the fragment pocket-restrained methodology (v7/v8) was correct, and voids the "crowns drift
+  helical" worry (POS drifts identically). The real-judge discriminators = SWITCH mechanism (physical,
+  replicate-validated) > x-react (fragment) > apical binding competence (fragment pocket-restrained),
+  plus developability (pLDDT: ALL pass 0.9-1.0; hydropathy: current 20 mostly soluble, g7_73 borderline
+  +0.09) and novelty (L4). The organizers weight switch #1 and "no single in silico metric decides."
+- POOL SWITCH-INSTALL (Phase A/B): screened a 1567-design pool (RFD4+RFd1, novel+soluble) -> 104
+  fragment-binders -> exhaustive mech-B His-pair search (scripts/exhaustive_switch) -> replicate-fold
+  switch P (scripts/switch_prob) -> dual-folder (Boltz+Chai) confirm binding + x-react + novelty.
+  Yielded ~10 NEW dual-confirmed switch-designs (switch-vs-binding tension: strongest binders g0_146/
+  g0_125 won't take a switch; switch-installable backbones are moderate binders; His install degrades
+  binding for ~half). STANDOUT: rfd4_g5_120_sw2b (binding ipSAE_min 0.853 = strongest in the campaign +
+  robust switch). 3rd CROWN found: rfd4_g1_133_sw2b_A10_A20 (switch Boltz-robust + x-react dual 0.244 +
+  bind 0.349, novel 0.732).
+- **v10 = FINAL/recommended (submissions/tfr1_track2_v10.csv + _evidence.csv), validate PASS.** 20
+  distinct backbones, **16 switch-designs (incl 3 CROWNS: d25 xr0.37, g5_14 xr0.185, g1_133 xr0.244)**
+  + 4 hedges (g4_92 xr+bind, g1_15/g0_96 strongest binders, d417 xr). Replaced 9 weak/no-switch v8
+  designs with 8 new strong-binder switch-designs (g5_120/g2_138/g6_72/g1_69/g1_133/g1_76/g4_66/g4_93).
+  Ranked switch(#1 clear mechanism) > x-react(#2) > fragment binding(#3), + pLDDT(all pass) + hydropathy
+  + novelty. **8 NEW sequences -> re-run Proteinbase portal novelty before upload** (local oracle all
+  NOVEL 0.69-0.74). Graduated fallbacks: v9 (4 new), v8 (2 crowns), v7 (same 20 seqs as v6, portal
+  20/20 verified), v6. Upload USER-GATED.

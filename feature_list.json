@@ -8,7 +8,7 @@
     "cross_reactive",
     "affinity"
   ],
-  "active": "(complete) v8 recommended \u2014 submissions/tfr1_track2_v8.csv (2 all-three crowns, 4-fold re-ranked; re-run portal novelty on the 1 new crown seq before upload); v7 = portal-safe fallback. Upload user-gated.",
+  "active": "(complete) v10 recommended \u2014 submissions/tfr1_track2_v10.csv + _v10_evidence.csv (16 switch-designs incl 3 crowns; validated vs organizers' judge; re-run portal novelty on the 8 new seqs before upload); v7 = fully portal-verified fallback. Upload user-gated.",
   "updated": "2026-10-24",
   "status_legend": [
     "todo",
