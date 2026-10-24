@@ -15,8 +15,9 @@
   backbones, **16 switch-designs incl. 3 all-three CROWNS**: `d25_sw2b_A9_A25` (RFd1, x-react 0.37),
   `rfd4_g5_14_sw2b_A34_A50` (RFD4, 0.185), `rfd4_g1_133_sw2b_A10_A20` (RFD4, 0.244) — each robust switch
   + cross-reactive + binding, dual-folder confirmed. Standout binder-switch `rfd4_g5_120_sw2b` (bind
-  0.853). Validator PASS. **8 new sequences → re-run portal novelty before upload** (local oracle all
-  NOVEL 0.69–0.74).
+  0.853). Validator PASS. **Portal-verified 2026-10-24: all 20 accepted ("0 needing fixes"), every row
+  Passed, no novelty flags — the 9 sequences new since v6 (re-His'd g5_14 crown + 8 pool switch-designs)
+  cleared.** Ready to upload (user-gated).
 - **Fallback `submissions/tfr1_track2_v7.csv`** — same 20 sequences as v6 (portal 20/20 PASS), re-ranked;
   use if skipping the portal re-check. v9 (4 new) / v8 (2 crowns) intermediate; v6 original frozen.
 - **How v10 was built (runs/f17 + f18):** validated against the ORGANIZERS' EXACT JUDGE (selection
@@ -39,5 +40,5 @@
   (2) RFD4 breaks the RFd1 cross-reactivity wall at the BINDER level, but auto buried-His switch loses
   geometry on new backbones (per-backbone His-pair search needed; only des_25 A9+A25 held);
   (3) switch magnitude is in-silico-unrankable → select mechanism diversity + direction.
-- **Remaining (user-gated): re-run Proteinbase portal novelty on v10's 8 new sequences, then upload
-  `v10`** (or upload `v7` directly — fully portal-verified). No further compute needed.
+- **Remaining (user-gated): upload `v10`** — portal novelty cleared 2026-10-24 (all 20 Passed, 0
+  needing fixes). No further compute needed. (`v7` stays a fallback.) Commit is local; push user-gated.

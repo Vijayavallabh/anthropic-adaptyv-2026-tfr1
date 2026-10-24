@@ -545,3 +545,17 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   + novelty. **8 NEW sequences -> re-run Proteinbase portal novelty before upload** (local oracle all
   NOVEL 0.69-0.74). Graduated fallbacks: v9 (4 new), v8 (2 crowns), v7 (same 20 seqs as v6, portal
   20/20 verified), v6. Upload USER-GATED.
+
+## 2026-10-24 v10 PORTAL NOVELTY VERIFIED (20/20) — last gate cleared
+- User ran the Proteinbase portal on v10's 20 sequences. Result: **"20 included • 0 needing fixes"**,
+  every row Passed (all Single chain), **NO novelty / "similar designs" / "known binder fragment"
+  flags** (that flag is what failed d107 in v4 — its absence = novelty gate clear).
+- **Byte-verified the portal validated the EXACT v10 file:** all 20 names, row order (rows 2-21),
+  sequence prefixes (first 12), suffixes (last 8), and lengths match submissions/tfr1_track2_v10.csv
+  (d25=110, g5_14=71, g1_133=70, g5_120=99, e223=106, g4_5=94, g2_138=63, g6_72=69, d4=109, g1_69=83,
+  g7_73=109, g1_76=94, g4_66=71, g4_93=72, d374=115, d206=124, g4_92=64, g1_15=70, g0_96=102, d417=106).
+- The 9 sequences new since the portal-verified v6/v7 baseline (re-His'd g5_14 crown + 8 pool
+  switch-designs g5_120/g2_138/g6_72/g1_69/g1_133/g1_76/g4_66/g4_93) ALL cleared. _v10_evidence.csv
+  portal column updated re-check -> pass(2026-10-24).
+- **v10 is now fully portal-verified (format + novelty). Ready to upload; upload remains USER-GATED.**
+  No further compute needed. Commit is LOCAL (push user-gated).

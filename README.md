@@ -26,8 +26,9 @@ hard gate; the Proteinbase portal is authoritative.
   RFD4 0.185; `rfd4_g1_133_sw2b` RFD4 0.244 — each robust switch + cross-reactive + binding, dual-folder
   confirmed). Standout binder-switch `rfd4_g5_120_sw2b` (ipSAE 0.853). Built by validating against the
   **organizers' exact judge** (selection prompt) + screening a 1567-design pool for switch-installable
-  binders. **8 new sequences → re-run the Proteinbase portal novelty check before upload** (local oracle
-  all novel 0.69–0.74).
+  binders. **Portal-verified 2026-10-24 — all 20 accepted ("20 included • 0 needing fixes"), every row
+  Passed, no novelty / "similar designs" flags; the 9 sequences new since v6 (the re-His'd `g5_14` crown
+  + 8 pool switch-designs) all cleared.** Ready to upload (user-gated).
 - **`submissions/tfr1_track2_v7.csv`** (fully portal-verified fallback) — same 20 sequences as v6
   (portal 20/20 PASS), re-ranked. Use if skipping the portal re-check. v9 (4 new) / v8 (2 crowns) are
   intermediate fallbacks; v6 is the original frozen fallback.
