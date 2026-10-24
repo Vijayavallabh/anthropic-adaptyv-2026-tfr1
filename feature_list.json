@@ -8,7 +8,7 @@
     "cross_reactive",
     "affinity"
   ],
-  "active": "(complete) v10 recommended \u2014 submissions/tfr1_track2_v10.csv + _v10_evidence.csv (16 switch-designs incl 3 crowns; validated vs organizers' judge; PORTAL-VERIFIED 2026-10-24: all 20 Passed, 0 needing fixes, no novelty flags); v7 = fallback. Upload user-gated (commit local/unpushed).",
+  "active": "(complete) v11 RECOMMENDED \u2014 submissions/tfr1_track2_v11.csv + _v11_evidence.csv (20 distinct, ALL valid-switch, 7 CROWNS incl 3 Genie3; Genie3 at conserved sub-site -> 6 x-react crowns 3 switch-installed; full-pool screen -> g7_8); 7 new seqs -> portal novelty re-check. v10 (portal 20/20 verified) + v7 = fallbacks. Upload user-gated (commit local/unpushed).",
   "updated": "2026-10-24",
   "status_legend": [
     "todo",

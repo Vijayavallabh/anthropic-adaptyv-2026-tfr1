@@ -558,4 +558,128 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   switch-designs g5_120/g2_138/g6_72/g1_69/g1_133/g1_76/g4_66/g4_93) ALL cleared. _v10_evidence.csv
   portal column updated re-check -> pass(2026-10-24).
 - **v10 is now fully portal-verified (format + novelty). Ready to upload; upload remains USER-GATED.**
-  No further compute needed. Commit is LOCAL (push user-gated).
+  Commit is LOCAL (push user-gated).
+
+## 2026-10-24 v11 campaign (runs/f19): break the x-react floor (user: "replace a lot at all costs")
+- **Why:** v10's weak axis is x-react (only 3 crowns) + 4 no-switch hedges (ranks 17-20). Revalidated the
+  16 pool switch-designs on the COMPLETE dual-folder×dual-species panel (scratchpad/merge_xreact.py):
+  robust x-react (ipSAE_min over Boltz∧Chai) is real for ONLY g1_133 (0.244, already in v10). The high
+  Chai-mouse hits (g6_72 0.62, g5_120 0.41, g4_93 0.30, new g6_78 0.28, g0_37 0.21) are ALL contradicted
+  by Boltz-mouse (~0.01) = folder-pessimism; ipSAE_min correctly rejects. POS_3DS18 human 0.595/mouse
+  0.000, NEG 0.000 (calibrated).
+- **Gap found:** x-react screen was INCOMPLETE — only the 16 switch-designs were mouse-folded, but the
+  binder shortlist has 202 (104 human-scored, 62 with Boltz-h>=0.30, 27 with >=0.5 never x-tested).
+- **LAUNCHED (bg bdxsz2vac):** exhaustive mouse x-react screen of the 62 strong binders + 3 controls,
+  pocket-restrained dual-folder: Boltz-mouse {gpu0,2,3} + Chai-mouse {4,5} + Chai-human {6,7} (GPU1 =
+  foreign job, untouched). runs/f19/{myaml,screen.csv,boltz_m,chai_m,chai_h}. On done: bind_min=
+  min(frag_boltz_h,chai_h), xreact_min=min(boltz_m,chai_m); crowns = bind_min>=0.3 & xreact_min>=0.15.
+- **Next (pending f19):** switch-install new crowns -> v11 (replace no-switch hedges + weakest). If the
+  screen confirms the floor, run joint multi-state (human+mouse) MPNN to DESIGN x-react on crown
+  backbones (the one untried SOTA lever). Genie3 (organizers' flat-target generator) available but needs
+  a weights DOWNLOAD (user-gated). Judge frozen = v10 pipeline. Upload + push USER-GATED. v10 stands as
+  the current best until v11 members are MEASURABLY better.
+- **Genie3 APPROVED + BUILT (user: "pull the weights and run it too"):** scripts/setup_genie3.sh built the
+  NVIDIA uplifting genie3 kit into third_party/genie3 (venv_g3, torch 2.7.1) + fetched weights
+  (weights/genie3/pretrained/v1, step=600000.ckpt pinned OK); `run.sh check` h100/fast would_activate=True.
+  Dataset `tfr1_apicalbench` (scripts: extract_apical.py + make_g3_dataset.py, staged runs/f20, copied into
+  the kit) = apical fragment = UniProt 189-383 (contiguous), target PDB chain B renumbered 1-195. HOTSPOTS
+  = conserved sub-site frag {14,15,21,22} = UniProt {202,203,209,210} = I,V,L,V, compact (max CA-CA 6.4A)
+  -> biases toward CROSS-REACTIVE binders. scripts/gen_genie3_tfr1.sh (per-GPU shard, H100 fast line).
+  Smoke test (n=2, GPU3) launched b78khpc0v; full gen (N=840, 7 GPUs) launches after f19 frees GPUs.
+  Downstream funnel (MPNN->ESMFold/novelty->pocket Boltz∧Chai human+mouse->switch-install) reuses existing
+  f12-f19 scripts. FUNNEL DE-RISKED (validated on smoke backbones):
+  - Genie3 outputs CA-ONLY traces (binder=chain A, target=chain B, both CA). No PULCHRA available.
+  - SOLUTION: ProteinMPNN CA-only model (weights/proteinmpnn/ca_model_weights/v_48_010.pt, --ca_only) runs
+    directly on CA traces -> real binder seqs (fixed_chains=['B'], designed=['A']). No backbone rebuild.
+  - proteinmpnn kit built (scripts/setup_proteinmpnn.sh -> third_party/proteinmpnn; 'check' step fails on
+    torch-metadata but IRRELEVANT: stock third_party/proteinmpnn/stock/src/protein_mpnn_run.py + helper
+    parse_multiple_chains.py + the fetched soluble/vanilla/ca weights all work via .venv-boltz python).
+  - This fork LACKS assign_fixed_chains.py -> build chains.jsonl manually {name:[['A'],['B']]}.
+  - MPNN seqs will be GRAVY/hydropathy-filtered downstream (CA model isn't soluble-biased).
+  - Gotcha fixed: g3 problem JSON needs ABSOLUTE target paths (parse_pdb opens relative to CWD).
+
+## 2026-10-24 f19 RESULT: 2 NEW x-react crowns + Genie3 waves running
+- **f19 x-react screen DONE (bdxsz2vac, 65 designs scored).** Control calibration: Boltz-mouse is the
+  RELIABLE discriminator (POS_3DS18 mouse=0.000 correct, NEG=0) while Chai-mouse is OPTIMISTIC (POS
+  mouse=0.484 false-pos) -> xreact_min=min(boltz_m,chai_m) correctly rejects Chai false positives.
+- **2 NEW ROBUST CROWNS** (bind_min>=0.3 & xreact_min>=0.15, BOTH folders agree on mouse):
+  - rfd4_g7_tfr1_apical_xreact_mini_8: bind 0.517, xreact 0.240 (bM 0.305/cM 0.240), TM 0.74, 86aa
+  - rfd4_g6_tfr1_apical_xreact_mini_7: bind 0.752, xreact 0.222 (bM 0.222/cM 0.243), TM 0.663(!), 105aa
+  These were PRE-switch binders missed by the 16-design subset (only 16 of 202 were mouse-folded before).
+  merge: scratchpad/merge_f19.py. Doubles the binder-level x-react yield (g1_133-class).
+- **Switch-installed both** (scripts/install_switch.sh -> runs/f21/sw/switched.csv): g6_7_sw2his
+  (A38H/K65;A69H/K104), g7_8_sw2his (A14H/K20;A39H/K72), g7_8_sw3his (+A78H/K82).
+- **VALIDATING (beut5xsd4, GPU0):** scripts/val_switch_f21.sh — did bind+xreact survive His install +
+  is switch robust? pocket dual-folder DIFF=1 (bind/xreact) + DIFF=5 switch_prob. Pass = bind_min>=0.3,
+  xreact_min>=0.15, valid switch -> up to 2 NEW submission crowns for v11 (v10 has 3).
+- **Genie3: wave1 DONE (240 backbones), wave2 RUNNING (bo6m428mi, GPUs 1,3,5,6, ~600).** Foreign jobs on
+  GPUs 2,4(okc-muse-spark),7 -> avoided. Next: funnel both waves (CA-MPNN -> SC/novelty -> pocket fold
+  human+mouse -> switch-install).
+
+## 2026-10-24 f21 switch verdict (beut5xsd4) + exhaustive search + Genie3 funnel started
+- **Switch-install verdict on the 2 new crowns (greedy pick):**
+  - g7_8_sw2his: bind_min 0.379 ✓, xreact_min 0.205 ✓ (bM 0.205/cM 0.233 BOTH agree!) BUT switch = only
+    1 robust His-cation contact (mean 1.0, frac>=2=0.00) = GENTLE single-His, not sharp 2-His. A valid
+    gentle-switch x-react crown (better than v10's d417 sw1 hedge), upgrade pending.
+  - g6_7_sw2his: bind 0.663 ✓ but xreact LOST (bM 0.014; His install killed mouse binding); no 2-His.
+  - Same wall as RFD4 pool: sharp mech-B switch rarely holds on these backbones (only des_25, g5_14 cracked
+    it via per-backbone exhaustive search).
+- **EXHAUSTIVE His-pair search (b3abp4zty, GPU 5,6,7):** 52 combos (g7_8: 40 anchors K16/20/42/72/82;
+  g6_7: 12 anchors K65/104) folded DIFF=5 -> switch_prob, to find a robust 2-His combo preserving x-react.
+  runs/f21/exh/. Then confirm bind+xreact DIFF=1 dual-folder on the switch-robust combos.
+- **Genie3 funnel stage1 (bswrakrxz, GPU1):** 840 backbones consolidated -> CA-MPNN (ca_model v_48_010,
+  design A/fix B, 0-Cys) -> runs/f22/mpnn.csv. Next: self_consistency (ESMFold bb_TM>=0.80 + novelty
+  covwTM<0.80) -> pocket Boltz∧Chai human -> binders -> mouse x-react -> switch-install.
+- GPU contention HIGH (foreign jobs on 0,2,3,4 incl okc-muse-spark) -> steering to free GPUs only.
+- v10 (3 crowns) STILL the baseline. v11 candidates so far: g7_8 (x-react, switch upgrade pending).
+
+## 2026-10-24 4th CROWN confirmed + Genie3 funnel s2 (self-consistency)
+- **NEW 4th CROWN: rfd4_g7_8_sw2b_A14_A41** (exhaustive His search cracked it, like g5_14):
+  seq STEDEFNSLVDDIHEKINNKDALKTKYKWLYTDLVNSLNHHKSAELAIILLDLYDKNQTDTANELLKAVKEKDYTKAIDILKNSTS (86aa).
+  Combo A14H/K20 + A41H/K42: ROBUST 2-His switch (frac>=2=1.00, always 2 contacts) + bind_min 0.513 +
+  xreact_min 0.234 (bM 0.234/cM 0.239 BOTH agree) + novel (parent TM 0.74) + soluble (hyd -0.66).
+  Matches v10's best crown (g1_133 0.244) on x-react. Alternates (same backbone, pick ONE): 3-His
+  _A14_A41_A39 (sharper switch mean2.4, xreact 0.228), _A41_A12 (bind 0.610, xreact 0.223).
+  -> v11 will have 4 CROWNS (d25, g5_14, g1_133, g7_8). g6_7 x-react died on His install (dropped).
+  NEW SEQ -> portal novelty re-check before upload.
+- **Genie3 funnel: MPNN done (840 bb -> 1680 seqs, runs/f22/mpnn.csv).** s2 self_consistency launched
+  (sc_shard, ESMFold bb_TM>=0.80 + novelty covwTM<0.80, 7 GPUs) -> runs/f22/sc. NOTE: launched with a
+  bad inner '&' -> verify sc_shard alive + relaunch clean if orphaned. Survivors -> pocket Boltz∧Chai
+  human -> binders -> mouse x-react -> switch-install -> v11 Genie3 additions.
+- **Funnel s2 DONE: 1680 seqs -> 1578 self-consistent (bb_TM>=0.80) + 1076 novel -> 1000 BOTH** (572
+  unique backbones). Genie3+CA-MPNN fold back excellently. runs/f22/sc/all.csv.
+- **Funnel s3 RUNNING (b9i9m44r8, GPU 1-7):** top 300 by novelty (covwTM 0.555-0.733, 54 robustly novel
+  <0.65; deduped best-per-backbone) -> human pocket Boltz + score (runs/f23). Binders (ipSAE>=0.3) then
+  go to mouse+Chai x-react -> switch-install. Then assemble v11 = 4 crowns + Genie3 switch-designs,
+  replacing v10 no-switch hedges. All new seqs -> portal novelty re-check before upload (USER-GATED).
+
+## 2026-10-24 f23 BREAKTHROUGH: Genie3 -> 6 dual-folder x-react CROWNS
+- **Genie3 funnel s3 (runs/f23): 300 novel designs -> human Boltz: 156 binders (52%!), 74 ipSAE>=0.5**
+  (far better than RFD4 pool). Top 0.82. Genie3 is the right generator for this flat apical target.
+- **Mouse screen (Boltz, reliable) on 156 -> 9 with boltz_m>=0.15 -> Chai dual-folder confirm -> 6 CROWNS**
+  (bind_min>=0.3 & xreact_min>=0.15, BOTH folders): w2g5_111 (bind0.418/xr0.325), w2g5_59 (0.520/0.310),
+  w2g6_144 (0.707/0.242), w2g1_118 (0.506/0.204), w2g3_19 (0.511/0.194), w2g1_108 (0.583/0.162). Several
+  BEAT v10's best crown (g1_133 0.244) on x-react. Targeting the CONSERVED sub-site (202/203/209/210)
+  worked decisively. (Bug: first confirm job had $PY unset via '& ' subshell; re-scored clean.)
+- **These 6 are PRE-SWITCH.** f24: install_switch + exhaustive His search -> 178 combos -> DIFF=5
+  switch-fold search RUNNING (b1of5ruvr, GPU 2-7) -> switch_prob. Robust-switch combos then confirmed
+  for bind+xreact retention. Each surviving switch = a v11 Genie3 crown.
+- POTENTIAL v11: v10's 3 crowns + g7_8_sw2b + up to 6 Genie3 crowns = up to 10 CROWNS (vs v10's 3).
+  Switch-install wall will cull some (RFD4 pattern). All new seqs -> portal novelty re-check (USER-GATED).
+
+## 2026-10-24 f24 RESULT + v11 ASSEMBLED (7 CROWNS, validated PASS)
+- **All 6 Genie3 crowns accepted a ROBUST switch** (frac>=2 0.8-1.0) — MUCH better than RFD4 (only g7_8
+  cracked). After bind+xreact re-confirm (DIFF=1 dual-folder): **3 CONFIRMED Genie3 switch-crowns** +
+  3 switch-binders:
+  - genie_w2g6_144_sw3b: bind 0.710, xreact 0.311 (BEST new crown), covwTM 0.676, GRAVY -0.74
+  - genie_w2g5_111_sw2b: bind 0.425, xreact 0.254, covwTM 0.640 (2-His; 3-His lost x-react)
+  - genie_w2g3_19_sw2b:  bind 0.543, xreact 0.222, covwTM 0.703
+  - switch-binders (x-react <0.15): w2g1_118 (0.532/0.146), w2g1_108 (0.582/0.144), w2g5_59 (0.497/0.013)
+  All 0-Cys, soluble (GRAVY neg), 3 robustly novel (covwTM<0.68).
+- **v11 = submissions/tfr1_track2_v11.csv + _v11_evidence.csv — validate PASS (20/0/0, anarci yes).**
+  20 DISTINCT backbones, 7 CROWNS (front-loaded 1-7), ALL valid-switch, 6 Genie3 + g7_8 added, v10
+  no-switch hedges (g4_92/g1_15/g0_96/d417) + weakest (g4_66/g4_93/g1_76) DROPPED. Ranked switch(#1,all
+  valid)>x-react(#2)>binding(#3). Top crowns beat v10's best (w2g6_144 0.311, w2g5_111 0.254 vs 0.244).
+  vs v10: 7 crowns (was 3), 20/20 switch (was 16), +6 fresh Genie3 lineages (robustly novel).
+- **7 NEW seqs (6 Genie3 + g7_8) -> portal novelty re-check before upload (USER-GATED).** Genie3 crowns
+  robustly novel (low risk). Fallbacks: v10 (portal 20/20), v7. Upload + push USER-GATED.

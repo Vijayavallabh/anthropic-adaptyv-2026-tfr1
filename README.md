@@ -20,8 +20,15 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-24) — submission ready; upload user-gated.** Deliverables (all validator PASS):
-- **`submissions/tfr1_track2_v10.csv`** (recommended) + `_v10_evidence.csv` — 20 distinct backbones,
+**COMPLETE (2026-10-24) — v11 ready; upload user-gated.** Deliverables (all validator PASS):
+- **`submissions/tfr1_track2_v11.csv`** (RECOMMENDED) + `_v11_evidence.csv` — 20 distinct backbones,
+  **all valid-switch, 7 all-three CROWNS**: d25 (x-react 0.37), Genie3 `w2g6_144` (0.311), `w2g5_111`
+  (0.254), `g1_133` (0.244), `g7_8` (0.234), Genie3 `w2g3_19` (0.222), `g5_14` (0.185). Built by
+  screening the full binder pool for x-react (→ `g7_8` via exhaustive His search) + running **Genie3**
+  (the organizers' flat-target generator) at the conserved sub-site → 6 x-react crowns, 3 switch-installed
+  cleanly. **7 new sequences → portal novelty re-check before upload** (Genie3 crowns robustly novel,
+  covwTM 0.64–0.70). v10/v7 are portal-verified fallbacks.
+- **`submissions/tfr1_track2_v10.csv`** (portal-verified fallback) + `_v10_evidence.csv` — 20 distinct backbones,
   **16 switch-designs incl. 3 all-three CROWNS** (`d25_sw2b_A9_A25` RFd1 x-react 0.37; `rfd4_g5_14_sw2b`
   RFD4 0.185; `rfd4_g1_133_sw2b` RFD4 0.244 — each robust switch + cross-reactive + binding, dual-folder
   confirmed). Standout binder-switch `rfd4_g5_120_sw2b` (ipSAE 0.853). Built by validating against the

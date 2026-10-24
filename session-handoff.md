@@ -10,8 +10,14 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-24) — COMPLETE; submission ready, upload user-gated
-- **Deliverable: `submissions/tfr1_track2_v10.csv`** (recommended) + `_v10_evidence.csv` — 20 DISTINCT
+## State (2026-10-24) — COMPLETE; v11 ready, upload user-gated
+- **Deliverable: `submissions/tfr1_track2_v11.csv`** (RECOMMENDED) + `_v11_evidence.csv` — 20 DISTINCT
+  backbones, **all valid-switch, 7 CROWNS**: d25 (0.37), Genie3 w2g6_144 (0.311), w2g5_111 (0.254),
+  g1_133 (0.244), g7_8 (0.234), Genie3 w2g3_19 (0.222), g5_14 (0.185). Built by running **Genie3**
+  (organizers' flat-target generator) at the conserved sub-site → 6 x-react crowns (3 switch-installed)
+  + full-pool x-react screen → g7_8. 7 new seqs → portal novelty re-check (USER-GATED). v10/v7 =
+  portal-verified fallbacks.
+- **(fallback) `submissions/tfr1_track2_v10.csv`** (portal 20/20) + `_v10_evidence.csv` — 20 DISTINCT
   backbones, **16 switch-designs incl. 3 all-three CROWNS**: `d25_sw2b_A9_A25` (RFd1, x-react 0.37),
   `rfd4_g5_14_sw2b_A34_A50` (RFD4, 0.185), `rfd4_g1_133_sw2b_A10_A20` (RFD4, 0.244) — each robust switch
   + cross-reactive + binding, dual-folder confirmed. Standout binder-switch `rfd4_g5_120_sw2b` (bind
