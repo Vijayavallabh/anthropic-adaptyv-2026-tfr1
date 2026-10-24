@@ -20,16 +20,21 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-24) — v12 ready; upload user-gated.** Deliverables (all validator PASS):
-- **`submissions/tfr1_track2_v12.csv`** (RECOMMENDED) + `_v12_evidence.csv` — 20 distinct backbones,
-  **all valid-switch, 10 all-three CROWNS** (front-loaded; the selector's top-10 are all crowns): d25
-  (x-react 0.37), Genie3 `w2g6_144` (0.311), `w2g3_53` (0.280), `w2g5_111` (0.254), `g1_133` (0.244),
-  `g7_8` (0.234), `w2g3_19` (0.222), `w1g0_112` (0.217), `g5_14` (0.185), `w2g5_27` (0.173). Built by
-  screening the full binder pool for x-react (→ `g7_8`) + fully mining **Genie3** (the organizers'
-  flat-target generator) at the conserved sub-site: 572 novel backbones → 11 binder-level x-react crowns
-  → 6 Genie3 switch-crowns (Genie3 takes His switches cleanly, unlike RFD4). **10 new sequences → portal
-  novelty re-check before upload** (Genie3 crowns robustly novel, covwTM 0.64–0.70). v11 (7 crowns) / v10
-  / v7 are fallbacks (v10/v7 portal-verified).
+**COMPLETE (2026-10-24) — v13 ready (crowns validated); upload user-gated.** Deliverables (all validator PASS):
+- **`submissions/tfr1_track2_v13.csv`** (RECOMMENDED) + `_v13_evidence.csv` — the same 20 sequences as
+  v12 (byte-identical), with **all 10 CROWNS now validated against a false-positive control** and the
+  **top-10 interleaved by generator**. A decoy control (20 de-novo binders designed for *other* targets,
+  folded through the exact pocket-restrained human+mouse metric) found that single-folder human binding
+  is a weak gate (25% of decoys clear it) but **0/20 clear the crown conjunction** (human ≥0.30 AND mouse
+  ≥0.15): max decoy mouse ipSAE 0.108 sits below the 0.15 bar and below every crown's cross-reactivity
+  (0.145–0.37). A pose-contact check confirms all 6 Genie3 crowns bury the conserved sub-site (UniProt
+  209/210) in *both* species. So the crowns are real — the mouse cross-reactivity axis is the filter
+  de-novo non-binders cannot fake. The top-10 then interleaves generators (the four non-Genie3 crowns
+  hold protected ranks 1/3/5/7: `d25` #1, `g1_133`/`g7_8`/`g5_14`) to hedge wet-lab correlation risk.
+  **10 new sequences → portal novelty re-check before upload** (local oracle: all novel, covwTM 0.64–0.78).
+- **`submissions/tfr1_track2_v12.csv`** (fallback) + `_v12_evidence.csv` — the same 20 sequences, ranked
+  by raw cross-reactivity before the generator interleave. v11 (7 crowns) / v10 / v7 are further
+  fallbacks (v10/v7 portal-verified).
 - **`submissions/tfr1_track2_v10.csv`** (portal-verified fallback) + `_v10_evidence.csv` — 20 distinct backbones,
   **16 switch-designs incl. 3 all-three CROWNS** (`d25_sw2b_A9_A25` RFd1 x-react 0.37; `rfd4_g5_14_sw2b`
   RFD4 0.185; `rfd4_g1_133_sw2b` RFD4 0.244 — each robust switch + cross-reactive + binding, dual-folder

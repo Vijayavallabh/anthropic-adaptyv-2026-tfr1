@@ -10,13 +10,24 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-24) — COMPLETE; v12 ready, upload user-gated
-- **Deliverable: `submissions/tfr1_track2_v12.csv`** (RECOMMENDED) + `_v12_evidence.csv` — 20 DISTINCT
-  backbones, **all valid-switch, 10 CROWNS** (top-10 all crowns): d25 (0.37), Genie3 w2g6_144 (0.311),
-  w2g3_53 (0.280), w2g5_111 (0.254), g1_133 (0.244), g7_8 (0.234), w2g3_19 (0.222), w1g0_112 (0.217),
-  g5_14 (0.185), w2g5_27 (0.173). Built by fully mining **Genie3** at the conserved sub-site (572 novel
-  backbones → 11 binder-level x-react crowns → 6 Genie3 switch-crowns) + full-pool x-react screen → g7_8.
-  10 new seqs → portal novelty re-check (USER-GATED). v11 (7 crowns) / v10 / v7 = fallbacks.
+## State (2026-10-24) — COMPLETE; v13 ready (crowns validated), upload user-gated
+- **Deliverable: `submissions/tfr1_track2_v13.csv`** (RECOMMENDED) + `_v13_evidence.csv` — SAME 20
+  sequences as v12 (byte-identical, reordered). **All 10 CROWNS VALIDATED** by a decoy false-crown
+  control + pose-contact check (see below), then the **top-10 INTERLEAVED by generator**: the 4
+  non-Genie3 crowns hold PROTECTED ranks 1/3/5/7 (d25 RFd1 #1; g1_133, g7_8, g5_14 RFD4), Genie3 crowns
+  at 2/4/6/8/9/10 — hedges generator-correlation wet-lab risk at the top without demoting any validated
+  cross-reactive crown. Ranks 11-20 unchanged. Validator PASS (20/0/0, anarci yes).
+- **VALIDATION (runs/f27 + pose-contact) — why the crowns are real, not in-silico artifacts:**
+  The red-team + a side-agent flagged Genie3 in-silico reliability (its lab-real TNF binders once scored
+  as failures). Two decision-critical controls, both PASSED: (1) **decoy false-crown control** — 20
+  de-novo binders for OTHER targets (TNF v27 + GLP1R, size-matched) folded through the exact
+  pocket-restrained human+mouse metric: **25% clear human bind ≥0.30 (single-folder binding is a WEAK
+  gate) but 0/20 = 0% clear the FALSE-CROWN conjunction (human ≥0.30 AND mouse ≥0.15)**; max decoy mouse
+  ipSAE 0.108 < 0.15 bar < every crown's xreact_min (0.145–0.37). The mouse x-react axis is the
+  discriminating filter de-novo non-binders cannot fake. (2) **pose-contact** — all 6 Genie3 crowns bury
+  the conserved sub-site (UniProt 209/210 + 14/15) in BOTH species' poses. ⇒ no crown demoted.
+- **(fallback) `submissions/tfr1_track2_v12.csv`** — same 20 seqs as v13, PRE-interleave ranking (top-10
+  by raw x-react; 6 Genie3 at ranks 2-4/7-8-10). + `_v12_evidence.csv`.
 - **(fallback) `submissions/tfr1_track2_v10.csv`** (portal 20/20) + `_v10_evidence.csv` — 20 DISTINCT
   backbones, **16 switch-designs incl. 3 all-three CROWNS**: `d25_sw2b_A9_A25` (RFd1, x-react 0.37),
   `rfd4_g5_14_sw2b_A34_A50` (RFD4, 0.185), `rfd4_g1_133_sw2b_A10_A20` (RFD4, 0.244) — each robust switch

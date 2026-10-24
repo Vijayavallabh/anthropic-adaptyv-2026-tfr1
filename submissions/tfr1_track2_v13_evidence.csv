@@ -1,0 +1,21 @@
+rank,name,source,switch,bind_min,xreact_min,novelty,gravy,len,role,portal,fc_val
+1,d25_sw2b_A9_A25,RFd1,4/4,0.407,0.37,(v6),-0.71,110,CROWN,verified(v10),crown>ceiling
+2,genie_w2g6_144_sw3b,Genie3,robust3H,0.71,0.311,0.676,-0.74,70,CROWN,re-check,crown>ceiling
+3,rfd4_g1_133_sw2b_A10_A20,RFD4,robust,0.349,0.244,0.732,-0.44,70,CROWN,verified(v10),crown>ceiling
+4,genie_w2g3_53_sw2b,Genie3,robust2H,0.481,0.28,0.78,-0.8,68,CROWN,re-check,crown>ceiling
+5,rfd4_g7_8_sw2b_A14_A41,RFD4,robust2H,0.513,0.234,0.74,-0.71,86,CROWN,re-check,crown>ceiling
+6,genie_w2g5_111_sw2b,Genie3,robust2H,0.425,0.254,0.64,-0.92,72,CROWN,re-check,crown>ceiling
+7,rfd4_g5_14_sw2b_A34_A50,RFD4,4/4,0.382,0.185,0.737,-0.84,71,CROWN,verified(v10),crown>ceiling
+8,genie_w2g3_19_sw2b,Genie3,robust2H,0.543,0.222,0.703,-0.5,100,CROWN,re-check,crown>ceiling
+9,genie_w1g0_112_sw2b,Genie3,robust2H,0.302,0.217,0.749,-0.53,62,CROWN,re-check,crown>ceiling
+10,genie_w2g5_27_sw2b,Genie3,robust2H,0.457,0.173,0.738,-0.85,68,CROWN,re-check,crown>ceiling
+11,genie_w2g6_99_sw2b,Genie3,robust2H,0.24,0.246,0.786,-1.18,86,xreact switch-binder,re-check,xr>ceiling
+12,genie_w2g3_21_sw2b,Genie3,robust2H,0.381,0.145,0.751,-0.77,104,switch-binder,re-check,xr>ceiling
+13,rfd4_g5_120_sw2b_A53_A61,RFD4,robust,0.853,0.024,0.737,-0.51,99,strong binder,verified(v10),n/a
+14,genie_w2g1_108_sw2b,Genie3,robust2H,0.582,0.144,0.73,-0.47,88,switch-binder,re-check,xr>ceiling
+15,e223_m3_sw3his,RFd1,4/4,0.408,0.012,(v6),-1.83,106,switch,verified(v10),n/a
+16,rfd4_g4_5_sw3his,RFD4,2/4,0.611,0.011,(v6),-0.06,94,switch,verified(v10),n/a
+17,rfd4_g7_73_sw2his,RFD4,3/4,0.578,0.063,(v6),0.09,109,switch,verified(v10),n/a
+18,d4_m5_sw2his,RFd1,2/4,0.454,0.0,(v6),-1.53,109,switch,verified(v10),n/a
+19,d374_m7_sw3his,RFd1,4/4,0.205,0.021,(v6),-0.06,115,switch,verified(v10),n/a
+20,d206_m6_sw3his,RFd1,4/4,0.203,0.011,(v6),-0.08,124,switch,verified(v10),n/a
