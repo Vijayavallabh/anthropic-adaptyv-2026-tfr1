@@ -20,11 +20,20 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-24) — submission ready; upload user-gated.** Deliverable:
-`submissions/tfr1_track2_v6.csv` — 20 distinct-backbone designs, validator PASS, Proteinbase portal
-novelty 20/20 PASS. Flagship `d25_sw2b_A9_A25` (2-His mech-B switch + cross-reactive + dual-confirmed).
-Generators: RFdiffusion1 + RFD4-Proteina (generator-diversity); validation is **pocket-restrained**
-Boltz-2 ∧ Chai-1 (blind co-fold drifts off-epitope here). See `progress.md` / `session-handoff.md`.
+**COMPLETE (2026-10-24) — submission ready; upload user-gated.** Deliverables (all validator PASS):
+- **`submissions/tfr1_track2_v8.csv`** (recommended) — 20 distinct backbones, **two all-three crowns**
+  (`d25_sw2b_A9_A25`, RFd1, x-react 0.37; `rfd4_g5_14_sw2b_A34_A50`, RFD4, x-react 0.185 — both:
+  robust switch + cross-reactive + binding, dual-folder × dual-species confirmed). Re-ranked by a
+  uniform 4-fold validation. **1 new sequence (the 2nd crown) vs v6/v7 → re-run the portal novelty
+  check before upload** (local oracle 0.737, novel; low risk).
+- **`submissions/tfr1_track2_v7.csv`** (portal-safe fallback) — the same 20 sequences as v6 (portal
+  novelty 20/20 PASS already) but re-ranked by the 4-fold validation; use if skipping the portal re-check.
+- `submissions/tfr1_track2_v6.csv` — original frozen fallback (portal 20/20 PASS).
+
+Flagships are **mech-B multi-His switches + cross-reactive + dual-confirmed**. Generators: RFdiffusion1
++ RFD4-Proteina. Validation is **pocket-restrained** Boltz-2 ∧ Chai-1 with **ipSAE_min** (worst-case
+over folders/species) and **replicate-fold switch probability** (single-fold switch_contacts is noisy).
+See `progress.md` / `session-handoff.md`.
 
 ## Quickstart
 

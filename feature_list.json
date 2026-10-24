@@ -8,7 +8,7 @@
     "cross_reactive",
     "affinity"
   ],
-  "active": "(complete) v6 submission ready \u2014 submissions/tfr1_track2_v6.csv; upload to Proteinbase is user-gated",
+  "active": "(complete) v8 recommended \u2014 submissions/tfr1_track2_v8.csv (2 all-three crowns, 4-fold re-ranked; re-run portal novelty on the 1 new crown seq before upload); v7 = portal-safe fallback. Upload user-gated.",
   "updated": "2026-10-24",
   "status_legend": [
     "todo",

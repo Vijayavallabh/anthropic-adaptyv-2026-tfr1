@@ -463,3 +463,48 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
 - Switch-installed + refolded 12 fresh distinct RFD4 backbones (top novel human binders): 8 dual-confirmed; g4_5_sw3his VALID-SWITCH (swG2); g1_15 (Bh0.95/Ch0.83), g0_96 (0.94/0.80) strong binders (swG0-1).
 - v6 = 20 DISTINCT backbones, one design each, ranked by objective priority: valid-switch tier (des_25 flagship, des_206/223/374/4, g7_8, g4_5, des_386) -> x-react hedges (g7_1/g5_14/g2_132/d417) -> strong distinct binders (g1_15/g0_96/g7_73/g6_7/g4_91/g4_92/g5_24/g6_32). No shared backbones.
 - submissions/tfr1_track2_v6.csv validated PASS. NOTE: 9 new RFD4 designs unchecked on portal novelty (from novel pool maxTM<0.80; re-run portal before upload).
+
+## 2026-10-24 v7: 4-fold re-ranking of the 20 (organizers'-style ipSAE_min + switch cross-check)
+- GOAL: align the front-loaded order (selector takes <=10 from TOP, row-order = ranking) to a rigorous
+  re-score, since v6's within-tier order rested on the construction folds only. Re-scored ALL 20 v6
+  designs on a UNIFORM 4-fold panel: {Boltz-2, Chai-1} x {human, mouse}, pocket-restrained, single-seq,
+  POS_3DS18/NEG-scramble calibrated. runs/f17/. Scripts: score_ipsae.py (ipSAE via patched ipsae.py),
+  switch_contacts.py on each fold, merge_rank.py (ipSAE_min = worst-case over folders per species).
+- CALIBRATION: Boltz-h POS 0.55 / NEG 0.00; Chai-h POS 0.67 / NEG 0.00. Boltz-m POS_3DS18=0.00
+  (correct: 3DS18 human-specific) but Chai-m POS=0.47 (Chai-mouse PERMISSIVE on x-species) -> use
+  mouse ipSAE_min=min(Boltz-m,Chai-m), which correctly discounts Chai's spurious highs (g7_1 Chai-m 0.48
+  but Boltz-m 0.01 -> min 0.01).
+- #1 SWITCH (switch_contacts, Baker floor>=2, counted across all 4 folds): 4/4 ROBUST = d25, e223,
+  d374, d206, g5_24; 3/4 = g7_73; 2/4 = g4_5, d4, d386; <=1/4 (did NOT hold) = g7_8 (v6 #6!), g7_1,
+  g5_14, g2_132, d417, g1_15, g0_96, g6_7, g4_91, g4_92, g6_32. Switch validity is FOLD-DEPENDENT
+  (cross-fold count is the robust signal). g7_73 & g5_24 (v6 bottom tier) have robust switches.
+- #2 X-REACT (mouse ipSAE_min, floor ~0.15): d25 0.37, d417 0.23 (but barely binds human), g5_14 0.19;
+  g4_92 borderline 0.11. Confirms x-react is rare; d25 the clear standout (also best on both folds).
+- #3 AFFINITY (human ipSAE_min): robust strong binders g1_15 0.79, g0_96 0.77, g4_92 0.70, g6_7 0.69,
+  g4_5 0.61, g7_73 0.58. FOLDER-DEPENDENT over-confidence CAUGHT: d386 (Boltz 0.73 but Chai 0.29 ->
+  min 0.29), d4 (0.72->0.45). Weak binders (<0.40): d386, d374, d206, g5_24, g2_132, d417.
+- CROWN: d25_sw2b_A9_A25 is the ONLY design valid on all three (switch 4/4, x-react 0.37, binds 0.41),
+  robust across all 4 folds. Flagship #1 re-confirmed independently.
+- v7 ORDER (affinity-floor ~0.40 gate, then lexicographic #1>#2>#3): d25, e223, g7_73, g4_5, d4,
+  g5_14, g4_92, g1_15, g0_96, g6_7 (top-10) | d374, d206, g5_24, g6_32, d386, g7_1, g4_91, g7_8,
+  d417, g2_132. SAME 20 SEQUENCES as v6 (re-order only) -> portal novelty 20/20 still holds.
+  submissions/tfr1_track2_v7.csv validated PASS. v6 frozen as fallback. Upload USER-GATED.
+- SWITCH SEARCH -> 2nd CROWN (runs/f17/sw_search, sw_rep, sw_mouse, sw_chai_*): exhaustive mech-B
+  His-pair search (scripts/exhaustive_switch.py) on g5_14 (confirmed x-react dual-species binder whose
+  v6 switch was marginal). 45 combos; found the v6 greedy pick (A13/R19+A39/K43) was marginal
+  (frac>=2 = 0.20 across 5 replicate folds) while K31-anchored combos are ROBUST.
+- KEY METHOD FIX: switch_contacts on a SINGLE Boltz fold is noisy (same seq gave total 1 vs 5 on
+  different folds). Fixed by REPLICATE folding (DIFF_SAMPLES=5) + frac>=2 (scripts/switch_prob.py),
+  calibrated: POSctrl e223 frac 1.00/d25 1.00, NEGctrl g0_96 0.00, marginal g5_14_sw2his 0.20. NOTE:
+  DIFF=5 gives NOISY ipSAE (binding) -> use DIFF=1 for binding, DIFF=5 for switch probability.
+- CROWN 2 = rfd4_g5_14_sw2b_A34_A50 (g5_14 + His A34/K31 + A50/K53). DUAL-FOLDER x DUAL-SPECIES
+  confirmed: switch 4/4 folds valid (Boltz-h frac 1.00 mean4, Boltz-m 4, Chai-h 3, Chai-m 3);
+  x-react ipSAE_min(Boltz-m,Chai-m)=0.185; binding ipSAE_min(Boltz-h,Chai-h)=0.382; novelty 0.737
+  (NOVEL, = parent g5_14 which passed portal 20/20). A 2nd all-three design, DIFFERENT fold family
+  (RFD4) than d25 (RFd1). (switch GEOMETRY validated, not magnitude — magnitude stays unrankable.)
+- v8 = v7 with the crown REPLACING the old no-switch g5_14_sw2his (same backbone -> still 20 distinct):
+  #1 d25 (x-react 0.37), #2 g5_14 crown (x-react 0.185), then e223/g7_73/g4_5/d4 (switch+binds),
+  g4_92 (x-react+binds), g1_15/g0_96/g6_7 (binders) | 11-20 switch/binder hedges. validate PASS.
+  submissions/tfr1_track2_v8.csv. **1 NEW sequence (the crown) vs the portal-checked v6/v7 set ->
+  re-run Proteinbase portal novelty before upload** (local oracle novel 0.737; low risk). v7 = fully
+  portal-verified fallback; v6 = original frozen fallback. Upload USER-GATED.
