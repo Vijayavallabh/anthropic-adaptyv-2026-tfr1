@@ -1026,3 +1026,34 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   Minor notes (not blockers): all 20 share the apical epitope + protein class (epitope/class diversity is a
   rewarded axis we don't spread); non-Met-starting designs get an auto-Met we didn't fold with (far N-term,
   off-interface). Tool has registered targets tfr1/tnfa/glp1r/kras-pmhc -> same gate for Challenges 2/3/4/5.
+
+## 2026-10-27 — F38 non-mimetic moonshot campaign (/ambition-lift "drastic moonshots") -> NO CHANGE; v19 STANDS
+OUTCOME: an exhaustive moonshot campaign found NO design that strictly dominates the v19 rank-1. v19 is
+CONFIRMED at the ceiling and ships unchanged. "Confirm, don't churn." Full raw data in runs/f38_moon/.
+- SCOPE (all legitimate, all on the frozen pipeline): (A) extended the switch-rescue (which had only ever
+  run on ONE backbone) to 4 backbones (genie_w2g3_53 3-His re-mine, genie_w2g6_144, w3g2_70, w4g2_174),
+  112 unique 2-His+3-His candidates, DIFF=6 pocket-restrained dual-folder rescreen -> robust n=3 refold of
+  the top 16 (with the incumbent folded on MATCHED seeds) + 2-fold JustHisPKa + pose + novelty + dev;
+  (B) bivalent avidity moonshot; (C) first-principles non-mimetic-switch SOTA scan.
+- (C) SOTA scan verdict: NO non-mimetic switch chemistry survives (His is the ONLY side chain with intrinsic
+  pKa in [6.0,7.4]; reversed-polarity acid / His-His pair / cation-pi / metal all fail validation or physics).
+  Separated buried-His STACKING is the 2024-2026 SOTA frontier (Baker bioRxiv 2025.09.29.678932). Confirms
+  our approach; the only validatable lever is MORE separated His (= what (A) searched).
+- (B) bivalent NO-GO (geometry + biology + kinetics + validatability): apical epitopes 83A apart, outward-
+  facing; bivalent TfR1 -> LYSOSOME not recycling (Niewoehner 2014 Brain Shuttle); avidity SLOWS off-rate ->
+  fights the pH-6 release (= objective #1). The most "radical" idea is actively counterproductive.
+- (A) the apparent winner genie_w2g3_53__A27HK8_A13HR44 looked like a strict dominator (robust mouse ipSAE
+  0.448+/-0.027 vs incumbent 0.395, 2-in-window both folds, human 0.501) -> BUT a cold devil's-advocate
+  (P=60%) + my own verification KILLED the swap:
+    * #2 cross-reactivity is a RATIO (config: mouse_crossreact_ratio_to_1). mouse/human ratio = incumbent
+      0.92-0.94 vs challenger 0.85-0.89 (BOTH campaigns) -> the INCUMBENT is more cross-reactive; the
+      challenger's higher ABSOLUTE mouse score is a confounded general-affinity bump (XR & BIND co-move,
+      same co-folds, rho~0.87), NOT better cross-reactivity.
+    * #1 switch is a TIE (incumbent swing 1.38-1.47 >= challenger 1.34-1.44, overlapping) -> not a win.
+    * so the challenger's ONLY clean edge is #3 affinity (LOWEST priority; the judge prefers a clear switch
+      over a strong binder). Evicting the PORTAL-VERIFIED rank-1 for a noisier (sigma 0.027 vs 0.007),
+      un-verified cousin that's worse on the #2 ratio = a backwards trade. REJECTED. build_v20 deleted.
+  NEGATIVE RESULTS (honest): g144 "deep-switch" standout COLLAPSED on robust (seed0 0.390 -> n=3 0.298+/-0.066,
+  a lucky seed caught by the matched refold); all 3-His triples killed bind (0.03-0.08) or dropped XR; no
+  non-g53 backbone beat g53 on cross-reactivity. The exhaustive search CONFIRMS v19 is at the biophysical
+  ceiling on this epitope. DELIVERABLE UNCHANGED: v19 (portal-verified 20/20) > v18 > v17. Upload USER-GATED.
