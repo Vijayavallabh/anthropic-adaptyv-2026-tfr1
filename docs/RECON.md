@@ -47,7 +47,7 @@ This supersedes the earlier guessed span 202–215: residues 205–207 and 213�
 - **Binding definition:** fittable KD, OR association shift >300% over negative control. Conditions
   measured: human 7.4, human 6.0, mouse 7.4 (page says "four conditions" but lists three — possible
   mouse 6.0; unconfirmed, watch Slack).
-- **Novelty = 1–4 LEVEL scale (NOT 3-of-4).** Hard gate = level ≥3 (enforced at submission). Level 4 =
+- **Novelty = 1–4 LEVEL scale (NOT 3-of-4).** The ENFORCED submission gate is the binder-prescreen tool (prior-art + known-binder), NOT this score — per Oct-27 Slack + the prescreen README the 1–4 novelty level is INFORMATIONAL (a ranking input; still target level 4). Level 4 =
   seq ≤30% (MMseqs2 vs SwissProt/PDB/patents/PLAbDab) AND < moderate structural TM (ESMFold→domain
   split→Foldseek/TM-align, coverage-weighted). **Target level 4. Judged on the BINDING PART ONLY.**
   Antibodies on CDRH3. (Thresholds via WebFetch summarizer — byte-verify before coding the oracle.)
@@ -110,7 +110,8 @@ This supersedes the earlier guessed span 202–215: residues 205–207 and 213�
   PROPKA-Wyman/pKAI/JustHISpKa/GFN2-xTB sign-consensus, ON-state contact-gated <8 Å). Obj2 = worst-case
   cross-species ipSAE_min (human ∧ mouse, matched protonation, energetic — never a single folder).
   Obj3 = ≥2-folder human binding consensus + de-novo af2ig (plddt_binder>80, rmsd<2) + apical bonus.
-  Hard gates DEMOTE (not cull): switch-direction purity, novelty ≥3/4, 0-Cys + developability.
+  Hard gates DEMOTE (not cull): switch-direction purity, 0-Cys + developability. (Novelty ≥3/4 is a ranking
+  input, NOT a cull — the ENFORCED entry gate is the binder-prescreen, Oct-27.)
   Tie-break 1 = Obj priority; tie-break 2 = method/lineage novelty + diversity (≤2/lineage even at the
   head). **Exact counts are planning defaults — rebalance by actual F06/F07/F08 yields.**
 
