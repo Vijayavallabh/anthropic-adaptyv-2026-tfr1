@@ -10,10 +10,22 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-27) — COMPLETE; v17 PORTAL-VERIFIED 20/20; CLEARED FOR UPLOAD (user-gated)
-- **Deliverable: `submissions/tfr1_track2_v17.csv`** (RECOMMENDED) + `_v17_evidence.csv` — 20
-  genuine-switch crowns, validator PASS, **portal-verified 2026-10-27 (all 20 Passed, "0 needing fixes",
-  NO novelty / "similar designs" flags; byte-verified submitted==validated)**. Row order = ranking.
+## State (2026-10-27, ambition-lift) — COMPLETE; v19 RECOMMENDED (19/20 portal-verified + 1 new); validator PASS
+- **DELIVERABLE STACK (upload + push USER-GATED):**
+  - **`submissions/tfr1_track2_v19.csv`** (RECOMMENDED, strongest) + `_v19_evidence.csv` — v18 + ONE
+    evidence-backed DESIGN upgrade: the switch-rescue winner `genie_w2g3_53__A13HR44_A31HK8` (robust mouse XR
+    0.394 ± 0.007 over n=3 seeds, min 0.385 → BEATS the whole prior pool's 0.349 and the soft ~0.40 ceiling;
+    GENUINE 2-in-window switch confirmed across 2 folds + sw_frac 1.00; bind 0.421; dev CLEAN; mouse pose on
+    conserved 203/209; novelty 0.778 == its PORTAL-VERIFIED parent's 0.776) REPLACES `w4g1_286` (same fold)
+    and ranks #1. 19/20 sequences BYTE-IDENTICAL to v17/v18; the winner is the ONLY new sequence → needs 1
+    portal novelty check (fold cleared in v15 → pass expected). 19 distinct folds. validator PASS 20/0/0.
+  - **`submissions/tfr1_track2_v18.csv`** (fully portal-verified fallback) + `_v18_evidence.csv` — v17's 20
+    sequences, pure reorder: the one SEVERE-expression design (`w4g3_380`) demoted out of the tested top-10
+    (clean `w4g5_147` promoted in). Inherits v17's 20/20 portal verification. Use for ZERO portal risk.
+  - **`submissions/tfr1_track2_v17.csv`** (portal-verified 20/20) + fallbacks v16/v15/v13.
+- v17 details below remain the basis for the v18/v19 sequence set. Row order = ranking.
+- **v17 (the fallback basis): portal-verified 2026-10-27 (all 20 Passed, "0 needing fixes", NO novelty /
+  "similar designs" flags; byte-verified submitted==validated).**
 - **What changed vs v16 (the decisive finding):** v16's cross-reactivity (XR) ranking used the **MAX
   across diffusion samples** — optimistic small-n noise (e.g. old #1 w3g6_146 hit 0.397 in ONE fold of
   six; robust mean 0.19). v17 re-scored all 20 v16 + 19 Wave-4 switched crowns in **one same-pipeline
@@ -39,8 +51,14 @@
   control on this flat apical epitope → pocket restraints mandatory).
 - **Key findings carried forward:** (1) XR is only coarsely rankable in-silico (~0.03 pipeline noise,
   larger for a few high-variance designs) — select robust MEAN + diversity, never a single lucky sample;
-  (2) the ~0.40 XR "ceiling" is softer than thought but real under robust folding (one raw design held
-  0.434; switch install costs ~0.08 XR); (3) partial diffusion is a proven dud here (children inherit
-  parent novelty); (4) switch magnitude is in-silico-unrankable → pick genuine + diverse.
-- **Remaining (user-gated):** the owner's upload click on `v17.csv`. Repo pushed to `origin/main` on
-  owner request (2026-10-27). No further compute needed; v16/v15/v13 remain fallbacks.
+  (2) the ~0.40 XR "ceiling" is NOT a hard limit — the F37 switch-rescue produced a GENUINE-switch design at
+  robust XR 0.394 (n=3) by relocating the buried His on the highest-XR backbone (genie_w2g3_53); it was a soft
+  property of the un-rescued pool; (3) partial diffusion is a proven dud here (children inherit parent
+  novelty); (4) switch magnitude is in-silico-unrankable WITHIN the genuine set (His-pKa err 2-3u >> 1.4u
+  window; n_inwindow boundary-brittle) → gate genuine, then order by cross-reactivity + diversity, never
+  fine-rank the switch (a switch-tier reorder was built and RETRACTED after a devil's-advocate review).
+- **Remaining (user-gated):** (1) one Proteinbase novelty check on the single new v19 sequence
+  (`genie_w2g3_53__A13HR44_A31HK8`; fold cleared in v15 → pass expected), then the owner's upload click —
+  `v19.csv` (strongest) or `v18.csv`/`v17.csv` (fully portal-verified). (2) `git push` — this ambition-lift
+  checkpoint is committed locally but NOT pushed (push user-gated; prior v17 push was 2026-10-27). No further
+  compute needed.

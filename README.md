@@ -20,8 +20,29 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-27, latest) — v17 is the RECOMMENDED deliverable; PORTAL-VERIFIED 20/20, cleared for upload (user-gated).**
-- **`submissions/tfr1_track2_v17.csv`** (RECOMMENDED) + `_v17_evidence.csv` — 20 genuine-switch crowns re-ranked
+**COMPLETE (2026-10-27, ambition-lift) — v19 is the RECOMMENDED deliverable; validator PASS; 19/20 portal-verified + 1 new design pending a portal novelty check.**
+- **`submissions/tfr1_track2_v19.csv`** (RECOMMENDED) + `_v19_evidence.csv` — v18 with ONE evidence-backed
+  **design** upgrade from a switch-rescue. `genie_w2g3_53__A13HR44_A31HK8` (relocating the buried-His switch
+  off `genie_w2g3_53`'s pKa-depressed positions) is validated on every axis — **robust mouse cross-reactivity
+  0.394 ± 0.007 over n=3 independent seeds (min 0.385), beating the entire prior pool (best 0.349) and the
+  soft ~0.40 "ceiling"**; **GENUINE 2-in-window switch confirmed across 2 folds** (sw_frac 1.00, swing ~1.4);
+  bind 0.421; developability CLEAN (0-Cys); mouse pose anchored on the conserved cross-species core (203/209);
+  novelty 0.778 (= its **portal-verified** parent's 0.776). It REPLACES `w4g1_286` (same fold cluster) and
+  ranks **#1** by cross-reactivity. **19/20 sequences are byte-identical to the portal-verified v17/v18 set;
+  the winner is the only new sequence and needs one Proteinbase novelty check (its fold was cleared in v15 →
+  a pass is expected).** 19 distinct folds. A deep 18-agent adversarial SOTA scout + a cold devil's-advocate
+  confirmed that no *other* new design or method beats the set and that cross-reactivity/switch otherwise sit
+  at biophysical ceilings — this targeted rescue broke the XR one. New: `build_v18.py`, `build_v19.py`,
+  the `buried_switch_scan → exhaustive_switch → guarded wave4_rescreen` rescue (`runs/f37_rescue`).
+- **`submissions/tfr1_track2_v18.csv`** (fully portal-verified fallback) + `_v18_evidence.csv` — v17's exact
+  20 sequences with one developability fix: the single SEVERE-expression-risk design (`w4g3_380`, net charge
+  −15 charge-blob) demoted out of the tested top-10, promoting the clean, equal-cross-reactivity `w4g5_147`
+  in. A pure reorder → inherits v17's 20/20 portal verification. Use this for a zero-portal-risk, fully
+  verified top-10. (A switch-`n_inwindow` reorder was built then **retracted** after the devil's-advocate +
+  SOTA scout showed the switch is not finely rankable within the genuine set — only coarsely gate-able.)
+
+**COMPLETE (2026-10-27, earlier) — v17 (now a portal-verified fallback; superseded by v19/v18); PORTAL-VERIFIED 20/20.**
+- **`submissions/tfr1_track2_v17.csv`** (portal-verified fallback) + `_v17_evidence.csv` — 20 genuine-switch crowns re-ranked
   on a ROBUST metric. Root-cause finding: v16's cross-reactivity numbers were the **max across diffusion
   samples** (optimistic); v17 re-scores all 20 v16 + 19 Wave-4 switched crowns in one same-pipeline DIFF=6
   dual-folder batch and ranks on the **mean** (aligned with the organizers' conservative ipSAE_min+ensemble

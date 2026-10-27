@@ -1,0 +1,21 @@
+rank,name,set,lineage,tested_top10,xr_mean,xr_std,bind,crown_rate,switch_verdict,n_inwindow,expr_risk,liability,novelty_tm,cluster,portal,note
+1,genie_w2g3_53__A13HR44_A31HK8,F37-rescue,Genie3-w2,Y,0.394,0.007,0.421,1.00,GENUINE,2,CLEAN,0,0.778,2,CHECK (new seq; fold cleared v15),RESCUE WINNER: robust XR 0.394 (n=3) + 2-in-window switch (2 folds); replaces w4g1_286
+2,w3g2_70_mpnn1_sw2his,V16,Genie3-w3,Y,0.349,0.001,0.652,1.000,GENUINE,2,CLEAN,0,,11,cleared(v15/v17),
+3,genie_w2g6_144_sw3b,V16,Genie3-w2,Y,0.325,0.049,0.714,1.000,GENUINE,2,CLEAN,1,0.686,20,cleared(v15/v17),
+4,w4g1_195_mpnn0_sw2his,W4,Genie3-w4,Y,0.338,0.028,0.466,1.000,GENUINE,1,CLEAN,1,0.825,21,cleared(v15/v17),
+5,w3g5_231_mpnn1_sw3his,V16,Genie3-w3,Y,0.311,0.055,0.583,1.000,GENUINE,2,CLEAN,2,,5,cleared(v15/v17),
+6,w3g7_240_mpnn1_sw3his,V16,Genie3-w3,Y,0.282,0.002,0.580,1.000,GENUINE,2,CLEAN,0,,5,cleared(v15/v17),
+7,w4g7_217_mpnn1_sw3his,W4,Genie3-w4,Y,0.269,0.007,0.489,1.000,GENUINE,0,CLEAN,0,0.767,1,cleared(v15/v17),
+8,w4g2_174_mpnn1_sw3his,W4,Genie3-w4,Y,0.245,0.011,0.381,1.000,GENUINE,3,CLEAN,0,0.664,3,cleared(v15/v17),
+9,w4g0_194_mpnn1_sw2his,W4,Genie3-w4,Y,0.227,0.004,0.457,1.000,GENUINE,1,MODERATE,1,0.680,4,cleared(v15/v17),
+10,w4g5_147_mpnn0_sw3his,W4,Genie3-w4,Y,0.225,0.001,0.639,1.000,GENUINE,2,MODERATE,1,0.672,9,cleared(v15/v17),
+11,w4g3_380_mpnn0_sw2his,W4,Genie3-w4,-,0.229,0.001,0.606,1.000,GENUINE,1,SEVERE,3,0.692,7,cleared(v15/v17),SEVERE expr risk -> out of tested top-10
+12,rfd4_g7_8_sw2b_A14_A41,V16,RFD4,-,0.212,0.026,0.521,1.000,GENUINE,1,CLEAN,5,0.701,17,cleared(v15/v17),
+13,w3g6_146_mpnn0_sw2his,V16,Genie3-w3,-,0.190,0.013,0.529,1.000,GENUINE,2,CLEAN,2,,10,cleared(v15/v17),
+14,rfd4_g5_14_sw2b_A34_A50,V16,RFD4,-,0.184,0.005,0.377,1.000,GENUINE,3,CLEAN,0,0.737,18,cleared(v15/v17),
+15,w4g5_137_mpnn1_sw3his,W4,Genie3-w4,-,0.222,0.006,0.597,1.000,GENUINE,2,CLEAN,1,0.806,8,cleared(v15/v17),
+16,w3g2_225_mpnn0_sw3his,V16,Genie3-w3,-,0.162,0.003,0.331,1.000,GENUINE,3,CLEAN,1,,15,cleared(v15/v17),
+17,w3g5_70_mpnn1_sw3his,V16,Genie3-w3,-,0.216,0.115,0.421,0.500,GENUINE,1,CLEAN,2,,12,cleared(v15/v17),
+18,w3g5_249_mpnn0__A13HK16_A42HK69,V16,Genie3-w3,-,0.144,0.025,0.574,0.500,GENUINE(geom),,MODERATE,1,,14,cleared(v15/v17),
+19,genie_w2g5_111_sw2b,V16,Genie3-w2,-,0.138,0.022,0.425,0.500,GENUINE,1,CLEAN,1,0.684,19,cleared(v15/v17),
+20,w3g0_290_mpnn1_sw2his,V16,Genie3-w3,-,0.162,0.150,0.705,0.500,GENUINE,1,CLEAN,1,,13,cleared(v15/v17),
