@@ -1002,3 +1002,27 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   order + length + head/tail (PASS). Net of the ambition-lift: a genuinely BETTER design (the rescue winner
   beats the entire prior pool on cross-reactivity 0.394>0.349 while matching the top 2-in-window switch) now
   sits portal-cleared at #1. Remaining: owner's upload click + git push (both USER-GATED); checkpoint committed.
+
+## 2026-10-27 — Rules reconciliation (Oct-27 Slack summary, user-relayed) + prescreen cross-check
+- KEY REFRAME (Slack, Oct 27): the HARD ENTRY GATE is the `adaptyvbio/binder-prescreen` tool (release v0.5,
+  updated for TfR1 2026-10-27) — "passing the prescreen at submission means the design has entered." The
+  **Proteinbase NOVELTY SCORE is INFORMATIONAL, NOT an exclusion criterion** (contra the long-held "novelty
+  hard-gate level>=3" framing). Novelty is still a displayed ranking input the Claude-selector values, so keep
+  it high — but it cannot exclude. The portal's per-row "Passed / 0 needing fixes" IS the prescreen result ->
+  v19 already passed the authoritative gate.
+- PRESCREEN STRUCTURE (PRESCREEN_SPEC.md v0.5): two arms. TARGET arm (no downloads) = whole-seq composite,
+  >=8-aa verbatim containment, and binding-region vs the curated known-binder set; for NON-ANTIBODY
+  miniproteins (our class) it flags `known_target_binder` (composite>=0.90), `verbatim_target_fragment`
+  (>=8 aa of a named/confirmed binder), or `target_binder_homolog` (whole-seq id in [0.70,0.90)). PRIOR-ART
+  arm = MMseqs vs PDB/SwissProt/PLAbDab/Thera-SAbDab/THPdb/Proteinbase/USPTO (>=0.95 -> known_sequence).
+- INDEPENDENT CROSS-CHECK (data-only, my own code reading the tool's tfr1_binders.fasta = 6695 known binders;
+  did NOT execute the external tool — permission-gated): all 20 of v19/v18/v17 show ZERO >=8-aa verbatim
+  fragment and max homology-proxy (5-mer containment) = 0.03 -> no target-arm flag. Confirms the portal pass.
+  (Prior-art arm needs the 4.6GB corpus build + runs the external tool, both out of scope here; the portal
+  already ran the full prescreen, and de-novo seqs with structural novelty <0.80 can't be >=95% public id.)
+- COMPLIANCE (v19 vs the Oct-27 rules): PASS — 0 unpaired Cys, len 62-109 (10-250), molecule_class=protein,
+  unique names, 3-col CSV row-order=ranking, de-novo (His-switch on OUR OWN designs, not modified known
+  binders), switch direction bind-7.4/release-6.0 (confirms the ProtonPottsMPNN NO-GO: it does the REVERSE).
+  Minor notes (not blockers): all 20 share the apical epitope + protein class (epitope/class diversity is a
+  rewarded axis we don't spread); non-Met-starting designs get an auto-Met we didn't fold with (far N-term,
+  off-interface). Tool has registered targets tfr1/tnfa/glp1r/kras-pmhc -> same gate for Challenges 2/3/4/5.
