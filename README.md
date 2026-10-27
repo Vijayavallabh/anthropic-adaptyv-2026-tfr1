@@ -20,7 +20,7 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-27, ambition-lift) — v19 is the RECOMMENDED deliverable; validator PASS; 19/20 portal-verified + 1 new design pending a portal novelty check.**
+**COMPLETE (2026-10-27, ambition-lift) — v19 is the RECOMMENDED deliverable; PORTAL-VERIFIED 20/20, cleared for upload (user-gated).**
 - **`submissions/tfr1_track2_v19.csv`** (RECOMMENDED) + `_v19_evidence.csv` — v18 with ONE evidence-backed
   **design** upgrade from a switch-rescue. `genie_w2g3_53__A13HR44_A31HK8` (relocating the buried-His switch
   off `genie_w2g3_53`'s pKa-depressed positions) is validated on every axis — **robust mouse cross-reactivity
@@ -28,9 +28,9 @@ hard gate; the Proteinbase portal is authoritative.
   soft ~0.40 "ceiling"**; **GENUINE 2-in-window switch confirmed across 2 folds** (sw_frac 1.00, swing ~1.4);
   bind 0.421; developability CLEAN (0-Cys); mouse pose anchored on the conserved cross-species core (203/209);
   novelty 0.778 (= its **portal-verified** parent's 0.776). It REPLACES `w4g1_286` (same fold cluster) and
-  ranks **#1** by cross-reactivity. **19/20 sequences are byte-identical to the portal-verified v17/v18 set;
-  the winner is the only new sequence and needs one Proteinbase novelty check (its fold was cleared in v15 →
-  a pass is expected).** 19 distinct folds. A deep 18-agent adversarial SOTA scout + a cold devil's-advocate
+  ranks **#1** by cross-reactivity. **Proteinbase portal-verified 2026-10-27 — all 20 Passed, "0 needing
+  fixes", the new winner cleared the novelty gate (it was the only new sequence; its fold was cleared in v15);
+  byte-verified submitted==validated.** 19 distinct folds. A deep 18-agent adversarial SOTA scout + a cold devil's-advocate
   confirmed that no *other* new design or method beats the set and that cross-reactivity/switch otherwise sit
   at biophysical ceilings — this targeted rescue broke the XR one. New: `build_v18.py`, `build_v19.py`,
   the `buried_switch_scan → exhaustive_switch → guarded wave4_rescreen` rescue (`runs/f37_rescue`).

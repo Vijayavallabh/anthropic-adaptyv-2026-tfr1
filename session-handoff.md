@@ -17,8 +17,9 @@
     0.394 ± 0.007 over n=3 seeds, min 0.385 → BEATS the whole prior pool's 0.349 and the soft ~0.40 ceiling;
     GENUINE 2-in-window switch confirmed across 2 folds + sw_frac 1.00; bind 0.421; dev CLEAN; mouse pose on
     conserved 203/209; novelty 0.778 == its PORTAL-VERIFIED parent's 0.776) REPLACES `w4g1_286` (same fold)
-    and ranks #1. 19/20 sequences BYTE-IDENTICAL to v17/v18; the winner is the ONLY new sequence → needs 1
-    portal novelty check (fold cleared in v15 → pass expected). 19 distinct folds. validator PASS 20/0/0.
+    and ranks #1. 19/20 sequences BYTE-IDENTICAL to v17/v18; the winner was the ONLY new sequence and it
+    PASSED → **v19 PORTAL-VERIFIED 20/20 (2026-10-27: all Passed, 0 fixes; byte-verified submitted==validated)**.
+    19 distinct folds. validator PASS 20/0/0.
   - **`submissions/tfr1_track2_v18.csv`** (fully portal-verified fallback) + `_v18_evidence.csv` — v17's 20
     sequences, pure reorder: the one SEVERE-expression design (`w4g3_380`) demoted out of the tested top-10
     (clean `w4g5_147` promoted in). Inherits v17's 20/20 portal verification. Use for ZERO portal risk.
@@ -57,8 +58,7 @@
   novelty); (4) switch magnitude is in-silico-unrankable WITHIN the genuine set (His-pKa err 2-3u >> 1.4u
   window; n_inwindow boundary-brittle) → gate genuine, then order by cross-reactivity + diversity, never
   fine-rank the switch (a switch-tier reorder was built and RETRACTED after a devil's-advocate review).
-- **Remaining (user-gated):** (1) one Proteinbase novelty check on the single new v19 sequence
-  (`genie_w2g3_53__A13HR44_A31HK8`; fold cleared in v15 → pass expected), then the owner's upload click —
-  `v19.csv` (strongest) or `v18.csv`/`v17.csv` (fully portal-verified). (2) `git push` — this ambition-lift
-  checkpoint is committed locally but NOT pushed (push user-gated; prior v17 push was 2026-10-27). No further
-  compute needed.
+- **Remaining (user-gated):** (1) the owner's upload click — `v19.csv` (RECOMMENDED; PORTAL-VERIFIED 20/20
+  on 2026-10-27, all Passed incl. the new winner, byte-verified) or `v18.csv`/`v17.csv` (also fully
+  portal-verified fallbacks). (2) `git push` — the ambition-lift checkpoint is committed locally but NOT yet
+  pushed (push user-gated; prior v17 push was 2026-10-27). No further compute needed.

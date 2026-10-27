@@ -991,6 +991,14 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   v18/v17 set; the winner is the ONLY new sequence (portal CHECK -- its fold was cleared in v15, so a pass is
   expected). 19 distinct fold clusters (diversity preserved). This is the genuine top-rank OVERHAUL the
   ambition-lift was for -- a better DESIGN, not just a reorder.
-- DELIVERABLE STACK: v19 (RECOMMENDED, strongest; winner #1 needs 1 portal novelty check) > v18 (fully
-  portal-verified fallback = v17 seqs + the SEVERE-dev demotion) > v17 (portal-verified 20/20) > v16/v15/v13.
-  Upload + push remain USER-GATED.
+- DELIVERABLE STACK: v19 (RECOMMENDED, strongest) > v18 (fully portal-verified fallback = v17 seqs + the
+  SEVERE-dev demotion) > v17 (portal-verified 20/20) > v16/v15/v13. Upload + push remain USER-GATED.
+
+## 2026-10-27 — v19 PORTAL-VERIFIED 20/20 (owner paste) — CLEARED FOR UPLOAD (user-gated)
+- Proteinbase portal on v19 (owner paste): "20 included, 0 needing fixes"; EVERY row Passed, including the
+  NEW switch-rescue winner genie_w2g3_53__A13HR44_A31HK8 (Row 2) — it CLEARED the hard novelty gate (as
+  expected; its fold was portal-cleared in v15). The only remaining gate is closed -> v19 is fully portal-verified.
+- BYTE-VERIFIED submitted==validated: all 20 portal rows match submissions/tfr1_track2_v19.csv by name + row
+  order + length + head/tail (PASS). Net of the ambition-lift: a genuinely BETTER design (the rescue winner
+  beats the entire prior pool on cross-reactivity 0.394>0.349 while matching the top 2-in-window switch) now
+  sits portal-cleared at #1. Remaining: owner's upload click + git push (both USER-GATED); checkpoint committed.
