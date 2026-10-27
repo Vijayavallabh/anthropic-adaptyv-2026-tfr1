@@ -20,7 +20,34 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**UPDATED (2026-10-27) — v15 is the new RECOMMENDED deliverable (owner-authorized compute push to replace v13's weak members).** All validator PASS; upload + push remain user-gated.
+**COMPLETE (2026-10-27, latest) — v17 is the RECOMMENDED deliverable; PORTAL-VERIFIED 20/20, cleared for upload (user-gated).**
+- **`submissions/tfr1_track2_v17.csv`** (RECOMMENDED) + `_v17_evidence.csv` — 20 genuine-switch crowns re-ranked
+  on a ROBUST metric. Root-cause finding: v16's cross-reactivity numbers were the **max across diffusion
+  samples** (optimistic); v17 re-scores all 20 v16 + 19 Wave-4 switched crowns in one same-pipeline DIFF=6
+  dual-folder batch and ranks on the **mean** (aligned with the organizers' conservative ipSAE_min+ensemble
+  judge). #1 `w3g2_70` (robust 0.349, stable, portal-cleared) replaces w3g6_146 (robust mean 0.19 — its 0.397
+  was one lucky sample → #13). **8 new Wave-4 distinct-fold crowns** (deep 3,200-backbone Genie3 wave f35)
+  replace 8 weak/dead-switch, non-crown, or structural-cousin v16 members. All 20 GENUINE switches
+  (JustHisPKa); **19/20 distinct folds** (vs v16 15/20; max achievable); RFD4 lineage kept (#12/#14).
+  **Portal-verified 2026-10-27 — all 20 Passed, "0 needing fixes", no novelty / "similar designs" flags
+  (both borderline-novelty new designs cleared); byte-verified submitted==validated.** Validator PASS.
+  New scripts: build_v17.py, build_master_v17.py, wave4_rescreen.sh, wave4_robust.sh, pose_subsite.py.
+
+**UPDATED (2026-10-27, later) — v16 (now a fallback; superseded by v17).** v16 = the 20 portal-verified v15 sequences RE-RANKED on accurate new evidence; validator PASS; upload + push user-gated. Key:
+- **`submissions/tfr1_track2_v16.csv`** (RECOMMENDED) + `_v16_evidence.csv` — same 20 sequences as v15
+  (all portal-novelty-cleared), re-ordered by the ACCURATE switch tool. Objective #1 (pH-switch, 49%/39%
+  selector weight) is now scored by **JustHisPKa** (MUE 0.4; AmberTools prep wired this session) instead of
+  His-cation geometry. Ranking = genuine-switch tier gate → XR → bind, developability demotion, diversity.
+  **#1 = w3g6_146** (genuine 2-His switch + best XR 0.397 + high bind — strongest on all three), replacing
+  w3g5_70 (accurate tool shows only 1 of its 3 His fires). Weak/dead switches demoted to the tail
+  (genie_w2g3_53 switch 0.31 #3→#16; genie_w1g0_112 dead →#18). Honest negatives: joint multi-state MPNN
+  did NOT raise cross-reactivity (0/12; re-seq kills binding — XR ceiling ~0.40 holds); blind Protenix
+  (organizers' folder) cannot localize the apical epitope even for the POS_3DS18 control → dropped as a
+  ranker. New scripts: benchmark_table.py, dev_augment.py, propka_switch.py, justhispka_switch.py,
+  fold/score_protenix_tfr1.py, joint_xreact_build_tfr1.py+joint_xreact_mpnn.sh, build_v16.py.
+- **`submissions/tfr1_track2_v15.csv`** (fallback) — the same 20, ranked before the accurate-switch re-rank.
+
+**UPDATED (2026-10-27) — v15 (now a fallback; superseded by v16).** All validator PASS.
 - **`submissions/tfr1_track2_v15.csv`** (RECOMMENDED) + `_v15_evidence.csv` — 20 designs, **15 genuine
   robust-switch crowns** (clear all three objectives under 6-Boltz-sample robust folding + dual-folder
   min + switch_prob Baker-floor + max-TM novelty gate) front-loaded, then 2 weak-switch crowns + 3

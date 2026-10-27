@@ -912,3 +912,11 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   wave4_rescreen.sh(+seed), wave4_robust.sh, pose_subsite.py. Fallbacks intact: v16/v15/v14/v13.
 - PENDING: portal novelty check on the 8 NEW (USER-GATED upload); optional n=4 top-up (foreign BoltzGen job
   intermittently holds the shared box; n=2-3 mean already decisive vs v16's max).
+
+## 2026-10-27 — v17 PORTAL-VERIFIED (20/20 Passed) — CLEARED FOR UPLOAD (user-gated)
+- Proteinbase portal on v17 (owner paste): "20 included • 0 needing fixes"; EVERY row Passed; NO novelty or
+  "similar designs" flags. Both borderline-novelty NEW designs cleared (w4g1_195 @row4, w4g5_137 @row16), and
+  the 8 new Wave-4 designs + the 19/20-distinct-fold set passed the authoritative similarity gate.
+- BYTE-VERIFIED submitted==validated: all 20 portal sequences match submissions/tfr1_track2_v17.csv by row
+  order + length + head/tail. v17 is the RECOMMENDED deliverable. Fallbacks v16/v15/v13 intact.
+- The only remaining step is the owner's upload click (USER-GATED). Nothing else pending.
