@@ -73,6 +73,8 @@ if len(sel)<20:
         try_add(r, allow_dupcluster=True)
 
 sel=sel[:20]
+# fail-loud: never silently emit a short/empty submission (e.g. from an empty master.tsv)
+assert len(sel)==20, f"build_v17: selected {len(sel)} designs, expected 20 — check runs/f35/sel/master.tsv is populated"
 sel.sort(key=lambda r:-r['rankscore'])  # final row order = confidence XR with novelty-certainty tie-break
 
 # write v17 + evidence
