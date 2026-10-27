@@ -1,7 +1,28 @@
 # progress
 
-**Updated:** 2026-10-20 (session cont., post-/clear)
-**Active feature:** F02 — target prep
+**Updated:** 2026-10-27 (v15 compute push)
+**Active feature:** DELIVERABLE = v15 (RECOMMENDED); upload + push USER-GATED
+
+## 2026-10-27 — v15 "best-20" compute push (owner-authorized: replace v13's weak members)
+- Fresh Genie3 wave (2,400 backbones, conserved-sub-site conditioned, seeds 21000) → funnel → 2,735
+  self-consistent+novel → crown-screened two tiers (top 400 + next 1,200 of the pool) → ~47 bind+xr crowns.
+- NEW lossless 2-stage crown screen (`scripts/crown_screen_2stage.sh`): Boltz necessary-condition filter on
+  all candidates, Chai only on survivors — same verdict as full 4-fold crown_val, far less Chai. (Red-team
+  found 2 latent false-negative bugs; verified ZERO exposure on the actual runs; fixed for robustness.)
+- Switch install: greedy (`install_switch.sh`) + exhaustive His-pair rescue (`exhaustive_switch.py`) on the
+  highest-XR backbones. switch genuineness via `scripts/switch_prob_chai.py` (Chai/CIF, Baker floor frac≥2).
+- Robustness (Prong C): re-fold the crown pool at DIFF_SAMPLES=6 (6-Boltz-sample mean) — single-fold XR/bind
+  proved noisy (v13 d25 bind 0.407→0.014; wave-3 XR ±0.19). Switch frac is stable across runs.
+- Novelty: `novelty_struct.py` max-TM gate (portal-calibrated 0.89 = L3/L2 boundary). Caught that the funnel's
+  covwTM<0.80 gate let non-novel designs through (w3g1_43/139 max-TM 0.92/0.95 → excluded).
+- Result: **v15** = 15 genuine robust-switch novel crowns + 5 completing (2 weak-switch crowns + 3 RFD4/RFd1
+  hedges). validate --track2 PASS. Flagship w3g6_146 XR 0.397. v14 (14 crowns+6 hedges) + v13 are fallbacks.
+- Research workflow verdict: no better generator for this flat-apical target (PXDesign/BoltzGen/BindCraft
+  wall; Genie3 is the one that crowns); Odin-Multi (multi-state co-design) documented as an optional future
+  x-react lever (not pursued — 2–4 d setup, new backbones still face the switch gate).
+- USER-GATED next: Proteinbase novelty re-check (watch borderline rows) → upload → push.
+
+## (historical, 2026-10-20)
 
 ## Done
 - **F00 repo + harness** (closing out) — clean uv project `adaptyv-tfr1` at the canonical path;

@@ -20,6 +20,21 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
+**UPDATED (2026-10-27) — v15 is the new RECOMMENDED deliverable (owner-authorized compute push to replace v13's weak members).** All validator PASS; upload + push remain user-gated.
+- **`submissions/tfr1_track2_v15.csv`** (RECOMMENDED) + `_v15_evidence.csv` — 20 designs, **15 genuine
+  robust-switch crowns** (clear all three objectives under 6-Boltz-sample robust folding + dual-folder
+  min + switch_prob Baker-floor + max-TM novelty gate) front-loaded, then 2 weak-switch crowns + 3
+  RFD4/RFd1 method-diversity hedges. Built from a fresh 2,400-backbone Genie3 wave (conserved-sub-site
+  conditioned) → 2,735 self-consistent+novel → ~47 bind+xr crowns across two screening tiers → switch
+  install (greedy + exhaustive rescue) → robust re-fold. Flagship **w3g6_146 XR 0.397** (vs v13 best
+  0.322); #1 `w3g5_70` is comfortably-novel (0.690) for top-slot safety. Mix 16 Genie3 / 3 RFD4 / 1 RFd1.
+  Honest same-pipeline finding: under this strict robust+novelty test v13's 10 "crowns" hold at only ~5,
+  so v15 roughly doubles the robustly-real crowns. Borderline-novelty rows (ranks 2/4/8/9/15, max-TM
+  0.81–0.85, pass the ≥L3 gate) are flagged — **run the Proteinbase novelty check before upload.**
+- **`submissions/tfr1_track2_v14.csv`** (fallback) + `_v14_evidence.csv` — earlier cut of the same push
+  (14 crowns + 6 hedges), validated PASS. Superseded by v15 (deeper crown set, higher top-10 XR).
+- **`submissions/tfr1_track2_v13.csv`** (portal-verified fallback) + `_v13_evidence.csv` — see below.
+
 **COMPLETE (2026-10-24) — v13 portal-verified + crowns validated; cleared for upload (user-gated).** Deliverables (all validator PASS):
 - **`submissions/tfr1_track2_v13.csv`** (RECOMMENDED) + `_v13_evidence.csv` — the same 20 sequences as
   v12 (byte-identical), with **all 10 CROWNS now validated against a false-positive control** and the
