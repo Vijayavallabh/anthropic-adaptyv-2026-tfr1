@@ -29,7 +29,11 @@ runs/
 outputs/
 scratchpad/
 data/generated/
+data/pdb_ref/
 *.log
+
+# Local submission backups (from in-place CSV fixes)
+*.prebakfix
 
 # Caches
 .cache/

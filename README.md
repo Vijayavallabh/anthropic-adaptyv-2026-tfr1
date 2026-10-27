@@ -34,7 +34,7 @@ hard gate; the Proteinbase portal is authoritative.
   New scripts: build_v17.py, build_master_v17.py, wave4_rescreen.sh, wave4_robust.sh, pose_subsite.py.
 
 **UPDATED (2026-10-27, later) — v16 (now a fallback; superseded by v17).** v16 = the 20 portal-verified v15 sequences RE-RANKED on accurate new evidence; validator PASS; upload + push user-gated. Key:
-- **`submissions/tfr1_track2_v16.csv`** (RECOMMENDED) + `_v16_evidence.csv` — same 20 sequences as v15
+- **`submissions/tfr1_track2_v16.csv`** (fallback — superseded by v17) + `_v16_evidence.csv` — same 20 sequences as v15
   (all portal-novelty-cleared), re-ordered by the ACCURATE switch tool. Objective #1 (pH-switch, 49%/39%
   selector weight) is now scored by **JustHisPKa** (MUE 0.4; AmberTools prep wired this session) instead of
   His-cation geometry. Ranking = genuine-switch tier gate → XR → bind, developability demotion, diversity.
@@ -48,7 +48,7 @@ hard gate; the Proteinbase portal is authoritative.
 - **`submissions/tfr1_track2_v15.csv`** (fallback) — the same 20, ranked before the accurate-switch re-rank.
 
 **UPDATED (2026-10-27) — v15 (now a fallback; superseded by v16).** All validator PASS.
-- **`submissions/tfr1_track2_v15.csv`** (RECOMMENDED) + `_v15_evidence.csv` — 20 designs, **15 genuine
+- **`submissions/tfr1_track2_v15.csv`** (fallback) + `_v15_evidence.csv` — 20 designs, **15 genuine
   robust-switch crowns** (clear all three objectives under 6-Boltz-sample robust folding + dual-folder
   min + switch_prob Baker-floor + max-TM novelty gate) front-loaded, then 2 weak-switch crowns + 3
   RFD4/RFd1 method-diversity hedges. Built from a fresh 2,400-backbone Genie3 wave (conserved-sub-site
@@ -63,7 +63,7 @@ hard gate; the Proteinbase portal is authoritative.
 - **`submissions/tfr1_track2_v13.csv`** (portal-verified fallback) + `_v13_evidence.csv` — see below.
 
 **COMPLETE (2026-10-24) — v13 portal-verified + crowns validated; cleared for upload (user-gated).** Deliverables (all validator PASS):
-- **`submissions/tfr1_track2_v13.csv`** (RECOMMENDED) + `_v13_evidence.csv` — the same 20 sequences as
+- **`submissions/tfr1_track2_v13.csv`** (fallback — portal-verified) + `_v13_evidence.csv` — the same 20 sequences as
   v12 (byte-identical), with **all 10 CROWNS now validated against a false-positive control** and the
   **top-10 interleaved by generator**. A decoy control (20 de-novo binders designed for *other* targets,
   folded through the exact pocket-restrained human+mouse metric) found that single-folder human binding

@@ -1,7 +1,7 @@
 # progress
 
 **Updated:** 2026-10-27 (v15 compute push)
-**Active feature:** DELIVERABLE = v15 (RECOMMENDED); upload + push USER-GATED
+**Active feature:** DELIVERABLE = v17 (RECOMMENDED — PORTAL-VERIFIED 20/20, cleared for upload); upload USER-GATED. Fallbacks v16/v15/v14/v13.
 
 ## 2026-10-27 — v15 "best-20" compute push (owner-authorized: replace v13's weak members)
 - Fresh Genie3 wave (2,400 backbones, conserved-sub-site conditioned, seeds 21000) → funnel → 2,735
@@ -920,3 +920,17 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
 - BYTE-VERIFIED submitted==validated: all 20 portal sequences match submissions/tfr1_track2_v17.csv by row
   order + length + head/tail. v17 is the RECOMMENDED deliverable. Fallbacks v16/v15/v13 intact.
 - The only remaining step is the owner's upload click (USER-GATED). Nothing else pending.
+
+## 2026-10-27 — SCORING METHOD VERIFIED (fresh primary source, not memory): organizers use AVERAGE ipSAE
+- A side-agent correctly flagged that the v16->v17 mean-vs-max re-rank rested on a MEMORY of the scoring
+  rule. Fresh web read of Adaptyv's own competitions: "the leaderboard was built from AVERAGE ipSAE score,
+  computed via Boltz2" (Nipah); ipSAE is noisy across seeds/hardware and Adaptyv says the unpredictability
+  is INTENTIONAL (anti-metric-gaming). The Anthropic autonomous-binder report (this competition family) used
+  ESMFold2 + ipSAE_min + self-consistency DockQ. Local captured rules agree: ipSAE_min worst-case {human,
+  mouse}, "never a single folder" (configs/target.yaml:111, docs/RECON.md:111, docs/METHODS.md:25).
+- => v17's robust-MEAN ranking is ALIGNED with the organizers' AVERAGE-ipSAE scoring; v16's MAX-of-samples
+  was mis-aligned. Under single-fold scoring the mean is still EV-optimal (mean = E[single draw]); only a
+  "best-of-many" scoring would favor max, which contradicts the verified average/worst-case/never-single ethos.
+  The #1 pick w3g2_70 (mean 0.349, std 0.001) scores ~0.35 under ANY aggregation -> robustly optimal front row.
+  Reorder CONFIRMED (not just asserted). Sources: adaptyvbio.substack.com leaderboard posts; Anthropic Claude
+  Science autonomous-binder report.
