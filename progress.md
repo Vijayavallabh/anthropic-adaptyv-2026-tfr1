@@ -754,3 +754,161 @@ UPLOAD USER-GATED. Novelty portal check = final gate before upload.
   length, 20/20 exact. Evidence CSV portal col updated: 10 verified(v10) + 10 verified(v13) = 20/20.
 - **v13 is CLEARED FOR UPLOAD.** Upload to Proteinbase + git push remain USER-GATED. Fallbacks v12/v11/
   v10/v7 (all portal-verified). CAMPAIGN COMPLETE: crowns validated (decoy false-crown 0/20) + novel (portal).
+
+## 2026-10-27 WAVE-4 launched — deepen the proven crown recipe (ambition-lift, autonomous)
+- Decision: idle 8xH100 + 5 days to deadline + v16 locked as floor + frozen judge => fresh generation is
+  asymmetric-EV (can only match/beat v16). Launched (job b2wjy7b3f, scripts/wave4_drive.sh):
+  Genie3 conserved-sub-site (frag 14,15,21,22 = UniProt 202,203,209,210), 3200 backbones (33% deeper than
+  the v15 wave of 2400), FRESH seeds 31000-31007 -> funnel (MPNN -> ESMFold SC+novelty -> human Boltz
+  screen) -> FROZEN crown screen (crown_screen_2stage, dual-folder Boltz+Chai ipSAE_min) -> runs/f35/crown.
+- Devil's-advocate REVISION (CLAUDE.md mandate): DROPPED the extended-footprint arm. Frag 16,20,23,24
+  (=UniProt 204,208,211,212) are the 4 human<->mouse DIVERGENT residues -> conditioning Genie3 on them is
+  XR-negative by construction (not ambiguous). All firepower -> the conserved-sub-site recipe that actually
+  crowns + cross-reacts. Anthropic's footprint-COUNT rho=0.07 is about size, not deliberately targeting
+  divergent positions, so it doesn't rescue that arm.
+- Post-crown plan (pipeline confirmed ready): install_switch.sh -> robust re-fold (DIFF_SAMPLES=6) ->
+  switch_prob + justhispka_switch -> novelty_struct (max-TM <0.80 safe) -> dedup vs v15/v16 -> v17 ONLY if
+  genuine-switch+novel+robust NEW crowns beat v16's weak tail (e223_m3 XR 0.012, rfd4_g1_133 XR 0.120,
+  weak/dead switches). v16/v15/v14/v13 stay intact as fallbacks. Upload + push remain USER-GATED.
+
+## 2026-10-27 ADVERSARIAL REVIEW (workflow wd4wlu16z, 4 agents, repo-grounded) -> plan revised
+- KILL Wave-5 (partial diffusion). DECISIVE: the project ALREADY ran PD this campaign (progress.md
+  2026-10-21 des_160): DUD - children inherit parent novelty; "needs a ROBUSTLY-novel (<0.65) parent,
+  which I don't have." All 3 Wave-5 seeds are 0.69/0.831/0.846; the two top-XR ones are the WORST on
+  novelty. partial_T=10 + noise_scale_ca=0 => children ~= parent => fail <0.80 gate AND become the
+  look-alikes that trip the "similar designs" flag. The ~0.40 XR CEILING is EPITOPE BIOPHYSICS (apical
+  patch keeps only 3/9 residues in mouse, loses 2 basics) NOT a backbone property -> no perturbation can
+  break it. SELF-CORRECTION: my prior claim that PD was the "best shot at XR>0.40" was WRONG.
+- Joint human+mouse MPNN third lever: NO-GO (already ran, runs/jxr: 1 crown XR 0.235 < its v16 parent 0.315).
+- "Replace all 20": EV-NEGATIVE. Discards v16's lineage diversity (3 RFD4 + 1 RFd1), maximizes similar-
+  designs risk, re-exposes every row to the novelty gate before a user-gated deadline upload. WINNING move =
+  keep the portal-verified genuine-switch CORE + swap the weak/redundant TAIL (ranks 16-20) with Wave-4's
+  distinct new crowns + ADD the missing structural-diversity gate. Realistic: ~5 slots, more iff Wave-4/RFd3
+  deliver distinct crowns that beat core members on key+novelty+distinctness.
+- DIVERSITY RULE (corrected): STRUCTURAL pairwise Foldseek TM<0.60 across the 20 (NOT a per-generator cap -
+  that would reject 8+ distinct Genie3 crowns). fold_diversity.py on v16 -> 15 distinct folds/20; the 5
+  duplicates are each a weak-tail design sharing a fold with a top-10 member (genie_w2g3_53~w3g7_240/w3g5_231;
+  genie_w1g0_112~w3g6_93; w3g0_218~w3g7_6; rfd4_g1_133~w3g5_264). Portal ALREADY passed these 20 (v15) => TM
+  0.60 is conservative vs the portal; portal is authority. Replacing the weak tail -> 20 distinct folds.
+- NEW orthogonal lever REPLACING PD: RFd3 (all-atom; "broke the flat-polar wall" ~0.4% per memory) for
+  genuine NON-Genie3 distinct crowns + lineage balance. Queue AFTER Wave-4, CONDITIONAL on a smoke test
+  (runs + produces docked backbones here) and yield. v17 selection = synthesis spec (gate switch-GENUINE+
+  crown+novelty<0.80 -> TM<0.60 greedy fill -> lexicographic switch>XR>bind -> ship iff beats a v16 member).
+- #1 row (49% wt): keep w3g6_146 (XR 0.397, already PORTAL-CLEARED in v15 so its local 0.831 is not a true
+  risk); hold w3g5_70 (0.69, novel) as #1 fallback. Any Wave-4 crown takes #1 only if it beats on key AND <0.80.
+
+## 2026-10-27 (later) — WAVE-4 CROWNS: the ~0.40 XR "ceiling" did NOT hold under deeper search
+- Wave-4 (b2wjy7b3f, 3200 Genie3 backbones seeds 31000-31007) -> funnel -> FROZEN crown screen (runs/f35/crown):
+  **37 crowns** (bind>=0.30 & XR>=0.15, dual-folder Boltz+Chai min, pocket-restrained). 11 at XR>=0.25, 5 at
+  >=0.30, and **3 ABOVE 0.40**: w4g3_21 (XR 0.483, BIND 0.447), w4g1_208 (XR 0.426, BIND 0.673),
+  w4g1_195 (XR 0.416, BIND 0.462). This DIRECTLY refutes my just-stated "XR ~0.40 is an unbreakable
+  biophysical ceiling." CORRECTION: the ceiling was an artifact of shallow sampling, not a hard wall. A
+  deeper 3200-backbone search found backbones the dual-folder screen scores >0.40 on mouse. (v16 best was
+  w3g6_146 XR 0.397.) Honest caveat: still in-silico ipSAE; magnitude carries co-folder-calibration risk.
+- POSE CHECK (scripts/pose_subsite.py, fragment-aware, CONS={14,15,21,22}=UniProt 202/203/209/210,
+  DIV={16,20,23,24,183}=204/208/211/212/371): refutes the OFF-EPITOPE-artifact explanation. Every high-XR
+  crown sits on the apical patch and contacts the CONSERVED anchors in BOTH species (mouse cons=2-3 incl.
+  15/21/22). So high mouse ipSAE is on-epitope + conserved-anchored, NOT nonsense-pose drift. RESIDUAL RISK
+  (honest): all crowns ALSO contact the divergent residues -> the mouse score rests on the co-folder scoring
+  tolerance of the mouse substitutions (R208->N etc.). That is the real in-silico uncertainty, unprovable
+  until wet-lab; dual-folder min is our best hedge.
+- SWITCH INSTALL (scripts/install_switch.sh on the 36 crowns): 68 switched variants (each crown sw2his and,
+  where >=3 separated buried cations, sw3his) -> runs/f35/switch/switched.csv. Switched seq is the SUBMITTABLE
+  form (His substitutions change binding).
+- ROBUST RE-SCREEN launched (b2r3o0b1z, scripts/wave4_rescreen.sh): 68 switched + 6 top raw crowns (as _RAW
+  controls to separate "ceiling wrong" from "switch install cost XR") -> DIFF=6 dual-folder Boltz+Chai,
+  pocket-restrained, all 8 GPUs (boltz_h[0,1] boltz_m[2,3] chai_h[4,5] chai_m[6,7]); switch_prob from the
+  Boltz human DIFF=6 replicate fold in the same pass. -> runs/f35/rescreen/rescreen_table.tsv.
+- NEXT after re-screen: JustHisPKa on switched survivors (genuine-switch tier gate) -> novelty_struct
+  (ESMFold max-TM, HARD portal gate; these w4 seqs are UNSEEN by portal) -> fold_diversity (TM<0.60 vs each
+  other + v16 core) -> build v17 iff a switched Wave-4 crown beats a v16 member on switch/XR/novelty/distinctness.
+
+## 2026-10-27 (later still) — ROBUST re-screen + novelty + diversity TEMPER the headline; same-batch comparison launched
+- ROBUST DIFF=6 re-screen of the 68 switched + 6 raw controls (runs/f35/rescreen): the raw "3 above 0.40"
+  shrank to **1** (w4g1_195 raw 0.434). w4g3_21 0.483->0.344, w4g1_208 0.426->**0.120** (non-robust samples).
+  Lesson reaffirmed: a single-screen XR is noisy (~0.14 swing); only DIFF=6 dual-folder is trustworthy.
+  22 SWITCHED crowns survive robustly. Switch install costs ~0.08 XR -> best SUBMITTABLE Wave-4 crown
+  w4g1_195_sw2his XR 0.352 (BELOW v16 champion w3g6_146 0.397 as measured earlier -> see same-batch caveat).
+- NOVELTY (novelty_struct, single-seq ESMFold max-TM vs PDB; runs/f35/sel/novelty.csv): 12/22 novel(<0.80),
+  7 borderline(0.80-0.90), 3 RISK(>0.90). The two HIGHEST-BIND crowns FAIL novelty (w4g3_109 BIND 0.82 @0.96;
+  w4g1_208 BIND 0.66 @0.94) -> unsubmittable. w4g1_195 (champion XR 0.352) is borderline @0.825. Best
+  NOVEL+strong: w4g3_155_sw2his (XR 0.274/BIND 0.702/nov 0.697), w4g7_217_sw3his (0.272/0.492/0.767),
+  w4g2_174_sw3his (0.259/0.377/0.664), w4g1_286_sw3his (0.267/0.547/0.788).
+- MUTUAL DIVERSITY (fold_diversity single-seq TM<0.60; runs/f35/sel/w4div): 13 distinct folds/22. KEY:
+  cluster 1 ties w4g3_155 ~ w4g1_286 ~ w4g2_351 (same fold) -> pick ONE (w4g3_155, best). >=6 DISTINCT-fold
+  novel crowns available for the tail swap -> ample.
+- V16.csv BUG FIXED: w3g5_249's sequence had a trailing newline (forced CSV quoting; my awk corrupted it in a
+  first combined set). Rewrote v16.csv with a proper CSV writer (whitespace-only change to 1 seq, biological
+  seq unchanged; .prebakfix backup). Validator PASS, 20 rows. First batch re-score (bbh358zg9) KILLED for the
+  corrupted input; GPUs cleaned.
+- SAME-BATCH COMPARISON (side-agent's valid-comparison fix, correct): re-scoring all 20 v16 members + 19
+  submittable Wave-4 crowns in ONE identical DIFF=6 dual-folder batch (ba8o5hiim -> runs/f35/batchcmp/rescore)
+  so keep-or-swap rests on one set of dice, not two runs (XR noise ~0.14 >> the 0.05 gap it would decide).
+- PENDING: justhispka (bnhfi5z9r, switch-genuineness tier) + same-batch table + v16 single-seq models for
+  cross-set TM<0.60 -> then build v17 (keep validated core, swap weak tail w/ best distinct-fold novel
+  genuine-switch Wave-4 crowns, 20 distinct folds, re-rank) IFF strictly stronger than v16 on same-batch numbers.
+
+## 2026-10-27 — JustHisPKa: ALL 22 Wave-4 switched crowns are GENUINE switches; swap plan firmed
+- JustHisPKa (runs/f35/sel/switch_justhispka.tsv): 22/22 GENUINE. Strongest: w4g2_174_sw3his (3 in-window,
+  swing 2.42), w4g2_351_sw3his (1.79), w4g3_155_sw2his (3 in-window, 1.63), w4g5_147_sw3his (1.33). Switch
+  gate does NOT narrow the field (good) -> binding + novelty + distinctness are the discriminators. Per
+  lesson-switch-magnitude-not-rankable: swing is a TIER, not a fine ranker.
+- v16 WEAK/DEAD-switch tail (replaceable, from v16 evidence): #16 genie_w2g3_53 WEAK(0.31), #17 w3g0_218
+  WEAK(0.32), #18 genie_w1g0_112 DEAD(0.00), #20 e223_m3 DEAD(0.00, XR 0.012 non-crown), #19 rfd4_g1_133
+  GENUINE but XR 0.120 non-crown (RFD4/RFd1 hedge). RFD4 lineage STAYS in core at #9 rfd4_g7_8 + #11
+  rfd4_g5_14 (both GENUINE) -> replacing weak #19/#20 keeps lineage diversity.
+- Wave-4 swap pool (novel<0.80 + GENUINE switch + distinct fold, same-batch XR pending): w4g3_155_sw2his
+  (XR 0.274/BIND 0.702/nov 0.697/swing 1.63), w4g7_217_sw3his (0.272/0.492/0.767/0.70), w4g2_174_sw3his
+  (0.259/0.377/0.664/2.42), w4g3_380_sw2his (0.228/0.604/0.692/1.11), w4g0_194_sw2his (0.231/0.460/0.68/0.92),
+  w4g5_147_sw3his (0.225/0.638/0.672/1.33). cluster-1 cousins (155/286/351) -> keep only w4g3_155.
+- GATED on ba8o5hiim (same-batch DIFF=6 of 20 v16 + 19 Wave-4): finalize keep/replace boundary on ONE set of
+  dice, then v16 single-seq ESMFold (fill 8 blank novelties + unified TM<0.60 diversity) -> build_v17 ->
+  ship IFF strictly stronger than v16 on same-batch numbers. Upload + push remain USER-GATED.
+
+## 2026-10-27 — CRITICAL: v16's XR ranking rests on NON-REPRODUCIBLE numbers; robust n=4 campaign launched
+- SAME-BATCH DIFF=6 (runs/f35/batchcmp/rescore, 20 v16 + 19 Wave-4, one batch): the picture INVERTS vs v16's
+  evidence. v16 #1 FLAGSHIP w3g6_146 evidence-XR 0.397 -> same-batch 0.177 (-0.22). v16 "weak tail"
+  genie_w2g3_53 -> TOP XR 0.379 (but WEAK switch -> stays demoted by objective #1). v16 "core" w3g5_70 0.320->
+  0.102, w3g6_93 0.259->0.062, w3g0_290 0.197->0.012, w3g5_264 0.220->0.012 (now NON-crowns). Others rose:
+  w3g5_231 0.257->0.367, genie_w2g6_144 0.315->0.374.
+- REPRODUCIBILITY TEST (two independent DIFF=6 runs of the 19 Wave-4): mean |dXR|=0.029, 17/19 within 0.06.
+  => the DIFF=6 pipeline IS reproducible (~0.03); v16's evidence XR came from a DIFFERENT/less-robust
+  measurement and does NOT reproduce. The side-agent was right: v16 numbers vs fresh numbers are not
+  comparable; the SAME-BATCH numbers are the trustworthy ones. CONSEQUENCE: v16's front-loading (49%/39%) is
+  mis-ordered on the robust metric (its #1 is actually mid-pack XR).
+- A few designs are genuinely HIGH-VARIANCE (unreliable): w4g1_286_sw3his 0.267->0.014; w3g6_146 0.397->0.177.
+  Prefer the stable sister (w4g1_286_sw2his) / demote high-std designs from front ranks.
+- STRATEGY REFINED (honest): XR is NOT finely rankable (ties < ~0.08 are noise) and the organizers' blind
+  judge can't localize the apical epitope either. So DOMINATE = portfolio of ROBUST genuine-switch crowns
+  (high crown-rate across folds + strong mean), maximally DIVERSE (folds+lineages, the scored axis), with
+  FRONT-LOAD by CONFIDENCE (robust mean + low variance + genuine switch + novel + on-epitope), not by a
+  single lucky XR. This REBUILDS the ranking, not just the tail.
+- ROBUST n=4 CAMPAIGN (bih4fmqox, scripts/wave4_robust.sh): 3 more DIFF=6 batches of the combined 39 with
+  independent Chai seeds 1/2/3, pooled with batchcmp(seed0) -> runs/f35/robust/robust_xr.tsv (per-design
+  xr_mean, xr_std, crown_rate, bind_mean). Then: v16 single-seq ESMFold (novelty for 8 blanks + unified
+  TM<0.60 diversity) -> build_v17 on robust stats. Upload+push USER-GATED.
+
+## 2026-10-27 — ROOT CAUSE FOUND + v17 BUILT: v16 XR was MAX-of-samples; v17 re-ranks on robust MEAN
+- SMOKING GUN (runs/f33 per-sample data for w3g6_146): its mouse XR across replicate folds = {0.000, 0.3975,
+  0.0118, ...}. v16 recorded **0.397 = the MAX**. My wave4_rescreen takes the MEAN across DIFF=6 samples
+  (score_ipsae.py line 67-68: st.mean over samples; per-sample standard symmetric-max ipSAE) -> w3g6_146
+  robust MEAN ~0.19 (stable, std 0.013). => v16's XR ranking was MAX-of-samples (optimistic, small-n noise),
+  over-ranking spiky designs (w3g6_146, w3g5_70, w3g0_290) and under-ranking consistent ones (w3g2_70,
+  genie_w2g6_144). Devil's-advocate ("maybe MY pipeline is broken") ANSWERED: my rescreen matches the frozen
+  crown-screen on Wave-4 (w4g1_195 0.416 vs 0.434) and is internally consistent across all 39. The organizers
+  judge with ipSAE_MIN across folders + ensemble (CONSERVATIVE) -> robust mean aligns with them, max does not.
+- v17 BUILT (submissions/tfr1_track2_v17.csv, validator PASS 20/0/0). Ranked by confidence-adjusted robust XR
+  (mean - 0.5*std, n=2 V16 / n=3 W4 same-pipeline DIFF=6). #1 w3g2_70 (robust 0.349, std 0.001, GENUINE,
+  BIND 0.65, portal-cleared) REPLACES w3g6_146 (robust 0.19, demoted to #14). 8 NEW Wave-4 genuine-switch
+  distinct-fold crowns added (ranks 2,6,7,8,9,10,11,12); 8 dropped (genie_w2g3_53 WEAK despite top XR 0.356,
+  w3g0_218 WEAK, genie_w1g0_112 DEAD, e223_m3/w3g5_264 non-crowns, w3g6_93/w3g7_6 cousins, rfd4_g1_133 low-XR).
+  All 20 GENUINE switches. 19/20 distinct folds (MAX achievable — the 3 unused clusters hold only
+  novelty-risk/non-crown designs; one cousin pair w3g5_231~w3g7_240 both strong crowns). RFD4 lineage kept
+  (#13 rfd4_g7_8, #15 rfd4_g5_14). 2 HIVAR designs in the near-zero-weight tail (#17,#20) for fold diversity.
+- v17 vs v16 (same robust metric): STRONGER on #1-switch (20/20 genuine vs 17/20), #2-XR front-load (0.349 vs
+  0.19 at #1), diversity (19 vs 15 folds). CONDITIONAL on the 8 NEW designs passing the portal novelty check
+  (6 safe <0.80: w4g1_286/w4g7_217/w4g2_174/w4g3_380/w4g0_194/w4g5_147; 2 borderline: w4g1_195 0.825,
+  w4g5_137 0.806). v16 members all portal-cleared (v15). Scripts: build_master_v17.py, build_v17.py,
+  wave4_rescreen.sh(+seed), wave4_robust.sh, pose_subsite.py. Fallbacks intact: v16/v15/v14/v13.
+- PENDING: portal novelty check on the 8 NEW (USER-GATED upload); optional n=4 top-up (foreign BoltzGen job
+  intermittently holds the shared box; n=2-3 mean already decisive vs v16's max).
