@@ -20,8 +20,25 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-28) — v20 is the RECOMMENDED deliverable; #1 slot LOCKED (unanimous 3-0 adjudication); PORTAL-VERIFIED 20/20, cleared for upload (user-gated).**
-- **`submissions/tfr1_track2_v20.csv`** (RECOMMENDED, FINAL) — v19 with **only the rank-1 slot swapped** to
+**RECOMMENDED (2026-10-28, ambition-lift) — `submissions/tfr1_track2_v21.csv`: v20 re-ranked by the organizers' own BLIND judge. #1 UNCHANGED and vindicated. Upload user-gated (v20 is the zero-risk portal-verified fallback).**
+- **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED) — a **pure reorder** of v20 (IDENTICAL 20 sequences →
+  ~zero portal risk; **#1 unchanged**). We scored the locked finals with the judge that will *actually* rank us:
+  the organizers' **blind** Protenix (ESMFold2+Protenix regime), which our *pocket-restrained* Boltz∧Chai
+  pipeline never applied to the exact final sequences. **Calibrated** on POS_3DS18/NEG_scramble: `on_epi_rate`
+  is **invalid** (a scramble scored on_epi **1.00** > the true positive's 0.50 — blind folding drifts on this
+  flat epitope), but `iptm_max` is **valid** (POS **0.271** vs NEG **~0.12**, a clean 2.2× gap; natural
+  binder break at iptm ≈ 0.18). **Findings:** (1) the **#1 lock is vindicated** — `A27HK8_A13HR44` is blind
+  human iptm **0.260** / mouse **0.243** (within-folder ratio **0.93**, the best both-species balance), beating
+  the v19 twin on this independent third folder; (2) v20's xr-sorted order front-loaded **blind-weak** designs
+  (#2 `w3g2_70`, blind iptm 0.167 — a pocket-restraint artifact) above genuine-switch designs strong on *both*
+  judges; (3) mouse blind is undifferentiated (no #2 reorder signal). **v21** applies a transparent max-min rule
+  honoring lexicographic priority — human-binding is the **gate** (#2 counts only among human-binders), so
+  GATE_PASS (blind iptm ≥ 0.18) ranked above GATE_FAIL, each by the validated Boltz∧Chai `xr_mean`. validator
+  PASS 20/0/0; diversity preserved (distinct folds). *Limits:* n=1 positive control; iptm used as the ipSAE_min
+  proxy (PAE not dumped); the `w3g2_70` #2→#13 demotion is the one judgment call (flagged, low-weight slots).
+  Build: `scripts/build_v21.py`; per-design axes: `submissions/tfr1_track2_v21_evidence.csv`.
+- **`submissions/tfr1_track2_v20.csv`** (PORTAL-VERIFIED fallback — the validated pocket-restrained-pipeline
+  order; #1 slot LOCKED by unanimous 3-0 adjudication; 20/20 Passed 2026-10-28) — v19 with **only the rank-1 slot swapped** to
   **`genie_w2g3_53__A27HK8_A13HR44`** (a His-placement twin of the former #1, differing by ~2–3 residues).
   **Why the swap:** a devil's-advocate found the earlier cross-reactivity "ratio" was computed **incoherently**
   as `min(mouse-over-folders)/min(human-over-folders)` — it pairs the mouse score from one co-folder with the

@@ -10,9 +10,20 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-28) — COMPLETE; v20 FINAL (#1 slot LOCKED, PORTAL-VERIFIED 20/20); validator PASS
-- **DELIVERABLE STACK (upload USER-GATED; repo pushed 2026-10-28):**
-  - **`submissions/tfr1_track2_v20.csv`** (RECOMMENDED, FINAL) — v19 with **only the rank-1 swapped** to the
+## State (2026-10-28) — v21 RECOMMENDED (organizers'-judge reorder of v20; #1 UNCHANGED + vindicated); validator PASS
+- **DELIVERABLE STACK (upload USER-GATED; v21 NOT pushed — push user-gated):**
+  - **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED, ambition-lift 2026-10-28) — a **pure reorder** of v20
+    (IDENTICAL 20 sequences → ~zero portal risk; **#1 unchanged**). Scored the locked finals with the organizers'
+    **blind** Protenix judge (our pocket-restrained Boltz∧Chai pipeline never applied it to the exact finals).
+    Calibrated on POS_3DS18/NEG (`runs/prot/controls_out`): `on_epi_rate` **invalid** (scramble on_epi 1.00 >
+    positive 0.50), `iptm_max` **valid** (POS 0.271 vs NEG ~0.12). **#1 lock VINDICATED** (A27HK8_A13HR44 blind
+    human 0.260 / mouse 0.243, ratio 0.93 — best both-species; beats v19 twin). v20's xr order front-loaded
+    blind-weak designs (#2 w3g2_70 iptm 0.167, pocket-restraint artifact). v21 rule: human-binding GATE
+    (blind iptm ≥ 0.18) above GATE_FAIL, each by validated xr_mean. `scripts/build_v21.py` +
+    `_v21_evidence.csv`. validator PASS 20/0/0. Limits: n=1 POS; iptm as ipSAE proxy (no PAE dump); w3g2_70
+    #2→#13 is the one judgment call (flagged). Blind-judge tables: `runs/prot/v20_judge/{human,mouse}.tsv`.
+  - **`submissions/tfr1_track2_v20.csv`** (PORTAL-VERIFIED fallback — validated pocket-restrained-pipeline order;
+    #1 LOCKED 3-0; 20/20 Passed) — v19 with **only the rank-1 swapped** to the
     His-placement twin `genie_w2g3_53__A27HK8_A13HR44`. A devil's-advocate found the earlier cross-reactivity
     "ratio" was computed incoherently as `min(mouse-over-folders)/min(human-over-folders)` (numerator and
     denominator from different folders → faked a near-1 for the old #1). The correct WITHIN-folder ratio
@@ -66,7 +77,9 @@
   novelty); (4) switch magnitude is in-silico-unrankable WITHIN the genuine set (His-pKa err 2-3u >> 1.4u
   window; n_inwindow boundary-brittle) → gate genuine, then order by cross-reactivity + diversity, never
   fine-rank the switch (a switch-tier reorder was built and RETRACTED after a devil's-advocate review).
-- **Remaining (user-gated):** the owner's upload click — `v20.csv` (RECOMMENDED, FINAL; PORTAL-VERIFIED 20/20
-  on 2026-10-28, all Passed incl. the new rank-1, byte-verified) or any of `v19`/`v18`/`v17` (portal-verified
-  fallbacks). `git push` done 2026-10-28 (owner-requested). **No further compute or ranking change needed — the
-  #1 slot is LOCKED** (re-open only on portal rejection → fall back to v19, or new wet-lab data).
+- **Remaining (user-gated):** the owner's upload click — **`v21.csv`** (RECOMMENDED; organizers'-blind-judge
+  order; pure reorder of the portal-verified set → ~zero portal risk) **or** `v20.csv` (zero-risk portal-verified
+  fallback, validated-pipeline order) or `v19`/`v18`/`v17`. **v21 NOT pushed** (push remains user-gated; the
+  earlier push was a one-time owner request for the v20 docs). **#1 slot unchanged and vindicated** on the
+  organizers' judge; the v21 vs v20 choice is the ranking-philosophy call (organizers' blind judge vs our
+  validated pocket-restrained pipeline), decided at upload.

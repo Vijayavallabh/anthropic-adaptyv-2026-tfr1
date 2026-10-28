@@ -1,7 +1,7 @@
 # progress
 
-**Updated:** 2026-10-28 (v20 #1-slot LOCKED + PORTAL-VERIFIED)
-**Active feature:** DELIVERABLE = v20 (FINAL — rank-1 = genie_w2g3_53__A27HK8_A13HR44; #1 slot LOCKED by unanimous 3-0 adjudication; PORTAL-VERIFIED 20/20, byte-verified; cleared for upload). Fallbacks v19/v18/v17 (all portal-verified). ONLY the owner's upload click remains USER-GATED (repo committed + pushed 2026-10-28). Do NOT re-open the rank-1 on in-silico grounds (see the 2026-10-28 LOCK entries at the end of this log).
+**Updated:** 2026-10-28 (v21 RECOMMENDED — reorder by organizers' calibrated BLIND judge; #1 UNCHANGED + vindicated)
+**Active feature:** DELIVERABLE = **v21** (RECOMMENDED — v20 **pure-reordered** by the organizers' blind Protenix judge, calibrated with POS_3DS18/NEG; #1 UNCHANGED = genie_w2g3_53__A27HK8_A13HR44, now VINDICATED on the blind judge as the best both-species binder, ratio 0.93; validator PASS 20/0/0; identical sequence set to v20 → ~zero portal risk). **v20** = portal-verified fallback (the validated pocket-restrained-pipeline order). Fallbacks v19/v18/v17 (all portal-verified). ONLY the owner's upload click remains USER-GATED. See the 2026-10-28 ORGANIZERS'-JUDGE entry at the end of this log.
 
 ## 2026-10-27 — v15 "best-20" compute push (owner-authorized: replace v13's weak members)
 - Fresh Genie3 wave (2,400 backbones, conserved-sub-site conditioned, seeds 21000) → funnel → 2,735
@@ -1132,3 +1132,45 @@ BYTE-VERIFIED submitted==validated: all 20 portal (name, length, ORDER) identica
 reopen condition (portal REJECTS v20 rank-1) resolved IN FAVOUR; the challenger cleared the same authoritative
 gate the incumbent did. **v20 is the FINAL, LOCKED, PORTAL-VERIFIED deliverable (20/20).** v19 retained as the
 portal-verified fallback. ONLY remaining step = the owner's upload click (USER-GATED); git push also USER-GATED.
+
+## 2026-10-28 — ORGANIZERS'-JUDGE RE-SCORE (ambition-lift) → v21 REORDER (#1 UNCHANGED + VINDICATED)
+
+**Ask:** owner "/ambition-lift — find any ways to improve/replace designs for a definitive dominating
+submission at all costs." Lift chosen (doing mode): score the locked finals by the judge that will
+ACTUALLY rank us — the organizers' **blind** Protenix (ESMFold2+Protenix regime) — which our internal
+*pocket-restrained* Boltz∧Chai pipeline never applied to the exact final sequences.
+
+**Run:** blind Protenix on 21 designs (v20's 20 + v19 rank-1 twin), human AND mouse, 48 poses/design,
+GPUs 2-7 (0-1 foreign-held, untouched). `runs/prot/v20_judge/{human,mouse}.tsv`. Scorer
+`scripts/score_protenix_tfr1.py`. ~11 min wall. All 42 folds OK.
+
+**Calibration (the pivot) — POS_3DS18 / NEG_scramble on the SAME blind judge** (`runs/prot/controls_out`):
+- `on_epi_rate` is **INVALID**: NEG_scramble2 scored on_epi **1.00** (> the true positive's 0.50). A sticky
+  scramble lands on the flat apical epitope as often as a real binder → confirms & refines
+  `lesson-tfr1-apical-blind-cofold-fails-poscontrol` (the *localization* fails, not necessarily binding).
+- `iptm_max` is **VALID**: POS_3DS18 **0.271** vs NEG **0.121/0.125** — a clean 2.2× separation. So rank on
+  blind **iptm_max**, discard on_epi. Natural binder/non-binder break in the design pool at iptm ≈ **0.18**
+  (gap 0.194→0.172).
+
+**Findings:**
+1. **#1 LOCK VINDICATED.** genie_w2g3_53__A27HK8_A13HR44: blind human iptm **0.260**, mouse **0.243** →
+   within-folder ratio **0.93** (best both-species balance in the pool); beats the v19 twin (0.260 vs 0.233,
+   mouse 0.243 vs 0.231) on this independent third folder. The 3-0 adjudication holds on the organizers' judge.
+2. **v20's xr-sorted order front-loaded blind-WEAK designs.** #2 `w3g2_70` (highest xr 0.349, highest Boltz
+   bind) is blind iptm **0.167** (gate-fail — its strength is a pocket-restraint artifact the organizers'
+   blind judge misses). Several genuine-switch designs strong on BOTH judges sat at ranks 7-19.
+3. **Mouse blind = undifferentiated** (iptm ~0.13-0.26, near the human-NEG floor for all; no mouse POS to
+   calibrate) → the blind judge gives NO #2 reorder signal; mouse cross-react stays as the known fragile axis.
+
+**Action → `submissions/tfr1_track2_v21.csv` (RECOMMENDED).** Pure reorder of v20 (IDENTICAL 20 sequences,
+#1 unchanged) by a transparent max-min rule respecting lexicographic priority: human-binding is the GATE
+(AGENTS.md: #2 only counts among human-binders), so GATE_PASS (blind iptm ≥ 0.18) ranked above GATE_FAIL,
+each group by the validated Boltz∧Chai **xr_mean** (#2 ranker). `scripts/build_v21.py`;
+`submissions/tfr1_track2_v21_evidence.csv` has all axes per design. validator PASS 20/0/0. Diversity preserved
+(all 20 are distinct folds, TM<0.60). v20 kept intact as the portal-verified fallback (validated-pipeline order).
+
+**Limitations (honest):** n=1 positive control; used blind **iptm** (calibrated) as the ipSAE_min proxy
+(Protenix PAE not dumped → true ipSAE would need a re-fold, low marginal value — iptm/ipSAE correlate and the
+0.18 break is clean); the `w3g2_70` #2→#13 demotion is the one judgment call (validated-pipeline star vs
+blind-judge weak) — flagged, and it sits in low-weight slots. **Upload USER-GATED** (v21 recommended, v20
+zero-risk fallback). Not pushed (push remains user-gated).
