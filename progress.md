@@ -1215,6 +1215,6 @@ on all 20 (name + row-order + length + head12 + tail8 identical), and the portal
 SAME 20-sequence set as the already-verified v20 (the pure-reorder claim, externally validated). So v21 is now
 **portal-verified AND multi-folder-confirmed AND #1-vindicated** — it strictly dominates v20 as the
 recommendation (same verified status, organizers'-judge-aligned order). DELIVERABLE: v21 (RECOMMENDED,
-portal-verified) > v20 (portal-verified fallback) > v19/v18/v17. ONLY the owner's upload click + git push remain
-USER-GATED. No further ranking change — the submission is as validated as in-silico allows (4 structure folders
-+ POS/NEG controls + portal).
+portal-verified) > v20 (portal-verified fallback) > v19/v18/v17. Repo pushed to origin/main 2026-10-28
+(owner-authorized); ONLY the owner's upload click remains USER-GATED. No further ranking change — the submission
+is as validated as in-silico allows (4 structure folders + POS/NEG controls + portal).

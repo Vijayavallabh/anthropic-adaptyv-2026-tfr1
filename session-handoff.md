@@ -11,7 +11,7 @@
 3. Continue the active feature.
 
 ## State (2026-10-28) — v21 RECOMMENDED + PORTAL-VERIFIED 20/20 (organizers'-judge reorder of v20; #1 UNCHANGED + vindicated); validator PASS
-- **DELIVERABLE STACK (upload + push USER-GATED):**
+- **DELIVERABLE STACK (repo pushed to origin/main 2026-10-28; upload USER-GATED):**
   - **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED — **PORTAL-VERIFIED 20/20 byte-confirmed 2026-10-28**:
     20 included, 0 fixes, all Passed; portal-parsed == v21.csv on name+order+len+head+tail; portal independently
     confirms the SAME 20-seq set as v20, reordered) — a **pure reorder** of v20
@@ -82,7 +82,7 @@
   fine-rank the switch (a switch-tier reorder was built and RETRACTED after a devil's-advocate review).
 - **Remaining (user-gated):** the owner's upload click — **`v21.csv`** (RECOMMENDED; organizers'-blind-judge
   order; pure reorder of the portal-verified set → ~zero portal risk) **or** `v20.csv` (zero-risk portal-verified
-  fallback, validated-pipeline order) or `v19`/`v18`/`v17`. **v21 NOT pushed** (push remains user-gated; the
-  earlier push was a one-time owner request for the v20 docs). **#1 slot unchanged and vindicated** on the
-  organizers' judge; the v21 vs v20 choice is the ranking-philosophy call (organizers' blind judge vs our
-  validated pocket-restrained pipeline), decided at upload.
+  fallback, validated-pipeline order) or `v19`/`v18`/`v17`. **All session work pushed to origin/main 2026-10-28**
+  (owner-authorized). **#1 slot unchanged and vindicated** on the organizers' judge; the v21 vs v20 choice is the
+  ranking-philosophy call (organizers' blind judge vs our validated pocket-restrained pipeline), decided at upload.
+  Both are portal-verified 20/20, so v21 (better-ranked) is the recommendation.
