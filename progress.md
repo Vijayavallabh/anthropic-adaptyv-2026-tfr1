@@ -1105,3 +1105,21 @@ is retained INTACT as the immediate fallback. OPEN (USER): (a) rank-1 reversal c
 portal on v20's new rank-1 before upload (near-certain to clear: same backbone/novelty); (c) upload + git push
 remain USER-GATED. Honest note: this REVERSES the 2026-10-27 f38 rejection, which rested on the incoherent
 min/min ratio -- a genuine bug, not a new opinion; the within-folder fix is robust across 3 folds x 2 folders.
+
+## 2026-10-28 — #1 SLOT LOCKED (3-0 independent adjudication; stop the churn)
+A 4-agent adjudication (3 independent lenses: metric-purist / execution-realist / lower-regret-decider + synth,
+each RE-VERIFYING the on-disk numbers) returned UNANIMOUS 3-0 for the CHALLENGER (v20 rank-1
+genie_w2g3_53__A27HK8_A13HR44), synth confidence 0.80. They even corrected the incumbent's switch record UP to
+3/3 2-in-window (f38-s1 1.38, f37-s0 1.41, f37-s1 1.47; my earlier "2/2" undercounted) -- STRENGTHENING the
+incumbent on #1 -- and STILL all picked the challenger, because #1 is a coarse TIE (challenger's lone
+sub-window reading = His27 pKa 5.76, 0.24u under the 6.0 line, ~10x inside the 2-3u predictor error) so #2
+decides, and the challenger wins #2 robustly (within-folder |ratio-1| 0.12 vs 0.38, both folders + common
+folds; mechanistically balancing, not an affinity bump). They reproduced the min/min BUG and confirmed it
+INVERTS the comparison (buggy: incumbent 0.096 < challenger 0.126) -- the exact artifact behind the earlier
+wrong rejection. #3 affinity challenger >= incumbent. Net: challenger WEAKLY DOMINATES.
+=> **v20 is FINAL/LOCKED.** DO NOT RE-OPEN on ANY in-silico ground (re-fold, new seed, pKa re-run, switch/
+in-window re-read, std/"noisier-cousin" argument, or min/min recompute). Re-open ONLY if: (1) the Proteinbase
+portal REJECTS v20's rank-1 -> mechanically fall back to the intact portal-verified v19, NO re-litigation; or
+(2) NEW wet-lab / validated-method data reverses a ranked axis (not expected before Nov-1 AoE). The slot flipped
+3x; THIS IS THE LAST CHANGE. Protocol: owner runs the portal on v20 ONCE (near-certain: same backbone, same top
+hit 8twa, novelty 0.777 vs cleared 0.778, 0-Cys), then freeze; v19 kept as labeled fallback. Upload+push USER-GATED.
