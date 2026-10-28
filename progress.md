@@ -1,7 +1,7 @@
 # progress
 
-**Updated:** 2026-10-28 (v21 RECOMMENDED — reorder by organizers' calibrated BLIND judge; #1 UNCHANGED + vindicated)
-**Active feature:** DELIVERABLE = **v21** (RECOMMENDED — v20 **pure-reordered** by the organizers' blind Protenix judge, calibrated with POS_3DS18/NEG; #1 UNCHANGED = genie_w2g3_53__A27HK8_A13HR44, now VINDICATED on the blind judge as the best both-species binder, ratio 0.93; validator PASS 20/0/0; identical sequence set to v20 → ~zero portal risk). **v20** = portal-verified fallback (the validated pocket-restrained-pipeline order). Fallbacks v19/v18/v17 (all portal-verified). ONLY the owner's upload click remains USER-GATED. See the 2026-10-28 ORGANIZERS'-JUDGE entry at the end of this log.
+**Updated:** 2026-10-28 (v21 RECOMMENDED + PORTAL-VERIFIED 20/20 + multi-folder-confirmed; #1 UNCHANGED + vindicated)
+**Active feature:** DELIVERABLE = **v21** (RECOMMENDED — **PORTAL-VERIFIED 20/20, byte-confirmed 2026-10-28**: 20 included, 0 fixes, every row Passed; portal-parsed == v21.csv on name+order+len+head+tail, and the portal independently confirms it is the SAME 20-sequence set as v20, reordered). v21 = v20 pure-reordered by the organizers' blind Protenix judge (calibrated POS/NEG); #1 UNCHANGED = genie_w2g3_53__A27HK8_A13HR44, vindicated (best both-species, ratio 0.93). Order multi-folder-confirmed (ESMFold2 foldability all-pass + Protenix sensitive ranker + Boltz-blind confirms the robust subset; Chai-blind discarded as broken). validator PASS 20/0/0. **v20** = portal-verified fallback. ONLY the owner's upload click remains USER-GATED. See the 2026-10-28 entries at the end of this log.
 
 ## 2026-10-27 — v15 "best-20" compute push (owner-authorized: replace v13's weak members)
 - Fresh Genie3 wave (2,400 backbones, conserved-sub-site conditioned, seeds 21000) → funnel → 2,735
@@ -1208,3 +1208,13 @@ pipeline + 3-0 lock. No reorder: demoting high-xr prot-only designs on low-sensi
 churn. The organizers'-judge picture is now as complete as this target allows: ESMFold2 (foldability, all pass)
 + Protenix (sensitive interface, the ranker) + Boltz-blind (confirms the robust subset) + Chai-blind (broken,
 discarded). v21 stands; v20 remains the portal-verified fallback. Upload + push USER-GATED.
+
+**2026-10-28 — v21 PORTAL-VERIFIED 20/20 (byte-confirmed).** Owner ran v21 through Proteinbase: 20 included,
+0 needing fixes, every row Passed (single chain). Byte-verified portal-parsed == `submissions/tfr1_track2_v21.csv`
+on all 20 (name + row-order + length + head12 + tail8 identical), and the portal independently confirms the
+SAME 20-sequence set as the already-verified v20 (the pure-reorder claim, externally validated). So v21 is now
+**portal-verified AND multi-folder-confirmed AND #1-vindicated** — it strictly dominates v20 as the
+recommendation (same verified status, organizers'-judge-aligned order). DELIVERABLE: v21 (RECOMMENDED,
+portal-verified) > v20 (portal-verified fallback) > v19/v18/v17. ONLY the owner's upload click + git push remain
+USER-GATED. No further ranking change — the submission is as validated as in-silico allows (4 structure folders
++ POS/NEG controls + portal).

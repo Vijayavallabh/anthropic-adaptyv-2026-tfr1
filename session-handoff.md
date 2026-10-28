@@ -10,10 +10,13 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-28) — v21 RECOMMENDED (organizers'-judge reorder of v20; #1 UNCHANGED + vindicated); validator PASS
-- **DELIVERABLE STACK (upload USER-GATED; v21 NOT pushed — push user-gated):**
-  - **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED, ambition-lift 2026-10-28) — a **pure reorder** of v20
-    (IDENTICAL 20 sequences → ~zero portal risk; **#1 unchanged**). Scored the locked finals with the organizers'
+## State (2026-10-28) — v21 RECOMMENDED + PORTAL-VERIFIED 20/20 (organizers'-judge reorder of v20; #1 UNCHANGED + vindicated); validator PASS
+- **DELIVERABLE STACK (upload + push USER-GATED):**
+  - **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED — **PORTAL-VERIFIED 20/20 byte-confirmed 2026-10-28**:
+    20 included, 0 fixes, all Passed; portal-parsed == v21.csv on name+order+len+head+tail; portal independently
+    confirms the SAME 20-seq set as v20, reordered) — a **pure reorder** of v20
+    (IDENTICAL 20 sequences; **#1 unchanged**); order multi-folder-confirmed (ESMFold2+Protenix+Boltz-blind;
+    Chai-blind discarded as broken). Scored the locked finals with the organizers'
     **blind** Protenix judge (our pocket-restrained Boltz∧Chai pipeline never applied it to the exact finals).
     Calibrated on POS_3DS18/NEG (`runs/prot/controls_out`): `on_epi_rate` **invalid** (scramble on_epi 1.00 >
     positive 0.50), `iptm_max` **valid** (POS 0.271 vs NEG ~0.12). **#1 lock VINDICATED** (A27HK8_A13HR44 blind

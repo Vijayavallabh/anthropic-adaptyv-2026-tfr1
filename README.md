@@ -20,7 +20,7 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**RECOMMENDED (2026-10-28, ambition-lift) — `submissions/tfr1_track2_v21.csv`: v20 re-ranked by the organizers' own BLIND judge. #1 UNCHANGED and vindicated. Upload user-gated (v20 is the zero-risk portal-verified fallback).**
+**RECOMMENDED + PORTAL-VERIFIED (2026-10-28, ambition-lift) — `submissions/tfr1_track2_v21.csv`: v20 re-ranked by the organizers' own BLIND judge, now PORTAL-VERIFIED 20/20 (byte-confirmed; portal also confirms it's the same 20-seq set as v20, reordered). #1 UNCHANGED and vindicated; order multi-folder-confirmed. Upload + push user-gated (v20 is the portal-verified fallback).**
 - **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED) — a **pure reorder** of v20 (IDENTICAL 20 sequences →
   ~zero portal risk; **#1 unchanged**). We scored the locked finals with the judge that will *actually* rank us:
   the organizers' **blind** Protenix (ESMFold2+Protenix regime), which our *pocket-restrained* Boltz∧Chai
