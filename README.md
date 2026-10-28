@@ -20,20 +20,26 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
-**COMPLETE (2026-10-27, ambition-lift) — v19 is the RECOMMENDED deliverable; PORTAL-VERIFIED 20/20, cleared for upload (user-gated).**
-- **`submissions/tfr1_track2_v19.csv`** (RECOMMENDED) + `_v19_evidence.csv` — v18 with ONE evidence-backed
-  **design** upgrade from a switch-rescue. `genie_w2g3_53__A13HR44_A31HK8` (relocating the buried-His switch
-  off `genie_w2g3_53`'s pKa-depressed positions) is validated on every axis — **robust mouse cross-reactivity
-  0.394 ± 0.007 over n=3 independent seeds (min 0.385), beating the entire prior pool (best 0.349) and the
-  soft ~0.40 "ceiling"**; **GENUINE 2-in-window switch confirmed across 2 folds** (sw_frac 1.00, swing ~1.4);
-  bind 0.421; developability CLEAN (0-Cys); mouse pose anchored on the conserved cross-species core (203/209);
-  novelty 0.778 (= its **portal-verified** parent's 0.776). It REPLACES `w4g1_286` (same fold cluster) and
-  ranks **#1** by cross-reactivity. **Proteinbase portal-verified 2026-10-27 — all 20 Passed, "0 needing
-  fixes", the new winner cleared the novelty gate (it was the only new sequence; its fold was cleared in v15);
-  byte-verified submitted==validated.** 19 distinct folds. A deep 18-agent adversarial SOTA scout + a cold devil's-advocate
-  confirmed that no *other* new design or method beats the set and that cross-reactivity/switch otherwise sit
-  at biophysical ceilings — this targeted rescue broke the XR one. New: `build_v18.py`, `build_v19.py`,
-  the `buried_switch_scan → exhaustive_switch → guarded wave4_rescreen` rescue (`runs/f37_rescue`).
+**COMPLETE (2026-10-28) — v20 is the RECOMMENDED deliverable; #1 slot LOCKED (unanimous 3-0 adjudication); PORTAL-VERIFIED 20/20, cleared for upload (user-gated).**
+- **`submissions/tfr1_track2_v20.csv`** (RECOMMENDED, FINAL) — v19 with **only the rank-1 slot swapped** to
+  **`genie_w2g3_53__A27HK8_A13HR44`** (a His-placement twin of the former #1, differing by ~2–3 residues).
+  **Why the swap:** a devil's-advocate found the earlier cross-reactivity "ratio" was computed **incoherently**
+  as `min(mouse-over-folders)/min(human-over-folders)` — it pairs the mouse score from one co-folder with the
+  human score from another, faking a near-1 for the old #1 (whose two folders actually disagree on direction).
+  The **correct within-folder ratio** (per folder, aggregated; robust across 3 folds × 2 folders) makes
+  `A27HK8_A13HR44` the **most cross-reactive** by far (|ratio−1| **0.12 vs 0.38**), winning by *balancing* the
+  two species, not a uniform affinity bump. On the ranked objectives it **weakly dominates** the former #1:
+  **#1 pH-switch = coarse TIE** (both GENUINE 2-in-window across folds; pKa predictor error ≫ the 1.4u window,
+  so swing/count is not finely rankable), **#2 cross-reactivity = challenger wins robustly**, **#3 affinity =
+  challenger ≥**. Developability CLEAN (0-Cys, net charge −0.05); novelty 0.777 (≈ the cleared 0.778). A
+  **unanimous 3-0 independent adjudication** locked the rank-1 as the challenger to end a 3× flip. **Proteinbase
+  portal-verified 2026-10-28 — 20 included, "0 needing fixes", every row Passed incl. the new rank-1;
+  byte-verified submitted==validated.** The other 19 designs are byte-identical in content to the portal-verified
+  v19. Do **not** re-open the rank-1 on any in-silico ground; re-open only on portal rejection (→ fall back to
+  v19) or new wet-lab data. New: 1-row swap over v19, the lock adjudication workflow `lock-tfr1-rank1`.
+- **`submissions/tfr1_track2_v19.csv`** (PORTAL-VERIFIED fallback) + `_v19_evidence.csv` — the prior deliverable
+  (former rank-1 `genie_w2g3_53__A13HR44_A31HK8`, switch-rescue winner); retained intact as the zero-rework
+  fallback. Reached via a targeted switch-rescue that broke the ~0.40 XR "ceiling" (robust mouse XR 0.394, n=3).
 - **`submissions/tfr1_track2_v18.csv`** (fully portal-verified fallback) + `_v18_evidence.csv` — v17's exact
   20 sequences with one developability fix: the single SEVERE-expression-risk design (`w4g3_380`, net charge
   −15 charge-blob) demoted out of the tested top-10, promoting the clean, equal-cross-reactivity `w4g5_147`

@@ -10,16 +10,24 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-27, ambition-lift) — COMPLETE; v19 RECOMMENDED (19/20 portal-verified + 1 new); validator PASS
-- **DELIVERABLE STACK (upload + push USER-GATED):**
-  - **`submissions/tfr1_track2_v19.csv`** (RECOMMENDED, strongest) + `_v19_evidence.csv` — v18 + ONE
-    evidence-backed DESIGN upgrade: the switch-rescue winner `genie_w2g3_53__A13HR44_A31HK8` (robust mouse XR
-    0.394 ± 0.007 over n=3 seeds, min 0.385 → BEATS the whole prior pool's 0.349 and the soft ~0.40 ceiling;
-    GENUINE 2-in-window switch confirmed across 2 folds + sw_frac 1.00; bind 0.421; dev CLEAN; mouse pose on
-    conserved 203/209; novelty 0.778 == its PORTAL-VERIFIED parent's 0.776) REPLACES `w4g1_286` (same fold)
-    and ranks #1. 19/20 sequences BYTE-IDENTICAL to v17/v18; the winner was the ONLY new sequence and it
-    PASSED → **v19 PORTAL-VERIFIED 20/20 (2026-10-27: all Passed, 0 fixes; byte-verified submitted==validated)**.
-    19 distinct folds. validator PASS 20/0/0.
+## State (2026-10-28) — COMPLETE; v20 FINAL (#1 slot LOCKED, PORTAL-VERIFIED 20/20); validator PASS
+- **DELIVERABLE STACK (upload USER-GATED; repo pushed 2026-10-28):**
+  - **`submissions/tfr1_track2_v20.csv`** (RECOMMENDED, FINAL) — v19 with **only the rank-1 swapped** to the
+    His-placement twin `genie_w2g3_53__A27HK8_A13HR44`. A devil's-advocate found the earlier cross-reactivity
+    "ratio" was computed incoherently as `min(mouse-over-folders)/min(human-over-folders)` (numerator and
+    denominator from different folders → faked a near-1 for the old #1). The correct WITHIN-folder ratio
+    (robust across 3 folds × 2 folders) makes `A27HK8_A13HR44` the most cross-reactive (|ratio−1| 0.12 vs 0.38,
+    by balancing species, not an affinity bump). On the ranked objectives it weakly dominates: #1 switch TIE
+    (both GENUINE 2-in-window; not finely rankable), #2 cross-react challenger wins robustly, #3 affinity
+    challenger ≥. Dev CLEAN (0-Cys, net charge −0.05); novelty 0.777. A **unanimous 3-0 independent
+    adjudication LOCKED the rank-1** (ending a 3× flip). **v20 PORTAL-VERIFIED 20/20 (2026-10-28: 20 included,
+    0 fixes, every row Passed incl. the new rank-1; byte-verified submitted==validated).** The other 19 designs
+    are byte-identical in content to v19. validator PASS 20/0/0. **DO NOT re-open the rank-1 on in-silico
+    grounds** (re-fold/seed/pKa-rerun/switch-reread/min-min recompute); re-open only on portal rejection
+    (→ fall back to v19) or new wet-lab data.
+  - **`submissions/tfr1_track2_v19.csv`** (PORTAL-VERIFIED fallback) + `_v19_evidence.csv` — the prior
+    deliverable (former rank-1 `genie_w2g3_53__A13HR44_A31HK8`, switch-rescue winner, robust mouse XR 0.394
+    n=3); retained intact as the zero-rework fallback.
   - **`submissions/tfr1_track2_v18.csv`** (fully portal-verified fallback) + `_v18_evidence.csv` — v17's 20
     sequences, pure reorder: the one SEVERE-expression design (`w4g3_380`) demoted out of the tested top-10
     (clean `w4g5_147` promoted in). Inherits v17's 20/20 portal verification. Use for ZERO portal risk.
@@ -58,7 +66,7 @@
   novelty); (4) switch magnitude is in-silico-unrankable WITHIN the genuine set (His-pKa err 2-3u >> 1.4u
   window; n_inwindow boundary-brittle) → gate genuine, then order by cross-reactivity + diversity, never
   fine-rank the switch (a switch-tier reorder was built and RETRACTED after a devil's-advocate review).
-- **Remaining (user-gated):** (1) the owner's upload click — `v19.csv` (RECOMMENDED; PORTAL-VERIFIED 20/20
-  on 2026-10-27, all Passed incl. the new winner, byte-verified) or `v18.csv`/`v17.csv` (also fully
-  portal-verified fallbacks). (2) `git push` — the ambition-lift checkpoint is committed locally but NOT yet
-  pushed (push user-gated; prior v17 push was 2026-10-27). No further compute needed.
+- **Remaining (user-gated):** the owner's upload click — `v20.csv` (RECOMMENDED, FINAL; PORTAL-VERIFIED 20/20
+  on 2026-10-28, all Passed incl. the new rank-1, byte-verified) or any of `v19`/`v18`/`v17` (portal-verified
+  fallbacks). `git push` done 2026-10-28 (owner-requested). **No further compute or ranking change needed — the
+  #1 slot is LOCKED** (re-open only on portal rejection → fall back to v19, or new wet-lab data).

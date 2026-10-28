@@ -1,7 +1,7 @@
 # progress
 
-**Updated:** 2026-10-27 (v15 compute push)
-**Active feature:** DELIVERABLE = v17 (RECOMMENDED — PORTAL-VERIFIED 20/20, cleared for upload); upload USER-GATED. Fallbacks v16/v15/v14/v13.
+**Updated:** 2026-10-28 (v20 #1-slot LOCKED + PORTAL-VERIFIED)
+**Active feature:** DELIVERABLE = v20 (FINAL — rank-1 = genie_w2g3_53__A27HK8_A13HR44; #1 slot LOCKED by unanimous 3-0 adjudication; PORTAL-VERIFIED 20/20, byte-verified; cleared for upload). Fallbacks v19/v18/v17 (all portal-verified). ONLY the owner's upload click remains USER-GATED (repo committed + pushed 2026-10-28). Do NOT re-open the rank-1 on in-silico grounds (see the 2026-10-28 LOCK entries at the end of this log).
 
 ## 2026-10-27 — v15 "best-20" compute push (owner-authorized: replace v13's weak members)
 - Fresh Genie3 wave (2,400 backbones, conserved-sub-site conditioned, seeds 21000) → funnel → 2,735
