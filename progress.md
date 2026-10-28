@@ -1218,3 +1218,43 @@ recommendation (same verified status, organizers'-judge-aligned order). DELIVERA
 portal-verified) > v20 (portal-verified fallback) > v19/v18/v17. Repo pushed to origin/main 2026-10-28
 (owner-authorized); ONLY the owner's upload click remains USER-GATED. No further ranking change — the submission
 is as validated as in-silico allows (4 structure folders + POS/NEG controls + portal).
+
+**2026-10-28 — AMBITION-LIFT #4 ("5 days left, best 20 on all metrics") → v21 CONFIRMED (5th time), now
+organizers'-judge + coherent-ratio + adversary validated. NO change.** Instead of a 5th generation wave
+(ceiling confirmed 4×: v15 Genie3 wave, F38 4-backbone moonshot, 18-agent scout 0/13, v21 blind re-score), ran
+the genuinely-unexploited lever: scored the 20 **robustly** on the organizers' ACTUAL in-silico judge (blind
+Protenix, n=48 samples/design, 95% bootstrap CIs) — v21 had only GATED on a single blind stat; it had never
+been RANKED by the judge's own metrics. Calibrated every axis on POS_3DS18/NEG_scramble.
+- **Calibration:** blind `iptm_med` VALID (POS 0.210 [0.199,0.244] vs NEG 0.105-0.109, CIs disjoint, ~2×;
+  binder-gate ≈0.15). A 2nd NEW interface axis — pose self-consistency / **sc-DockQ proxy** (binder COM spread
+  across samples) — **FAILS calibration and is DISCARDED** (POS 16.5Å lies *between* NEG 15.2/19.3Å; same
+  failure mode as `on_epi_rate` — blind folding scatters even real binders on this flat epitope).
+- **Gate CONFIRMED:** the judge's binder-gate cleanly separates v21's top-12 (H_med 0.157-0.225) from the tail
+  13-20 (0.119-0.144). v21's structure is right on the organizers' own judge.
+- **Pool mine (NEW folds, GPUs 2-7):** 7 distinct-backbone genuine-switch candidates the judge had never seen.
+  Only `w4g1_286` clears the gate — robustly the STRONGEST human binder anywhere (H_med 0.301 [0.281,0.309] >
+  rank-1's 0.190 > POS 0.210). BUT it is DOMINATED on the lexicographic objective: #1 switch swing 0.50
+  (weakest, effectively 1 in-window His @pKa 6.09) and #2 blind ratio 0.58 / coherent-pocket ratio FOLDER-
+  DISAGREES (Boltz 0.48 human-skew + Chai 1.19 mouse-skew → its "balance" is an averaging artifact, worst-case
+  |r-1|=0.52), and it is a **structural twin (cluster 2) of the LOCKED flagship** (correlated-failure risk on #1).
+  It wins only #3 affinity (lowest). The other 6 are below the binding gate (no better than the current tail).
+  Same trap as F38 (one-axis winner, worse on the ratio).
+- **Devil's-advocate (cold, P(MISTAKE)=55%)** correctly caught that `build_v21.py` L36 sorts the gate-pass group
+  by `xr_mean` = **absolute mouse ipSAE** (a confound, ρ~0.87 with bind per `lesson-crossreact-is-ratio-not-
+  absolute`), NOT the objective-#2 ratio — the lesson-crossreact fix reached #1 but was never propagated to the
+  portfolio sort. VERIFIED + taken seriously. **Resolution:** recomputed the coherent WITHIN-FOLDER pocket ratio
+  (per folder m/h, Boltz & Chai) for the whole gate-pass group from per-folder ipSAE on disk (f30/reval6 +
+  f35/robust + f37_rescue). The ratio is **NOISE-DOMINATED**: folders disagree by 0.3-1.0 on nearly every design,
+  mean-vs-worst aggregation flips the order, 3/12 sign-flip (#1, genie_w2g5_111, w4g1_286). A ratio reorder
+  differs from v21 but changes only noise-distinguished top-10 membership, never the locked #1 (49% of weight),
+  and would forfeit v21's byte-level portal verification for ~zero expected gain. The advocate's Prong-B dilemma
+  ("ratio decides → re-sort, OR ratio is noise → #2 ties → swap in w4g1_286") is a FALSE dilemma: the project's
+  established third state holds — #2 is COARSELY (not finely, not zero) rankable, so neither a reliable fine
+  re-sort nor a collapse to pure-#3 affinity is warranted.
+- **VERDICT: ship v21 UNCHANGED** (5th independent confirmation of the ceiling), now additionally validated by
+  the organizers' robust judge + the coherent #2 ratio + a 55% adversary. `w4g1_286` is surfaced as the single
+  legitimate OWNER-OVERRIDE option (a pure strongest-human-binder *affinity hedge*, aligned with the organizers'
+  affinity-front-loaded in-silico judge) — recommended AGAINST (dominated on #1 & #2; cluster-twin of #1).
+  Evidence: `submissions/tfr1_track2_v21_judge_validation.tsv`, `scripts/judge_validate_v21.py`,
+  `runs/prot/pool_judge/{human,mouse}` (7 pool folds). Validator PASS 20/0/0; v21 byte-unchanged + portal-verified.
+  Committed this checkpoint; push remains USER-GATED (not requested this session).

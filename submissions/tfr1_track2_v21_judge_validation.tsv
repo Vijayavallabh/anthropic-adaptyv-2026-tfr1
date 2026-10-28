@@ -1,0 +1,24 @@
+# organizers'-judge + coherent-ratio validation of v21 (ambition-lift #4, 2026-10-28)
+# blind calib POS_3DS18 Hmed 0.210[0.199,0.244] vs NEG 0.105-0.109; binder-gate ~0.15. pose/sc-DockQ proxy DISCARDED (POS 16.5A between NEG 15.2/19.3).
+v21rank	name	blindH_med	blindH_CI	blindM_med	blindMH_ratio	pocket_Boltz_r	pocket_Chai_r	pocket|mean-1|	pocket_folders_disagree	xr_mean(abs_mouse,v21_sortkey)	switch_swing	switch_nwin	cluster	lineage
+1	genie_w2g3_53__A27HK8_A13HR44	0.190	[0.179,0.197]	0.153	0.80	0.73	1.16	0.21	YES	-	-	-	-	-
+2	w4g1_195_mpnn0_sw2his	0.165	[0.161,0.179]	0.166	1.00	1.00	0.64	0.18		0.338	0.71	2	21	Genie3-w4
+3	genie_w2g6_144_sw3b	0.188	[0.182,0.204]	0.175	0.93	0.42	0.86	0.36		0.325	-	-	20	Genie3-w2
+4	w3g5_231_mpnn1_sw3his	0.179	[0.167,0.186]	0.158	0.89	0.33	0.87	0.40		0.311	-	-	5	Genie3-w3
+5	w3g7_240_mpnn1_sw3his	0.160	[0.149,0.174]	0.168	1.05	-	-	-		0.282	-	-	5	Genie3-w3
+6	w4g7_217_mpnn1_sw3his	0.225	[0.216,0.231]	0.168	0.75	0.51	0.53	0.48		0.269	0.70	3	1	Genie3-w4
+7	w4g0_194_mpnn1_sw2his	0.216	[0.204,0.227]	0.173	0.80	0.38	0.98	0.32		0.227	0.92	2	4	Genie3-w4
+8	w4g5_147_mpnn0_sw3his	0.182	[0.169,0.198]	0.158	0.87	0.33	0.58	0.54		0.225	1.33	3	9	Genie3-w4
+9	w4g5_137_mpnn1_sw3his	0.191	[0.179,0.211]	0.267	1.40	0.30	0.42	0.64		0.222	1.30	3	8	Genie3-w4
+10	w3g6_146_mpnn0_sw2his	0.158	[0.150,0.177]	0.140	0.89	0.57	0.80	0.31		0.190	-	-	10	Genie3-w3
+11	w3g2_225_mpnn0_sw3his	0.157	[0.153,0.161]	0.216	1.37	0.77	0.47	0.38		0.162	-	-	15	Genie3-w3
+12	genie_w2g5_111_sw2b	0.198	[0.187,0.222]	0.181	0.91	0.25	1.32	0.54	YES	0.138	-	-	19	Genie3-w2
+13	w3g2_70_mpnn1_sw2his	0.142	[0.139,0.146]	0.154	1.08	-	-	-		0.349	-	-	11	Genie3-w3
+14	w4g2_174_mpnn1_sw3his	0.121	[0.119,0.124]	0.115	0.95	0.41	0.67	0.46		0.245	2.42	4	3	Genie3-w4
+15	w4g3_380_mpnn0_sw2his	0.123	[0.118,0.130]	0.126	1.02	0.50	0.38	0.56		0.229	1.11	3	7	Genie3-w4
+16	w3g5_70_mpnn1_sw3his	0.140	[0.137,0.144]	0.143	1.02	-	-	-		0.216	-	-	12	Genie3-w3
+17	rfd4_g7_8_sw2b_A14_A41	0.144	[0.141,0.148]	0.162	1.12	0.35	0.46	0.59		0.212	-	-	17	RFD4
+18	rfd4_g5_14_sw2b_A34_A50	0.134	[0.132,0.139]	0.135	1.00	0.70	0.49	0.40		0.184	-	-	18	RFD4
+19	w3g0_290_mpnn1_sw2his	0.119	[0.117,0.120]	0.136	1.15	0.28	0.66	0.53		0.162	-	-	13	Genie3-w3
+20	w3g5_249_mpnn0__A13HK16_A42HK69	0.126	[0.124,0.131]	0.131	1.04	-	-	-		0.144	-	-	14	Genie3-w3
+POOL	w4g1_286_mpnn1_sw2his	0.301	[0.281,0.309]	0.174	0.58	0.48	1.19	0.36	YES	-	0.50	2	2	Genie3-w4
