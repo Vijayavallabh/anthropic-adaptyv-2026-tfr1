@@ -1057,3 +1057,51 @@ CONFIRMED at the ceiling and ships unchanged. "Confirm, don't churn." Full raw d
   a lucky seed caught by the matched refold); all 3-His triples killed bind (0.03-0.08) or dropped XR; no
   non-g53 backbone beat g53 on cross-reactivity. The exhaustive search CONFIRMS v19 is at the biophysical
   ceiling on this epitope. DELIVERABLE UNCHANGED: v19 (portal-verified 20/20) > v18 > v17. Upload USER-GATED.
+
+## 2026-10-28 — DEVIL'S-ADVOCATE RE-ATTACK OVERTURNS THE f38 REJECTION -> v20 (rank-1 corrected)
+GOAL (user /devil-advocate "brutally, then optimistically revise"): attack "ship v19 unchanged; v19 at ceiling".
+A cold advocate (claim block only) returned P(MISTAKE)=35% with a KILL SHOT: the obj-#2 metric was applied
+INCONSISTENTLY (pool built/sorted by ABSOLUTE mouse ipSAE; the one challenger examined was rejected by the
+RATIO). I ran all three checks against the files -> found a REAL, decision-changing BUG, and REVERSED.
+
+THE BUG (methodological, verified): the "cross-reactivity ratio" used to reject A27HK8_A13HR44 in the f38
+section ABOVE was `XR/BIND = min(boltz_m,chai_m) / min(boltz_h,chai_h)` -- an INCOHERENT ratio. The mouse-min
+and human-min can come from DIFFERENT folders, so it divides mouse-under-one-folder by human-under-another.
+For the incumbent this manufactured a spurious "near-1" (0.914): its folders DISAGREE on direction (Boltz
+mouse/human 0.776 = human-preferring; Chai 1.384 = mouse-preferring), and min/min paired Boltz-mouse with
+Chai-human. Neither folder alone calls the incumbent equipotent.
+
+CORRECT metric = WITHIN-FOLDER mouse/human ratio, per folder, then aggregated (respecting "never a single
+folder" by using BOTH). Recomputed from the per-folder ipSAE on disk (f38 rescreen/s1/s2), |ratio-1|:
+  design                         Boltz |d|   Chai |d|   worst-case |d|   switch (coarse, >=2 folds)
+  A27HK8_A13HR44 (challenger)     0.113       0.120     0.120            GENUINE 2-in-win 2/3 folds
+  A13HR44_A31HK8 (incumbent)     0.224       0.384     0.384            GENUINE 2-in-win 2/2 folds
+  A27HK8_A18HK52 (advocate pick) 0.226       0.650     0.650            fold-UNSTABLE (WEAK/0-in-win in f37)
+  A12HK22_A17HK48                0.202       0.405     0.405            GENUINE (1->2 in-win)
+  A13HR44_A59HK21                0.233       0.255     0.255            GENUINE 2-in-win 2/2 folds
+=> under EVERY coherent statistic (Boltz-only = organizers' documented Boltz2-avg; Chai-only; worst-case),
+A27HK8_A13HR44 is the MOST cross-reactive by a wide margin. NOT a confound: in Boltz it raises the LOW species
+(mouse 0.448>incumbent 0.395, human ~tied) and in Chai it raises the LOW species (human 0.527>0.432, mouse
+~tied) -> it BALANCES toward equipotency in both, the opposite of a uniform affinity bump. My earlier
+"confounded affinity bump" claim was WRONG (it rested on the incoherent min/min ratio).
+
+CORRECTED lexicographic ranking (#1 switch > #2 x-react RATIO > #3 affinity):
+  #1 switch: TIE at the coarse gate (both robust GENUINE 2-in-window; pKa err 2-3u >> 1.4u window -> swing/
+     fold-count not finely rankable; incumbent 2/2 vs challenger 2/3 is boundary-brittle: challenger f37
+     His27 pKa 5.76, 0.24u under the line).
+  #2 x-react: CHALLENGER WINS, robustly (|d| 0.11-0.12 vs 0.22-0.38, both folders + worst-case).
+  #3 affinity: CHALLENGER >= incumbent (Chai human 0.527>0.432; Boltz ~tied; min-over-folders 0.501>0.431).
+  -> A27HK8_A13HR44 OUTRANKS the incumbent. The advocate's SPECIFIC pick (A27HK8_A18HK52) is REFUTED: it is
+     switch-UNSTABLE (WEAK, 0-in-window in f37) and the WORST on the coherent #2 ratio -> loses on #1 and #2.
+
+ACTION: built submissions/tfr1_track2_v20.csv = v19 with rank-1 ONLY swapped (incumbent -> A27HK8_A13HR44);
+all 19 other designs byte-identical CONTENT (verified by CR-stripped diff), CRLF format matched to the
+portal-verified v19, molecule_class protein. Challenger dev CLEAN (68aa, 0-Cys, net charge -0.05, gravy
+-0.79, liability 0), novel (singleseq maxTM 0.777 == incumbent portal-cleared 0.778, same backbone). seq
+MLTKEEIKKHIEHIAKEHNLKKKLVSHEEWNAQVDAFIEAKLDREAIKESVKAYAELNNGEVLMPKPK.
+VERDICT: REVISE. v20 (rank-1 = A27HK8_A13HR44) is the corrected RECOMMENDED deliverable; v19 (portal-verified)
+is retained INTACT as the immediate fallback. OPEN (USER): (a) rank-1 reversal confirm + which variant
+(clean 1-for-1 swap [built] vs keep incumbent at #2 as a hedge, drop #20); (b) owner re-run the Proteinbase
+portal on v20's new rank-1 before upload (near-certain to clear: same backbone/novelty); (c) upload + git push
+remain USER-GATED. Honest note: this REVERSES the 2026-10-27 f38 rejection, which rested on the incoherent
+min/min ratio -- a genuine bug, not a new opinion; the within-folder fix is robust across 3 folds x 2 folders.
