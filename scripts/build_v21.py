@@ -24,6 +24,9 @@ mcls = {r["name"]: r["molecule_class"] for r in v20}
 ev = {r["name"]: r for r in csv.DictReader(open(REPO/"submissions/tfr1_track2_v19_evidence.csv"))}
 Hip = read_tsv(REPO/"runs/prot/v20_judge/human.tsv", "design", "iptm_max")
 Mip = read_tsv(REPO/"runs/prot/v20_judge/mouse.tsv", "design", "iptm_max")
+import json
+try: ESM = json.load(open(REPO/"runs/esm_v21judge/plddt.json"))  # ESMFold2 monomer pLDDT (2nd organizers' folder)
+except Exception: ESM = {}
 
 def xr(nm):
     try: return float(ev[nm]["xr_mean"])
@@ -42,13 +45,13 @@ with open(REPO/"submissions/tfr1_track2_v21.csv", "w", newline="") as f:
 # evidence table
 with open(REPO/"submissions/tfr1_track2_v21_evidence.csv", "w", newline="") as f:
     w = csv.writer(f, lineterminator="\n")
-    w.writerow(["rank","name","gate","xr_mean","bind","switch","nw","H_iptm_blind","M_iptm_blind","MH_ratio","lineage"])
+    w.writerow(["rank","name","gate","xr_mean","bind","switch","nw","H_iptm_prot","M_iptm_prot","MH_ratio","esm2_plddt","lineage"])
     for i,nm in enumerate(order,1):
         e = ev.get(nm,{}); h = Hip.get(nm,0); m = Mip.get(nm,0)
         gate = "PASS" if h>=GATE else "fail"
         ratio = f"{m/h:.2f}" if h else "-"
         w.writerow([i,nm,gate,e.get("xr_mean","-"),e.get("bind","-"),(e.get("switch_verdict","-") or "-")[:4],
-                    e.get("n_inwindow","-"),f"{h:.3f}",f"{m:.3f}",ratio,e.get("lineage","-")])
+                    e.get("n_inwindow","-"),f"{h:.3f}",f"{m:.3f}",ratio,f"{ESM.get(nm,0):.2f}",e.get("lineage","-")])
 print("v21 order:")
 for i,nm in enumerate(order,1):
     print(f"  {i:>2} {nm:34} gate={'PASS' if Hip.get(nm,0)>=GATE else 'fail'} xr={xr(nm):.3f} Hiptm={Hip.get(nm,0):.3f}")

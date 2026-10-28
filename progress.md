@@ -1174,3 +1174,16 @@ each group by the validated Boltz∧Chai **xr_mean** (#2 ranker). `scripts/build
 0.18 break is clean); the `w3g2_70` #2→#13 demotion is the one judgment call (validated-pipeline star vs
 blind-judge weak) — flagged, and it sits in low-weight slots. **Upload USER-GATED** (v21 recommended, v20
 zero-risk fallback). Not pushed (push remains user-gated).
+
+**2026-10-28 — SECOND FOLDER (ESMFold2) COMPLETES THE ORGANIZERS' JUDGE → v21 CONFIRMED.** A side-agent
+flagged that the organizers use TWO folders (ESMFold2 + Protenix) and I'd run only Protenix. Correct flag;
+addressed. ESMFold2's role here is **monomer self-consistency / foldability** (our setup is monomer-native;
+multimer infer errors — ESMFold is not an interface predictor), i.e. the sc-DockQ-adjacent "folds as designed"
+component, complementary to Protenix's interface ipSAE. Ran ESMFold2 monomer on the 20 finals + the SAME
+POS/NEG controls (`runs/esm_v21judge/plddt.json`): **calibration clean** — POS_3DS18 pLDDT **0.85** vs
+NEG_scramble **0.37/0.41** (binder/scramble cleanly separated). **ALL 20 finals score 0.76-0.96** — every one
+far above the scramble floor, most at/above the positive control → the ESMFold2 half flags **NO** design as
+weak. So the two-folder organizers' judge is now complete and **CONFIRMS v21**: ESMFold2 (foldability, all
+pass) + Protenix (interface, the discriminator + #1 vindication). v21 order unchanged (ESMFold2 is
+confirmatory, not a reorder key — added as `esm2_plddt` in `_v21_evidence.csv`). The side-agent's "trading
+verified-20 for unverified" risk does not apply: v21 is a PURE REORDER (0 swaps; 20 seqs still portal-verified).
