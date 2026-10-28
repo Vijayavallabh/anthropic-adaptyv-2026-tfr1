@@ -1123,3 +1123,12 @@ portal REJECTS v20's rank-1 -> mechanically fall back to the intact portal-verif
 (2) NEW wet-lab / validated-method data reverses a ranked axis (not expected before Nov-1 AoE). The slot flipped
 3x; THIS IS THE LAST CHANGE. Protocol: owner runs the portal on v20 ONCE (near-certain: same backbone, same top
 hit 8twa, novelty 0.777 vs cleared 0.778, 0-Cys), then freeze; v19 kept as labeled fallback. Upload+push USER-GATED.
+
+## 2026-10-28 — v20 PORTAL-VERIFIED 20/20 (owner paste) — LOCK HOLDS; CLEARED FOR UPLOAD
+Owner ran the Proteinbase portal on v20: "20 included • 0 needing fixes"; EVERY row Passed, including the new
+rank-1 genie_w2g3_53__A27HK8_A13HR44 (Row 2, Single chain, Passed, 68 aa); NO novelty/"similar designs" flags.
+BYTE-VERIFIED submitted==validated: all 20 portal (name, length, ORDER) identical to submissions/tfr1_track2_v20.csv
+(CR-stripped diff clean); rank-1 head12 MLTKEEIKKHIE / tail8 EVLMPKPK / len 68 match. => the lock's only live
+reopen condition (portal REJECTS v20 rank-1) resolved IN FAVOUR; the challenger cleared the same authoritative
+gate the incumbent did. **v20 is the FINAL, LOCKED, PORTAL-VERIFIED deliverable (20/20).** v19 retained as the
+portal-verified fallback. ONLY remaining step = the owner's upload click (USER-GATED); git push also USER-GATED.
