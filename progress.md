@@ -1187,3 +1187,24 @@ weak. So the two-folder organizers' judge is now complete and **CONFIRMS v21**: 
 pass) + Protenix (interface, the discriminator + #1 vindication). v21 order unchanged (ESMFold2 is
 confirmatory, not a reorder key — added as `esm2_plddt` in `_v21_evidence.csv`). The side-agent's "trading
 verified-20 for unverified" risk does not apply: v21 is a PURE REORDER (0 swaps; 20 seqs still portal-verified).
+
+**2026-10-28 — BLIND BOLTZ + BLIND CHAI (2nd/3rd interface folders, user-requested) → v21 CONFIRMED.**
+Ran blind Boltz (GPUs 2-4) + blind Chai (5-7) on the 20 finals + POS/NEG controls, apical fragment, to test
+whether Protenix's gate holds under multi-folder consensus. Scored ipSAE (`runs/blind2/{boltz,chai}/ipsae.tsv`);
+full table `submissions/tfr1_track2_v21_multifolder.tsv`. **Calibration decided everything:**
+- **Chai-blind FAILS the positive control** (POS_3DS18 ipSAE 0.011 ≈ NEG 0.011) → it cannot tell a real binder
+  from a scramble on this target → **DISCARDED** (its high scores for w3g2_70/A27HK8/w3g0_290 are sink
+  artifacts — note it also "likes" w3g0_290, our weakest on Protenix). Clean catch by the calibration rule;
+  reinforces [[lesson-tfr1-apical-blind-cofold-fails-poscontrol]] and [[lesson-chai-mouse-iptm-is-folder-pessimism]].
+- **Boltz-blind is VALID but harsh/low-sensitivity** (POS 0.565 vs NEG 0.000, but zeros most de-novo designs incl.
+  known-binders genie_w2g5_111/w4g1_195 that Protenix+pocket-restrained rank high). So Boltz=0 is folder
+  pessimism, usable to PROMOTE (confirm robustness) not to DEMOTE.
+**Consensus → v21 CONFIRMED, not revised:** (1) all **6 "2-folder-robust" designs** (strong on Protenix AND
+Boltz-blind: genie_w2g6_144, w3g5_231, w4g7_217, w4g5_147, w4g5_137, w3g6_146) are already in v21's **top-10**
+(ranks 3,4,6,8,9,10); (2) the gate-fail group (13-20) is weak on the sensitive folder; (3) **#1 holds** — A27HK8
+is "prot-only" (Boltz-blind pessimistic, shared with other good designs) but it is HIGHER on the sensitive
+Protenix folder (0.260) than any 2-folder-robust design (w3g5_231 0.205), plus the validated pocket-restrained
+pipeline + 3-0 lock. No reorder: demoting high-xr prot-only designs on low-sensitivity Boltz-zeros would be
+churn. The organizers'-judge picture is now as complete as this target allows: ESMFold2 (foldability, all pass)
++ Protenix (sensitive interface, the ranker) + Boltz-blind (confirms the robust subset) + Chai-blind (broken,
+discarded). v21 stands; v20 remains the portal-verified fallback. Upload + push USER-GATED.

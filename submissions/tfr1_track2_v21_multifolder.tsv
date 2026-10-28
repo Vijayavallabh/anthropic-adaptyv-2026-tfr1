@@ -1,0 +1,26 @@
+# Multi-folder consensus (2026-10-28). CALIBRATION POS_3DS18 / NEG_scramble:
+#   Protenix_H iptm: POS 0.271 / NEG ~0.12 (VALID, sensitive)
+#   Boltz_blind ipSAE: POS 0.565 / NEG 0.000 (VALID but harsh/low-sensitivity: zeros=pessimism)
+#   Chai_blind ipSAE: POS 0.011 / NEG 0.011 (BROKEN -- fails positive control -> DISCARDED)
+#   ESMFold2 pLDDT: POS 0.85 / NEG 0.37-0.41 (VALID, foldability; all finals pass)
+v21rank	name	xr_mean	gate	Prot_H	Prot_M	Boltz_blind	Chai_DISCARD	ESM2	verdict
+1	genie_w2g3_53__A27HK8_A13HR44	-	PASS	0.260	0.243	0.052	0.477	0.93	prot-only
+2	w4g1_195_mpnn0_sw2his	0.338	PASS	0.237	0.207	0.000	0.139	0.94	prot-only
+3	genie_w2g6_144_sw3b	0.325	PASS	0.269	0.219	0.147	0.000	0.95	2-folder-robust
+4	w3g5_231_mpnn1_sw3his	0.311	PASS	0.205	0.210	0.284	0.000	0.94	2-folder-robust
+5	w3g7_240_mpnn1_sw3his	0.282	PASS	0.239	0.210	0.000	0.000	0.93	prot-only
+6	w4g7_217_mpnn1_sw3his	0.269	PASS	0.255	0.210	0.500	0.000	0.88	2-folder-robust
+7	w4g0_194_mpnn1_sw2his	0.227	PASS	0.259	0.222	0.011	0.389	0.93	prot-only
+8	w4g5_147_mpnn0_sw3his	0.225	PASS	0.266	0.189	0.280	0.000	0.76	2-folder-robust
+9	w4g5_137_mpnn1_sw3his	0.222	PASS	0.247	0.319	0.207	0.000	0.93	2-folder-robust
+10	w3g6_146_mpnn0_sw2his	0.190	PASS	0.198	0.168	0.312	0.000	0.91	2-folder-robust
+11	w3g2_225_mpnn0_sw3his	0.162	PASS	0.194	0.262	0.000	0.011	0.93	prot-only
+12	genie_w2g5_111_sw2b	0.138	PASS	0.267	0.212	0.000	0.012	0.93	prot-only
+13	w3g2_70_mpnn1_sw2his	0.349	fail	0.167	0.195	0.000	0.519	0.94	weak
+14	w4g2_174_mpnn1_sw3his	0.245	fail	0.139	0.132	0.000	0.000	0.83	weak
+15	w4g3_380_mpnn0_sw2his	0.229	fail	0.154	0.161	0.000	0.000	0.93	weak
+16	w3g5_70_mpnn1_sw3his	0.216	fail	0.172	0.165	0.011	0.364	0.95	weak
+17	rfd4_g7_8_sw2b_A14_A41	0.212	fail	0.167	0.201	0.000	0.000	0.93	weak
+18	rfd4_g5_14_sw2b_A34_A50	0.184	fail	0.162	0.169	0.000	0.120	0.96	weak
+19	w3g0_290_mpnn1_sw2his	0.162	fail	0.130	0.191	0.000	0.469	0.90	weak
+20	w3g5_249_mpnn0__A13HK16_A42HK69	0.144	fail	0.169	0.169	0.000	0.000	0.92	weak
