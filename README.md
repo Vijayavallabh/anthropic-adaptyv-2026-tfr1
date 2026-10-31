@@ -20,6 +20,10 @@ hard gate; the Proteinbase portal is authoritative.
 
 ## Status
 
+**RECOMMENDED + PORTAL-PARSED (2026-10-31, JustHISpKa / blind-Protenix campaign) — `submissions/tfr1_track2_v22.csv`.** v21 with its single weakest member swapped: the dead-switch `w3g5_249` (JustHISpKa His pKa 2.4–3.1 on two folds + a 2.9 Å His–Lys salt-bridge geometry + blind-gate fail 0.169) → **`genie_w2g3_53__A59HK21_A17HK48`**, validated on the organizers' *own* BLIND Protenix judge: **H-iptm 0.264** (above the flagship #1's 0.246), human **on-epitope 1.00**, blind **MH-ratio 0.98**, genuine switch (His17 6.60 / His59 6.91), novel 0.75. Portal-parsed **20/20 (0 fixes, all Passed)**; rows 1–19 **byte-identical** to v21; `validate_submission.py` **PASS**. The complete uniform n=80 blind-Protenix record for all 20 (same-batch POS/NEG gate calibration) is in `submissions/tfr1_track2_v22_blind_protenix.tsv`; per-design axes in `submissions/tfr1_track2_v22_evidence.csv`. **Provenance:** a full JustHISpKa switch re-score (validated ±0.1 pKa vs 2SIC experimental) confirmed 19/20 switches genuine and flagged only `w3g5_249`; a cold devil's-advocate correctly caught that cross-reactivity must be read on the blind-Protenix ruler (not pocket Boltz/Chai), on which v21 has no weak links — so exactly one surgical swap survived. **`submissions/tfr1_track2_v21.csv` remains the unchanged, portal-verified fallback.** Upload user-gated.
+
+_Below: the v21 rationale — still the basis for 19/20 of v22._
+
 **RECOMMENDED + PORTAL-VERIFIED (2026-10-28, ambition-lift) — `submissions/tfr1_track2_v21.csv`: v20 re-ranked by the organizers' own BLIND judge, now PORTAL-VERIFIED 20/20 (byte-confirmed; portal also confirms it's the same 20-seq set as v20, reordered). #1 UNCHANGED and vindicated; order multi-folder-confirmed. Repo pushed to origin/main 2026-10-28; upload user-gated (v20 is the portal-verified fallback).**
 - **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED) — a **pure reorder** of v20 (IDENTICAL 20 sequences →
   ~zero portal risk; **#1 unchanged**). We scored the locked finals with the judge that will *actually* rank us:

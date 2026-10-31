@@ -10,9 +10,10 @@
    `progress.md`.
 3. Continue the active feature.
 
-## State (2026-10-28) — v21 RECOMMENDED + PORTAL-VERIFIED 20/20 (organizers'-judge reorder of v20; #1 UNCHANGED + vindicated); validator PASS
-- **DELIVERABLE STACK (repo pushed to origin/main 2026-10-28; upload USER-GATED):**
-  - **`submissions/tfr1_track2_v21.csv`** (RECOMMENDED — **PORTAL-VERIFIED 20/20 byte-confirmed 2026-10-28**:
+## State (2026-10-31) — v22 RECOMMENDED + PORTAL-PARSED 20/20 (v21 with 1 dead-switch swap, blind-Protenix-validated); validator PASS
+- **DELIVERABLE STACK (repo pushed to origin/main; upload USER-GATED):**
+  - **`submissions/tfr1_track2_v22.csv`** (RECOMMENDED — **PORTAL-PARSED 20/20 2026-10-31**: 20 included, 0 fixes, all Passed; byte-roster-confirmed local==portal). v21 with ONE swap — the dead-switch `w3g5_249` (JustHISpKa His pKa 2.4–3.1 on two folds + a 2.9 Å His–Lys salt-bridge + blind-gate fail 0.169) → **`genie_w2g3_53__A59HK21_A17HK48`** (blind Protenix H-iptm **0.264** > flagship #1's 0.246, human on-epitope **1.00**, blind MH-ratio **0.98**, genuine switch His17 6.60 / His59 6.91, novel 0.75). JustHISpKa (field-best His-pKa predictor; user-provided binary, validated ±0.1 pKa vs 2SIC experimental) confirmed 19/20 switches genuine and flagged only `w3g5_249`; a cold devil's-advocate corrected the cross-reactivity ruler to blind Protenix (v21 has **no** weak xreact links there), so exactly ONE surgical swap survived. rows 1–19 **byte-identical** to v21; validator PASS 20/0/0. Complete uniform n=80 blind-Protenix record (same-batch POS/NEG gate): `submissions/tfr1_track2_v22_blind_protenix.tsv`; per-design axes `_v22_evidence.csv`. **`v21` remains the unchanged, portal-verified fallback.** (The licensed JustHISpKa binary + `.lic` live in the repo dir but are gitignored — never commit.)
+  - **`submissions/tfr1_track2_v21.csv`** (FALLBACK — **PORTAL-VERIFIED 20/20 byte-confirmed 2026-10-28**:
     20 included, 0 fixes, all Passed; portal-parsed == v21.csv on name+order+len+head+tail; portal independently
     confirms the SAME 20-seq set as v20, reordered) — a **pure reorder** of v20
     (IDENTICAL 20 sequences; **#1 unchanged**); order multi-folder-confirmed (ESMFold2+Protenix+Boltz-blind;

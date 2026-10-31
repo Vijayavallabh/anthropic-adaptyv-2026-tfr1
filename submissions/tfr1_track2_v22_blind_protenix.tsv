@@ -1,0 +1,28 @@
+# Adaptyv/Anthropic Challenge 4 (TfR1) — v22 blind-Protenix judge-ruler record
+# Organizers' regime: BLIND Protenix (ESMFold2+Protenix class), msa:empty, apical fragment target chain B, n=80 (samples 20 x seeds 101,102,103,104), same batch 2026-10-31
+# Gate calibration (same run): POS_3DS18 H_iptm=0.258  NEG_scramble max H_iptm=0.130  -> gate=0.194 (literature ref ~0.18)
+# H_iptm/M_iptm = iptm_max over samples (human/mouse apical fragment); on_epi = fraction of top poses burying >=2 apical epitope residues; MH_ratio = M_iptm/H_iptm (cross-reactivity, ->1 best)
+rank	name	H_iptm	H_on_epi	M_iptm	MH_ratio	gate
+1	genie_w2g3_53__A27HK8_A13HR44	0.246	0.800	0.247	1.005	PASS
+2	w4g1_195_mpnn0_sw2his	0.261	0.900	0.203	0.780	PASS
+3	genie_w2g6_144_sw3b	0.293	1.000	0.253	0.863	PASS
+4	w3g5_231_mpnn1_sw3his	0.207	0.600	0.214	1.035	PASS
+5	w3g7_240_mpnn1_sw3his	0.199	0.300	0.220	1.105	PASS
+6	w4g7_217_mpnn1_sw3his	0.244	0.900	0.226	0.926	PASS
+7	w4g0_194_mpnn1_sw2his	0.277	0.700	0.225	0.814	PASS
+8	w4g5_147_mpnn0_sw3his	0.189	0.900	0.263	1.391	fail
+9	w4g5_137_mpnn1_sw3his	0.248	0.600	0.327	1.315	PASS
+10	w3g6_146_mpnn0_sw2his	0.222	1.000	0.163	0.736	PASS
+11	w3g2_225_mpnn0_sw3his	0.209	0.500	0.268	1.284	PASS
+12	genie_w2g5_111_sw2b	0.296	1.000	0.233	0.788	PASS
+13	w3g2_70_mpnn1_sw2his	0.163	0.200	0.180	1.106	fail
+14	w4g2_174_mpnn1_sw3his	0.142	0.800	0.129	0.908	fail
+15	w4g3_380_mpnn0_sw2his	0.148	0.200	0.174	1.178	fail
+16	w3g5_70_mpnn1_sw3his	0.206	0.700	0.195	0.947	PASS
+17	rfd4_g7_8_sw2b_A14_A41	0.188	0.000	0.208	1.111	fail
+18	rfd4_g5_14_sw2b_A34_A50	0.185	0.500	0.163	0.880	fail
+19	w3g0_290_mpnn1_sw2his	0.197	0.700	0.195	0.989	PASS
+20	genie_w2g3_53__A59HK21_A17HK48	0.264	1.000	0.258	0.976	PASS
+ctrl	POS_3DS18	0.258	0.900	0.224		
+ctrl	NEG_scramble1	0.130	0.600	0.130		
+ctrl	NEG_scramble2	0.122	0.900	0.107		
