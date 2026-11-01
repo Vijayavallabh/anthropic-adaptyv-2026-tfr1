@@ -1,0 +1,30 @@
+# Adaptyv/Anthropic Challenge 4 (TfR1 apical pH-switch binder) — v25 TWO-STATE SWITCH CONSENSUS (evidence layer)
+# Method: PROPKA3 Wyman linkage on EXISTING bound complexes (no new folds). Per-His n_H(pH)=1/(1+10^(pH-pKa));
+#   ddg_pH = 1.419*INT_{6.0}^{7.4} dn_H dpH over top-2 iptm poses/design. ddg<0 = binds weaker at low pH = RELEASE-competent.
+# ddg_tot = all His (binder+target); ddg_bnd = BINDER His only = the DESIGNED mechanism (drops incidental target-His chemistry).
+# switch_class (binder-His): INTERFACE-STRONG (pKa couples to binding, both methods agree) | INTERFACE-WEAK (borderline) |
+#   TITRATABLE-ONLY (JustHISpKa in-window but binding-decoupled in this pose = intramolecular/surface His, binding-linkage can't score) | NOISY (pose-variable).
+# DISCIPLINE: this is a CONSENSUS/EVIDENCE layer, NOT a re-ranker. PROPKA and JustHISpKa disagree > the pH window; the
+#   portal-verified v25 ranking (switch=JustHISpKa-in-window pass -> xreact -> affinity) is PRESERVED. No swap/reorder on PROPKA alone.
+# Pose source: 18/20 human Protenix (organizer-ruler engine family), 2 Boltz human. Generated 2026-11-01.
+rank	name	H_iptm	M_be	sw_His_JHP	nov	ddg_tot	fracRel_tot	ddg_bnd	min_bnd	fracRel_bnd	max_bnd_dpKa	switch_class
+1	genie_w2g3_53__A27HK8_A13HR44	0.261	0	2	novel	-0.223	1.00	-0.216	-0.251	1.00	-0.32	INTERFACE-STRONG
+2	w3g0_174_mpnn1_sw3his	0.299	7	2	novel	-0.061	1.00	-0.061	-0.061	1.00	-0.07	INTERFACE-STRONG
+3	resc_v25g3_80_mpnn1__A12HK9_A33HK69	0.267	6	3	novel	-0.259	1.00	-0.003	-0.006	0.00	-0.01	TITRATABLE-ONLY
+4	genie_w2g6_144_sw3b	0.264	3	2	inherit	-0.199	1.00	-0.116	-0.127	1.00	-0.19	INTERFACE-STRONG
+5	resc_w3g5_70__A85HR7_A51HR17	0.222	5	4	novel	-0.112	1.00	-0.112	-0.140	1.00	-0.15	INTERFACE-STRONG
+6	resc_v25g3_49_mpnn0__A26HK30_A20HK23	0.205	2	2	novel	-0.019	0.50	-0.018	-0.037	0.50	-0.04	INTERFACE-WEAK
+7	w3g3_92_mpnn0_sw2his	0.260	1	2	novel	-0.000	0.00	0.000	0.000	0.00	+0.00	TITRATABLE-ONLY
+8	resc_w4g7_217__A19HK68_A26HK29	0.283	1	4	novel	0.158	0.50	-0.243	-0.330	1.00	-0.52	INTERFACE-STRONG
+9	resc_genie_w2g5_111__A28HR29_A64HK35	0.278	1	3	novel	-0.251	1.00	-0.234	-0.251	1.00	-0.86	INTERFACE-STRONG
+10	resc_w4g1_195__A18HK22_A81HK11	0.261	1	3	borderline	-0.197	0.50	-0.015	-0.016	0.00	-0.05	INTERFACE-WEAK
+11	resc_w4g1_286__A30HK12_A62HK45	0.324	1	3	novel	-0.448	1.00	-0.440	-0.674	1.00	-0.69	INTERFACE-STRONG
+12	resc_w4g0_194__A39HK22_A32HR35	0.332	1	2	novel	-0.258	0.50	-0.014	-0.016	0.00	-0.05	TITRATABLE-ONLY
+13	resc_v25g6_84_mpnn1__A52HK67_A69HK73	0.275	0	2	novel	-0.044	1.00	-0.009	-0.009	0.00	-0.01	TITRATABLE-ONLY
+14	w3g5_231_mpnn1_sw3his	0.207	0	2	novel	-0.086	1.00	-0.080	-0.086	1.00	-0.13	INTERFACE-STRONG
+15	resc_e223_m3__A17HK21_A34HK37	0.241	0	2	borderline	-0.063	0.50	-0.001	-0.001	0.00	-0.03	TITRATABLE-ONLY
+16	w3g7_240_mpnn1_sw3his	0.252	0	2	novel	-0.007	0.00	-0.007	-0.008	0.00	-0.01	TITRATABLE-ONLY
+17	w3g6_146_mpnn0_sw2his	0.244	0	2	borderline	-0.141	0.50	0.160	-0.263	0.50	+0.71	NOISY
+18	w4g5_137_mpnn1_sw3his	0.237	0	2	borderline	-0.350	1.00	-0.205	-0.262	1.00	-0.75	INTERFACE-STRONG
+19	resc_v25g4_44_mpnn0__A70HK87_A60HR19	0.220	0	2	novel	-0.021	0.50	-0.030	-0.060	0.50	-0.13	INTERFACE-WEAK
+20	resc_v25g5_109_mpnn0__A11HK42_A19HK23	0.220	0	2	novel	-0.009	0.00	-0.009	-0.009	0.00	-0.01	TITRATABLE-ONLY

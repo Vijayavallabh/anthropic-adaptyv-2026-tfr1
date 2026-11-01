@@ -30,6 +30,8 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--names", default="")           # comma list to subset by design name
     ap.add_argument("--targetseq", default="")       # override apical fragment with explicit target .seq (e.g. full ectodomain)
+    ap.add_argument("--trimul_kernel", default="cuequivariance")  # 'cuequivariance'|'torch' (torch = reference fallback)
+    ap.add_argument("--triatt_kernel", default="cuequivariance")  # 'cuequivariance'|'torch'|'triattention'|'deepspeed'
     a = ap.parse_args()
 
     target = open(a.targetseq).read().strip() if a.targetseq else open(FRAG[a.species]).read().strip()
@@ -52,7 +54,8 @@ def main():
     env = dict(os.environ, CUDA_VISIBLE_DEVICES=a.gpu, OMP_NUM_THREADS="4", MKL_NUM_THREADS="4")
     cmd = [str(PROT), "pred", "-i", str(ijson), "-o", str(od), "-s", a.seeds, "-e", str(a.samples),
            "-c", str(a.cycle), "-p", str(a.step), "-n", "protenix_base_default_v1.0.0",
-           "--use_msa", "true", "--use_template", "false"]
+           "--use_msa", "true", "--use_template", "false",
+           "--trimul_kernel", a.trimul_kernel, "--triatt_kernel", a.triatt_kernel]
     print(f"RUN protenix {a.species} gpu={a.gpu} {len(jobs)} job(s) samples={a.samples} seeds={a.seeds}", flush=True)
     print("  " + " ".join(cmd), flush=True)
     raise SystemExit(subprocess.run(cmd, cwd=str(REPO), env=env).returncode)
