@@ -1,0 +1,29 @@
+# Adaptyv/Anthropic Challenge 4 (TfR1 apical pH-switch binder) — MULTI-STATE CROSS-REACTIVITY CAMPAIGN (2026-11-01)
+# Owner directive: "go ahead unapologetically" (do joint human^mouse design for cross-reactivity) + "use the current available compute".
+# PIPELINE: multi-state tied ProteinMPNN (4-chain: A/C binder tied 1:1, B human apical, D mouse apical backbone+mouse resnames)
+#   over 11 backbones (v25's g3_49/g3_80/g4_44/g5_109/g6_84 + new g3_22/g3_65/g3_130/g4_92/g5_13) -> 110 candidates.
+# DEV PRE-SCREEN: tied two-interface design OVER-PACKS HYDROPHOBICS (mean %hyd 0.504 vs v25 0.400, runs to 21) -> 51/110 pass.
+# FOLD: BLIND Protenix cuequivariance ruler, both species. PILOT n=40 (21+30 clean) -> 15 genuine-XR, 5 native-switch (>=2 His).
+# RULER CHECK (n=80, seeds 101-104) on 5 native-switch finalists + POS/NEG controls:
+#   CALIBRATION: POS_3DS18 H_iptm 0.214 / M 0.223 clears; NEG_scramble 0.121-0.126 rejected. GATE H_iptm>=0.194 VALID.
+#   best_epi / on_epi_rate / wepi_frac are NOISE on this flat apical epitope (NEG_scramble2 on_epi 1.00 > POS 0.50; POS best_epi
+#   drifts to 0 at n=80) -> the ONLY valid cross-reactivity signal is both-species iptm (+ balanced MH ratio ~1).
+#
+# FINALISTS (switch = JustHISpKa His in [5.5,7.4]; n=80 both-species iptm; novelty = ESMFold single-seq maxTM):
+# name                       backbone     switch_JHP(in-window)      H_iptm M_iptm  MH   novelty      two-state_bnd_ddg  verdict
+ms_v25g3_22_mpnn0_s1         g3_22(new)   3His 5.90/6.89/6.87 PASS   0.247  0.236   0.96 0.734 novel  -0.576 INTERFACE-STRONG  best finalist
+ms_v25g3_22_mpnn0_s3         g3_22(new)   2His 6.72/6.67 PASS        0.205  0.240   1.17 0.821 border  n/a                     genuine-xr
+ms_v25g6_84_mpnn1_s9         g6_84(=v25r13) 2His 6.81/7.24 PASS      0.243  0.231   0.95 0.848 border  n/a                     genuine-xr
+ms_v25g5_109_mpnn0_s5        g5_109(=v25r20) 2His 6.59/6.90 PASS     0.230  0.199   0.87 0.879 border  n/a                     genuine-xr
+ms_v25g5_109_mpnn0_s0        g5_109       2His 7.48/7.61 FAIL        0.255  0.208   0.81 n/a          n/a                     switch-fail(out of window)
+#
+# HEAD-TO-HEAD vs v25 (same n=80 ruler, valid both-species iptm metric):
+#   v25 ALREADY has stronger both-species binders: #2 H0.299/M0.311, #3 H0.267/M0.287, #13 H0.275/M0.353.
+#   Best finalist g3_22_s1 (H0.247/M0.236) is COMPARABLE but NOT superior. Switch gate (JustHISpKa in-window) TIES all (magnitude
+#   not rankable in-silico). Novelty: only g3_22_s1 clean (0.734); others borderline (0.82-0.88).
+#
+# DECISION: HOLD v25 — NO swap. The multi-state route WORKS (produced 4 genuine cross-reactive switch binders), but they do NOT
+#   beat v25's existing cross-reactive tier on the valid metric; a swap would trade comparable designs + force a portal re-run +
+#   risk borderline-novelty flags = churn on a noisy metric ("confirm, don't churn"). v25 confirmed at the cross-reactivity ceiling
+#   the blind-Protenix ruler can resolve. g3_22_s1 is retained here as a fully-validated OPTIONAL swap-in if the owner wants a 3-His
+#   interface-strong switch design at a low-weight slot (owner call; forces portal re-run; upload USER-GATED).
