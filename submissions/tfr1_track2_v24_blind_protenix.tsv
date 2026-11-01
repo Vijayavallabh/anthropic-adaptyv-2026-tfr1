@@ -1,0 +1,29 @@
+# Adaptyv/Anthropic Challenge 4 (TfR1 apical pH-switch binder) — v24 FINAL blind-Protenix record
+# 20/20 GENUINE Tier-A (0 fillers, 0 off-epitope, 0 sub-gate). Uniform regime: BLIND Protenix (ESMFold2+Protenix class),
+#   msa:empty, apical fragment target chain B, n=80 (20 samples x seeds 101,102,103,104). Gate=0.194 (POS_3DS18 0.258 vs NEG_scramble 0.130).
+# Tier-A gate (ALL pass): H_iptm>=0.194 AND H_best_epi>=2 (apical epitope buried in BEST pose) AND sw_His>=2
+#   (JustHISpKa His pKa in physiological switch window [5.5,7.4] serum7.4<->endosome6, binder-alone) AND novelty!=risk.
+# Diversity: <=2 per lineage (15 distinct lineages). Ranking=lexicographic switch>cross-reactivity>affinity.
+# #1 LOCKED (portal-verified v20->v21, multi-folder-confirmed, organizer-blessed). xr_score=epitope-weighted MH_ratio->1:
+#   weight 1.0 if M_best_epi>=2 (mouse GENUINELY on-epitope), 0.5 if==1, 0.25 if==0 (raw-ratio off-epitope mirage, demoted).
+rank	name	H_iptm	H_be	M_iptm	M_be	MH_ratio	xr_score	sw_His	nov_maxTM	nov_verdict	gate
+1	genie_w2g3_53__A27HK8_A13HR44	0.261	4	0.249	0	0.955	0.239	2	0.777	novel	PASS
+2	w3g0_174_mpnn1_sw3his	0.299	6	0.311	7	1.041	0.959	2	0.764	novel	PASS
+3	genie_w2g6_144_sw3b	0.264	7	0.231	3	0.876	0.876	2	0	inherit	PASS
+4	resc_w3g5_70__A85HR7_A51HR17	0.222	3	0.168	5	0.759	0.759	4	0.742	novel	PASS
+5	w3g3_92_mpnn0_sw2his	0.260	3	0.230	1	0.883	0.441	2	0.744	novel	PASS
+6	resc_w4g7_217__A19HK68_A26HK29	0.283	6	0.219	1	0.773	0.386	4	0.662	novel	PASS
+7	resc_genie_w2g5_111__A28HR29_A64HK35	0.278	6	0.207	1	0.743	0.372	3	0.694	novel	PASS
+8	resc_w4g1_195__A18HK22_A81HK11	0.261	3	0.194	1	0.742	0.371	3	0.825	borderline	PASS
+9	resc_w4g1_286__A30HK12_A62HK45	0.324	7	0.200	1	0.617	0.308	3	0.765	novel	PASS
+10	resc_w4g0_194__A39HK22_A32HR35	0.332	5	0.202	1	0.609	0.304	2	0.677	novel	PASS
+11	w3g5_231_mpnn1_sw3his	0.207	6	0.204	0	0.987	0.247	2	0.763	novel	PASS
+12	genie_w2g3_53__A59HK21_A17HK48	0.264	8	0.254	0	0.965	0.241	3	0	inherit	PASS
+13	genie_w2g6_144__A56HK48_A43HK39	0.258	5	0.244	0	0.947	0.237	4	0	inherit	PASS
+14	resc_e223_m3__A17HK21_A34HK37	0.241	3	0.275	0	1.139	0.215	2	0.858	borderline	PASS
+15	w3g7_240_mpnn1_sw3his	0.252	3	0.214	0	0.847	0.212	2	0.795	novel	PASS
+16	resc_w4g1_195__A12HR9_A81HK11	0.242	4	0.191	0	0.787	0.197	4	0.823	borderline	PASS
+17	w3g6_146_mpnn0_sw2his	0.244	6	0.164	0	0.672	0.168	2	0.831	borderline	PASS
+18	resc_w4g0_194__A39HK22_A30HK2	0.301	6	0.200	0	0.665	0.166	3	0.681	novel	PASS
+19	w4g5_137_mpnn1_sw3his	0.237	3	0.325	0	1.371	0.157	2	0.806	borderline	PASS
+20	resc_w4g1_286__A38HK70_A44HK47	0.405	6	0.251	0	0.619	0.155	3	0.763	novel	PASS
