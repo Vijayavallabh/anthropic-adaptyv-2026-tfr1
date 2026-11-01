@@ -1,0 +1,24 @@
+# Adaptyv/Anthropic Challenge 4 (TfR1 apical pH-switch binder) — v26 = v25 + 2 ADVERSARIALLY-VALIDATED weak-tier swaps (2026-11-02)
+# Owner directive: "replace the weak ones at all costs" + "do whatever it takes to ship the best 20" (autonomous).
+# Campaign: multi-state tied-MPNN (vanilla + SolubleMPNN) + buried-His switch-INSTALL on strong switchless hits ->
+#   dev-screen -> BLIND Protenix fold (n40 pilot -> n80 ruler) -> JustHISpKa in-window gate -> novelty -> two-state binder-His ddg.
+# ARTIFACT DISCIPLINE: best_epi/on_epi NOISE on flat apical epitope; VALID x-react = both-species iptm. REJECTED non-specific
+#   artifacts (iptm>>POS with best_epi 0 AND wepi below scramble). 4-agent adversarial workflow vetted each swap on disk.
+#
+# v26 = v25 with EXACTLY 2 rows swapped (18 retained BYTE-IDENTICAL to portal-verified v25); #1 flagship untouched; validator PASS 20/0/0.
+# rank  OLD (removed, weak)                              NEW (validated upgrade)            gain (measurable axes)                 adversarial verdict
+17      w3g6_146_mpnn0_sw2his                            ms_g3_65_xr__A28H_A43H             mouse 0.164(FAIL)->0.225(be4,on-epi);  KEEP p0.22 (both-species on-epi,
+#        H0.244 M0.164(BELOW gate) NOISY-switch nov0.831   =xr_g3_65_s6__A28HK31_A43HR46     switch NOISY->in-window; aff 0.244->0.320  wepi0.208>POS; Pareto improvement)
+19      resc_v25g4_44_mpnn0__A70HK87_A60HR19             ms_g3_22v_xr__A20H_A44H_A66H       mouse 0.172(FAIL)->0.236(balanced0.96);KEEP p0.20 (dominates all 3 axes;
+#        H0.220 M0.172(BELOW gate) iface-weak nov0.749      =vanilla ms_v25g3_22_mpnn0_s1     switch iface-weak->iface-STRONG(-0.576); propka3 re-verified His20 5.88/
+#                                                                                            aff 0.220->0.247; nov 0.734           His44 6.47 in-window)
+#
+# REVERTED (adversarial REJECT): rank10 resc_w4g1_195 -> ms_g3_22_xr (g3_22_s2): mouse iptm 0.244>POS but wepi 0.022 BELOW BOTH
+#   scrambles (NEG 0.032/0.041) = NON-SPECIFIC off-epitope artifact; "gain" spurious. Kept the v25 original (REVERT p0.18).
+# NOT replaced (no genuine upgrade found; each has a real strength): #5 (iface-strong switch), #6 (M0.213 decent + clean nov),
+#   #15 (M-strong), #18 (M-strong iface-strong). The honest ceiling: mouse on-epitope cross-reactivity stays hard/noisy.
+# Holistic audit KEEP p0.15: 18 rows byte-identical, molecule_class uniform protein, max pairwise id 0.53 (no near-twins),
+#   flagship untouched, CRLF matches portal-verified v25, no portal-format risk. Both new seqs byte-identical to their n80-scored candidates.
+#
+# RECOMMENDATION: v26 (2 genuine cross-reactive-switch upgrades at ranks 17/19). v25 = portal-verified fallback (unchanged).
+# A swap forces a fresh Proteinbase portal re-run on the 2 new sequences (both novelty-pass local). Upload + push USER-GATED.
