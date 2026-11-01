@@ -1,0 +1,27 @@
+# Adaptyv/Anthropic Challenge 4 (TfR1 apical pH-switch binder) — v25 blind-Protenix record
+# v24 minus 5 near-twin cousins (ranks 12/13/16/18/20) + 5 NEW distinct Tier-A (fresh Genie3 campaign).
+# Same ruler: BLIND Protenix (ESMFold2+Protenix), msa:empty, apical fragment chain B, n=80 (20 samples x seeds 101-104). Gate=0.194.
+# Tier-A (ALL pass): H_iptm>=0.194 AND H_best_epi>=2 AND sw_His>=2 (JustHISpKa pKa in [5.5,7.4], 2 ENGINEERED His) AND novelty!=risk.
+# Genuinely varied: max pairwise identity among all 20 = 26.9%. 5 genuine cross-reactive (M_be>=2) vs v24's 3.
+# Ranking=lexicographic switch>cross-reactivity(xr_score=epitope-weighted MH_ratio->1)>affinity. #1 LOCKED.
+rank	name	H_iptm	H_be	M_iptm	M_be	MH_ratio	xr_score	sw_His	nov_maxTM	nov_verdict	gate
+1	genie_w2g3_53__A27HK8_A13HR44	0.261	4	0.249	0	0.955	0.239	2	0.777	novel	PASS
+2	w3g0_174_mpnn1_sw3his	0.299	6	0.311	7	1.041	0.959	2	0.764	novel	PASS
+3	resc_v25g3_80_mpnn1__A12HK9_A33HK69	0.267	5	0.287	6	1.074	0.931	3	0.738	novel	PASS
+4	genie_w2g6_144_sw3b	0.264	7	0.231	3	0.876	0.876	2	0	inherit	PASS
+5	resc_w3g5_70__A85HR7_A51HR17	0.222	3	0.168	5	0.759	0.759	4	0.742	novel	PASS
+6	resc_v25g3_49_mpnn0__A26HK30_A20HK23	0.205	6	0.213	2	1.041	0.961	2	0.748	novel	PASS
+7	w3g3_92_mpnn0_sw2his	0.260	3	0.230	1	0.883	0.441	2	0.744	novel	PASS
+8	resc_w4g7_217__A19HK68_A26HK29	0.283	6	0.219	1	0.773	0.386	4	0.662	novel	PASS
+9	resc_genie_w2g5_111__A28HR29_A64HK35	0.278	6	0.207	1	0.743	0.372	3	0.694	novel	PASS
+10	resc_w4g1_195__A18HK22_A81HK11	0.261	3	0.194	1	0.742	0.371	3	0.825	borderline	PASS
+11	resc_w4g1_286__A30HK12_A62HK45	0.324	7	0.200	1	0.617	0.308	3	0.765	novel	PASS
+12	resc_w4g0_194__A39HK22_A32HR35	0.332	5	0.202	1	0.609	0.304	2	0.677	novel	PASS
+13	resc_v25g6_84_mpnn1__A52HK67_A69HK73	0.275	7	0.353	0	1.283	0.195	2	0.73	novel	PASS
+14	w3g5_231_mpnn1_sw3his	0.207	6	0.204	0	0.987	0.247	2	0.763	novel	PASS
+15	resc_e223_m3__A17HK21_A34HK37	0.241	3	0.275	0	1.139	0.215	2	0.858	borderline	PASS
+16	w3g7_240_mpnn1_sw3his	0.252	3	0.214	0	0.847	0.212	2	0.795	novel	PASS
+17	w3g6_146_mpnn0_sw2his	0.244	6	0.164	0	0.672	0.168	2	0.831	borderline	PASS
+18	w4g5_137_mpnn1_sw3his	0.237	3	0.325	0	1.371	0.157	2	0.806	borderline	PASS
+19	resc_v25g4_44_mpnn0__A70HK87_A60HR19	0.220	6	0.172	0	0.778	0.195	2	0.749	novel	PASS
+20	resc_v25g5_109_mpnn0__A11HK42_A19HK23	0.220	5	0.198	0	0.899	0.225	2	0.772	novel	PASS
