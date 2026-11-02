@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-# Build v26 = v25 with 3 weak-tier members replaced by validated genuine upgrades.
-# Retained 17 rows preserved BYTE-FOR-BYTE from portal-verified v25; 3 new rows written with
-# molecule_class=single_chain (matches portal-verified v25) + STRIPPED sequences (no embedded newline). CRLF.
+# Build v26 = v25 with EXACTLY 2 weak-tier members replaced by validated genuine upgrades (an earlier 3-swap plan
+# had rank10 reverted as an artifact -> 2 swaps; see SWAPS dict + `assert swapped==2`).
+# Retained 18 rows preserved BYTE-FOR-BYTE from portal-verified v25; 2 new rows written with
+# molecule_class=protein (brief-canonical, matches portal-verified v25; NOT single_chain) + STRIPPED sequences. CRLF.
 import csv
 REPO="/home/prachh/v/anthropic-adaptyv-2026-tfr1"
 SC="/home/prachh/work/tmp/claude-1004/-home-prachh-v/437f5686-6960-4582-8739-fda6c6941e67/scratchpad"

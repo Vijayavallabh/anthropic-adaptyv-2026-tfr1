@@ -46,7 +46,7 @@ for d in SW:
         if nov_tm is None and ("tm" in kl or "max" in kl):
             try: nov_tm=float(v)
             except: pass
-        if "verdict" in kl or "class" in kl or "nov" in kl and not v.replace('.','').isdigit():
+        if ("verdict" in kl or "class" in kl or "nov" in kl) and not v.replace('.','').isdigit():  # parens: guard applies to all 3 terms (was a precedence pitfall; the actual sw_novelty.csv had one string `verdict` col so it read correctly regardless)
             nov_verdict=v
     mhr=(Mip/Hip) if Hip else 0.0
     # epitope-weighted x-react weight
@@ -56,6 +56,9 @@ for d in SW:
                      nov_tm=nov_tm if nov_tm is not None else -1, nov=nov_verdict, gate=gate, L=len(SW[d])))
 
 # rank: lexicographic within new designs -> x-react (Mbe desc, weighted mhr desc), then affinity (Hip desc)
+# NOTE: primary x-react key is Mbe (mouse epitope depth, capped 3) = the VALID channel. The secondary mhr=Mip/Hip is
+# UNCAPPED (rewards mouse-biased over balanced), contra the capped xr_score min(r,1/r) objective [[lesson-crossreact-is-ratio-not-absolute]].
+# Impact is TIEBREAKER-ONLY within a tied-Mbe group (inclusion is by Mbe+gate); did NOT change the shipped (portal-verified) inclusion set.
 def rk(r): return (-min(r["Mbe"],3), -(r["w"]*r["mhr"]), -r["Hip"])
 rows.sort(key=rk)
 

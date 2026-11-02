@@ -2,6 +2,14 @@
 # Uniform binding audit of all 20 v26 members vs IN-RUN POS/NEG anchors (same calibrated fold).
 # Primary gate = HUMAN on-epitope (the challenge requires binding human apical). Mouse = cross-react axis.
 # Classify: REAL (iptm>=gate AND wepi>scramble-floor AND on_epi>0) / COLLAPSE (iptm high but wepi<=floor) / WEAK (iptm<gate).
+#
+# !!! WARNING — the HUMAN wepi<=scramble-floor COLLAPSE gate below (line ~lookup `hw <= Hn_w`) is MISCALIBRATED and its
+#     output is SUPERSEDED. In-run calibration shows the POSITIVE CONTROL fails this exact gate (POS_3DS18 human wepi 0.100
+#     < NEG scramble floor 0.136 — the human apical epitope-overlap metric is NOISE). So this script's "COLLAPSE-OFFEPI"
+#     labels are FALSE POSITIVES on human (it flags ~12/20 incl. POS-like members). This first-pass table was DISCARDED.
+#     Authoritative human-binding evidence = (a) blind iptm floor >=0.194 [not-scramble], (b) adversarial workflow audit_wf.js
+#     [forbids any epitope gate the positive control fails], (c) pocket-restrained Boltz human-apical docking (POS-calibrated).
+#     Phantom-collapse is adjudicated ONLY on the MOUSE channel (where POS wepi > NEG). Do NOT act on this file's human labels.
 import csv, sys
 REPO="/home/prachh/v/anthropic-adaptyv-2026-tfr1"
 SC="/home/prachh/work/tmp/claude-1004/-home-prachh-v/437f5686-6960-4582-8739-fda6c6941e67/scratchpad"
