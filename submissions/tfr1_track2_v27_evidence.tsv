@@ -53,3 +53,14 @@
 #   - resc_v25g3_130 (rank15): non-phantom + strong human binder CONFIRMED (iptm 0.215, be8, on_epi 1.00); HONEST CAVEAT — its
 #     mouse cross-reactivity is SOFTER at n80 (wepi 0.039 vs n40 0.061; on_epi 0.30, be0 = marginally above the scramble floor,
 #     not robust). Still non-phantom + above scramble; ordering holds (g3_130 edges g5_13 on mouse cross-react). v27 UNCHANGED.
+#
+# HUMAN-APICAL POCKET-RESTRAINED CONFIRM (2026-11-02, re: side-agent note that the BLIND human epitope metric is dead):
+#   ran the project's pocket-restrained Boltz (apical-forced, POS/NEG-calibrated — the method that DOES separate apical
+#   binders from non-binders on human, unlike the blind ruler) on the 2 new picks. Method works this run: POS_3DS18 ab_iptm
+#   0.75 (hot_contacts 12); NEG_scramble 0.36/0.20 (hot 0). BOTH PICKS DOCK AT THE HUMAN APICAL EPITOPE, ABOVE the positive
+#   control: resc_v25g5_13 ab_iptm 0.93 (hot 6); resc_v25g3_130 ab_iptm 0.79 (hot 4) — vs NEG 0.20-0.36 (which stay low even
+#   restraint-forced). Closes the MANDATORY pocket-restrained human-apical validation for the 2 picks (the 18 retained were
+#   pocket-validated in the v25 era). HONEST LIMIT (the note's fundamental point): true human ON-epitope binding is only settled
+#   by WET LAB. In-silico now establishes, for all 20: not-scramble (blind iptm floor) + apical-docking competence (pocket-
+#   restrained, POS-calibrated) + switch (JustHISpKa 2-in-window) + novelty + developability (+ mouse cross-react for some).
+#   This limit is UNIFORM across v27/v26/v25 (flat apical target + blind co-fold), not a defect of any version. v27 UNCHANGED.
