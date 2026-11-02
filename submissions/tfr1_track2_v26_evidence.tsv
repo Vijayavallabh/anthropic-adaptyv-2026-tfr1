@@ -30,3 +30,14 @@
 # CEILING CONFIRMED 4 WAYS (campaign head-to-head; 4-agent adversarial review; exhaustive artifact-aware re-mine of all
 #   folds; round-2 top-tier backbones). Mouse on-epitope cross-reactivity = FUNDAMENTAL limit (flat apical epitope, blind
 #   co-fold drift, one-seq-for-2-species), NOT fixable by more generation. v26 (2 genuine upgrades) = best achievable.
+#
+# RED-TEAM RE-CHECK (2026-11-02, external note: "new designs score ~2x a real binder -> suspect non-specific collapse;
+#   check WHERE they bind before ranking"). VALID concern = exactly the artifact discipline already applied. Verified vs
+#   v26 bytes + n80 ruler (POS_3DS18 iptm H0.226/M0.236; NEG_scramble wepi H0.065/0.129, M0.032/0.041):
+#   - Highest-iptm candidate in the whole pool = xr_g4_92_mpnn1_s6: MOUSE iptm_max 0.397 (~2x POS) BUT wepi 0.032
+#     (=NEG_scramble1), best_epi 0, on_epi 0.2 = classic high-iptm OFF-EPITOPE collapse -> EXCLUDED (grep g4_92 v26 = 0).
+#   - ms_v25g3_22_s2 (mouse iptm 0.245>POS but wepi 0.022 < both scrambles = off-epitope) -> already REVERTED from rank10.
+#   - The 2 swaps that ARE in v26 are NOT the inflated phenotype (iptm at/near POS AND on-epitope, wepi>scramble):
+#       rank17 xr_g3_65_s6: H iptm 0.320 wepi 0.099(>scr); M iptm 0.225(~POS) wepi 0.208(>>POS 0.103) on_epi 0.9 -> on-epitope
+#       rank19 g3_22_s1:    H iptm 0.247 wepi 0.101 on_epi 0.8; M iptm 0.236(~POS) wepi 0.081(>scr) balanced 0.96 -> on-epitope
+#   CONCLUSION: no 0.33+ off-epitope high-scorer advanced into v26; both swaps clear the "where do they bind" gate. v26 UNCHANGED.
