@@ -44,3 +44,12 @@
 # v25 = portal-verified fallback (committed; 0 similar-flags).
 # A swap forces a fresh Proteinbase portal re-run on the 2 new sequences (both novelty-pass local: g3_130 novel, g5_13 borderline).
 # Upload + git push USER-GATED. Calibrate EVERY blind folder POS/NEG; pocket-restrained validation; never fake scores.
+#
+# n80 PARITY CONFIRM (2026-11-02): both picks re-folded at n80 (seeds 101-104) + in-run POS/NEG (HUMAN POS iptm 0.244/med
+#   0.186, NEG floor 0.122, gate 0.194; MOUSE POS iptm 0.215, NEG wepi floor 0.014). Both clear the human floor with strong
+#   epitope engagement (on_epi 1.00, best_epi 7-8) and NEITHER fires mouse phantom-collapse — parity with the n80-vetted v26 swaps.
+#   - resc_v25g5_13 (rank18): strong-binder status ROBUST at n80 — human iptm 0.279, median 0.222 (> POS med 0.186); mouse
+#     non-phantom (iptm 0.202 ~gate, human-specific). CONFIRMED.
+#   - resc_v25g3_130 (rank15): non-phantom + strong human binder CONFIRMED (iptm 0.215, be8, on_epi 1.00); HONEST CAVEAT — its
+#     mouse cross-reactivity is SOFTER at n80 (wepi 0.039 vs n40 0.061; on_epi 0.30, be0 = marginally above the scramble floor,
+#     not robust). Still non-phantom + above scramble; ordering holds (g3_130 edges g5_13 on mouse cross-react). v27 UNCHANGED.
