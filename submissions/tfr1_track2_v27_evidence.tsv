@@ -1,0 +1,46 @@
+# Adaptyv/Anthropic Challenge 4 (TfR1 apical pH-switch binder) — v27 = v26 with 2 PHANTOM-COLLAPSE members replaced (2026-11-02)
+# Trigger: red-team note ("new designs score ~2x a real binder -> suspect non-specific collapse; check WHERE they bind").
+# Response: full-submission UNIFORM binding audit (all 20 final seqs + POS_3DS18 + NEG_scramble1/2 folded in ONE calibrated
+#   blind-Protenix run, cuequivariance ruler, n40=20 samples x seeds 101,102, human + mouse apical target). Then a 4-agent
+#   adversarial workflow (3 skeptic lenses + conservative synthesis; pull only on 2/3 consensus with positive-control-surviving
+#   evidence). Replacements vetted on the SAME calibrated ruler + novelty (ESMFold single-seq maxTM vs PDB) + JustHISpKa switch.
+#
+# ============================ AUDIT FINDINGS ============================
+# (1) RED-TEAM WAS DIRECTIONALLY BACKWARDS: all 20 clear the only calibrated HUMAN binding signal iptm>=0.194
+#     (in-run POS_3DS18 0.208-0.226 vs NEG_scramble 0.120-0.124; bootstrap scramble FPR ~0). The named high-iptm "suspects"
+#     (rank11/17/8/12/2) are genuine binders; rank2 (w3g0_174) is the BEST cross-reactive binder (mouse be7/on_epi1.0/wepi0.265).
+# (2) HUMAN EPITOPE-OVERLAP METRICS ARE NOISE: on the flat human apical epitope, POS_3DS18 wepi 0.100 < NEG_scramble floor 0.136
+#     (scramble even posts higher best_epi/on_epi than POS). So wepi/best_epi/on_epi CANNOT condemn a member on human (fail the
+#     positive control). A first-pass "wepi<scramble" gate falsely flagged 12/20 incl. POS-like members -> DISCARDED. On MOUSE the
+#     metric IS calibrated-valid (POS wepi 0.120 > NEG 0.057), so specificity is adjudicated there.
+# (3) TWO PHANTOM-COLLAPSE members (POS-valid, median-confirmed mouse signature = iptm>>mouse-POS AND on_epi<=0.2 AND best_epi 0
+#     AND wepi<=floor, which POS does NOT trigger) — the only 2 of 20 firing it with median confirmation (rank1 fires on max only
+#     = tail, survives). 3/4 adversarial agents consensus-pull both:
+#       rank18 w4g5_137_mpnn1_sw3his      : MOUSE iptm_max 0.329 (med 0.214>POS med 0.194) on_epi 0.00 be0 wepi 0.007 ; human thin (med 0.186<gate)
+#       rank15 resc_e223_m3__A17HK21_A34HK37: MOUSE iptm_max 0.269 (med 0.245>POS med) on_epi 0.10 be0 wepi 0.024 ; human thinnest (iptm 0.209 med 0.163); ALSO borderline-novelty 0.858
+#     Both are the already-excluded g4_92/g3_22_s2 collapse signature on a flat apical target; their human "binding" is most
+#     parsimoniously the same phantom (human axis cannot independently confirm).
+#
+# ============================ v27 = v26 with EXACTLY 2 swaps (other 18 BYTE-IDENTICAL; validator PASS 20/0/0) ============================
+# rank  OLD (pulled, phantom-collapse)            NEW (vetted clean, same calibrated ruler)         why NEW is a strict upgrade
+# 15    resc_e223_m3__A17HK21_A34HK37             resc_v25g3_130_mpnn1__A80HK45_A49HK39             H iptm 0.210(>gate) on_epi1.0 be7; MOUSE BOTH-EPI
+#        (phantom + borderline-nov 0.858)           NOVEL maxTM 0.733; switch His49 7.35/His80 7.30    cross-reactive (wepi0.061>floor0.038) -> adds obj#2;
+#                                                    2-in-window; 0Cys; maxID 22.8% vs kept           non-phantom; fully clean on ALL gates
+# 18    w4g5_137_mpnn1_sw3his                     resc_v25g5_13_mpnn1__A29HK32_A36HK40              H iptm 0.283 / med 0.227 (STRONGEST binder, robust
+#        (phantom non-binder)                       switch His29 6.84/His36 7.17 2-in-window;         median > POS med 0.189); on_epi1.0 be7; mouse
+#                                                    0Cys; maxID 23.9% vs kept; non-phantom           non-phantom clean; switch-validated
+#   g3_130 (cross-reactive) ranks ABOVE g5_13 (affinity-only) per lexicographic objective switch>xreact>affinity. Picks 16.3% id to each other (distinct lineages).
+#
+# CAVEAT (honest): resc_v25g5_13 novelty maxTM 0.817 = BORDERLINE on the local structural oracle (threshold ~0.80). Context: it is
+#   LESS borderline than a member v26 already ships (rank10 resc_w4g1_195 0.825), and it replaces a phantom NON-binder. Portal
+#   novelty is multi-criteria (seq-id <=30% AND low TM; >=3/4 passes); g5_13's de-novo seq-id axes pass, so it likely clears >=3/4
+#   despite borderline structural TM. If ZERO novelty risk is preferred at rank18: fallback = drop rank18 (19-member v27) or keep v26.
+# Rejected alt for rank18: resc_v25g4_44__A60HR19_A21HR20 (novel 0.76 but JustHISpKa returned empty pKa -> SWITCH UNCONFIRMABLE -> OUT).
+# genie_w1g0_112 / w4g5_147 candidates: FAIL human floor (iptm 0.15-0.17) -> OUT. Replacement bench is thin (the confirmed generation ceiling).
+#
+# ============================ RECOMMENDATION ============================
+# v27 = RECOMMENDED (2 phantom non-binders -> 2 vetted real binders, one cross-reactive; measurable-axis upgrade on both).
+# v26 = prior (committed c30e013) — identical except the 2 phantom members at ranks 15/18.
+# v25 = portal-verified fallback (committed; 0 similar-flags).
+# A swap forces a fresh Proteinbase portal re-run on the 2 new sequences (both novelty-pass local: g3_130 novel, g5_13 borderline).
+# Upload + git push USER-GATED. Calibrate EVERY blind folder POS/NEG; pocket-restrained validation; never fake scores.
