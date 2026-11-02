@@ -64,3 +64,9 @@
 #   by WET LAB. In-silico now establishes, for all 20: not-scramble (blind iptm floor) + apical-docking competence (pocket-
 #   restrained, POS-calibrated) + switch (JustHISpKa 2-in-window) + novelty + developability (+ mouse cross-react for some).
 #   This limit is UNIFORM across v27/v26/v25 (flat apical target + blind co-fold), not a defect of any version. v27 UNCHANGED.
+#
+# PORTAL-VERIFIED (2026-11-02, user ran v27 through the Proteinbase portal): 20/20 included, 0 needing fixes, ALL 20 Passed,
+#   ZERO "similar designs" flags. Both NEW picks PASSED — incl. resc_v25g5_13 (local novelty-borderline 0.817): the portal's
+#   multi-criteria novelty ACCEPTED it (confirms low seq-id clears >=3/4 despite borderline structural TM) → the g5_13 novelty
+#   caveat is RESOLVED. Byte-verified: portal names+order+lengths == committed v27.csv (submit==validated). v27 now matches
+#   v25's portal-verified rigor and is unambiguously the recommendation. Upload finalization remains USER-GATED.
