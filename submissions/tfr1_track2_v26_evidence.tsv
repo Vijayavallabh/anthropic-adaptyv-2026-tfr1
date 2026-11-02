@@ -22,3 +22,11 @@
 #
 # RECOMMENDATION: v26 (2 genuine cross-reactive-switch upgrades at ranks 17/19). v25 = portal-verified fallback (unchanged).
 # A swap forces a fresh Proteinbase portal re-run on the 2 new sequences (both novelty-pass local). Upload + push USER-GATED.
+#
+# ROUND-2 (2026-11-02, fresh material): multi-state tied-MPNN on the 6 strongest v25 TOP-TIER backbones (never
+#   multi-stated: genie_w2g6_144, resc_w4g1_286, resc_w4g0_194, resc_w4g7_217, resc_genie_w2g5_111, resc_w3g5_70)
+#   -> 90 seqs -> 11 clean >=2His -> blind Protenix both species -> 0 GENUINE both-species-on-epitope (wepi>scramble).
+#   Best: w4g1_286_s11 H0.219/be8 but mouse wepi 0.017 (off-epitope); w3g5_70_s6 (=#5 backbone) human-strong but mouse<gate.
+# CEILING CONFIRMED 4 WAYS (campaign head-to-head; 4-agent adversarial review; exhaustive artifact-aware re-mine of all
+#   folds; round-2 top-tier backbones). Mouse on-epitope cross-reactivity = FUNDAMENTAL limit (flat apical epitope, blind
+#   co-fold drift, one-seq-for-2-species), NOT fixable by more generation. v26 (2 genuine upgrades) = best achievable.
